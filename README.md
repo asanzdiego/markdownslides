@@ -4,19 +4,17 @@
 
 ### What is it?
 
-![](../img/readme.png)
-
 - **MarkdownSlides** is a HTML and PDF **slides** generator
   **from MARKDOWN files**.
 
+![](./doc/img/readme.png)
 
 ### Samples
 
-- [HTML](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
-- [HTML Reveal Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html)
-- [PDF Reveal Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf)
-- [HTML Reveal Slides Alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-alternative.html)
-- [PDF Reveal Slides Alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-alternative.pdf)
+- From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
+  generate [Plain HTML](http://asanzdiego.github.io/markdownslides/doc/export/readme.html), 
+  [HTML Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html)
+  and [PDF Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf)
 
 ### Dependencies
 
@@ -64,18 +62,17 @@
 
 ### ¿Qué es esto?
 
-![](../img/leeme.png)
-
 - **MarkdownSlides** es un generador de **slides** HTML y PDF
   a **partir de ficheros MARKDOWN**.
 
+![](./doc/img/leeme.png)
+
 ### Ejemplos
 
-- [HTML](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
-- [HTML Reveal Slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.html)
-- [PDF Reveal Slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pdf)
-- [HTML Reveal Slides Alternativo](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides-alternative.html)
-- [PDF Reveal Slides Alternativo](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides-alternative.pdf)
+- A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
+  genera [HTML plano](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html),
+  [Slides en HTML](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.html)
+  y [Slides en PDF](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pdf)
 
 ### Dependencias
 

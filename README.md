@@ -12,11 +12,10 @@
 
 ### Samples
 
-- [HTML](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
-- [HTML Reveal Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html)
-- [PDF Reveal Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf)
-- [HTML Reveal Slides Alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-alternative.html)
-- [PDF Reveal Slides Alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-alternative.pdf)
+- From [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
+  generate [Plain HTML](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
+  or [HTML Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html)
+  or [PDF Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf)
 
 ### Dependencies
 
@@ -71,11 +70,10 @@
 
 ### Ejemplos
 
-- [HTML](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
-- [HTML Reveal Slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.html)
-- [PDF Reveal Slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pdf)
-- [HTML Reveal Slides Alternativo](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides-alternative.html)
-- [PDF Reveal Slides Alternativo](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides-alternative.pdf)
+- A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
+  genera [HTML plano](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
+  o [Slides en HTML](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.html)
+  o [Slides en PDF](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pdf)
 
 ### Dependencias
 

@@ -12,10 +12,10 @@
 
 ### Samples
 
-- From [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
-  generate [Plain HTML](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
-  or [HTML Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html)
-  or [PDF Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf)
+- From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
+  generate [Plain HTML](http://asanzdiego.github.io/markdownslides/doc/export/readme.html), 
+  [HTML Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html)
+  and [PDF Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf)
 
 ### Dependencies
 
@@ -71,9 +71,9 @@
 ### Ejemplos
 
 - A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
-  genera [HTML plano](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
-  o [Slides en HTML](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.html)
-  o [Slides en PDF](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pdf)
+  genera [HTML plano](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html),
+  [Slides en HTML](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.html)
+  y [Slides en PDF](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pdf)
 
 ### Dependencias
 

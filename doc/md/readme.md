@@ -4,14 +4,14 @@
 
 # About
 
-## MarkdownSlides
-
-![](../img/readme.png)
-
 ## What is it?
 
 - **MarkdownSlides** is a HTML and PDF **slides** generator
   **from MARKDOWN files**.
+
+## MarkdownSlides
+
+![](../img/readme.png)
 
 ## Licence
 

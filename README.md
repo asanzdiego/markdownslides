@@ -4,11 +4,10 @@
 
 ### What is it?
 
-![](./doc/img/readme.png)
-
 - **MarkdownSlides** is a HTML and PDF **slides** generator
   **from MARKDOWN files**.
 
+![](./doc/img/readme.png)
 
 ### Samples
 
@@ -63,10 +62,10 @@
 
 ### ¿Qué es esto?
 
-![](./doc/img/leeme.png)
-
 - **MarkdownSlides** es un generador de **slides** HTML y PDF
   a **partir de ficheros MARKDOWN**.
+
+![](./doc/img/leeme.png)
 
 ### Ejemplos
 

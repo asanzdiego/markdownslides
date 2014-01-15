@@ -4,14 +4,14 @@
 
 # Acerca de
 
-## MarkdownSlides
-
-![](../img/leeme.png)
-
 ## ¿Qué es esto?
 
 - **MarkdownSlides** es un generador de **slides** HTML y PDF
   a **partir de ficheros MARKDOWN**.
+
+## MarkdownSlides
+
+![](../img/leeme.png)
 
 ## Licencia
 

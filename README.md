@@ -4,7 +4,7 @@
 
 ### What is it?
 
-![](../img/readme.png)
+![](./doc/img/readme.png)
 
 - **MarkdownSlides** is a HTML and PDF **slides** generator
   **from MARKDOWN files**.
@@ -64,7 +64,7 @@
 
 ### ¿Qué es esto?
 
-![](../img/leeme.png)
+![](./doc/img/leeme.png)
 
 - **MarkdownSlides** es un generador de **slides** HTML y PDF
   a **partir de ficheros MARKDOWN**.

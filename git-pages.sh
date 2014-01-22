@@ -4,9 +4,11 @@ echo "*****************************"
 echo "* PUSH CHANGES TO GIT PAGES *"
 echo "*****************************"
 
-FROM='/home/adolfo/Curro/cursos/markdownslides'
-FOLDERTO='/home/adolfo/Curro/github/gh-pages'
-TO='/home/adolfo/Curro/github/gh-pages/markdownslides'
+FROM=`cd`
+FOLDERTO=$GIT_PAGES_FOLDER
+TO="$GIT_PAGES_FOLDER/markdownslides"
+
+echo "TO_GIT_PAGES_FOLDER=$TO"
 
 DATE=`date +"%Y.%m.%d-%H:%M"`
 TO_OLD=$TO'-OLD-'$DATE

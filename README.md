@@ -32,6 +32,11 @@
 - [Phantom.js](http://phantomjs.org) (needs to be installed)
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) (downloaded automaticaly)
 - [Deck.js](http://imakewebthings.com/deck.js/) (automaticaly downloaded)
+- Now, only works in Linux (may be on MacOS)
+
+## Download
+
+- [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 ### Creation
 
@@ -110,6 +115,11 @@
 - [Phantom.js](http://phantomjs.org) (necesita ser instalado)
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) (descargado automaticamente)
 - [Deck.js](http://imakewebthings.com/deck.js/) (bajado automáticamente)
+- Por ahora, solo funciona en Linux (y puede que en MacOS)
+
+## Download
+
+- [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 ### Creación
 

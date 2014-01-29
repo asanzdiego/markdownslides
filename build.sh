@@ -83,6 +83,23 @@ function cleanMdToBook() {
   sed 's/##.*(I).*/&KK/g' $1.md > ../export/$1-to-book.md
   sed -i 's/ (I).*KK//g' ../export/$1-to-book.md
   sed -i 's/##.*(I.*//g' ../export/$1-to-book.md
+  sed -i 's/##.*(V.*//g' ../export/$1-to-book.md
+  sed -i 's/##.*(X.*//g' ../export/$1-to-book.md
+}
+
+function buildDeckSlides() {
+
+  downloadLib imakewebthings deck.js
+  downloadLib markahon deck.search.js
+  downloadLib mikeharris100 deck.js-transition-cube
+
+  echo -e "Exporting...                   ../export/$1-deck-slides$2.html"
+
+  pandoc -w dzslides --template $ORIGIN/templates/deck-slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-deck-slides$2.html ../export/$1-to-slides.md
+
+  sed -i s/h1\>/h2\>/g ../export/$1-deck-slides.html
+  sed -i s/\>\<h2/\>\<h1/g ../export/$1-deck-slides.html
+  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-deck-slides.html
 }
 
 function buildRevealSlides() {
@@ -104,21 +121,6 @@ function buildRevealSlidesPdf() {
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.pdf"
 
   phantomjs ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf > /dev/null
-}
-
-function buildDeckSlides() {
-
-  downloadLib imakewebthings deck.js
-  downloadLib markahon deck.search.js
-  downloadLib mikeharris100 deck.js-transition-cube
-
-  echo -e "Exporting...                   ../export/$1-deck-slides$2.html"
-
-  pandoc -w dzslides --template $ORIGIN/templates/deck-slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-deck-slides$2.html ../export/$1-to-slides.md
-
-  sed -i s/h1\>/h2\>/g ../export/$1-deck-slides.html
-  sed -i s/\>\<h2/\>\<h1/g ../export/$1-deck-slides.html
-  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-deck-slides.html
 }
 
 function buildBeamer() {
@@ -160,12 +162,12 @@ function exportMdToSlides() {
 
   cleanMdToSlides $1
 
+  buildDeckSlides $1
+  buildDeckSlides $1 -alternative
   buildRevealSlides $1
   buildRevealSlidesPdf $1
   buildRevealSlides $1 -alternative
   buildRevealSlidesPdf $1 -alternative
-  buildDeckSlides $1
-  buildDeckSlides $1 -alternative
   buildBeamer $1
 }
 

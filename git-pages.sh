@@ -23,7 +23,8 @@ rm -rf $TO'/.git' && \
 cp -r $TO_OLD'/.git' $TO && \
 cd $TO && \
 
-git diff | grep +++
+git diff | grep ^+++
+git diff | grep ^---
 
 read -p "You want to continue? [y|*N*]: " OPTION
 

@@ -4,7 +4,8 @@ echo "**************************"
 echo "* PUSH CHANGES TO GITHUB *"
 echo "**************************"
 
-git diff | grep +++
+git diff | grep ^+++
+git diff | grep ^---
 
 read -p "You want to continue? [y|*N*]: " OPTION
 

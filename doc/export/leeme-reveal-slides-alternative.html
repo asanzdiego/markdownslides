@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="generator" content="pandoc" />
-  <meta name="description" content="MarkdownSlides" />
+  <meta name="description" content="Markdown Slides" />
   <meta name="author" content="Adolfo Sanz De Diego" />
-  <meta name="copyright" content="MarkdownSlides - Adolfo Sanz De Diego -  Enero 2014" /> 
-  <title>MarkdownSlides</title>
+  <meta name="copyright" content="Markdown Slides - Adolfo Sanz De Diego -  Enero 2014" /> 
+  <title>Markdown Slides</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -76,23 +76,41 @@
     <div class="slides">
 
 <section>
-    <h1 class="title">MarkdownSlides</h2>
+    <h1 class="title">Markdown Slides</h2>
     <h2 class="author">Adolfo Sanz De Diego</h2>
     <h3 class="date">Enero 2014</h3>
 </section>
 
-<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">1</span> Acerca de</h1></section><section id="qué-es-esto" class="slide level2">
-<h2><span class="header-section-number">1.1</span> ¿Qué es esto?</h2>
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">1</span> Acerca de</h1></section><section id="qué-es-esto-i" class="slide level2">
+<h2><span class="header-section-number">1.1</span> ¿Qué es esto? (I)</h2>
 <ul>
-<li><strong>MarkdownSlides</strong> es un generador de <strong>slides</strong> HTML y PDF a <strong>partir de ficheros MARKDOWN</strong>.</li>
+<li><strong>MarkdownSlides</strong> es un generador de <strong>slides</strong> Reveal.js, Deck.js y PDF a <strong>partir de ficheros MARKDOWN</strong>, que también genera documentos HTML, ODT y DOCX.</li>
 </ul>
-</section><section id="markdownslides" class="slide level2">
-<h2><span class="header-section-number">1.2</span> MarkdownSlides</h2>
+</section><section id="qué-es-esto-ii" class="slide level2">
+<h2><span class="header-section-number">1.2</span> ¿Qué es esto? (II)</h2>
 <figure>
-<img src="../img/leeme.png" />
+<img src="../img/markdownslides.png" />
 </figure>
+</section><section id="ejemplos" class="slide level2">
+<h2><span class="header-section-number">1.3</span> Ejemplos</h2>
+<ul>
+<li><p>A partir de un fichero <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md">MARKDOWN</a> genera:</p>
+<ul>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html">reveal-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html">reveal-slides-alternative</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf">reveal-pdf-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf">reveal-pdf-slides-alternative</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides.html">deck-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides-alternative.html">deck-slides-alternative</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-beamer.pdf">pdf-beamer</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf">pdf</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.html">html</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.docx">docx</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.odt">odt</a></li>
+</ul></li>
+</ul>
 </section><section id="licencia" class="slide level2">
-<h2><span class="header-section-number">1.3</span> Licencia</h2>
+<h2><span class="header-section-number">1.4</span> Licencia</h2>
 <ul>
 <li><strong>Este obra está bajo una licencia:</strong>
 <ul>
@@ -109,17 +127,32 @@
 <ul>
 <li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> (necesita ser instalado)</li>
 <li><a href="http://phantomjs.org">Phantom.js</a> (necesita ser instalado)</li>
-<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> (incluido)</li>
+<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> (bajado automáticamente)</li>
+<li><a href="http://imakewebthings.com/deck.js/">Deck.js</a> (bajado automáticamente)</li>
 </ul>
-</section><section id="creación" class="slide level2">
-<h2><span class="header-section-number">2.2</span> Creación</h2>
+</section><section id="creación-i" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Creación (I)</h2>
 <ul>
 <li><p>Primero <strong>copia la carpeta doc y renombrala a tu gusto</strong>. Esto no es necesario pero te ayuda a organizar tus documentos.</p></li>
 <li><p><strong>Crea los ficheros md</strong> que quieras generar en la <strong>carpeta md</strong>. Los ficheros md son ficheros <a href="http://es.wikipedia.org/wiki/Markdown">Markdown</a>, que no son nada más que ficheros de texto plano, con extensión md, y con un marcado ligero (que hay que conocer pero que es muy sencillo).</p></li>
-<li><p>Una vez creado los md, puedes <strong>generar html, html-slides y pdf-slides con un script</strong>.</p></li>
+</ul>
+</section><section id="creación-ii" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Creación (II)</h2>
+<ul>
+<li><p>Una vez creado los md, <strong>podemos generar con un script</strong>:</p>
+<ul>
+<li>reveal-slides</li>
+<li>reveal-pdf-slides</li>
+<li>deck-slides</li>
+<li>pdf-beamer</li>
+<li>pdf</li>
+<li>html</li>
+<li>docx</li>
+<li>odt</li>
+</ul></li>
 </ul>
 </section><section id="generación" class="slide level2">
-<h2><span class="header-section-number">2.3</span> Generación</h2>
+<h2><span class="header-section-number">2.4</span> Generación</h2>
 <ul>
 <li>Para <strong>convertir todos los ficheros md de todas las carpetas</strong> hay que posicionarse en la carpeta raiz, y ejecutar:</li>
 </ul>
@@ -141,13 +174,17 @@
 <li><p>Hoy en día:</p>
 <ul>
 <li><p><strong>Profesor de FP de informática</strong>:</p>
-<pre><code>- Hardware, Sistemas Operativos
-- Redes, Programación</code></pre></li>
+<ul>
+<li>Hardware, Sistemas Operativos</li>
+<li>Redes, Programación</li>
+</ul></li>
 <li><p><strong>Formador Freelance</strong>:</p>
-<pre><code>- Java, Android
-- JavaScript, jQuery
-- JSF, Spring, Hibernate
-- Groovy &amp; Grails</code></pre></li>
+<ul>
+<li>Java, Android</li>
+<li>JavaScript, jQuery</li>
+<li>JSF, Spring, Hibernate</li>
+<li>Groovy &amp; Grails</li>
+</ul></li>
 <li><p><strong>Me gusta programar</strong></p></li>
 </ul></li>
 </ul>
@@ -157,9 +194,14 @@
 <img src="../img/hackathon-lovers-logo.png" />
 </figure>
 <ul>
-<li><p><strong>Para los amantes de los hackathones</strong></p></li>
-<li><p><strong>Meetup</strong>: <a href="http://www.meetup.com/Hackathon-Lovers/">http://www.meetup.com/Hackathon-Lovers/</a></p></li>
-<li><p><strong>Twitter</strong>: <a href="http://twitter.com/HackathonLovers">http://twitter.com/HackathonLovers</a></p></li>
+<li><p><strong>Para los amantes de los hackathones</strong></p>
+<ul>
+<li><strong>Meetup</strong>: <a href="http://www.meetup.com/Hackathon-Lovers/">http://www.meetup.com/Hackathon-Lovers/</a></li>
+<li><strong>Twitter</strong>: <a href="http://twitter.com/HackathonLovers">http://twitter.com/HackathonLovers</a></li>
+<li><strong>Blog</strong>: <a href="http://hackathonlovers.tumblr.com/">http://hackathonlovers.tumblr.com/</a></li>
+<li><strong>LinkedIn</strong>: <a href="http://www.linkedin.com/groups/Hackathon-Lovers-6510465">http://www.linkedin.com/groups/Hackathon-Lovers-6510465</a></li>
+<li><strong>YouTube</strong>: <a href="http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw">http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw</a></li>
+</ul></li>
 </ul>
 </section><section id="tweets-sentiment" class="slide level2">
 <h2><span class="header-section-number">3.4</span> Tweets Sentiment</h2>
@@ -167,16 +209,18 @@
 <img src="../img/tweets-sentiment-logo.png" />
 </figure>
 <ul>
-<li><p>Es un <strong>analizador de tweets</strong> que extrae información semántica para conocer si el sentimiento general de los tweets de un determinado tema es positivo o negativo.</p></li>
-<li><p><strong>Web</strong>: <a href="http://tweetssentiment.com/">http://tweetssentiment.com/</a></p></li>
-<li><p><strong>Twitter</strong>: <a href="http://twitter.com/TweetsSentiment">http://twitter.com/TweetsSentiment</a></p></li>
+<li><p>Es un <strong>analizador de tweets</strong> que extrae información semántica para conocer si el sentimiento general de los tweets de un determinado tema es positivo o negativo.</p>
+<ul>
+<li><strong>Web</strong>: <a href="http://tweetssentiment.com/">http://tweetssentiment.com/</a></li>
+<li><strong>Twitter</strong>: <a href="http://twitter.com/TweetsSentiment">http://twitter.com/TweetsSentiment</a></li>
+</ul></li>
 </ul>
 </section><section id="donde-encontrarme" class="slide level2">
 <h2><span class="header-section-number">3.5</span> ¿Donde encontrarme?</h2>
 <ul>
-<li><p>Mi nick: <strong>asanzdiego</strong></p></li>
-<li><p>AboutMe: <strong><a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></strong></p>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
 <ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></li>
 <li>GitHub: <a href="http://github.com/asanzdiego/">http://github.com/asanzdiego/</a></li>
 <li>Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a></li>
 <li>Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a></li>

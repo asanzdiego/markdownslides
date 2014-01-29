@@ -1,17 +1,34 @@
-% MarkdownSlides
+% Markdown Slides
 % Adolfo Sanz De Diego
 % Enero 2014
 
 # Acerca de
 
-## ¿Qué es esto?
+## ¿Qué es esto? (I)
 
-- **MarkdownSlides** es un generador de **slides** HTML y PDF
-  a **partir de ficheros MARKDOWN**.
+- **MarkdownSlides** es un generador de **slides** Reveal.js, Deck.js y PDF
+  a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, ODT y DOCX.
 
-## MarkdownSlides
+## ¿Qué es esto? (II)
 
-![](../img/leeme.png)
+![](../img/markdownslides.png)
+
+## Ejemplos
+
+- A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
+  genera:
+
+    - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html)
+    - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html)
+    - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
+    - [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
+    - [deck-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides.html)
+    - [deck-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides-alternative.html)
+    - [pdf-beamer](http://asanzdiego.github.io/markdownslides/doc/export/leeme-beamer.pdf)
+    - [pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf)
+    - [html](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
+    - [docx](http://asanzdiego.github.io/markdownslides/doc/export/leeme.docx)
+    - [odt](http://asanzdiego.github.io/markdownslides/doc/export/leeme.odt)
 
 ## Licencia
 
@@ -27,9 +44,10 @@
 
 - [Pandoc](http://johnmacfarlane.net/pandoc/) (necesita ser instalado)
 - [Phantom.js](http://phantomjs.org) (necesita ser instalado)
-- [Reveal.js](http://lab.hakim.se/reveal-js/#/) (incluido)
+- [Reveal.js](http://lab.hakim.se/reveal-js/#/) (bajado automáticamente)
+- [Deck.js](http://imakewebthings.com/deck.js/) (bajado automáticamente)
 
-## Creación
+## Creación (I)
 
 - Primero **copia la carpeta doc y renombrala a tu gusto**. Esto no es necesario pero
   te ayuda a organizar tus documentos.
@@ -39,7 +57,18 @@
   que no son nada más que ficheros de texto plano, con extensión md,
   y con un marcado ligero (que hay que conocer pero que es muy sencillo).
 
-- Una vez creado los md, puedes **generar html, html-slides y pdf-slides con un script**.
+## Creación (II)
+
+- Una vez creado los md, **podemos generar con un script**:
+
+    - reveal-slides
+    - reveal-pdf-slides
+    - deck-slides
+    - pdf-beamer
+    - pdf
+    - html
+    - docx
+    - odt
 
 ## Generación
 
@@ -71,15 +100,15 @@
 
     - **Profesor de FP de informática**:
 
-            - Hardware, Sistemas Operativos
-            - Redes, Programación
+        - Hardware, Sistemas Operativos
+        - Redes, Programación
 
     - **Formador Freelance**:
 
-            - Java, Android
-            - JavaScript, jQuery
-            - JSF, Spring, Hibernate
-            - Groovy & Grails
+        - Java, Android
+        - JavaScript, jQuery
+        - JSF, Spring, Hibernate
+        - Groovy & Grails
 
     - **Me gusta programar**
 
@@ -89,9 +118,11 @@
 
 - **Para los amantes de los hackathones**
 
-- **Meetup**: [http://www.meetup.com/Hackathon-Lovers/](http://www.meetup.com/Hackathon-Lovers/)
-
-- **Twitter**: [http://twitter.com/HackathonLovers](http://twitter.com/HackathonLovers)
+    - **Meetup**: [http://www.meetup.com/Hackathon-Lovers/](http://www.meetup.com/Hackathon-Lovers/)
+    - **Twitter**: [http://twitter.com/HackathonLovers](http://twitter.com/HackathonLovers)
+    - **Blog**: [http://hackathonlovers.tumblr.com/](http://hackathonlovers.tumblr.com/)
+    - **LinkedIn**: [http://www.linkedin.com/groups/Hackathon-Lovers-6510465](http://www.linkedin.com/groups/Hackathon-Lovers-6510465)
+    - **YouTube**: [http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw](http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw)
 
 ## Tweets Sentiment
 
@@ -101,17 +132,15 @@
 si el sentimiento general de los tweets de un determinado tema
 es positivo o negativo.
 
-- **Web**: [http://tweetssentiment.com/](http://tweetssentiment.com/)
-
-- **Twitter**: [http://twitter.com/TweetsSentiment](http://twitter.com/TweetsSentiment)
+    - **Web**: [http://tweetssentiment.com/](http://tweetssentiment.com/)
+    - **Twitter**: [http://twitter.com/TweetsSentiment](http://twitter.com/TweetsSentiment)
 
 ## ¿Donde encontrarme?
 
 - Mi nick: **asanzdiego**
 
-- AboutMe: **[http://about.me/asanzdiego](http://about.me/asanzdiego)**
-
-    - GitHub:   [http://github.com/asanzdiego/](http://github.com/asanzdiego/)
+    - AboutMe:  [http://about.me/asanzdiego](http://about.me/asanzdiego)
+    - GitHub:   [http://github.com/asanzdiego](http://github.com/asanzdiego)
     - Twitter:  [http://twitter.com/asanzdiego](http://twitter.com/asanzdiego)
     - Blog:     [http://asanzdiego.blogspot.com.es](http://asanzdiego.blogspot.com.es)
     - LinkedIn: [http://www.linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)

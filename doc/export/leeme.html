@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="MarkdownSlides" />
+  <meta name="description" content="Markdown Slides" />
   <meta name="author" content="Adolfo Sanz De Diego" />
-  <meta name="copyright" content="MarkdownSlides - Adolfo Sanz De Diego -  Enero 2014" /> 
-  <title>MarkdownSlides</title>
+  <meta name="copyright" content="Markdown Slides - Adolfo Sanz De Diego -  Enero 2014" /> 
+  <title>Markdown Slides</title>
   <style type="text/css">code{white-space: pre;}</style>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,7 +15,7 @@
 </head>
 <body>
 <header>
-<h1 class="title">MarkdownSlides</h1>
+<h1 class="title">Markdown Slides</h1>
 <h2 class="author">Adolfo Sanz De Diego</h2>
 <h3 class="date">Enero 2014</h3>
 </header>
@@ -23,7 +23,7 @@
 <ul>
 <li><a href="#acerca-de"><span class="toc-section-number">1</span> Acerca de</a><ul>
 <li><a href="#qué-es-esto"><span class="toc-section-number">1.1</span> ¿Qué es esto?</a></li>
-<li><a href="#markdownslides"><span class="toc-section-number">1.2</span> MarkdownSlides</a></li>
+<li><a href="#ejemplos"><span class="toc-section-number">1.2</span> Ejemplos</a></li>
 <li><a href="#licencia"><span class="toc-section-number">1.3</span> Licencia</a></li>
 </ul></li>
 <li><a href="#instalación-y-manejo"><span class="toc-section-number">2</span> Instalación y manejo</a><ul>
@@ -43,12 +43,28 @@
 <h1 id="acerca-de"><a href="#acerca-de"><span class="header-section-number">1</span> Acerca de</a></h1>
 <h2 id="qué-es-esto"><a href="#qué-es-esto"><span class="header-section-number">1.1</span> ¿Qué es esto?</a></h2>
 <ul>
-<li><strong>MarkdownSlides</strong> es un generador de <strong>slides</strong> HTML y PDF a <strong>partir de ficheros MARKDOWN</strong>.</li>
+<li><strong>MarkdownSlides</strong> es un generador de <strong>slides</strong> Reveal.js, Deck.js y PDF a <strong>partir de ficheros MARKDOWN</strong>, que también genera documentos HTML, ODT y DOCX.</li>
 </ul>
-<h2 id="markdownslides"><a href="#markdownslides"><span class="header-section-number">1.2</span> MarkdownSlides</a></h2>
 <figure>
-<img src="../img/leeme.png" />
+<img src="../img/markdownslides.png" />
 </figure>
+<h2 id="ejemplos"><a href="#ejemplos"><span class="header-section-number">1.2</span> Ejemplos</a></h2>
+<ul>
+<li><p>A partir de un fichero <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md">MARKDOWN</a> genera:</p>
+<ul>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html">reveal-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html">reveal-slides-alternative</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf">reveal-pdf-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf">reveal-pdf-slides-alternative</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides.html">deck-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides-alternative.html">deck-slides-alternative</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-beamer.pdf">pdf-beamer</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf">pdf</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.html">html</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.docx">docx</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.odt">odt</a></li>
+</ul></li>
+</ul>
 <h2 id="licencia"><a href="#licencia"><span class="header-section-number">1.3</span> Licencia</a></h2>
 <ul>
 <li><strong>Este obra está bajo una licencia:</strong>
@@ -65,13 +81,24 @@
 <ul>
 <li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> (necesita ser instalado)</li>
 <li><a href="http://phantomjs.org">Phantom.js</a> (necesita ser instalado)</li>
-<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> (incluido)</li>
+<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> (bajado automáticamente)</li>
+<li><a href="http://imakewebthings.com/deck.js/">Deck.js</a> (bajado automáticamente)</li>
 </ul>
 <h2 id="creación"><a href="#creación"><span class="header-section-number">2.2</span> Creación</a></h2>
 <ul>
 <li><p>Primero <strong>copia la carpeta doc y renombrala a tu gusto</strong>. Esto no es necesario pero te ayuda a organizar tus documentos.</p></li>
 <li><p><strong>Crea los ficheros md</strong> que quieras generar en la <strong>carpeta md</strong>. Los ficheros md son ficheros <a href="http://es.wikipedia.org/wiki/Markdown">Markdown</a>, que no son nada más que ficheros de texto plano, con extensión md, y con un marcado ligero (que hay que conocer pero que es muy sencillo).</p></li>
-<li><p>Una vez creado los md, puedes <strong>generar html, html-slides y pdf-slides con un script</strong>.</p></li>
+<li><p>Una vez creado los md, <strong>podemos generar con un script</strong>:</p>
+<ul>
+<li>reveal-slides</li>
+<li>reveal-pdf-slides</li>
+<li>deck-slides</li>
+<li>pdf-beamer</li>
+<li>pdf</li>
+<li>html</li>
+<li>docx</li>
+<li>odt</li>
+</ul></li>
 </ul>
 <h2 id="generación"><a href="#generación"><span class="header-section-number">2.3</span> Generación</a></h2>
 <ul>
@@ -93,13 +120,17 @@
 <li><p>Hoy en día:</p>
 <ul>
 <li><p><strong>Profesor de FP de informática</strong>:</p>
-<pre><code>- Hardware, Sistemas Operativos
-- Redes, Programación</code></pre></li>
+<ul>
+<li>Hardware, Sistemas Operativos</li>
+<li>Redes, Programación</li>
+</ul></li>
 <li><p><strong>Formador Freelance</strong>:</p>
-<pre><code>- Java, Android
-- JavaScript, jQuery
-- JSF, Spring, Hibernate
-- Groovy &amp; Grails</code></pre></li>
+<ul>
+<li>Java, Android</li>
+<li>JavaScript, jQuery</li>
+<li>JSF, Spring, Hibernate</li>
+<li>Groovy &amp; Grails</li>
+</ul></li>
 <li><p><strong>Me gusta programar</strong></p></li>
 </ul></li>
 </ul>
@@ -108,24 +139,31 @@
 <img src="../img/hackathon-lovers-logo.png" />
 </figure>
 <ul>
-<li><p><strong>Para los amantes de los hackathones</strong></p></li>
-<li><p><strong>Meetup</strong>: <a href="http://www.meetup.com/Hackathon-Lovers/">http://www.meetup.com/Hackathon-Lovers/</a></p></li>
-<li><p><strong>Twitter</strong>: <a href="http://twitter.com/HackathonLovers">http://twitter.com/HackathonLovers</a></p></li>
+<li><p><strong>Para los amantes de los hackathones</strong></p>
+<ul>
+<li><strong>Meetup</strong>: <a href="http://www.meetup.com/Hackathon-Lovers/">http://www.meetup.com/Hackathon-Lovers/</a></li>
+<li><strong>Twitter</strong>: <a href="http://twitter.com/HackathonLovers">http://twitter.com/HackathonLovers</a></li>
+<li><strong>Blog</strong>: <a href="http://hackathonlovers.tumblr.com/">http://hackathonlovers.tumblr.com/</a></li>
+<li><strong>LinkedIn</strong>: <a href="http://www.linkedin.com/groups/Hackathon-Lovers-6510465">http://www.linkedin.com/groups/Hackathon-Lovers-6510465</a></li>
+<li><strong>YouTube</strong>: <a href="http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw">http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw</a></li>
+</ul></li>
 </ul>
 <h2 id="tweets-sentiment"><a href="#tweets-sentiment"><span class="header-section-number">3.4</span> Tweets Sentiment</a></h2>
 <figure>
 <img src="../img/tweets-sentiment-logo.png" />
 </figure>
 <ul>
-<li><p>Es un <strong>analizador de tweets</strong> que extrae información semántica para conocer si el sentimiento general de los tweets de un determinado tema es positivo o negativo.</p></li>
-<li><p><strong>Web</strong>: <a href="http://tweetssentiment.com/">http://tweetssentiment.com/</a></p></li>
-<li><p><strong>Twitter</strong>: <a href="http://twitter.com/TweetsSentiment">http://twitter.com/TweetsSentiment</a></p></li>
+<li><p>Es un <strong>analizador de tweets</strong> que extrae información semántica para conocer si el sentimiento general de los tweets de un determinado tema es positivo o negativo.</p>
+<ul>
+<li><strong>Web</strong>: <a href="http://tweetssentiment.com/">http://tweetssentiment.com/</a></li>
+<li><strong>Twitter</strong>: <a href="http://twitter.com/TweetsSentiment">http://twitter.com/TweetsSentiment</a></li>
+</ul></li>
 </ul>
 <h2 id="donde-encontrarme"><a href="#donde-encontrarme"><span class="header-section-number">3.5</span> ¿Donde encontrarme?</a></h2>
 <ul>
-<li><p>Mi nick: <strong>asanzdiego</strong></p></li>
-<li><p>AboutMe: <strong><a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></strong></p>
+<li><p>Mi nick: <strong>asanzdiego</strong></p>
 <ul>
+<li>AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></li>
 <li>GitHub: <a href="http://github.com/asanzdiego/">http://github.com/asanzdiego/</a></li>
 <li>Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a></li>
 <li>Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a></li>

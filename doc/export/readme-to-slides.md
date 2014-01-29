@@ -97,7 +97,7 @@
 
 ![](../img/avatar-asanzdiego.png)
 
-### My Resume
+## My Resume
 
 - **Old JEE web developer**
 
@@ -117,7 +117,7 @@
 
     - **I like to develop**
 
-### Hackalover
+## Hackalover
 
 ![](../img/hackathon-lovers-logo.png)
 
@@ -129,7 +129,7 @@
     - **LinkedIn**: [http://www.linkedin.com/groups/Hackathon-Lovers-6510465](http://www.linkedin.com/groups/Hackathon-Lovers-6510465)
     - **YouTube**: [http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw](http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw)
 
-### Tweets Sentiment
+## Tweets Sentiment
 
 ![](../img/tweets-sentiment-logo.png)
 
@@ -139,7 +139,7 @@ if the general tweets feeling about a topic is positive or negative.
     - **Web**: [http://tweetssentiment.com/](http://tweetssentiment.com/)
     - **Twitter**: [http://twitter.com/TweetsSentiment](http://twitter.com/TweetsSentiment)
 
-### Where to find me?
+## Where to find me?
 
 - My nick: **asanzdiego**
 

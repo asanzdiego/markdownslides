@@ -140,7 +140,7 @@ es positivo o negativo.
 - Mi nick: **asanzdiego**
 
     - AboutMe:  [http://about.me/asanzdiego](http://about.me/asanzdiego)
-    - GitHub:   [http://github.com/asanzdiego](http://github.com/asanzdiego)
+    - GitHub:   [http://github.com/asanzdiego/](http://github.com/asanzdiego/)
     - Twitter:  [http://twitter.com/asanzdiego](http://twitter.com/asanzdiego)
     - Blog:     [http://asanzdiego.blogspot.com.es](http://asanzdiego.blogspot.com.es)
     - LinkedIn: [http://www.linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)

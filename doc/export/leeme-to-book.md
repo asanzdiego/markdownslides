@@ -4,12 +4,12 @@
 
 # Acerca de
 
-## ¿Qué es esto? (I)
+## ¿Qué es esto?
 
 - **MarkdownSlides** es un generador de **slides** Reveal.js, Deck.js y PDF
   a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, ODT y DOCX.
 
-## ¿Qué es esto? (II)
+
 
 ![](../img/markdownslides.png)
 
@@ -47,7 +47,7 @@
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) (bajado automáticamente)
 - [Deck.js](http://imakewebthings.com/deck.js/) (bajado automáticamente)
 
-## Creación (I)
+## Creación
 
 - Primero **copia la carpeta doc y renombrala a tu gusto**. Esto no es necesario pero
   te ayuda a organizar tus documentos.
@@ -57,7 +57,7 @@
   que no son nada más que ficheros de texto plano, con extensión md,
   y con un marcado ligero (que hay que conocer pero que es muy sencillo).
 
-## Creación (II)
+
 
 - Una vez creado los md, **podemos generar con un script**:
 
@@ -140,7 +140,7 @@ es positivo o negativo.
 - Mi nick: **asanzdiego**
 
     - AboutMe:  [http://about.me/asanzdiego](http://about.me/asanzdiego)
-    - GitHub:   [http://github.com/asanzdiego](http://github.com/asanzdiego)
+    - GitHub:   [http://github.com/asanzdiego/](http://github.com/asanzdiego/)
     - Twitter:  [http://twitter.com/asanzdiego](http://twitter.com/asanzdiego)
     - Blog:     [http://asanzdiego.blogspot.com.es](http://asanzdiego.blogspot.com.es)
     - LinkedIn: [http://www.linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)

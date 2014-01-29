@@ -69,41 +69,121 @@ function initExportFolder() {
 
 }
 
-function buildSlides() {
+function cleanMdToSlides() {
+
+  echo -e "Cleaning...                    ../export/$1-to-slides.md"
+
+  sed 's/##+/##/g' $1.md > ../export/$1-to-slides.md
+}
+
+function cleanMdToBook() {
+
+  echo -e "Cleaning...                    ../export/$1-to-book.md"
+
+  sed 's/##.*(I).*/&KK/g' $1.md > ../export/$1-to-book.md
+  sed -i 's/ (I).*KK//g' ../export/$1-to-book.md
+  sed -i 's/##.*(I.*//g' ../export/$1-to-book.md
+}
+
+function buildRevealSlides() {
 
   downloadLib hakimel reveal.js
 
-  echo -e "Exporting...                   ../export/$1-slides$2.html"
+  echo -e "Exporting...                   ../export/$1-reveal-slides$2.html"
 
-  pandoc -w revealjs --template $ORIGIN/templates/slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-slides$2.html $1.md
+  pandoc -w revealjs --template $ORIGIN/templates/reveal-slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-reveal-slides$2.html ../export/$1-to-slides.md
 
-  sed -i s/h1\>/h2\>/g ../export/$1-slides$2.html
-  sed -i s/\>\<h2/\>\<h1/g ../export/$1-slides$2.html
-  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-slides$2.html
+  sed -i s/h1\>/h2\>/g ../export/$1-reveal-slides$2.html
+  sed -i s/\>\<h2/\>\<h1/g ../export/$1-reveal-slides$2.html
+  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-reveal-slides$2.html
 }
 
 
-function buildSlidesPdf() {
+function buildRevealSlidesPdf() {
 
-  echo -e "Exporting...                   ../export/$1-slides$2.pdf"
+  echo -e "Exporting...                   ../export/$1-reveal-slides$2.pdf"
 
-  phantomjs ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "../export/$1-slides$2.html?print-pdf" ../export/$1-slides$2.pdf > /dev/null
+  phantomjs ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf > /dev/null
+}
+
+function buildDeckSlides() {
+
+  downloadLib imakewebthings deck.js
+  downloadLib markahon deck.search.js
+  downloadLib mikeharris100 deck.js-transition-cube
+
+  echo -e "Exporting...                   ../export/$1-deck-slides$2.html"
+
+  pandoc -w dzslides --template $ORIGIN/templates/deck-slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-deck-slides$2.html ../export/$1-to-slides.md
+
+  sed -i s/h1\>/h2\>/g ../export/$1-deck-slides.html
+  sed -i s/\>\<h2/\>\<h1/g ../export/$1-deck-slides.html
+  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-deck-slides.html
+}
+
+function buildBeamer() {
+
+  echo -e "Exporting...                   ../export/$1-beamer.pdf"
+
+  sed '/.gif/d' ../export/$1-to-slides.md | pandoc -w beamer --number-sections --table-of-contents --chapters -V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer.pdf
 }
 
 function buildHtml() {
 
   echo -e "Exporting...                   ../export/$1.html"
 
-  pandoc -w html5 --template $ORIGIN/templates/html-template.html --number-sections --email-obfuscation=none --toc --highlight-style=tango -o ../export/$1.html $1.md
+  pandoc -w html5 --template $ORIGIN/templates/html-template.html --number-sections --email-obfuscation=none --toc --highlight-style=tango -o ../export/$1.html ../export/$1-to-book.md
+}
+
+function buildDocx() {
+
+  echo -e "Exporting...                   ../export/$1.docx"
+
+  pandoc -w docx --number-sections --table-of-contents --chapters -o ../export/$1.docx ../export/$1-to-book.md
+}
+
+function buildOdt() {
+
+  echo -e "Exporting...                   ../export/$1.odt"
+
+  pandoc -w odt --number-sections --table-of-contents --chapters -o ../export/$1.odt ../export/$1-to-book.md
+}
+
+function buildPdf() {
+
+  echo -e "Exporting...                   ../export/$1.pdf"
+
+  sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --table-of-contents --chapters -o ../export/$1.pdf
+}
+
+function exportMdToSlides() {
+
+  cleanMdToSlides $1
+
+  buildRevealSlides $1
+  buildRevealSlidesPdf $1
+  buildRevealSlides $1 -alternative
+  buildRevealSlidesPdf $1 -alternative
+  buildDeckSlides $1
+  buildDeckSlides $1 -alternative
+  buildBeamer $1
+}
+
+function exportMdToBook() {
+
+  cleanMdToBook $1
+
+  buildHtml $1
+  buildDocx $1
+  buildOdt $1
+  buildPdf $1
 }
 
 function exportMdFile() {
 
-  buildSlides $1
-  buildSlidesPdf $1
-  buildSlides $1 -alternative
-  buildSlidesPdf $1 -alternative
-  buildHtml $1
+  exportMdToSlides $1
+  echo -e "- - - - - - - - - - - - - - - -"
+  exportMdToBook $1
 }
 
 function processFolder() {

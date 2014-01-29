@@ -1,55 +1,93 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]> <html class="no-js ie6" > <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" > <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" > <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="description" content="Markdown Slides" />
   <meta name="author" content="Adolfo Sanz De Diego" />
   <meta name="copyright" content="Markdown Slides - Adolfo Sanz De Diego -  January 2014" /> 
   <title>Markdown Slides</title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+
+  <!-- deck core css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/core/deck.core.css">
+
+  <!-- deck extensions css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/status/deck.status.css">
+
+  <!-- deck slide theme css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/web-2.0.css">
+  <!--
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/neon.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/swiss.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/web-2.0.css">
+  -->
+
+  <!-- deck slide transition css -->
+  <link rel="stylesheet" href="../lib/deck.js-transition-cube-master/cube.css">
+  <!--
+  <link rel="stylesheet" href="../lib/deck.js-transition-cube-master/cube.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/fade.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/horizontal-slide.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/vertical-slide.css">
+  -->
+
+  <!-- custom css just for this page -->
+  <style>
+    figcaption {
+      display: none;
+      visibility:hidden;
+    }
+
+    #titlepage, #documentauthor, #documentdate {
+      text-align: center;
+    }
+
+    #titlepage {
+      font-size: 5.25em;
+      padding-top: 15%;
+    }
+
+    #documentauthor {
+      font-size: 2.25em;
+    }
+
+    #documentdate {
+      font-size: 1.25em;
+    }
+  </style>
+
+  <!-- modernizr deck js  -->
+  <script src="../lib/deck.js-master/modernizr.custom.js"></script>
+
 </head>
-<body>
-<header>
-<h1 class="title">Markdown Slides</h1>
-<h2 class="author">Adolfo Sanz De Diego</h2>
-<h3 class="date">January 2014</h3>
-</header>
-<nav id="TOC">
-<ul>
-<li><a href="#about"><span class="toc-section-number">1</span> About</a><ul>
-<li><a href="#what-is-it"><span class="toc-section-number">1.1</span> What is it?</a></li>
-<li><a href="#samples"><span class="toc-section-number">1.2</span> Samples</a></li>
-<li><a href="#licence"><span class="toc-section-number">1.3</span> Licence</a></li>
-</ul></li>
-<li><a href="#instalation-and-how-to-use"><span class="toc-section-number">2</span> Instalation and how to use</a><ul>
-<li><a href="#dependencies"><span class="toc-section-number">2.1</span> Dependencies</a></li>
-<li><a href="#creation"><span class="toc-section-number">2.2</span> Creation</a></li>
-<li><a href="#build"><span class="toc-section-number">2.3</span> Build</a></li>
-</ul></li>
-<li><a href="#author"><span class="toc-section-number">3</span> Author</a><ul>
-<li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">3.1</span> Adolfo Sanz De Diego</a><ul>
-<li><a href="#my-resume"><span class="toc-section-number">3.1.1</span> My Resume</a></li>
-<li><a href="#hackalover"><span class="toc-section-number">3.1.2</span> Hackalover</a></li>
-<li><a href="#tweets-sentiment"><span class="toc-section-number">3.1.3</span> Tweets Sentiment</a></li>
-<li><a href="#where-to-find-me"><span class="toc-section-number">3.1.4</span> Where to find me?</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-<h1 id="about"><a href="#about"><span class="header-section-number">1</span> About</a></h1>
-<h2 id="what-is-it"><a href="#what-is-it"><span class="header-section-number">1.1</span> What is it?</a></h2>
+<body class="deck-container">
+<section class="slide">
+  <h2 id="titlepage">Markdown Slides</h2>
+  <h3 id="documentauthor">Adolfo Sanz De Diego</h3>
+  <h4 id="documentdate">January 2014</h4>
+</section>
+
+<section id="about" class="titleslide slide level1"><h1><span class="header-section-number">1</span> About</h1></section><section id="what-is-it-i" class="slide level2">
+<h2><span class="header-section-number">1.1</span> What is it? (I)</h2>
 <ul>
 <li><strong>MarkdownSlides</strong> is a Reveal.js, Deck.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, ODT and DOCX documents.</li>
 </ul>
+</section><section id="what-is-it-ii" class="slide level2">
+<h2><span class="header-section-number">1.2</span> What is it? (II)</h2>
 <figure>
 <img src="../img/markdownslides.png" />
 </figure>
-<h2 id="samples"><a href="#samples"><span class="header-section-number">1.2</span> Samples</a></h2>
+</section><section id="samples" class="slide level2">
+<h2><span class="header-section-number">1.3</span> Samples</h2>
 <ul>
 <li><p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
 <ul>
@@ -66,7 +104,8 @@
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.odt">odt</a></li>
 </ul></li>
 </ul>
-<h2 id="licence"><a href="#licence"><span class="header-section-number">1.3</span> Licence</a></h2>
+</section><section id="licence" class="slide level2">
+<h2><span class="header-section-number">1.4</span> Licence</h2>
 <ul>
 <li><strong>This work is licensed under a:</strong>
 <ul>
@@ -77,18 +116,24 @@
 <li><a href="http://www.gnu.org/licenses/gpl.html">GPL 3.0</a></li>
 </ul></li>
 </ul>
-<h1 id="instalation-and-how-to-use"><a href="#instalation-and-how-to-use"><span class="header-section-number">2</span> Instalation and how to use</a></h1>
-<h2 id="dependencies"><a href="#dependencies"><span class="header-section-number">2.1</span> Dependencies</a></h2>
+</section>
+<section id="instalation-and-how-to-use" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Instalation and how to use</h1></section><section id="dependencies" class="slide level2">
+<h2><span class="header-section-number">2.1</span> Dependencies</h2>
 <ul>
 <li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> (needs to be installed)</li>
 <li><a href="http://phantomjs.org">Phantom.js</a> (needs to be installed)</li>
 <li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> (automaticaly downloaded)</li>
 <li><a href="http://imakewebthings.com/deck.js/">Deck.js</a> (automaticaly downloaded)</li>
 </ul>
-<h2 id="creation"><a href="#creation"><span class="header-section-number">2.2</span> Creation</a></h2>
+</section><section id="creation-i" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Creation (I)</h2>
 <ul>
 <li><p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p></li>
 <li><p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p></li>
+</ul>
+</section><section id="creation-ii" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Creation (II)</h2>
+<ul>
 <li><p>Once created the md files, <strong>we can generate with an script</strong>.</p>
 <ul>
 <li>reveal-slides</li>
@@ -101,7 +146,8 @@
 <li>odt</li>
 </ul></li>
 </ul>
-<h2 id="build"><a href="#build"><span class="header-section-number">2.3</span> Build</a></h2>
+</section><section id="build" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Build</h2>
 <ul>
 <li>To <strong>convert all md files of all the folders</strong> go to the root folder and execute:</li>
 </ul>
@@ -110,12 +156,13 @@
 <li>To <strong>convert all md files of one folder</strong> go to the root folder and execute:</li>
 </ul>
 <pre><code>   ./build.sh [folder_name]</code></pre>
-<h1 id="author"><a href="#author"><span class="header-section-number">3</span> Author</a></h1>
-<h2 id="adolfo-sanz-de-diego"><a href="#adolfo-sanz-de-diego"><span class="header-section-number">3.1</span> Adolfo Sanz De Diego</a></h2>
+</section>
+<section id="author" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Author</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<h2><span class="header-section-number">3.1</span> Adolfo Sanz De Diego</h2>
 <figure>
 <img src="../img/avatar-asanzdiego.png" />
 </figure>
-<h3 id="my-resume"><a href="#my-resume"><span class="header-section-number">3.1.1</span> My Resume</a></h3>
+<h3 id="my-resume"><span class="header-section-number">3.1.1</span> My Resume</h3>
 <ul>
 <li><p><strong>Old JEE web developer</strong></p></li>
 <li><p>Today:</p>
@@ -135,7 +182,7 @@
 <li><p><strong>I like to develop</strong></p></li>
 </ul></li>
 </ul>
-<h3 id="hackalover"><a href="#hackalover"><span class="header-section-number">3.1.2</span> Hackalover</a></h3>
+<h3 id="hackalover"><span class="header-section-number">3.1.2</span> Hackalover</h3>
 <figure>
 <img src="../img/hackathon-lovers-logo.png" />
 </figure>
@@ -149,7 +196,7 @@
 <li><strong>YouTube</strong>: <a href="http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw">http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw</a></li>
 </ul></li>
 </ul>
-<h3 id="tweets-sentiment"><a href="#tweets-sentiment"><span class="header-section-number">3.1.3</span> Tweets Sentiment</a></h3>
+<h3 id="tweets-sentiment"><span class="header-section-number">3.1.3</span> Tweets Sentiment</h3>
 <figure>
 <img src="../img/tweets-sentiment-logo.png" />
 </figure>
@@ -160,17 +207,65 @@
 <li><strong>Twitter</strong>: <a href="http://twitter.com/TweetsSentiment">http://twitter.com/TweetsSentiment</a></li>
 </ul></li>
 </ul>
-<h3 id="where-to-find-me"><a href="#where-to-find-me"><span class="header-section-number">3.1.4</span> Where to find me?</a></h3>
+<h3 id="where-to-find-me"><span class="header-section-number">3.1.4</span> Where to find me?</h3>
 <ul>
 <li><p>My nick: <strong>asanzdiego</strong></p>
 <ul>
 <li>AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></li>
-<li>GitHub: <a href="http://github.com/asanzdiego">http://github.com/asanzdiego</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego/">http://github.com/asanzdiego/</a></li>
 <li>Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a></li>
 <li>Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a></li>
 <li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">http://www.linkedin.com/in/asanzdiego</a></li>
 <li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
 </ul></li>
 </ul>
+</section>
+
+<!--footer id="footer">
+  <h4 class="author"> Adolfo Sanz De Diego  - January 2014</h4>
+</footer-->
+
+<!-- deck goto extension html -->
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<!-- deck navigation extension html -->
+<div aria-role="navigation">
+  <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+  <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+</div>
+
+<!-- deck status extension html -->
+<p class="deck-status" aria-role="status">
+  <span class="deck-status-current"></span>
+  /
+  <span class="deck-status-total"></span>
+</p>
+
+<!-- jquery  -->
+<script src="../lib/deck.js-master/jquery.min.js"></script>
+
+<!-- deck core js  -->
+<script src="../lib/deck.js-master/core/deck.core.js"></script>
+
+<!-- deck extension js -->
+<script src="../lib/deck.js-master/extensions/goto/deck.goto.js"></script>
+<script src="../lib/deck.js-master/extensions/menu/deck.menu.js"></script>
+<script src="../lib/deck.js-master/extensions/navigation/deck.navigation.js"></script>
+<script src="../lib/deck.js-master/extensions/scale/deck.scale.js"></script>
+<script src="../lib/deck.js-master/extensions/status/deck.status.js"></script>
+<!--script src="../lib/deck.search.js-master/search/deck.search.js"></script-->
+
+<!-- Initialize the deck. -->
+<script>
+$(function() {
+    $.deck('.slide');
+});
+</script>
+
 </body>
 </html>

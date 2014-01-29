@@ -4,12 +4,12 @@
 
 # About
 
-## What is it? (I)
+## What is it?
 
 - **MarkdownSlides** is a Reveal.js, Deck.js and PDF **slides** generator
   **from MARKDOWN files**, that also generate HTML, ODT and DOCX documents.
 
-## What is it? (II)
+
 
 ![](../img/markdownslides.png)
 
@@ -47,7 +47,7 @@
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) (automaticaly downloaded)
 - [Deck.js](http://imakewebthings.com/deck.js/) (automaticaly downloaded)
 
-## Creation (I)
+## Creation
 
 - First **copy the doc folder and rename it as you like**. This is not necessary but
   helps you organize your documents.
@@ -57,7 +57,7 @@
   which are nothing more than plain text files with extension md,
   and a lightweight markup (we should know it but it is very simple).
 
-## Creation (II)
+
 
 - Once created the md files, **we can generate with an script**.
 

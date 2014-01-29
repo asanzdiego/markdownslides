@@ -1,26 +1,37 @@
-# MarkdownSlides
+# Markdown Slides
 
 ## English
 
 ### What is it?
 
-- **MarkdownSlides** is a HTML and PDF **slides** generator
-  **from MARKDOWN files**.
+- **MarkdownSlides** is a Reveal.js, Deck.js and PDF **slides** generator
+  **from MARKDOWN files**, that also generate HTML, ODT and DOCX documents.
 
-![](./doc/img/readme.png)
+![](./doc/img/markdownslides.png)
 
 ### Samples
 
 - From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
-  generate [Plain HTML](http://asanzdiego.github.io/markdownslides/doc/export/readme.html), 
-  [HTML Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html)
-  and [PDF Slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf)
+  generate:
+
+    - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html)
+    - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html)
+    - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
+    - [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf)
+    - [deck-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides.html)
+    - [deck-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides-alternative.html)
+    - [pdf-beamer](http://asanzdiego.github.io/markdownslides/doc/export/readme-beamer.pdf)
+    - [pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf)
+    - [html](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
+    - [docx](http://asanzdiego.github.io/markdownslides/doc/export/readme.docx)
+    - [odt](http://asanzdiego.github.io/markdownslides/doc/export/readme.odt)
 
 ### Dependencies
 
 - [Pandoc](http://johnmacfarlane.net/pandoc/) (needs to be installed)
 - [Phantom.js](http://phantomjs.org) (needs to be installed)
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) (downloaded automaticaly)
+- [Deck.js](http://imakewebthings.com/deck.js/) (automaticaly downloaded)
 
 ### Creation
 
@@ -32,7 +43,16 @@
   which are nothing more than plain text files with extension md,
   and a lightweight markup (we should know it but it is very simple).
 
-- Once created the md files, we can **generate html, html-slides y pdf-slides with a script**.
+- Once created the md files, **we can generate with an script**.
+
+    - reveal-slides
+    - reveal-pdf-slides
+    - deck-slides
+    - pdf-beamer
+    - pdf
+    - html
+    - docx
+    - odt
 
 ### Build
 
@@ -62,23 +82,34 @@
 
 ### ¿Qué es esto?
 
-- **MarkdownSlides** es un generador de **slides** HTML y PDF
-  a **partir de ficheros MARKDOWN**.
+- **MarkdownSlides** es un generador de **slides** Reveal.js, Deck.js y PDF
+  a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, ODT y DOCX.
 
-![](./doc/img/leeme.png)
+![](./doc/img/markdownslides.png)
 
 ### Ejemplos
 
 - A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
-  genera [HTML plano](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html),
-  [Slides en HTML](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.html)
-  y [Slides en PDF](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pdf)
+  genera:
+
+    - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html)
+    - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html)
+    - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
+    - [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
+    - [deck-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides.html)
+    - [deck-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides-alternative.html)
+    - [pdf-beamer](http://asanzdiego.github.io/markdownslides/doc/export/leeme-beamer.pdf)
+    - [pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf)
+    - [html](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
+    - [docx](http://asanzdiego.github.io/markdownslides/doc/export/leeme.docx)
+    - [odt](http://asanzdiego.github.io/markdownslides/doc/export/leeme.odt)
 
 ### Dependencias
 
 - [Pandoc](http://johnmacfarlane.net/pandoc/) (necesita ser instalado)
 - [Phantom.js](http://phantomjs.org) (necesita ser instalado)
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) (descargado automaticamente)
+- [Deck.js](http://imakewebthings.com/deck.js/) (bajado automáticamente)
 
 ### Creación
 
@@ -90,7 +121,16 @@
   que no son nada más que ficheros de texto plano, con extensión md,
   y con un marcado ligero (que hay que conocer pero que es muy sencillo).
 
-- Una vez creado los md, puedes **generar html, html-slides y pdf-slides con un script**.
+- Una vez creado los md, **podemos generar con un script**: 
+
+    - reveal-slides
+    - reveal-pdf-slides
+    - deck-slides
+    - pdf-beamer
+    - pdf
+    - html
+    - docx
+    - odt
 
 ### Generación
 

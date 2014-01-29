@@ -73,7 +73,7 @@ function cleanMdToSlides() {
 
   echo -e "Cleaning...                    ../export/$1-to-slides.md"
 
-  sed 's/##+/##/g' $1.md > ../export/$1-to-slides.md
+  sed 's/###*/##/g' $1.md > ../export/$1-to-slides.md
 }
 
 function cleanMdToBook() {

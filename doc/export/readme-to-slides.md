@@ -46,6 +46,11 @@
 - [Phantom.js](http://phantomjs.org) (needs to be installed)
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) (automaticaly downloaded)
 - [Deck.js](http://imakewebthings.com/deck.js/) (automaticaly downloaded)
+- Now, only works in Linux (may be on MacOS)
+
+## Download
+
+- [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 ## Creation (I)
 
@@ -139,7 +144,7 @@ if the general tweets feeling about a topic is positive or negative.
 - My nick: **asanzdiego**
 
     - AboutMe:  [http://about.me/asanzdiego](http://about.me/asanzdiego)
-    - GitHub:   [http://github.com/asanzdiego/](http://github.com/asanzdiego/)
+    - GitHub:   [http://github.com/asanzdiego](http://github.com/asanzdiego)
     - Twitter:  [http://twitter.com/asanzdiego](http://twitter.com/asanzdiego)
     - Blog:     [http://asanzdiego.blogspot.com.es](http://asanzdiego.blogspot.com.es)
     - LinkedIn: [http://www.linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)

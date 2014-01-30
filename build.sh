@@ -72,22 +72,70 @@ function initExportFolder() {
 
 }
 
+function convertMainListsIntoParagraphs() {
+
+  # replace first - with new linew
+  sed -i 's/^- /\n/g' ../export/$1-to-$2.md
+  sed -i 's/^-/\n/g' ../export/$1-to-$2.md
+}
+
+function normalizeMd() {
+
+  echo -e "Normalizing...                 ../export/$1-to-$2.md"
+
+  # remove blank lines
+  sed -i '/^$/d' ../export/$1-to-$2.md
+
+  # add new line before #
+  sed -i ':a;N;$!ba;s/\n#/\n\n#/g' ../export/$1-to-$2.md
+
+  # add new line before ![
+  sed -i 's/^!\[/\n!\[/g' ../export/$1-to-$2.md
+
+  # add new line after .png)
+  sed -i 's/.png)$/.png)\n/g' ../export/$1-to-$2.md
+
+  # add new line after .jpg)
+  sed -i 's/.jpg)$/.jpg)\n/g' ../export/$1-to-$2.md
+
+  # add new line after .gif)
+  sed -i 's/.gif)$/.gif)\n/g' ../export/$1-to-$2.md
+
+  # replace multiple empty lines with one empty line
+  sed -i '/^$/N;/^\n$/D' ../export/$1-to-$2.md
+}
+
 function cleanMdToSlides() {
+
+  cp $1.md ../export/$1-to-slides.md
 
   echo -e "Cleaning...                    ../export/$1-to-slides.md"
 
-  sed 's/###*/##/g' $1.md > ../export/$1-to-slides.md
+  # replace ### or #### with ##
+  # only <h2> is allowed in slides
+  sed -i 's/###*/##/g' ../export/$1-to-slides.md
+
+  normalizeMd $1 slides
 }
 
 function cleanMdToBook() {
 
+  cp $1.md ../export/$1-to-book.md
+
   echo -e "Cleaning...                    ../export/$1-to-book.md"
 
-  sed 's/##.*(I).*/&KK/g' $1.md > ../export/$1-to-book.md
+  # remove (I) from titles
+  sed -i 's/##.*(I).*/&KK/g' ../export/$1-to-book.md
   sed -i 's/ (I).*KK//g' ../export/$1-to-book.md
+
+  # remove all titles with (I) (II)...
   sed -i 's/##.*(I.*//g' ../export/$1-to-book.md
   sed -i 's/##.*(V.*//g' ../export/$1-to-book.md
   sed -i 's/##.*(X.*//g' ../export/$1-to-book.md
+
+  normalizeMd $1 book
+
+  convertMainListsIntoParagraphs $1 book
 }
 
 function buildDeckSlides() {

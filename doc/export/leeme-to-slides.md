@@ -48,7 +48,7 @@
 - [Deck.js](http://imakewebthings.com/deck.js/) (bajado automáticamente)
 - Por ahora, solo funciona en Linux (y puede que en MacOS)
 
-## Download
+## Descarga
 
 - [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
@@ -77,19 +77,21 @@
 
 ## Generación
 
-- Para **convertir todos los ficheros md de todas las carpetas**
-  hay que posicionarse en la carpeta raiz, y ejecutar:
+- Hay que posicionarse en la carpeta raiz, y ejecutar:
 
 ~~~
-   ./build.sh
+./build.sh [modo] [carpeta]
 ~~~
 
-- Para **convertir todos los ficheros md de una carpeta**
-  hay que posicionarse en la carpeta raiz, y ejecutar:
+- Donde [**modo**] puede tomar los siguientes valores:
 
-~~~
-   ./build.sh [nombre_de_carpeta]
-~~~
+    - "**min**": genera deck-slides y html plano.
+    - "**med**": genera ademas reveal-slides, docx y odt (**valor por defecto**)
+    - "**max**": genera todos los formatos.
+
+- Y donde [**carpeta**] es la carpeta donde va a buscar
+  los ficheros md. Si no se indica nada convertirá todos los ficheros md 
+  de todas las carpetas.
 
 # Autor
 

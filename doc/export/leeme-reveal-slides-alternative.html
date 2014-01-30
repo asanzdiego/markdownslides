@@ -131,8 +131,8 @@
 <li><a href="http://imakewebthings.com/deck.js/">Deck.js</a> (bajado automáticamente)</li>
 <li>Por ahora, solo funciona en Linux (y puede que en MacOS)</li>
 </ul>
-</section><section id="download" class="slide level2">
-<h2><span class="header-section-number">2.2</span> Download</h2>
+</section><section id="descarga" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Descarga</h2>
 <ul>
 <li><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></li>
 </ul>
@@ -160,13 +160,18 @@
 </section><section id="generación" class="slide level2">
 <h2><span class="header-section-number">2.5</span> Generación</h2>
 <ul>
-<li>Para <strong>convertir todos los ficheros md de todas las carpetas</strong> hay que posicionarse en la carpeta raiz, y ejecutar:</li>
+<li>Hay que posicionarse en la carpeta raiz, y ejecutar:</li>
 </ul>
-<pre><code>   ./build.sh</code></pre>
+<pre><code>./build.sh [modo] [carpeta]</code></pre>
 <ul>
-<li>Para <strong>convertir todos los ficheros md de una carpeta</strong> hay que posicionarse en la carpeta raiz, y ejecutar:</li>
+<li><p>Donde [<strong>modo</strong>] puede tomar los siguientes valores:</p>
+<ul>
+<li>&quot;<strong>min</strong>&quot;: genera deck-slides y html plano.</li>
+<li>&quot;<strong>med</strong>&quot;: genera ademas reveal-slides, docx y odt (<strong>valor por defecto</strong>)</li>
+<li>&quot;<strong>max</strong>&quot;: genera todos los formatos.</li>
+</ul></li>
+<li><p>Y donde [<strong>carpeta</strong>] es la carpeta donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.</p></li>
 </ul>
-<pre><code>   ./build.sh [nombre_de_carpeta]</code></pre>
 </section></section>
 <section><section id="autor" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
 <h2><span class="header-section-number">3.1</span> Adolfo Sanz De Diego</h2>

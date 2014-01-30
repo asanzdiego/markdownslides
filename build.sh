@@ -4,6 +4,9 @@ clear
 ORIGIN=`pwd`
 echo -e $ORIGIN
 
+#GENERATION_MODE='min|med|max'
+GENERATION_MODE='med'
+
 function downloadLib() {
 
   LIB_FOLDER="../lib"
@@ -163,12 +166,18 @@ function exportMdToSlides() {
   cleanMdToSlides $1
 
   buildDeckSlides $1
-  buildDeckSlides $1 -alternative
-  buildRevealSlides $1
-  buildRevealSlidesPdf $1
-  buildRevealSlides $1 -alternative
-  buildRevealSlidesPdf $1 -alternative
-  buildBeamer $1
+
+  if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
+    buildRevealSlides $1
+    buildRevealSlidesPdf $1
+  fi
+
+  if [ $GENERATION_MODE == "max" ]; then
+    buildDeckSlides $1 -alternative
+    buildRevealSlides $1 -alternative
+    buildRevealSlidesPdf $1 -alternative
+    buildBeamer $1
+  fi
 }
 
 function exportMdToBook() {
@@ -176,9 +185,16 @@ function exportMdToBook() {
   cleanMdToBook $1
 
   buildHtml $1
-  buildDocx $1
-  buildOdt $1
-  buildPdf $1
+
+  if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
+    buildDocx $1
+    buildOdt $1
+  fi
+
+  if [ $GENERATION_MODE == "max" ]; then
+    buildPdf $1
+  fi
+
 }
 
 function exportMdFile() {
@@ -220,8 +236,31 @@ function processFolders() {
   done
 }
 
-if [ "x$1" != "x" ]; then
-  processFolder $1
-else
-  processFolders
-fi
+function process() {
+
+  echo -e "Generation mode...             "$GENERATION_MODE
+
+  if [ "x$1" != "x" ]; then
+    processFolder $1
+  else
+    processFolders
+  fi
+}
+
+case "$1" in
+"max")
+    GENERATION_MODE="max"
+    process $2
+    ;;
+"med")
+    GENERATION_MODE="med"
+    process $2
+    ;;
+"min")
+    GENERATION_MODE="min"
+    process $2
+    ;;
+*)
+    process $1
+    ;;
+esac

@@ -6,18 +6,15 @@
 
 ## What is it?
 
-- **MarkdownSlides** is a Reveal.js, Deck.js and PDF **slides** generator
+**MarkdownSlides** is a Reveal.js, Deck.js and PDF **slides** generator
   **from MARKDOWN files**, that also generate HTML, ODT and DOCX documents.
-
-
 
 ![](../img/markdownslides.png)
 
 ## Samples
 
-- From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
+From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
   generate:
-
     - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html)
     - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html)
     - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
@@ -32,40 +29,41 @@
 
 ## Licence
 
-- **This work is licensed under a:**
+**This work is licensed under a:**
     - [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by-sa/3.0//)
 
-- **The program source code are licensed under a:**
+**The program source code are licensed under a:**
     - [GPL 3.0](http://www.gnu.org/licenses/gpl.html)
 
 # Instalation and how to use
 
 ## Dependencies
 
-- [Pandoc](http://johnmacfarlane.net/pandoc/) (needs to be installed)
-- [Phantom.js](http://phantomjs.org) (needs to be installed)
-- [Reveal.js](http://lab.hakim.se/reveal-js/#/) (automaticaly downloaded)
-- [Deck.js](http://imakewebthings.com/deck.js/) (automaticaly downloaded)
-- Now, only works in Linux (may be on MacOS)
+[Pandoc](http://johnmacfarlane.net/pandoc/) (needs to be installed)
+
+[Phantom.js](http://phantomjs.org) (needs to be installed)
+
+[Reveal.js](http://lab.hakim.se/reveal-js/#/) (automaticaly downloaded)
+
+[Deck.js](http://imakewebthings.com/deck.js/) (automaticaly downloaded)
+
+Now, only works in Linux (may be on MacOS)
 
 ## Download
 
-- [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
+[https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 ## Creation
 
-- First **copy the doc folder and rename it as you like**. This is not necessary but
+First **copy the doc folder and rename it as you like**. This is not necessary but
   helps you organize your documents.
 
-- **Create the md files** that you want to generate in the **md folder**.
+**Create the md files** that you want to generate in the **md folder**.
   The md files are [Markdown](http://en.wikipedia.org/wiki/Markdown) files
   which are nothing more than plain text files with extension md,
   and a lightweight markup (we should know it but it is very simple).
 
-
-
-- Once created the md files, **we can generate with an script**.
-
+Once created the md files, **we can generate with an script**.
     - reveal-slides
     - reveal-pdf-slides
     - deck-slides
@@ -77,19 +75,17 @@
 
 ## Build
 
-- In the root folder you have to execute:
-
+In the root folder you have to execute:
 ~~~
 ./build.sh [mode] [folder]
 ~~~
 
-- Where [**mode**] can take the next values:
-
+Where [**mode**] can take the next values:
     - "**min**": generate deck-slides and plain html.
     - "**med**": generate also reveal-slides, docx and odt (**default value**)
     - "**max**": generate all formats.
 
-- And where [**folder**] is the name of the folder wher to find
+And where [**folder**] is the name of the folder wher to find
   the md files. If no folder name, it will convert all md files of all the folders.
 
 # Author
@@ -100,30 +96,25 @@
 
 ### My Resume
 
-- **Old JEE web developer**
+**Old JEE web developer**
 
-- Today:
-
+Today:
     - **Computer teacher**:
-
         - Hardware, Operating Systems
         - Networking, Programming
-
     - **Freelance Trainer**:
-
         - Java, Android
         - JavaScript, jQuery
         - JSF, Spring, Hibernate
         - Groovy & Grails
-
     - **I like to develop**
 
 ### Hackalover
 
 ![](../img/hackathon-lovers-logo.png)
 
-- **For hackathons lovers**
 
+**For hackathons lovers**
     - **Meetup**: [http://www.meetup.com/Hackathon-Lovers/](http://www.meetup.com/Hackathon-Lovers/)
     - **Twitter**: [http://twitter.com/HackathonLovers](http://twitter.com/HackathonLovers)
     - **Blog**: [http://hackathonlovers.tumblr.com/](http://hackathonlovers.tumblr.com/)
@@ -134,16 +125,15 @@
 
 ![](../img/tweets-sentiment-logo.png)
 
-- Is a **tweets analyzer** which extracts semantic information to know
-if the general tweets feeling about a topic is positive or negative.
 
+Is a **tweets analyzer** which extracts semantic information to know
+if the general tweets feeling about a topic is positive or negative.
     - **Web**: [http://tweetssentiment.com/](http://tweetssentiment.com/)
     - **Twitter**: [http://twitter.com/TweetsSentiment](http://twitter.com/TweetsSentiment)
 
 ### Where to find me?
 
-- My nick: **asanzdiego**
-
+My nick: **asanzdiego**
     - AboutMe:  [http://about.me/asanzdiego](http://about.me/asanzdiego)
     - GitHub:   [http://github.com/asanzdiego](http://github.com/asanzdiego)
     - Twitter:  [http://twitter.com/asanzdiego](http://twitter.com/asanzdiego)

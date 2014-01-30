@@ -49,10 +49,29 @@
 <img src="../img/markdownslides.png" />
 </figure>
 <h2 id="samples"><a href="#samples"><span class="header-section-number">1.2</span> Samples</a></h2>
-<p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate: - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html">reveal-slides</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html">reveal-slides-alternative</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf">reveal-pdf-slides</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf">reveal-pdf-slides-alternative</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides.html">deck-slides</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides-alternative.html">deck-slides-alternative</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-beamer.pdf">pdf-beamer</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf">pdf</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.html">html</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.docx">docx</a> - <a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.odt">odt</a></p>
+<p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
+<ul>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html">reveal-slides</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html">reveal-slides-alternative</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf">reveal-pdf-slides</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf">reveal-pdf-slides-alternative</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides.html">deck-slides</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides-alternative.html">deck-slides-alternative</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-beamer.pdf">pdf-beamer</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf">pdf</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.html">html</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.docx">docx</a></p></li>
+<li><p><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.odt">odt</a></p></li>
+</ul>
 <h2 id="licence"><a href="#licence"><span class="header-section-number">1.3</span> Licence</a></h2>
-<p><strong>This work is licensed under a:</strong> - <a href="http://creativecommons.org/licenses/by-sa/3.0//">Creative Commons Attribution 3.0</a></p>
-<p><strong>The program source code are licensed under a:</strong> - <a href="http://www.gnu.org/licenses/gpl.html">GPL 3.0</a></p>
+<p><strong>This work is licensed under a:</strong></p>
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0//">Creative Commons Attribution 3.0</a></li>
+</ul>
+<p><strong>The program source code are licensed under a:</strong></p>
+<ul>
+<li><a href="http://www.gnu.org/licenses/gpl.html">GPL 3.0</a></li>
+</ul>
 <h1 id="instalation-and-how-to-use"><a href="#instalation-and-how-to-use"><span class="header-section-number">2</span> Instalation and how to use</a></h1>
 <h2 id="dependencies"><a href="#dependencies"><span class="header-section-number">2.1</span> Dependencies</a></h2>
 <p><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> (needs to be installed)</p>
@@ -65,10 +84,25 @@
 <h2 id="creation"><a href="#creation"><span class="header-section-number">2.3</span> Creation</a></h2>
 <p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p>
 <p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p>
-<p>Once created the md files, <strong>we can generate with an script</strong>. - reveal-slides - reveal-pdf-slides - deck-slides - pdf-beamer - pdf - html - docx - odt</p>
+<p>Once created the md files, <strong>we can generate with an script</strong>.</p>
+<ul>
+<li><p>reveal-slides</p></li>
+<li><p>reveal-pdf-slides</p></li>
+<li><p>deck-slides</p></li>
+<li><p>pdf-beamer</p></li>
+<li><p>pdf</p></li>
+<li><p>html</p></li>
+<li><p>docx</p></li>
+<li><p>odt</p></li>
+</ul>
 <h2 id="build"><a href="#build"><span class="header-section-number">2.4</span> Build</a></h2>
 <p>In the root folder you have to execute: <sub>~</sub> ./build.sh [mode] [folder] <sub>~</sub></p>
-<p>Where [<strong>mode</strong>] can take the next values: - &quot;<strong>min</strong>&quot;: generate deck-slides and plain html. - &quot;<strong>med</strong>&quot;: generate also reveal-slides, docx and odt (<strong>default value</strong>) - &quot;<strong>max</strong>&quot;: generate all formats.</p>
+<p>Where [<strong>mode</strong>] can take the next values:</p>
+<ul>
+<li><p>&quot;<strong>min</strong>&quot;: generate deck-slides and plain html.</p></li>
+<li><p>&quot;<strong>med</strong>&quot;: generate also reveal-slides, docx and odt (<strong>default value</strong>)</p></li>
+<li><p>&quot;<strong>max</strong>&quot;: generate all formats.</p></li>
+</ul>
 <p>And where [<strong>folder</strong>] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p>
 <h1 id="author"><a href="#author"><span class="header-section-number">3</span> Author</a></h1>
 <h2 id="adolfo-sanz-de-diego"><a href="#adolfo-sanz-de-diego"><span class="header-section-number">3.1</span> Adolfo Sanz De Diego</a></h2>
@@ -77,18 +111,52 @@
 </figure>
 <h3 id="my-resume"><a href="#my-resume"><span class="header-section-number">3.1.1</span> My Resume</a></h3>
 <p><strong>Old JEE web developer</strong></p>
-<p>Today: - <strong>Computer teacher</strong>: - Hardware, Operating Systems - Networking, Programming - <strong>Freelance Trainer</strong>: - Java, Android - JavaScript, jQuery - JSF, Spring, Hibernate - Groovy &amp; Grails - <strong>I like to develop</strong></p>
+<p>Today:</p>
+<ul>
+<li><strong>Computer teacher</strong>:
+<ul>
+<li>Hardware, Operating Systems</li>
+<li>Networking, Programming</li>
+</ul></li>
+<li><strong>Freelance Trainer</strong>:
+<ul>
+<li>Java, Android</li>
+<li>JavaScript, jQuery</li>
+<li>JSF, Spring, Hibernate</li>
+<li>Groovy &amp; Grails</li>
+</ul></li>
+<li><strong>I like to develop</strong></li>
+</ul>
 <h3 id="hackalover"><a href="#hackalover"><span class="header-section-number">3.1.2</span> Hackalover</a></h3>
 <figure>
 <img src="../img/hackathon-lovers-logo.png" />
 </figure>
-<p><strong>For hackathons lovers</strong> - <strong>Meetup</strong>: <a href="http://www.meetup.com/Hackathon-Lovers/">http://www.meetup.com/Hackathon-Lovers/</a> - <strong>Twitter</strong>: <a href="http://twitter.com/HackathonLovers">http://twitter.com/HackathonLovers</a> - <strong>Blog</strong>: <a href="http://hackathonlovers.tumblr.com/">http://hackathonlovers.tumblr.com/</a> - <strong>LinkedIn</strong>: <a href="http://www.linkedin.com/groups/Hackathon-Lovers-6510465">http://www.linkedin.com/groups/Hackathon-Lovers-6510465</a> - <strong>YouTube</strong>: <a href="http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw">http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw</a></p>
+<p><strong>For hackathons lovers</strong></p>
+<ul>
+<li><p><strong>Meetup</strong>: <a href="http://www.meetup.com/Hackathon-Lovers/">http://www.meetup.com/Hackathon-Lovers/</a></p></li>
+<li><p><strong>Twitter</strong>: <a href="http://twitter.com/HackathonLovers">http://twitter.com/HackathonLovers</a></p></li>
+<li><p><strong>Blog</strong>: <a href="http://hackathonlovers.tumblr.com/">http://hackathonlovers.tumblr.com/</a></p></li>
+<li><p><strong>LinkedIn</strong>: <a href="http://www.linkedin.com/groups/Hackathon-Lovers-6510465">http://www.linkedin.com/groups/Hackathon-Lovers-6510465</a></p></li>
+<li><p><strong>YouTube</strong>: <a href="http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw">http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw</a></p></li>
+</ul>
 <h3 id="tweets-sentiment"><a href="#tweets-sentiment"><span class="header-section-number">3.1.3</span> Tweets Sentiment</a></h3>
 <figure>
 <img src="../img/tweets-sentiment-logo.png" />
 </figure>
-<p>Is a <strong>tweets analyzer</strong> which extracts semantic information to know if the general tweets feeling about a topic is positive or negative. - <strong>Web</strong>: <a href="http://tweetssentiment.com/">http://tweetssentiment.com/</a> - <strong>Twitter</strong>: <a href="http://twitter.com/TweetsSentiment">http://twitter.com/TweetsSentiment</a></p>
+<p>Is a <strong>tweets analyzer</strong> which extracts semantic information to know if the general tweets feeling about a topic is positive or negative.</p>
+<ul>
+<li><p><strong>Web</strong>: <a href="http://tweetssentiment.com/">http://tweetssentiment.com/</a></p></li>
+<li><p><strong>Twitter</strong>: <a href="http://twitter.com/TweetsSentiment">http://twitter.com/TweetsSentiment</a></p></li>
+</ul>
 <h3 id="where-to-find-me"><a href="#where-to-find-me"><span class="header-section-number">3.1.4</span> Where to find me?</a></h3>
-<p>My nick: <strong>asanzdiego</strong> - AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a> - GitHub: <a href="http://github.com/asanzdiego">http://github.com/asanzdiego</a> - Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a> - Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a> - LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">http://www.linkedin.com/in/asanzdiego</a> - Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego">http://plus.google.com/+AdolfoSanzDeDiego</a></p>
+<p>My nick: <strong>asanzdiego</strong></p>
+<ul>
+<li><p>AboutMe: <a href="http://about.me/asanzdiego">http://about.me/asanzdiego</a></p></li>
+<li><p>GitHub: <a href="http://github.com/asanzdiego">http://github.com/asanzdiego</a></p></li>
+<li><p>Twitter: <a href="http://twitter.com/asanzdiego">http://twitter.com/asanzdiego</a></p></li>
+<li><p>Blog: <a href="http://asanzdiego.blogspot.com.es">http://asanzdiego.blogspot.com.es</a></p></li>
+<li><p>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">http://www.linkedin.com/in/asanzdiego</a></p></li>
+<li><p>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego">http://plus.google.com/+AdolfoSanzDeDiego</a></p></li>
+</ul>
 </body>
 </html>

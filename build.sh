@@ -74,14 +74,21 @@ function initExportFolder() {
 
 function convertMainListsIntoParagraphs() {
 
+  # convert first list level into paragraphs
   # replace first - with new linew
   sed -i 's/^- /\n/g' ../export/$1-to-$2.md
   sed -i 's/^-/\n/g' ../export/$1-to-$2.md
+
+  # up one level the others lists
+  sed -i 's/    -/-/g' ../export/$1-to-$2.md
+  sed -i 's/^- /\n- /g' ../export/$1-to-$2.md
+  sed -i 's/^-/\n- /g' ../export/$1-to-$2.md
+
 }
 
 function normalizeMd() {
 
-  echo -e "Normalizing...                 ../export/$1-to-$2.md"
+  #echo -e "Normalizing...                 ../export/$1-to-$2.md"
 
   # remove blank lines
   sed -i '/^$/d' ../export/$1-to-$2.md

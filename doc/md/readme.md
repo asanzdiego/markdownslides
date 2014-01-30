@@ -77,19 +77,20 @@
 
 ## Build
 
-- To **convert all md files of all the folders**
-  go to the root folder and execute:
+- In the root folder you have to execute:
 
 ~~~
-   ./build.sh
+./build.sh [mode] [folder]
 ~~~
 
-- To **convert all md files of one folder**
-  go to the root folder and execute:
+- Where [**mode**] can take the next values:
 
-~~~
-   ./build.sh [folder_name]
-~~~
+    - "**min**": generate deck-slides and plain html.
+    - "**med**": generate also reveal-slides, docx and odt (**default value**)
+    - "**max**": generate all formats.
+
+- And where [**folder**] is the name of the folder wher to find
+  the md files. If no folder name, it will convert all md files of all the folders.
 
 # Author
 

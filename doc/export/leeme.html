@@ -28,7 +28,7 @@
 </ul></li>
 <li><a href="#instalación-y-manejo"><span class="toc-section-number">2</span> Instalación y manejo</a><ul>
 <li><a href="#dependencias"><span class="toc-section-number">2.1</span> Dependencias</a></li>
-<li><a href="#download"><span class="toc-section-number">2.2</span> Download</a></li>
+<li><a href="#descarga"><span class="toc-section-number">2.2</span> Descarga</a></li>
 <li><a href="#creación"><span class="toc-section-number">2.3</span> Creación</a></li>
 <li><a href="#generación"><span class="toc-section-number">2.4</span> Generación</a></li>
 </ul></li>
@@ -86,7 +86,7 @@
 <li><a href="http://imakewebthings.com/deck.js/">Deck.js</a> (bajado automáticamente)</li>
 <li>Por ahora, solo funciona en Linux (y puede que en MacOS)</li>
 </ul>
-<h2 id="download"><a href="#download"><span class="header-section-number">2.2</span> Download</a></h2>
+<h2 id="descarga"><a href="#descarga"><span class="header-section-number">2.2</span> Descarga</a></h2>
 <ul>
 <li><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></li>
 </ul>
@@ -108,13 +108,18 @@
 </ul>
 <h2 id="generación"><a href="#generación"><span class="header-section-number">2.4</span> Generación</a></h2>
 <ul>
-<li>Para <strong>convertir todos los ficheros md de todas las carpetas</strong> hay que posicionarse en la carpeta raiz, y ejecutar:</li>
+<li>Hay que posicionarse en la carpeta raiz, y ejecutar:</li>
 </ul>
-<pre><code>   ./build.sh</code></pre>
+<pre><code>./build.sh [modo] [carpeta]</code></pre>
 <ul>
-<li>Para <strong>convertir todos los ficheros md de una carpeta</strong> hay que posicionarse en la carpeta raiz, y ejecutar:</li>
+<li><p>Donde [<strong>modo</strong>] puede tomar los siguientes valores:</p>
+<ul>
+<li>&quot;<strong>min</strong>&quot;: genera deck-slides y html plano.</li>
+<li>&quot;<strong>med</strong>&quot;: genera ademas reveal-slides, docx y odt (<strong>valor por defecto</strong>)</li>
+<li>&quot;<strong>max</strong>&quot;: genera todos los formatos.</li>
+</ul></li>
+<li><p>Y donde [<strong>carpeta</strong>] es la carpeta donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.</p></li>
 </ul>
-<pre><code>   ./build.sh [nombre_de_carpeta]</code></pre>
 <h1 id="autor"><a href="#autor"><span class="header-section-number">3</span> Autor</a></h1>
 <h2 id="adolfo-sanz-de-diego"><a href="#adolfo-sanz-de-diego"><span class="header-section-number">3.1</span> Adolfo Sanz De Diego</a></h2>
 <figure>

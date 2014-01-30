@@ -160,13 +160,18 @@
 </section><section id="build" class="slide level2">
 <h2><span class="header-section-number">2.5</span> Build</h2>
 <ul>
-<li>To <strong>convert all md files of all the folders</strong> go to the root folder and execute:</li>
+<li>In the root folder you have to execute:</li>
 </ul>
-<pre><code>   ./build.sh</code></pre>
+<pre><code>./build.sh [mode] [folder]</code></pre>
 <ul>
-<li>To <strong>convert all md files of one folder</strong> go to the root folder and execute:</li>
+<li><p>Where [<strong>mode</strong>] can take the next values:</p>
+<ul>
+<li>&quot;<strong>min</strong>&quot;: generate deck-slides and plain html.</li>
+<li>&quot;<strong>med</strong>&quot;: generate also reveal-slides, docx and odt (<strong>default value</strong>)</li>
+<li>&quot;<strong>max</strong>&quot;: generate all formats.</li>
+</ul></li>
+<li><p>And where [<strong>folder</strong>] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
 </ul>
-<pre><code>   ./build.sh [folder_name]</code></pre>
 </section></section>
 <section><section id="author" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Author</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
 <h2><span class="header-section-number">3.1</span> Adolfo Sanz De Diego</h2>

@@ -34,7 +34,7 @@
 - [Deck.js](http://imakewebthings.com/deck.js/) (automaticaly downloaded)
 - Now, only works in Linux (may be on MacOS)
 
-## Download
+### Download
 
 - [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
@@ -61,19 +61,20 @@
 
 ### Build
 
-- To **convert all md files of all the folders**
-  go to the root folder and execute:
+- In the root folder you have to execute:
 
 ~~~
-   ./build.sh
+./build.sh [mode] [folder]
 ~~~
 
-- To **convert all md files of one folder**
-  go to the root folder and execute:
+- Where [**mode**] can take the next values:
 
-~~~
-   ./build.sh [folder_name]
-~~~
+    - "**min**": generate deck-slides and plain html.
+    - "**med**": generate also reveal-slides, docx and odt (**default value**)
+    - "**max**": generate all formats.
+
+- And where [**folder**] is the name of the folder wher to find
+  the md files. If no folder name, it will convert all md files of all the folders.
 
 ## Licence
 
@@ -117,7 +118,7 @@
 - [Deck.js](http://imakewebthings.com/deck.js/) (bajado automáticamente)
 - Por ahora, solo funciona en Linux (y puede que en MacOS)
 
-## Download
+### Descarga
 
 - [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
@@ -144,19 +145,21 @@
 
 ### Generación
 
-- Para **convertir todos los ficheros md de todas las carpetas**
-  hay que posicionarse en la carpeta raiz, y ejecutar:
+- Hay que posicionarse en la carpeta raiz, y ejecutar:
 
 ~~~
-   ./build.sh
+./build.sh [modo] [carpeta]
 ~~~
 
-- Para **convertir todos los ficheros md de una carpeta**
-  hay que posicionarse en la carpeta raiz, y ejecutar:
+- Donde [**modo**] puede tomar los siguientes valores:
 
-~~~
-   ./build.sh [nombre_de_carpeta]
-~~~
+    - "**min**": genera deck-slides y html plano.
+    - "**med**": genera ademas reveal-slides, docx y odt (**valor por defecto**)
+    - "**max**": genera todos los formatos.
+
+- Y donde [**carpeta**] es la carpeta donde va a buscar
+  los ficheros md. Si no se indica nada convertirá todos los ficheros md 
+  de todas las carpetas.
 
 ### Licencia
 

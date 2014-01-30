@@ -4,6 +4,9 @@ clear
 ORIGIN=`pwd`
 echo -e $ORIGIN
 
+#GENERATION_MODE='min|med|max'
+GENERATION_MODE='med'
+
 function downloadLib() {
 
   LIB_FOLDER="../lib"
@@ -83,6 +86,23 @@ function cleanMdToBook() {
   sed 's/##.*(I).*/&KK/g' $1.md > ../export/$1-to-book.md
   sed -i 's/ (I).*KK//g' ../export/$1-to-book.md
   sed -i 's/##.*(I.*//g' ../export/$1-to-book.md
+  sed -i 's/##.*(V.*//g' ../export/$1-to-book.md
+  sed -i 's/##.*(X.*//g' ../export/$1-to-book.md
+}
+
+function buildDeckSlides() {
+
+  downloadLib imakewebthings deck.js
+  downloadLib markahon deck.search.js
+  downloadLib mikeharris100 deck.js-transition-cube
+
+  echo -e "Exporting...                   ../export/$1-deck-slides$2.html"
+
+  pandoc -w dzslides --template $ORIGIN/templates/deck-slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-deck-slides$2.html ../export/$1-to-slides.md
+
+  sed -i s/h1\>/h2\>/g ../export/$1-deck-slides.html
+  sed -i s/\>\<h2/\>\<h1/g ../export/$1-deck-slides.html
+  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-deck-slides.html
 }
 
 function buildRevealSlides() {
@@ -104,21 +124,6 @@ function buildRevealSlidesPdf() {
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.pdf"
 
   phantomjs ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf > /dev/null
-}
-
-function buildDeckSlides() {
-
-  downloadLib imakewebthings deck.js
-  downloadLib markahon deck.search.js
-  downloadLib mikeharris100 deck.js-transition-cube
-
-  echo -e "Exporting...                   ../export/$1-deck-slides$2.html"
-
-  pandoc -w dzslides --template $ORIGIN/templates/deck-slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-deck-slides$2.html ../export/$1-to-slides.md
-
-  sed -i s/h1\>/h2\>/g ../export/$1-deck-slides.html
-  sed -i s/\>\<h2/\>\<h1/g ../export/$1-deck-slides.html
-  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-deck-slides.html
 }
 
 function buildBeamer() {
@@ -160,13 +165,19 @@ function exportMdToSlides() {
 
   cleanMdToSlides $1
 
-  buildRevealSlides $1
-  buildRevealSlidesPdf $1
-  buildRevealSlides $1 -alternative
-  buildRevealSlidesPdf $1 -alternative
   buildDeckSlides $1
-  buildDeckSlides $1 -alternative
-  buildBeamer $1
+
+  if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
+    buildRevealSlides $1
+    buildRevealSlidesPdf $1
+  fi
+
+  if [ $GENERATION_MODE == "max" ]; then
+    buildDeckSlides $1 -alternative
+    buildRevealSlides $1 -alternative
+    buildRevealSlidesPdf $1 -alternative
+    buildBeamer $1
+  fi
 }
 
 function exportMdToBook() {
@@ -174,9 +185,16 @@ function exportMdToBook() {
   cleanMdToBook $1
 
   buildHtml $1
-  buildDocx $1
-  buildOdt $1
-  buildPdf $1
+
+  if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
+    buildDocx $1
+    buildOdt $1
+  fi
+
+  if [ $GENERATION_MODE == "max" ]; then
+    buildPdf $1
+  fi
+
 }
 
 function exportMdFile() {
@@ -218,8 +236,31 @@ function processFolders() {
   done
 }
 
-if [ "x$1" != "x" ]; then
-  processFolder $1
-else
-  processFolders
-fi
+function process() {
+
+  echo -e "Generation mode...             "$GENERATION_MODE
+
+  if [ "x$1" != "x" ]; then
+    processFolder $1
+  else
+    processFolders
+  fi
+}
+
+case "$1" in
+"max")
+    GENERATION_MODE="max"
+    process $2
+    ;;
+"med")
+    GENERATION_MODE="med"
+    process $2
+    ;;
+"min")
+    GENERATION_MODE="min"
+    process $2
+    ;;
+*)
+    process $1
+    ;;
+esac

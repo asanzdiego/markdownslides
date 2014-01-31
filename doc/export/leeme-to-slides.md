@@ -10,7 +10,7 @@
 
 ## ¿Qué es esto? (II)
 
-![](../img/markdownslides.png)
+<div style="text-align:center">![](../img/markdownslides.png)</div>
 
 ## Ejemplos
 - A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
@@ -81,7 +81,7 @@
 
 ## Adolfo Sanz De Diego
 
-![](../img/avatar-asanzdiego.png)
+<div style="text-align:center">![](../img/avatar-asanzdiego.png)</div>
 
 ## Mi CV resumido
 - **Antiguo programador web JEE**
@@ -98,7 +98,7 @@
 
 ## Hackalover
 
-![](../img/hackathon-lovers-logo.png)
+<div style="text-align:center">![](../img/hackathon-lovers-logo.png)</div>
 
 - **Para los amantes de los hackathones**
     - **Meetup**: [http://www.meetup.com/Hackathon-Lovers/](http://www.meetup.com/Hackathon-Lovers/)
@@ -109,7 +109,7 @@
 
 ## Tweets Sentiment
 
-![](../img/tweets-sentiment-logo.png)
+<div style="text-align:center">![](../img/tweets-sentiment-logo.png)</div>
 
 - Es un **analizador de tweets** que extrae información semántica para conocer
 si el sentimiento general de los tweets de un determinado tema

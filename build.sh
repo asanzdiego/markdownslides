@@ -97,16 +97,16 @@ function normalizeMd() {
   sed -i ':a;N;$!ba;s/\n#/\n\n#/g' ../export/$1-to-$2.md
 
   # add new line before ![
-  sed -i 's/^!\[/\n!\[/g' ../export/$1-to-$2.md
+  sed -i 's/^!\[/\n<div style="text-align:center">!\[/g' ../export/$1-to-$2.md
 
   # add new line after .png)
-  sed -i 's/.png)$/.png)\n/g' ../export/$1-to-$2.md
+  sed -i 's/.png)$/.png)<\/div>\n/g' ../export/$1-to-$2.md
 
   # add new line after .jpg)
-  sed -i 's/.jpg)$/.jpg)\n/g' ../export/$1-to-$2.md
+  sed -i 's/.jpg)$/.jpg)<\/div>\n/g' ../export/$1-to-$2.md
 
   # add new line after .gif)
-  sed -i 's/.gif)$/.gif)\n/g' ../export/$1-to-$2.md
+  sed -i 's/.gif)$/.gif)<\/div>\n/g' ../export/$1-to-$2.md
 
   # replace multiple empty lines with one empty line
   sed -i '/^$/N;/^\n$/D' ../export/$1-to-$2.md

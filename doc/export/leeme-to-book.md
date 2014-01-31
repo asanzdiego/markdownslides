@@ -9,7 +9,7 @@
 **MarkdownSlides** es un generador de **slides** Reveal.js, Deck.js y PDF
   a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, ODT y DOCX.
 
-![](../img/markdownslides.png)
+<div style="text-align:center">![](../img/markdownslides.png)</div>
 
 ## Ejemplos
 
@@ -141,7 +141,7 @@ Y donde [**carpeta**] es la carpeta donde va a buscar
 
 ## Adolfo Sanz De Diego
 
-![](../img/avatar-asanzdiego.png)
+<div style="text-align:center">![](../img/avatar-asanzdiego.png)</div>
 
 ## Mi CV resumido
 
@@ -166,7 +166,7 @@ Hoy en día:
 
 ## Hackalover
 
-![](../img/hackathon-lovers-logo.png)
+<div style="text-align:center">![](../img/hackathon-lovers-logo.png)</div>
 
 
 **Para los amantes de los hackathones**
@@ -188,7 +188,7 @@ Hoy en día:
 
 ## Tweets Sentiment
 
-![](../img/tweets-sentiment-logo.png)
+<div style="text-align:center">![](../img/tweets-sentiment-logo.png)</div>
 
 
 Es un **analizador de tweets** que extrae información semántica para conocer

@@ -9,7 +9,7 @@
 **MarkdownSlides** is a Reveal.js, Deck.js and PDF **slides** generator
   **from MARKDOWN files**, that also generate HTML, ODT and DOCX documents.
 
-![](../img/markdownslides.png)
+<div style="text-align:center">![](../img/markdownslides.png)</div>
 
 ## Samples
 
@@ -140,7 +140,7 @@ And where [**folder**] is the name of the folder wher to find
 
 ## Adolfo Sanz De Diego
 
-![](../img/avatar-asanzdiego.png)
+<div style="text-align:center">![](../img/avatar-asanzdiego.png)</div>
 
 ### My Resume
 
@@ -165,7 +165,7 @@ Today:
 
 ### Hackalover
 
-![](../img/hackathon-lovers-logo.png)
+<div style="text-align:center">![](../img/hackathon-lovers-logo.png)</div>
 
 
 **For hackathons lovers**
@@ -187,7 +187,7 @@ Today:
 
 ### Tweets Sentiment
 
-![](../img/tweets-sentiment-logo.png)
+<div style="text-align:center">![](../img/tweets-sentiment-logo.png)</div>
 
 
 Is a **tweets analyzer** which extracts semantic information to know

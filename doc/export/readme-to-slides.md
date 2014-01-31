@@ -10,7 +10,7 @@
 
 ## What is it? (II)
 
-![](../img/markdownslides.png)
+<div style="text-align:center">![](../img/markdownslides.png)</div>
 
 ## Samples
 - From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
@@ -80,7 +80,7 @@
 
 ## Adolfo Sanz De Diego
 
-![](../img/avatar-asanzdiego.png)
+<div style="text-align:center">![](../img/avatar-asanzdiego.png)</div>
 
 ## My Resume
 - **Old JEE web developer**
@@ -97,7 +97,7 @@
 
 ## Hackalover
 
-![](../img/hackathon-lovers-logo.png)
+<div style="text-align:center">![](../img/hackathon-lovers-logo.png)</div>
 
 - **For hackathons lovers**
     - **Meetup**: [http://www.meetup.com/Hackathon-Lovers/](http://www.meetup.com/Hackathon-Lovers/)
@@ -108,7 +108,7 @@
 
 ## Tweets Sentiment
 
-![](../img/tweets-sentiment-logo.png)
+<div style="text-align:center">![](../img/tweets-sentiment-logo.png)</div>
 
 - Is a **tweets analyzer** which extracts semantic information to know
 if the general tweets feeling about a topic is positive or negative.

@@ -118,10 +118,6 @@ Y donde [**carpeta**] es la carpeta donde va a buscar
 
 ## Adolfo Sanz De Diego
 
-<div style="text-align:center">![](../img/avatar-asanzdiego.png)</div>
-
-## Mi CV resumido
-
 **Antiguo programador web JEE**
 
 Hoy en día:

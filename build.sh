@@ -162,9 +162,9 @@ function buildDeckSlides() {
 
   pandoc -w dzslides --template $ORIGIN/templates/deck-slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-deck-slides$2.html ../export/$1-to-slides.md
 
-  sed -i s/h1\>/h2\>/g ../export/$1-deck-slides.html
-  sed -i s/\>\<h2/\>\<h1/g ../export/$1-deck-slides.html
-  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-deck-slides.html
+  sed -i s/h1\>/h2\>/g ../export/$1-deck-slides$2.html
+  sed -i s/\>\<h2/\>\<h1/g ../export/$1-deck-slides$2.html
+  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-deck-slides$2.html
 }
 
 function buildRevealSlides() {

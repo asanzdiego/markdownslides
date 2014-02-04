@@ -16,36 +16,25 @@
 A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
   genera:
 
-
 -  [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html)
-
 
 -  [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html)
 
-
 -  [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
-
 
 -  [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
 
-
 -  [deck-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides.html)
-
 
 -  [deck-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides-alternative.html)
 
-
 -  [pdf-beamer](http://asanzdiego.github.io/markdownslides/doc/export/leeme-beamer.pdf)
-
 
 -  [pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf)
 
-
 -  [html](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
 
-
 -  [docx](http://asanzdiego.github.io/markdownslides/doc/export/leeme.docx)
-
 
 -  [odt](http://asanzdiego.github.io/markdownslides/doc/export/leeme.odt)
 
@@ -53,11 +42,9 @@ A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslid
 
 **Este obra está bajo una licencia:**
 
-
 -  [Creative Commons Reconocimiento-CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/es/)
 
 **El código fuente de los programas están bajo una licencia:**
-
 
 -  [GPL 3.0](http://www.viti.es/gnu/licenses/gpl.html)
 
@@ -91,45 +78,35 @@ Primero **copia la carpeta doc y renombrala a tu gusto**. Esto no es necesario p
 
 Una vez creado los md, **podemos generar con un script**:
 
-
 -  reveal-slides
-
 
 -  reveal-pdf-slides
 
-
 -  deck-slides
-
 
 -  pdf-beamer
 
-
 -  pdf
-
 
 -  html
 
-
 -  docx
-
 
 -  odt
 
 ## Generación
 
 Hay que posicionarse en la carpeta raiz, y ejecutar:
+
 ~~~
 ./build.sh [modo] [carpeta]
 ~~~
 
 Donde [**modo**] puede tomar los siguientes valores:
 
-
 -  "**min**": genera deck-slides y html plano.
 
-
 -  "**med**": genera ademas reveal-slides, docx y odt (**valor por defecto**)
-
 
 -  "**max**": genera todos los formatos.
 
@@ -149,18 +126,17 @@ Y donde [**carpeta**] es la carpeta donde va a buscar
 
 Hoy en día:
 
-
 -  **Profesor de FP de informática**:
+
     - Hardware, Sistemas Operativos
     - Redes, Programación
 
-
 -  **Formador Freelance**:
+
     - Java, Android
     - JavaScript, jQuery
     - JSF, Spring, Hibernate
     - Groovy & Grails
-
 
 -  **Me gusta programar**
 
@@ -168,21 +144,15 @@ Hoy en día:
 
 <div style="text-align:center">![](../img/hackathon-lovers-logo.png)</div>
 
-
 **Para los amantes de los hackathones**
-
 
 -  **Meetup**: [http://www.meetup.com/Hackathon-Lovers/](http://www.meetup.com/Hackathon-Lovers/)
 
-
 -  **Twitter**: [http://twitter.com/HackathonLovers](http://twitter.com/HackathonLovers)
-
 
 -  **Blog**: [http://hackathonlovers.tumblr.com/](http://hackathonlovers.tumblr.com/)
 
-
 -  **LinkedIn**: [http://www.linkedin.com/groups/Hackathon-Lovers-6510465](http://www.linkedin.com/groups/Hackathon-Lovers-6510465)
-
 
 -  **YouTube**: [http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw](http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw)
 
@@ -190,14 +160,11 @@ Hoy en día:
 
 <div style="text-align:center">![](../img/tweets-sentiment-logo.png)</div>
 
-
 Es un **analizador de tweets** que extrae información semántica para conocer
 si el sentimiento general de los tweets de un determinado tema
 es positivo o negativo.
 
-
 -  **Web**: [http://tweetssentiment.com/](http://tweetssentiment.com/)
-
 
 -  **Twitter**: [http://twitter.com/TweetsSentiment](http://twitter.com/TweetsSentiment)
 
@@ -205,20 +172,14 @@ es positivo o negativo.
 
 Mi nick: **asanzdiego**
 
-
 -  AboutMe:  [http://about.me/asanzdiego](http://about.me/asanzdiego)
-
 
 -  GitHub:   [http://github.com/asanzdiego](http://github.com/asanzdiego)
 
-
 -  Twitter:  [http://twitter.com/asanzdiego](http://twitter.com/asanzdiego)
-
 
 -  Blog:     [http://asanzdiego.blogspot.com.es](http://asanzdiego.blogspot.com.es)
 
-
 -  LinkedIn: [http://www.linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)
-
 
 -  Google+:  [http://plus.google.com/+AdolfoSanzDeDiego](http://plus.google.com/+AdolfoSanzDeDiego)

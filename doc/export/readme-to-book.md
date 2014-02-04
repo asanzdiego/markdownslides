@@ -16,36 +16,25 @@
 From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
   generate:
 
-
 -  [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html)
-
 
 -  [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html)
 
-
 -  [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
-
 
 -  [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf)
 
-
 -  [deck-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides.html)
-
 
 -  [deck-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides-alternative.html)
 
-
 -  [pdf-beamer](http://asanzdiego.github.io/markdownslides/doc/export/readme-beamer.pdf)
-
 
 -  [pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf)
 
-
 -  [html](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
 
-
 -  [docx](http://asanzdiego.github.io/markdownslides/doc/export/readme.docx)
-
 
 -  [odt](http://asanzdiego.github.io/markdownslides/doc/export/readme.odt)
 
@@ -53,11 +42,9 @@ From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md
 
 **This work is licensed under a:**
 
-
 -  [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by-sa/3.0//)
 
 **The program source code are licensed under a:**
-
 
 -  [GPL 3.0](http://www.gnu.org/licenses/gpl.html)
 
@@ -91,45 +78,35 @@ First **copy the doc folder and rename it as you like**. This is not necessary b
 
 Once created the md files, **we can generate with an script**.
 
-
 -  reveal-slides
-
 
 -  reveal-pdf-slides
 
-
 -  deck-slides
-
 
 -  pdf-beamer
 
-
 -  pdf
-
 
 -  html
 
-
 -  docx
-
 
 -  odt
 
 ## Build
 
 In the root folder you have to execute:
+
 ~~~
 ./build.sh [mode] [folder]
 ~~~
 
 Where [**mode**] can take the next values:
 
-
 -  "**min**": generate deck-slides and plain html.
 
-
 -  "**med**": generate also reveal-slides, docx and odt (**default value**)
-
 
 -  "**max**": generate all formats.
 
@@ -148,18 +125,17 @@ And where [**folder**] is the name of the folder wher to find
 
 Today:
 
-
 -  **Computer teacher**:
+
     - Hardware, Operating Systems
     - Networking, Programming
 
-
 -  **Freelance Trainer**:
+
     - Java, Android
     - JavaScript, jQuery
     - JSF, Spring, Hibernate
     - Groovy & Grails
-
 
 -  **I like to develop**
 
@@ -167,21 +143,15 @@ Today:
 
 <div style="text-align:center">![](../img/hackathon-lovers-logo.png)</div>
 
-
 **For hackathons lovers**
-
 
 -  **Meetup**: [http://www.meetup.com/Hackathon-Lovers/](http://www.meetup.com/Hackathon-Lovers/)
 
-
 -  **Twitter**: [http://twitter.com/HackathonLovers](http://twitter.com/HackathonLovers)
-
 
 -  **Blog**: [http://hackathonlovers.tumblr.com/](http://hackathonlovers.tumblr.com/)
 
-
 -  **LinkedIn**: [http://www.linkedin.com/groups/Hackathon-Lovers-6510465](http://www.linkedin.com/groups/Hackathon-Lovers-6510465)
-
 
 -  **YouTube**: [http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw](http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw)
 
@@ -189,13 +159,10 @@ Today:
 
 <div style="text-align:center">![](../img/tweets-sentiment-logo.png)</div>
 
-
 Is a **tweets analyzer** which extracts semantic information to know
 if the general tweets feeling about a topic is positive or negative.
 
-
 -  **Web**: [http://tweetssentiment.com/](http://tweetssentiment.com/)
-
 
 -  **Twitter**: [http://twitter.com/TweetsSentiment](http://twitter.com/TweetsSentiment)
 
@@ -203,20 +170,14 @@ if the general tweets feeling about a topic is positive or negative.
 
 My nick: **asanzdiego**
 
-
 -  AboutMe:  [http://about.me/asanzdiego](http://about.me/asanzdiego)
-
 
 -  GitHub:   [http://github.com/asanzdiego](http://github.com/asanzdiego)
 
-
 -  Twitter:  [http://twitter.com/asanzdiego](http://twitter.com/asanzdiego)
-
 
 -  Blog:     [http://asanzdiego.blogspot.com.es](http://asanzdiego.blogspot.com.es)
 
-
 -  LinkedIn: [http://www.linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)
-
 
 -  Google+:  [http://plus.google.com/+AdolfoSanzDeDiego](http://plus.google.com/+AdolfoSanzDeDiego)

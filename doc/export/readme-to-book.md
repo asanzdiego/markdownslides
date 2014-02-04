@@ -117,10 +117,6 @@ And where [**folder**] is the name of the folder wher to find
 
 ## Adolfo Sanz De Diego
 
-<div style="text-align:center">![](../img/avatar-asanzdiego.png)</div>
-
-### My Resume
-
 **Old JEE web developer**
 
 Today:

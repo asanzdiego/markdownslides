@@ -97,10 +97,6 @@
 
 ## Adolfo Sanz De Diego
 
-![](../img/avatar-asanzdiego.png)
-
-## Mi CV resumido
-
 - **Antiguo programador web JEE**
 
 - Hoy en día:

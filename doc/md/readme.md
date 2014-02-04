@@ -96,10 +96,6 @@
 
 ## Adolfo Sanz De Diego
 
-![](../img/avatar-asanzdiego.png)
-
-### My Resume
-
 - **Old JEE web developer**
 
 - Today:

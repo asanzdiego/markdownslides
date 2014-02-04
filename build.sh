@@ -72,6 +72,21 @@ function initExportFolder() {
 
 }
 
+function centerImages() {
+
+  # open div before ![
+  sed -i 's/^!\[/<div style="text-align:center">!\[/g' ../export/$1-to-$2.md
+
+  # close div after .png)
+  sed -i 's/.png)$/.png)<\/div>\n/g' ../export/$1-to-$2.md
+
+  # close div after .jpg)
+  sed -i 's/.jpg)$/.jpg)<\/div>\n/g' ../export/$1-to-$2.md
+
+  # close div after .gif)
+  sed -i 's/.gif)$/.gif)<\/div>\n/g' ../export/$1-to-$2.md
+}
+
 function convertMainListsIntoParagraphs() {
 
   # convert first list level into paragraphs
@@ -84,6 +99,8 @@ function convertMainListsIntoParagraphs() {
   sed -i 's/^- /\n- /g' ../export/$1-to-$2.md
   sed -i 's/^-/\n- /g' ../export/$1-to-$2.md
 
+  # replace multiple empty lines with one empty line
+  sed -i '/^$/N;/^\n$/D' ../export/$1-to-$2.md
 }
 
 function normalizeMd() {
@@ -95,18 +112,7 @@ function normalizeMd() {
 
   # add new line before #
   sed -i ':a;N;$!ba;s/\n#/\n\n#/g' ../export/$1-to-$2.md
-
-  # add new line before ![
-  sed -i 's/^!\[/\n<div style="text-align:center">!\[/g' ../export/$1-to-$2.md
-
-  # add new line after .png)
-  sed -i 's/.png)$/.png)<\/div>\n/g' ../export/$1-to-$2.md
-
-  # add new line after .jpg)
-  sed -i 's/.jpg)$/.jpg)<\/div>\n/g' ../export/$1-to-$2.md
-
-  # add new line after .gif)
-  sed -i 's/.gif)$/.gif)<\/div>\n/g' ../export/$1-to-$2.md
+  sed -i ':a;N;$!ba;s/\n    #/\n\n    #/g' ../export/$1-to-$2.md
 
   # replace multiple empty lines with one empty line
   sed -i '/^$/N;/^\n$/D' ../export/$1-to-$2.md
@@ -122,7 +128,7 @@ function cleanMdToSlides() {
   # only <h2> is allowed in slides
   sed -i 's/###*/##/g' ../export/$1-to-slides.md
 
-  normalizeMd $1 slides
+  # normalizeMd $1 slides
 }
 
 function cleanMdToBook() {
@@ -131,16 +137,17 @@ function cleanMdToBook() {
 
   echo -e "Cleaning...                    ../export/$1-to-book.md"
 
-  # remove (I) from titles
-  sed -i 's/##.*(I).*/&KK/g' ../export/$1-to-book.md
-  sed -i 's/ (I).*KK//g' ../export/$1-to-book.md
+  # remove (I) from lines
+  sed -i 's/ (I)//g' ../export/$1-to-book.md
 
-  # remove all titles with (I) (II)...
-  sed -i 's/##.*(I.*//g' ../export/$1-to-book.md
-  sed -i 's/##.*(V.*//g' ../export/$1-to-book.md
-  sed -i 's/##.*(X.*//g' ../export/$1-to-book.md
+  # remove all lines with (I) (II)...
+  sed -i 's/.*(I.*//g' ../export/$1-to-book.md
+  sed -i 's/.*(V.*//g' ../export/$1-to-book.md
+  sed -i 's/.*(X.*//g' ../export/$1-to-book.md
 
-  normalizeMd $1 book
+  centerImages $1 book
+
+  # normalizeMd $1 book
 
   convertMainListsIntoParagraphs $1 book
 }

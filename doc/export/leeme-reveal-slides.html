@@ -64,6 +64,12 @@
     strong {
       color: #777
     }
+    .only-print {
+      display: none;
+    }
+    @media print { 
+      .only-print { display: block!important; } 
+    }
   </style>
 
   <!--[if lt IE 9]>
@@ -76,6 +82,11 @@
     <div class="slides">
 
 <section>
+    <br class="only-print"/>
+    <br class="only-print"/>
+    <br class="only-print"/>
+    <br class="only-print"/>
+    <br class="only-print"/>
     <h1 class="title">Markdown Slides [ES]</h2>
     <h2 class="author">Adolfo Sanz De Diego</h2>
     <h3 class="date">Enero 2014</h3>

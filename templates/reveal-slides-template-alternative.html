@@ -73,7 +73,7 @@ $endif$
     }
     code {
       white-space: pre;
-    }
+    }$
     .reveal section img {
       margin: 15px 0px;
       padding: 15px;
@@ -81,6 +81,12 @@ $endif$
     }
     strong {
       color: #777
+    }
+    .only-print {
+      display: none;
+    }
+    @media print { 
+      .only-print { display: block!important; } 
     }
   </style>
 
@@ -104,6 +110,11 @@ $endfor$
 
 $if(title)$
 <section>
+    <br class="only-print"/>
+    <br class="only-print"/>
+    <br class="only-print"/>
+    <br class="only-print"/>
+    <br class="only-print"/>
     <h1 class="title">$title$</h1>
 $if(subtitle)$
   <h1 class="subtitle">$subtitle$</h1>

@@ -73,7 +73,7 @@ $endif$
     }
     code {
       white-space: pre;
-    }
+    }$
     .reveal section img {
       margin: 15px 0px;
       padding: 15px;
@@ -81,6 +81,13 @@ $endif$
     }
     strong {
       color: #777
+    }
+    .only-print {
+      display: none;
+    }
+    @media print { 
+      #only-print-parent { display: table !important; } 
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
     }
   </style>
 
@@ -103,15 +110,17 @@ $endfor$
     <div class="slides">
 
 $if(title)$
-<section>
-    <h1 class="title">$title$</h1>
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">$title$</h1>
 $if(subtitle)$
-  <h1 class="subtitle">$subtitle$</h1>
+      <h1 class="subtitle">$subtitle$</h1>
 $endif$
 $for(author)$
-    <h2 class="author">$author$</h2>
+      <h2 class="author">$author$</h2>
 $endfor$
-    <h3 class="date">$date$</h3>
+      <h3 class="date">$date$</h3>
+    </div>
 </section>
 $endif$
 $if(toc)$

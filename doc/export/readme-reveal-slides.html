@@ -64,6 +64,10 @@
     strong {
       color: #777
     }
+    @media print { 
+      #only-print-parent { display: table !important; } 
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
+    }
   </style>
 
   <!--[if lt IE 9]>
@@ -75,10 +79,12 @@
   <div class="reveal">
     <div class="slides">
 
-<section>
-    <h1 class="title">Markdown Slides [EN]</h2>
-    <h2 class="author">Adolfo Sanz De Diego</h2>
-    <h3 class="date">January 2014</h3>
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Markdown Slides [EN]</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">January 2014</h3>
+    </div>
 </section>
 
 <section><section id="about" class="titleslide slide level1"><h1><span class="header-section-number">1</span> About</h1></section><section id="what-is-it-i" class="slide level2">

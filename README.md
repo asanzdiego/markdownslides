@@ -11,7 +11,7 @@
 
 ### Samples
 
-- From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
+- From a [MARKDOWN](http://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
   generate:
 
     - [deck-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides.html)

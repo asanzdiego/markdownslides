@@ -64,11 +64,9 @@
     strong {
       color: #777
     }
-    .only-print {
-      display: none;
-    }
     @media print { 
-      .only-print { display: block!important; } 
+      #only-print-parent { display: table !important; } 
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
     }
   </style>
 
@@ -81,15 +79,12 @@
   <div class="reveal">
     <div class="slides">
 
-<section>
-    <br class="only-print"/>
-    <br class="only-print"/>
-    <br class="only-print"/>
-    <br class="only-print"/>
-    <br class="only-print"/>
-    <h1 class="title">Markdown Slides [ES]</h2>
-    <h2 class="author">Adolfo Sanz De Diego</h2>
-    <h3 class="date">Enero 2014</h3>
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Markdown Slides [ES]</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">Enero 2014</h3>
+    </div>
 </section>
 
 <section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">1</span> Acerca de</h1></section><section id="qué-es-esto-i" class="slide level2">

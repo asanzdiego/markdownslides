@@ -10,10 +10,6 @@ $endif$
 $for(author-meta)$
   <meta name="author" content="$author-meta$" />
 $endfor$
-$if(date-meta)$
-  <meta name="dcterms.date" content="$date-meta$" />
-$endif$
-  <meta name="copyright" content="$title$ - $for(author)$$author$ - $sep$$endfor$ $date$" /> 
   <title>$if(title-prefix)$$title-prefix$ - $endif$$if(pagetitle)$$pagetitle$$endif$</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -73,7 +69,7 @@ $endif$
     }
     code {
       white-space: pre;
-    }$
+    }
     .reveal section img {
       margin: 15px 0px;
       padding: 15px;
@@ -82,12 +78,24 @@ $endif$
     strong {
       color: #777
     }
-    .only-print {
-      display: none;
+    a:hover {
+      text-decoration: underline !important;
+    }
+    h1.title {
+      font-size: 300% !important;
+    }
+    h1 {
+      font-size: 250% !important;
+    }
+    h2 {
+      font-size: 150% !important;
     }
     @media print { 
       #only-print-parent { display: table !important; } 
       #only-print-child { display: table-cell !important; vertical-align: middle;}
+      h1.title { font-size: 350% !important;}
+      h1 { font-size: 300% !important; }
+      h2 { font-size: 200% !important; }
     }
   </style>
 

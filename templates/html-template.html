@@ -10,10 +10,6 @@ $endif$
 $for(author-meta)$
   <meta name="author" content="$author-meta$" />
 $endfor$
-$if(date-meta)$
-  <meta name="dcterms.date" content="$date-meta$" />
-$endif$
-  <meta name="copyright" content="$title$ - $for(author)$$author$ - $sep$$endfor$ $date$" /> 
   <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
   <style type="text/css">code{white-space: pre;}</style>
   <!--[if lt IE 9]>

@@ -75,7 +75,7 @@ function initExportFolder() {
 function centerImages() {
 
   # open div before ![
-  sed -i 's/^!\[/<div style="text-align:center">!\[/g' ../export/$1-to-$2.md
+  sed -i 's/!\[/<div style="text-align:center">!\[/g' ../export/$1-to-$2.md
 
   # close div after .png)
   sed -i 's/.png)$/.png)<\/div>\n/g' ../export/$1-to-$2.md
@@ -137,6 +137,9 @@ function cleanMdToBook() {
 
   echo -e "Cleaning...                    ../export/$1-to-book.md"
 
+  # remove % if img
+  sed -i 's/% !\[/!\[/g' ../export/$1-to-book.md
+
   # remove (I) from lines
   sed -i 's/ (I)//g' ../export/$1-to-book.md
 
@@ -150,6 +153,7 @@ function cleanMdToBook() {
   # normalizeMd $1 book
 
   convertMainListsIntoParagraphs $1 book
+
 }
 
 function buildDeckSlides() {

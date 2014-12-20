@@ -242,7 +242,7 @@ function exportMdToSlides() {
     buildDeckSlides $1 -alternative
     buildRevealSlides $1 -alternative
     buildRevealSlidesPdf $1 -alternative
-    #buildBeamer $1
+    buildBeamer $1
   fi
 }
 

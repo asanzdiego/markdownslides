@@ -127,6 +127,7 @@ function cleanMdToSlides() {
   # replace ### or #### with ##
   # only <h2> is allowed in slides
   sed -i 's/###*/##/g' ../export/$1-to-slides.md
+  sed -i 's/##\\#/###/g' ../export/$1-to-slides.md
 
   # normalizeMd $1 slides
 }
@@ -152,7 +153,7 @@ function cleanMdToBook() {
 
   # normalizeMd $1 book
 
-  convertMainListsIntoParagraphs $1 book
+  # convertMainListsIntoParagraphs $1 book
 
 }
 

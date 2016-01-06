@@ -175,6 +175,7 @@ function buildDeckSlides() {
 function buildRevealSlides() {
 
   downloadLib hakimel reveal.js
+  downloadLib denehyg reveal.js-menu
 
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.html"
 

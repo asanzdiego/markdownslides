@@ -1,6 +1,6 @@
 % Markdown Slides [EN]
 % Adolfo Sanz De Diego
-% January 2014
+% September 2016
 
 # About
 
@@ -25,8 +25,6 @@
     - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html)
     - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
     - [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf)
-    - [pdf-beamer](http://asanzdiego.github.io/markdownslides/doc/export/readme-beamer.pdf)
-    - [pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf)
     - [html](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
     - [docx](http://asanzdiego.github.io/markdownslides/doc/export/readme.docx)
     - [odt](http://asanzdiego.github.io/markdownslides/doc/export/readme.odt)
@@ -99,53 +97,25 @@
 
 - **Old JEE web developer**
 
-- Today:
+- Now I'm **Tecnical Teacher Advaisor** in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education, Youth and Sports of the Community of Madrid.
 
-    - **Computer teacher**:
+- In addition I work as **trainer specialized in development technologies**.
 
-        - Hardware, Operating Systems
-        - Networking, Programming
+## Algunos proyectos
 
-    - **Freelance Trainer**:
+- **Hackathon Lovers** <http://hackathonlovers.com>:  a group created for entrepreneurs and developers who loves hackathones.
 
-        - Java, Android
-        - JavaScript, jQuery
-        - JSF, Spring, Hibernate
-        - Groovy & Grails
+- **Password Manager Generator** <http://pasmangen.github.io>: an online password manager.
 
-    - **I like to develop**
+- **MarkdownSlides** <https://github.com/asanzdiego/markdownslides>: a script to create slides from MD files.
 
-### Hackalover
+## Where to find me?
 
-<div style="text-align:center">![](../img/hackathon-lovers-logo.png)</div>
+- Mi nick: **asanzdiego**
 
-
-- **For hackathons lovers**
-
-    - **Meetup**: [http://www.meetup.com/Hackathon-Lovers/](http://www.meetup.com/Hackathon-Lovers/)
-    - **Twitter**: [http://twitter.com/HackathonLovers](http://twitter.com/HackathonLovers)
-    - **Blog**: [http://hackathonlovers.tumblr.com/](http://hackathonlovers.tumblr.com/)
-    - **LinkedIn**: [http://www.linkedin.com/groups/Hackathon-Lovers-6510465](http://www.linkedin.com/groups/Hackathon-Lovers-6510465)
-    - **YouTube**: [http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw](http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw)
-
-### Tweets Sentiment
-
-<div style="text-align:center">![](../img/tweets-sentiment-logo.png)</div>
-
-
-- Is a **tweets analyzer** which extracts semantic information to know
-if the general tweets feeling about a topic is positive or negative.
-
-    - **Web**: [http://tweetssentiment.com/](http://tweetssentiment.com/)
-    - **Twitter**: [http://twitter.com/TweetsSentiment](http://twitter.com/TweetsSentiment)
-
-### Where to find me?
-
-- My nick: **asanzdiego**
-
-    - AboutMe:  [http://about.me/asanzdiego](http://about.me/asanzdiego)
-    - GitHub:   [http://github.com/asanzdiego](http://github.com/asanzdiego)
-    - Twitter:  [http://twitter.com/asanzdiego](http://twitter.com/asanzdiego)
-    - Blog:     [http://asanzdiego.blogspot.com.es](http://asanzdiego.blogspot.com.es)
-    - LinkedIn: [http://www.linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)
-    - Google+:  [http://plus.google.com/+AdolfoSanzDeDiego](http://plus.google.com/+AdolfoSanzDeDiego)
+    - AboutMe:  <http://about.me/asanzdiego>
+    - GitHub:   <http://github.com/asanzdiego>
+    - Twitter:  <http://twitter.com/asanzdiego>
+    - Blog:     <http://asanzdiego.blogspot.com.es>
+    - LinkedIn: <http://www.linkedin.com/in/asanzdiego>
+    - Google+:  <http://plus.google.com/+AdolfoSanzDeDiego>

@@ -244,7 +244,7 @@ function exportMdToSlides() {
     buildDeckSlides $1 -alternative
     buildRevealSlides $1 -alternative
     buildRevealSlidesPdf $1 -alternative
-    buildBeamer $1
+    #buildBeamer $1
   fi
 }
 
@@ -256,11 +256,11 @@ function exportMdToBook() {
 
   if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
     buildDocx $1
-    buildOdt $1
   fi
 
   if [ $GENERATION_MODE == "max" ]; then
-    buildPdf $1
+    buildOdt $1
+    #buildPdf $1
   fi
 
 }

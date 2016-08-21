@@ -1,6 +1,6 @@
 % Markdown Slides [ES]
 % Adolfo Sanz De Diego
-% Enero 2014
+% Septiembre 2016
 
 # Acerca de
 
@@ -25,8 +25,6 @@
     - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html)
     - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
     - [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
-    - [pdf-beamer](http://asanzdiego.github.io/markdownslides/doc/export/leeme-beamer.pdf)
-    - [pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf)
     - [html](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
     - [docx](http://asanzdiego.github.io/markdownslides/doc/export/leeme.docx)
     - [odt](http://asanzdiego.github.io/markdownslides/doc/export/leeme.odt)
@@ -91,63 +89,34 @@
     - "**max**": genera todos los formatos.
 
 - Y donde [**carpeta**] es la carpeta donde va a buscar
-  los ficheros md. Si no se indica nada convertirá todos los ficheros md 
+  los ficheros md. Si no se indica nada convertirá todos los ficheros md
   de todas las carpetas.
 
 # Autor
 
 ## Adolfo Sanz De Diego
 
-- **Antiguo programador web JEE**
+- Empecé **desarrollando aplicaciones web**, hasta que di el salto a la docencia.
 
-- Hoy en día:
+- Actualmente soy **Asesor Técnico Docente** en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.
 
-    - **Profesor de FP de informática**:
+- Además colaboro como **formador especializado en tecnologías de desarrollo**.
 
-        - Hardware, Sistemas Operativos
-        - Redes, Programación
+## Algunos proyectos
 
-    - **Formador Freelance**:
+- **Hackathon Lovers** <http://hackathonlovers.com>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.
 
-        - Java, Android
-        - JavaScript, jQuery
-        - JSF, Spring, Hibernate
-        - Groovy & Grails
+- **Password Manager Generator** <http://pasmangen.github.io>: un gestor de contraseñas online.
 
-    - **Me gusta programar**
-
-## Hackalover
-
-<div style="text-align:center">![](../img/hackathon-lovers-logo.png)</div>
-
-
-- **Para los amantes de los hackathones**
-
-    - **Meetup**: [http://www.meetup.com/Hackathon-Lovers/](http://www.meetup.com/Hackathon-Lovers/)
-    - **Twitter**: [http://twitter.com/HackathonLovers](http://twitter.com/HackathonLovers)
-    - **Blog**: [http://hackathonlovers.tumblr.com/](http://hackathonlovers.tumblr.com/)
-    - **LinkedIn**: [http://www.linkedin.com/groups/Hackathon-Lovers-6510465](http://www.linkedin.com/groups/Hackathon-Lovers-6510465)
-    - **YouTube**: [http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw](http://www.youtube.com/channel/UCRwSe7jK-y62BMvIiNBV1qw)
-
-## Tweets Sentiment
-
-<div style="text-align:center">![](../img/tweets-sentiment-logo.png)</div>
-
-
-- Es un **analizador de tweets** que extrae información semántica para conocer
-si el sentimiento general de los tweets de un determinado tema
-es positivo o negativo.
-
-    - **Web**: [http://tweetssentiment.com/](http://tweetssentiment.com/)
-    - **Twitter**: [http://twitter.com/TweetsSentiment](http://twitter.com/TweetsSentiment)
+- **MarkdownSlides** <https://github.com/asanzdiego/markdownslides>: un script para crear slides a partir de ficheros MD.
 
 ## ¿Donde encontrarme?
 
 - Mi nick: **asanzdiego**
 
-    - AboutMe:  [http://about.me/asanzdiego](http://about.me/asanzdiego)
-    - GitHub:   [http://github.com/asanzdiego](http://github.com/asanzdiego)
-    - Twitter:  [http://twitter.com/asanzdiego](http://twitter.com/asanzdiego)
-    - Blog:     [http://asanzdiego.blogspot.com.es](http://asanzdiego.blogspot.com.es)
-    - LinkedIn: [http://www.linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)
-    - Google+:  [http://plus.google.com/+AdolfoSanzDeDiego](http://plus.google.com/+AdolfoSanzDeDiego)
+    - AboutMe:  <http://about.me/asanzdiego>
+    - GitHub:   <http://github.com/asanzdiego>
+    - Twitter:  <http://twitter.com/asanzdiego>
+    - Blog:     <http://asanzdiego.blogspot.com.es>
+    - LinkedIn: <http://www.linkedin.com/in/asanzdiego>
+    - Google+:  <http://plus.google.com/+AdolfoSanzDeDiego>

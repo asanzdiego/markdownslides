@@ -22,7 +22,6 @@ $endif$
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../lib/reveal.js-master/css/reveal.css">
   <link rel="stylesheet" href="../lib/reveal.js-menu-master/menu.css">
-  <style type="text/css">code{white-space: pre;}</style>
 $if(quotes)$
   <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
 $endif$
@@ -39,6 +38,10 @@ $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$"/>
 $endfor$
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
@@ -47,8 +50,11 @@ $endfor$
     link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal.js-master/css/print/pdf.css' : '../lib/reveal.js-master/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
-  <!-- Overwrite images -->
+
   <style type="text/css">
+    code{
+      white-space: pre;
+    }
     .reveal pre code {
       background: rgba(255, 255, 255, 0.7);
       color: rgba(0, 0, 0, 0.7);

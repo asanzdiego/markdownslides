@@ -191,7 +191,7 @@ function buildRevealSlidesPdf() {
 
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.pdf"
 
-  phantomjs ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf > /dev/null
+  phantomjs ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "file://`pwd`/../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf 800x450 > /dev/null
 }
 
 function buildBeamer() {

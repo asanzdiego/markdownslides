@@ -21,8 +21,6 @@
     - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html)
     - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
     - [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf)
-    - [pdf-beamer](http://asanzdiego.github.io/markdownslides/doc/export/readme-beamer.pdf)
-    - [pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf)
     - [html](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
     - [docx](http://asanzdiego.github.io/markdownslides/doc/export/readme.docx)
     - [odt](http://asanzdiego.github.io/markdownslides/doc/export/readme.odt)
@@ -51,11 +49,9 @@
 
 - Once created the md files, **we can generate with an script**.
 
+    - deck-slides
     - reveal-slides
     - reveal-pdf-slides
-    - deck-slides
-    - pdf-beamer
-    - pdf
     - html
     - docx
     - odt
@@ -71,7 +67,7 @@
 - Where [**mode**] can take the next values:
 
     - "**min**": generate deck-slides and plain html.
-    - "**med**": generate also reveal-slides, docx and odt (**default value**)
+    - "**med**": generate also reveal-slides and docx (**default value**)
     - "**max**": generate all formats.
 
 - And where [**folder**] is the name of the folder wher to find
@@ -105,8 +101,6 @@
     - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html)
     - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
     - [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
-    - [pdf-beamer](http://asanzdiego.github.io/markdownslides/doc/export/leeme-beamer.pdf)
-    - [pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf)
     - [html](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
     - [docx](http://asanzdiego.github.io/markdownslides/doc/export/leeme.docx)
     - [odt](http://asanzdiego.github.io/markdownslides/doc/export/leeme.odt)
@@ -133,13 +127,11 @@
   que no son nada más que ficheros de texto plano, con extensión md,
   y con un marcado ligero (que hay que conocer pero que es muy sencillo).
 
-- Una vez creado los md, **podemos generar con un script**: 
+- Una vez creado los md, **podemos generar con un script**:
 
+    - deck-slides
     - reveal-slides
     - reveal-pdf-slides
-    - deck-slides
-    - pdf-beamer
-    - pdf
     - html
     - docx
     - odt
@@ -155,11 +147,11 @@
 - Donde [**modo**] puede tomar los siguientes valores:
 
     - "**min**": genera deck-slides y html plano.
-    - "**med**": genera ademas reveal-slides, docx y odt (**valor por defecto**)
+    - "**med**": genera además reveal-slides y docx (**valor por defecto**)
     - "**max**": genera todos los formatos.
 
 - Y donde [**carpeta**] es la carpeta donde va a buscar
-  los ficheros md. Si no se indica nada convertirá todos los ficheros md 
+  los ficheros md. Si no se indica nada convertirá todos los ficheros md
   de todas las carpetas.
 
 ### Licencia

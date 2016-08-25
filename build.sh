@@ -282,7 +282,8 @@ function processFolder() {
 
   for FILE in *.md; do
 
-    FILE_WITHOUT_EXTENSION=${FILE%%.*}
+    FILE_WITHOUT_EXTENSION=${FILE%.*}
+
     if [ -e $FILE_WITHOUT_EXTENSION.md ]; then
       echo -e "-------------------------------"
       exportMdFile $FILE_WITHOUT_EXTENSION

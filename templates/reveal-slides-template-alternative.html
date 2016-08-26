@@ -33,7 +33,7 @@ $endif$
 $if(theme)$
   <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/$theme$.css" id="theme">
 $else$
-  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js-master/css/theme/beige.css" id="theme">
 $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$"/>
@@ -52,6 +52,10 @@ $endfor$
   </script>
 
   <style type="text/css">
+    body {
+      background: white !important;
+      background-color: white !important;
+    }
     code{
       white-space: pre;
     }

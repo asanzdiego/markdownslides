@@ -22,6 +22,7 @@ function downloadLib() {
 
   GIT_USER=$1
   GIT_PROJECT=$2
+
   DOWNLOAD_FOLDER="$LIB_FOLDER/$GIT_PROJECT-master"
   ZIP_FILE="$LIB_FOLDER/$GIT_PROJECT.zip"
 
@@ -39,6 +40,7 @@ function downloadLib() {
 
     echo -e "Extracting...                  $ZIP_FILE"
     unzip -q -d $LIB_FOLDER $ZIP_FILE
+    rm $LIB_FOLDER/$GIT_PROJECT.zip
   fi
 }
 
@@ -186,6 +188,22 @@ function buildRevealSlides() {
   sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-reveal-slides$2.html
 }
 
+function buildRevealOnlineSlides() {
+
+  echo Generando RevealOnline
+  echo parametros: $*
+
+  revealSrc=http://lab.hakim.se/reveal-js/
+  revealMenuSrc=https://denehyg.github.io/reveal.js-menu/plugin/reveal.js-menu/
+
+  echo -e "Exporting...                   ../export/$1-reveal-online-slides$2.html"
+
+  pandoc -w revealjs --template $ORIGIN/templates/reveal-online-slides-template$2.html --variable revealSrc="$revealSrc" --variable revealMenuSrc="$revealMenuSrc" --number-sections --email-obfuscation=none -o ../export/$1-reveal-online-slides$2.html ../export/$1-to-slides.md
+
+  sed -i s/h1\>/h2\>/g ../export/$1-reveal-online-slides$2.html
+  sed -i s/\>\<h2/\>\<h1/g ../export/$1-reveal-online-slides$2.html
+  sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-reveal-online-slides$2.html
+}
 
 function buildRevealSlidesPdf() {
 
@@ -237,6 +255,7 @@ function exportMdToSlides() {
 
   if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
     buildRevealSlides $1
+    buildRevealOnlineSlides $1
     buildRevealSlidesPdf $1
   fi
 

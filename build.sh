@@ -190,9 +190,6 @@ function buildRevealSlides() {
 
 function buildRevealOnlineSlides() {
 
-  echo Generando RevealOnline
-  echo parametros: $*
-
   revealSrc=http://lab.hakim.se/reveal-js/
   revealMenuSrc=https://denehyg.github.io/reveal.js-menu/plugin/reveal.js-menu/
 

@@ -45,3 +45,4 @@ page.open( inputFile, function( status ) {
 		phantom.exit();
 	}, 1000 );
 } );
+

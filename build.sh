@@ -1,5 +1,8 @@
 #! /bin/bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
 clear
 ORIGIN=`pwd`
 echo -e $ORIGIN
@@ -206,7 +209,7 @@ function buildRevealSlidesPdf() {
 
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.pdf"
 
-  phantomjs --ssl-protocol=any ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "file://`pwd`/../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf 800x450 > /dev/null
+  phantomjs --ssl-protocol=any ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "file://`pwd`/../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf 960x540 > /dev/null
 }
 
 function buildBeamer() {
@@ -248,12 +251,12 @@ function exportMdToSlides() {
 
   cleanMdToSlides $1
 
-  buildDeckSlides $1
+  buildDeckSlides $1 ""
 
   if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
-    buildRevealSlides $1
-    buildRevealOnlineSlides $1
-    buildRevealSlidesPdf $1
+    buildRevealSlides $1 ""
+    buildRevealOnlineSlides $1 ""
+    buildRevealSlidesPdf $1 ""
   fi
 
   if [ $GENERATION_MODE == "max" ]; then

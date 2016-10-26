@@ -1,5 +1,8 @@
 #! /bin/bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
 echo "**************************"
 echo "* PUSH CHANGES TO REMOTE *"
 echo "**************************"

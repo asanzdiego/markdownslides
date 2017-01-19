@@ -195,19 +195,20 @@ $ docker build -t asanzdiego/markdownslides .
 - Proceso para lanzar el contenedor
 
      - Necesitamos el directorio plantilla doc, o tu directorio personalizado para generar los ficheros md y recibir los exports como siempre
-     - Lanzamos el contenedor, el producto generado sera como la configuración **min**
+     
+- Lanzamos el contenedor, el producto generado sera como la configuración **min**
 
 ~~~
 docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
 ~~~
 
-     - Cambiando a configuración **med**
+- Cambiando a configuración **med**
 
 ~~~
 docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
 ~~~
      
-     - Cambiando a configuración **max**
+- Cambiando a configuración **max**
 
 ~~~
 docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc

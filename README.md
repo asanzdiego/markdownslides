@@ -73,6 +73,33 @@
 - And where [**folder**] is the name of the folder wher to find
   the md files. If no folder name, it will convert all md files of all the folders.
 
+### Docker (Under testing)!
+
+- Building docker image (It will be at dockerhub soon!)
+
+~~~
+$ docker build -t asanzdiego/markdownslides .
+~~~
+
+- Process to launch container
+    
+     - Need the directory template doc, or your personalized directory to generate your md files and to receive the exports as usual
+     - Launch the container, product generated will be as **min** configuration 
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
+~~~
+     - Changing to **med** configuration
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
+~~~
+     - Changing to **max** configuation
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc
+~~~
+
 ## Licence
 
 - **This work is licensed under a:**
@@ -153,6 +180,35 @@
 - Y donde [**carpeta**] es la carpeta donde va a buscar
   los ficheros md. Si no se indica nada convertirá todos los ficheros md
   de todas las carpetas.
+
+### Docker (En pruebas)!
+
+- Construyendo la imagen (Estará en Dockerhub pronto)
+
+~~~
+$ docker build -t asanzdiego/markdownslides .
+~~~
+
+- Proceso para lanzar el contenedor
+
+     - Necesitamos el directorio plantilla doc, o tu directorio personalizado para generar los ficheros md y recibir los exports como siempre
+     - Lanzamos el contenedor, el producto generado sera como la configuración **min**
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
+~~~
+
+     - Cambiando a configuración **med**
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
+~~~
+     
+     - Cambiando a configuración **max**
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc
+~~~
 
 ### Licencia
 

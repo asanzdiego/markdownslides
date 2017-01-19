@@ -84,17 +84,20 @@ $ docker build -t asanzdiego/markdownslides .
 - Process to launch container
     
      - Need the directory template doc, or your personalized directory to generate your md files and to receive the exports as usual
-     - Launch the container, product generated will be as **min** configuration 
+     
+- Launch the container, product generated will be as **min** configuration 
 
 ~~~
 docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
 ~~~
-     - Changing to **med** configuration
+     
+- Changing to **med** configuration
 
 ~~~
 docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
 ~~~
-     - Changing to **max** configuation
+     
+- Changing to **max** configuation
 
 ~~~
 docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc

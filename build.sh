@@ -193,8 +193,8 @@ function buildRevealSlides() {
 
 function buildRevealOnlineSlides() {
 
-  revealSrc=http://lab.hakim.se/reveal-js/
-  revealMenuSrc=https://denehyg.github.io/reveal.js-menu/plugin/reveal.js-menu/
+  revealSrc=https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-master/
+  revealMenuSrc=https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-menu-master/
 
   echo -e "Exporting...                   ../export/$1-reveal-online-slides$2.html"
 

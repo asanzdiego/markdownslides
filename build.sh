@@ -168,7 +168,7 @@ function buildDeckSlides() {
   downloadLib markahon deck.search.js
   downloadLib mikeharris100 deck.js-transition-cube
 
-  echo -e "Exporting...                   ../export/$1-deck-slides$2.html"
+  echo -e "Exporting...                   ../export/$1-deck-slides$2.html DEPRECATED!!!"
 
   pandoc -w dzslides --template $ORIGIN/templates/deck-slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-deck-slides$2.html ../export/$1-to-slides.md
 
@@ -212,37 +212,44 @@ function buildRevealSlidesPdf() {
   phantomjs --ssl-protocol=any ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "file://`pwd`/../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf 960x540 > /dev/null
 }
 
-function buildBeamer() {
+function buildBeamerSlides() {
 
-  echo -e "Exporting...                   ../export/$1-beamer.pdf"
+  echo -e "Exporting...                   ../export/$1-beamer.pdf DEPRECATED!!!"
 
   sed '/.gif/d' ../export/$1-to-slides.md | pandoc -w beamer --number-sections --table-of-contents --chapters -V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer.pdf
 }
 
-function buildHtml() {
+function buildHtmlBook() {
 
   echo -e "Exporting...                   ../export/$1.html"
 
   pandoc -w html5 --template $ORIGIN/templates/html-template.html --number-sections --email-obfuscation=none --toc --highlight-style=tango -o ../export/$1.html ../export/$1-to-book.md
 }
 
-function buildDocx() {
+function buildDocxBook() {
 
   echo -e "Exporting...                   ../export/$1.docx"
 
   pandoc -w docx --number-sections --table-of-contents --chapters -o ../export/$1.docx ../export/$1-to-book.md
 }
 
-function buildOdt() {
+function buildOdtBook() {
 
   echo -e "Exporting...                   ../export/$1.odt"
 
   pandoc -w odt --number-sections --table-of-contents --chapters -o ../export/$1.odt ../export/$1-to-book.md
 }
 
-function buildPdf() {
+function buildEpub() {
 
-  echo -e "Exporting...                   ../export/$1.pdf"
+  echo -e "Exporting...                   ../export/$1.epub"
+
+  pandoc -w epub --number-sections --table-of-contents --chapters -o ../export/$1.epub ../export/$1-to-book.md
+}
+
+function buildPdfBook() {
+
+  echo -e "Exporting...                   ../export/$1.pdf DEPRECATED!!!"
 
   sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --table-of-contents --chapters -o ../export/$1.pdf
 }
@@ -263,7 +270,7 @@ function exportMdToSlides() {
     buildDeckSlides $1 -alternative
     buildRevealSlides $1 -alternative
     buildRevealSlidesPdf $1 -alternative
-    #buildBeamer $1
+    #buildBeamerSlides $1
   fi
 }
 
@@ -271,15 +278,16 @@ function exportMdToBook() {
 
   cleanMdToBook $1
 
-  buildHtml $1
+  buildHtmlBook $1
 
   if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
-    buildDocx $1
+    buildDocxBook $1
   fi
 
   if [ $GENERATION_MODE == "max" ]; then
-    buildOdt $1
-    #buildPdf $1
+    buildOdtBook $1
+    buildEpubBook $1
+    #buildPdfBook $1
   fi
 
 }

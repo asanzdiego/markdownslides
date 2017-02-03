@@ -487,7 +487,7 @@ var RevealMenu = window.RevealMenu || (function(){
 			}
 
 			function createSlideMenu() {
-				if ( !document.querySelector('section[data-markdown]:not([data-markdown-parsed])') ) {
+				if ( !document.querySelector('section[data-markdown]:not([data-markdown-parsed="true"]') ) {
 					$('<div data-panel="Slides" class="slide-menu-panel"><ul class="slide-menu-items"></ul></div>')
 						.appendTo(panels)
 						.addClass('active-menu-panel');
@@ -592,7 +592,7 @@ var RevealMenu = window.RevealMenu || (function(){
 			if (transitions) {
 				var panel = $('<div data-panel="Transitions" class="slide-menu-panel"></div>').appendTo(panels);
 				var menu = $('<ul class="slide-menu-items"></ul>').appendTo(panel);
-				  ['None', 'Fade', 'Slide', 'Convex', 'Concave', 'Zoom', 'Cube', 'Page'].forEach(function(name, i) {
+				['None', 'Fade', 'Slide', 'Convex', 'Concave', 'Zoom'].forEach(function(name, i) {
 					$('<li class="slide-menu-item" data-transition="' + name.toLowerCase() + '" data-item="' + (i+1) + '">' + name + '</li>').appendTo(menu).click(clicked);
 				})
 			}

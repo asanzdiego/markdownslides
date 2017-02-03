@@ -7,8 +7,7 @@ clear
 ORIGIN=`pwd`
 echo -e $ORIGIN
 
-#GENERATION_MODE='min|med|max'
-GENERATION_MODE='med'
+. ./build.properties
 
 function downloadLib() {
 
@@ -184,21 +183,21 @@ function buildRevealSlides() {
 
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.html"
 
-  pandoc -w revealjs --template $ORIGIN/templates/reveal-slides-template$2.html --number-sections --email-obfuscation=none -o ../export/$1-reveal-slides$2.html ../export/$1-to-slides.md
+  pandoc -w revealjs --template $ORIGIN/templates/reveal-slides-template$2.html  --variable width=$RESOLUTION_WIDTH --variable height=$RESOLUTION_HEIGHT --number-sections --email-obfuscation=none -o ../export/$1-reveal-slides$2.html ../export/$1-to-slides.md
 
   sed -i s/h1\>/h2\>/g ../export/$1-reveal-slides$2.html
   sed -i s/\>\<h2/\>\<h1/g ../export/$1-reveal-slides$2.html
   sed -i s/\\/h2\>\</\\/h1\>\</g ../export/$1-reveal-slides$2.html
 }
 
-function buildRevealOnlineSlides() {
+function buildRevealSlidesOnline() {
 
   revealSrc=https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-master/
   revealMenuSrc=https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-menu-master/
 
   echo -e "Exporting...                   ../export/$1-reveal-online-slides$2.html"
 
-  pandoc -w revealjs --template $ORIGIN/templates/reveal-online-slides-template$2.html --variable revealSrc="$revealSrc" --variable revealMenuSrc="$revealMenuSrc" --number-sections --email-obfuscation=none -o ../export/$1-reveal-online-slides$2.html ../export/$1-to-slides.md
+  pandoc -w revealjs --template $ORIGIN/templates/reveal-online-slides-template$2.html --variable revealSrc="$revealSrc" --variable revealMenuSrc="$revealMenuSrc" --variable width=$RESOLUTION_WIDTH --variable height=$RESOLUTION_HEIGHT --number-sections --email-obfuscation=none -o ../export/$1-reveal-online-slides$2.html ../export/$1-to-slides.md
 
   sed -i s/h1\>/h2\>/g ../export/$1-reveal-online-slides$2.html
   sed -i s/\>\<h2/\>\<h1/g ../export/$1-reveal-online-slides$2.html
@@ -209,7 +208,7 @@ function buildRevealSlidesPdf() {
 
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.pdf"
 
-  phantomjs --ssl-protocol=any ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "file://`pwd`/../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf 960x540 > /dev/null
+  phantomjs --ssl-protocol=any ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "file://`pwd`/../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf $RESOLUTION_WIDTH'x'$RESOLUTION_HEIGHT > /dev/null
 }
 
 function buildBeamerSlides() {
@@ -240,7 +239,7 @@ function buildOdtBook() {
   pandoc -w odt --number-sections --table-of-contents --chapters -o ../export/$1.odt ../export/$1-to-book.md
 }
 
-function buildEpub() {
+function buildEpubBook() {
 
   echo -e "Exporting...                   ../export/$1.epub"
 
@@ -254,42 +253,80 @@ function buildPdfBook() {
   sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --table-of-contents --chapters -o ../export/$1.pdf
 }
 
+function build() {
+
+  FUNCTION_NAME=$1
+
+  if [ $FUNCTION_NAME == "min" ]; then
+    echo "YES"
+  fi
+
+  if [ $FUNCTION_NAME == "med" -a $GENERATION_MODE == "med" ]; then
+    echo "YES"
+  fi
+
+  if [ $FUNCTION_NAME == "med" -a $GENERATION_MODE == "max" ]; then
+    echo "YES"
+  fi
+
+  if [ $FUNCTION_NAME == "max" -a $GENERATION_MODE == "max" ]; then
+    echo "YES"
+  fi
+}
+
 function exportMdToSlides() {
 
   cleanMdToSlides $1
 
-  buildDeckSlides $1 ""
-
-  if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
+  if [ "`build $BUILD_REVEAL_SLIDES`" == "YES" ]; then
     buildRevealSlides $1 ""
-    buildRevealOnlineSlides $1 ""
+  fi
+  if [ "`build $BUILD_REVEAL_SLIDES_PDF`" == "YES" ]; then
     buildRevealSlidesPdf $1 ""
   fi
-
-  if [ $GENERATION_MODE == "max" ]; then
-    buildDeckSlides $1 -alternative
-    buildRevealSlides $1 -alternative
-    buildRevealSlidesPdf $1 -alternative
-    #buildBeamerSlides $1
+  if [ "`build $BUILD_REVEAL_SLIDES_ONLINE`" == "YES" ]; then
+    buildRevealSlidesOnline $1 ""
   fi
+  if [ "`build $BUILD_REVEAL_SLIDES_ALTERNATIVE`" == "YES" ]; then
+    buildRevealSlides $1 -alternative
+  fi
+  if [ "`build $BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF`" == "YES" ]; then
+    buildRevealSlidesPdf $1 -alternative
+  fi
+  if [ "`build $BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE`" == "YES" ]; then
+    buildRevealSlidesOnline $1 -alternative
+  fi
+  if [ "`build $BUILD_BEAMER_SLIDES`" == "YES" ]; then
+    buildBeamerSlides $1
+  fi
+  if [ "`build $BUILD_DECK_SLIDES`" == "YES" ]; then
+    buildDeckSlides $1 ""
+  fi
+  if [ "`build $BUILD_DECK_SLIDES_ALTERNATIVE`" == "YES" ]; then
+    buildDeckSlides $1 -alternative
+  fi
+
 }
 
 function exportMdToBook() {
 
   cleanMdToBook $1
 
-  buildHtmlBook $1
-
-  if [ $GENERATION_MODE == "med" -o $GENERATION_MODE == "max" ]; then
+  if [ "`build $BUILD_HTML_BOOK`" == "YES" ]; then
+    buildHtmlBook $1
+  fi
+  if [ "`build $BUILD_DOCX_BOOK`" == "YES" ]; then
     buildDocxBook $1
   fi
-
-  if [ $GENERATION_MODE == "max" ]; then
+  if [ "`build $BUILD_ODT_BOOK`" == "YES" ]; then
     buildOdtBook $1
-    buildEpubBook $1
-    #buildPdfBook $1
   fi
-
+  if [ "`build $BUILD_EPUB_BOOK`" == "YES" ]; then
+    buildEpubBook $1
+  fi
+  if [ "`build $BUILD_PDF_BOOK`" == "YES" ]; then
+    buildPdfBook $1
+  fi
 }
 
 function exportMdFile() {

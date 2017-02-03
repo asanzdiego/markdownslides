@@ -1,9 +1,7 @@
 /* global module:false */
 module.exports = function(grunt) {
 	var port = grunt.option('port') || 8000;
-	var root = grunt.option('root') || '.';
-
-	if (!Array.isArray(root)) root = [root];
+	var base = grunt.option('base') || '.';
 
 	// Project configuration
 	grunt.initConfig({
@@ -71,7 +69,6 @@ module.exports = function(grunt) {
 				curly: false,
 				eqeqeq: true,
 				immed: true,
-				esnext: true,
 				latedef: true,
 				newcap: true,
 				noarg: true,
@@ -96,12 +93,11 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: port,
-					base: root,
+					base: base,
 					livereload: true,
 					open: true
 				}
-			},
-
+			}
 		},
 
 		zip: {
@@ -130,20 +126,14 @@ module.exports = function(grunt) {
 				tasks: 'css-core'
 			},
 			html: {
-				files: root.map(path => path + '/*.html')
+				files: [ '*.html']
 			},
 			markdown: {
-				files: root.map(path => path + '/*.md')
+				files: [ '*.md' ]
 			},
 			options: {
 				livereload: true
 			}
-		},
-
-		retire: {
-			js: ['js/reveal.js', 'lib/js/*.js', 'plugin/**/*.js'],
-			node: ['.'],
-			options: {}
 		}
 
 	});
@@ -158,7 +148,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
 	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-zip' );
-	grunt.loadNpmTasks( 'grunt-retire' );
 
 	// Default task
 	grunt.registerTask( 'default', [ 'css', 'js' ] );

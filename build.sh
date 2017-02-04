@@ -1,6 +1,6 @@
 #! /bin/bash
 
-set -euo pipefail
+set -eo pipefail
 IFS=$'\n\t'
 
 clear
@@ -93,19 +93,22 @@ function initExportFolder() {
 
 }
 
-function centerImages() {
+function normaliceImages() {
 
   # open div before ![
   sed -i 's/!\[/<div style="text-align:center">!\[/g' ../export/$1-to-$2.md
+}
+
+function normaliceImages() {
 
   # close div after .png)
-  sed -i 's/.png)$/.png)<\/div>\n/g' ../export/$1-to-$2.md
+  sed -i 's/.png)$/.png){ width=50% text-align=center }\n/g' ../export/$1-to-$2.md
 
   # close div after .jpg)
-  sed -i 's/.jpg)$/.jpg)<\/div>\n/g' ../export/$1-to-$2.md
+  sed -i 's/.jpg)$/.jpg){ width=50% text-align=center }\n/g' ../export/$1-to-$2.md
 
   # close div after .gif)
-  sed -i 's/.gif)$/.gif)<\/div>\n/g' ../export/$1-to-$2.md
+  sed -i 's/.gif)$/.gif){ width=50% text-align=center }\n/g' ../export/$1-to-$2.md
 }
 
 function convertMainListsIntoParagraphs() {
@@ -143,7 +146,7 @@ function cleanMdToSlides() {
 
   cp $1.md ../export/$1-to-slides.md
 
-  echo -e "Cleaning...                    ../export/$1-to-slides.md"
+  echo -e "Cleaning md to slides...       ../export/$1-to-slides.md"
 
   # replace ### or #### with ##
   # only <h2> is allowed in slides
@@ -151,13 +154,21 @@ function cleanMdToSlides() {
   sed -i 's/##\\#/###/g' ../export/$1-to-slides.md
 
   # normalizeMd $1 slides
+
+  normaliceImages $1 slides
+
+  # replace @start-notes with <aside class="notes">
+  sed -i 's/^@start-notes/<aside class="notes">/g' ../export/$1-to-slides.md
+
+  # replace @end-notes with </aside>
+  sed -i 's/^@end-notes/<\/aside>/g' ../export/$1-to-slides.md
 }
 
 function cleanMdToBook() {
 
   cp $1.md ../export/$1-to-book.md
 
-  echo -e "Cleaning...                    ../export/$1-to-book.md"
+  echo -e "Cleaning md to book...         ../export/$1-to-book.md"
 
   # remove % if img
   sed -i 's/% !\[/!\[/g' ../export/$1-to-book.md
@@ -170,12 +181,17 @@ function cleanMdToBook() {
   sed -i 's/.*(V.*//g' ../export/$1-to-book.md
   sed -i 's/.*(X.*//g' ../export/$1-to-book.md
 
-  centerImages $1 book
-
   # normalizeMd $1 book
 
   # convertMainListsIntoParagraphs $1 book
 
+  normaliceImages $1 book
+
+  # remove @start-notes
+  sed -i 's/^@start-notes//g' ../export/$1-to-book.md
+
+  # remove @end-notes
+  sed -i 's/^@end-notes//g' ../export/$1-to-book.md
 }
 
 function buildDeckSlides() {
@@ -385,7 +401,7 @@ function processFolders() {
 
 function process() {
 
-  echo -e "Generation mode...              "$GENERATION_MODE
+  echo -e "Generation mode...             "$GENERATION_MODE
 
   if [ "x$1" != "x" ]; then
     processFolder $1
@@ -394,12 +410,10 @@ function process() {
   fi
 }
 
-if [ "$1" == "clean" ]; then
+if [ "x$1" == "xclean" ]; then
   CLEAN_LIB_FOLDER='yes'
   shift
 fi
-
-echo -e "Clean lib folder...             "$CLEAN_LIB_FOLDER
 
 case "$1" in
 "max")

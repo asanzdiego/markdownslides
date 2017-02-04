@@ -121,19 +121,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section><section id="about" class="titleslide slide level1"><h1><span class="header-section-number">1</span> About</h1></section><section id="what-is-it-i" class="slide level2">
 <h2><span class="header-section-number">1.1</span> What is it? (I)</h2>
-<ul>
-<li><p><strong>MarkdownSlides</strong> is a Reveal.js, Deck.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p></li>
-<li><p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p></li>
-</ul>
+<p><strong>MarkdownSlides</strong> is a Reveal.js, Deck.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p>
+<p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p>
 </section><section id="what-is-it-ii" class="slide level2">
 <h2><span class="header-section-number">1.2</span> What is it? (II)</h2>
 <figure>
-<img src="../img/markdownslides.png" />
+<img src="../img/markdownslides.png" text-align="center" style="width:50.0%" />
 </figure>
 </section><section id="samples" class="slide level2">
 <h2><span class="header-section-number">1.3</span> Samples</h2>
-<ul>
-<li><p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
+<p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
 <ul>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html">reveal-slides</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf">reveal-slides-pdf</a></li>
@@ -144,69 +141,101 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html">html-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx">docx-book</a></li>
-</ul></li>
+</ul>
+</section><section id="contributors" class="slide level2">
+<h2><span class="header-section-number">1.4</span> Contributors</h2>
+<ul>
+<li>Cesar Seoane: <a href="https://github.com/cesarseoane" class="uri">https://github.com/cesarseoane</a></li>
+<li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
+<li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
 </ul>
 </section><section id="licence" class="slide level2">
-<h2><span class="header-section-number">1.4</span> Licence</h2>
+<h2><span class="header-section-number">1.5</span> Licence</h2>
 <ul>
-<li><strong>This work is licensed under a:</strong>
+<li><p><strong>This work is licensed under a:</strong></p>
 <ul>
 <li><a href="http://creativecommons.org/licenses/by-sa/3.0//">Creative Commons Attribution 3.0</a></li>
 </ul></li>
-<li><strong>The program source code are licensed under a:</strong>
+<li><p><strong>The program source code are licensed under a:</strong></p>
 <ul>
 <li><a href="http://www.gnu.org/licenses/gpl.html">GPL 3.0</a></li>
 </ul></li>
 </ul>
 </section></section>
-<section><section id="instalation-and-how-to-use" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Instalation and how to use</h1></section><section id="dependencies" class="slide level2">
+<section><section id="instalation" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Instalation</h1></section><section id="dependencies" class="slide level2">
 <h2><span class="header-section-number">2.1</span> Dependencies</h2>
 <ul>
-<li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> (needs to be installed)</li>
-<li><a href="http://phantomjs.org">Phantom.js</a> (needs to be installed)</li>
-<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> (automaticaly downloaded)</li>
-<li><a href="http://imakewebthings.com/deck.js/">Deck.js</a> (automaticaly downloaded)</li>
-<li>Now, only works in Linux (may be on MacOS)</li>
-<li>It can works with Docker, but is in beta.</li>
-</ul>
-</section><section id="download" class="slide level2">
-<h2><span class="header-section-number">2.2</span> Download</h2>
+<li><p>It needs to be installed:</p>
 <ul>
-<li><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></li>
-</ul>
-</section><section id="docker-under-testing" class="slide level2">
-<h2><span class="header-section-number">2.3</span> Docker (Under testing)!</h2>
-<ul>
-<li>Building docker image (It will be at dockerhub soon!)</li>
-</ul>
-<pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
-<ul>
-<li><p>Process to launch container</p>
-<ul>
-<li>Need the directory template doc, or your personalized directory to generate your md files and to receive the exports as usual</li>
+<li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a></li>
+<li><a href="http://phantomjs.org">Phantom.js</a></li>
 </ul></li>
-<li><p>Launch the container, product generated will be as <strong>min</strong> configuration</p></li>
+<li><p>It is automaticaly downloaded:</p>
+<ul>
+<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></li>
+</ul></li>
 </ul>
+</section><section id="requirements" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Requirements</h2>
+<p>Now, only works in Linux (may be on MacOS)</p>
+<p>It can works with Docker, but is in beta.</p>
+</section><section id="download" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Download</h2>
+<p><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></p>
+</section><section id="docker-under-testing" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Docker (Under testing)!</h2>
+<p>Your installation with docker is still <strong>under testing</strong>.</p>
+<p>Any feedback is welcome.</p>
+</section><section id="building-docker-image" class="slide level2">
+<h2><span class="header-section-number">2.5</span> Building docker image</h2>
+<p>It will be at dockerhub soon:</p>
+<pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
+</section><section id="launch-the-container" class="slide level2">
+<h2><span class="header-section-number">2.6</span> Launch the container</h2>
+<p>Launch the container, product generated will be as <strong>min</strong> configuration</p>
 <pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides</code></pre>
-<ul>
-<li>Changing to <strong>med</strong> configuration</li>
-</ul>
+<p>Changing to <strong>med</strong> configuration</p>
 <pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc</code></pre>
-<ul>
-<li>Changing to <strong>max</strong> configuation</li>
-</ul>
+<p>Changing to <strong>max</strong> configuation</p>
 <pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc</code></pre>
-</section><section id="creation" class="slide level2">
-<h2><span class="header-section-number">2.4</span> Creation</h2>
+</section></section>
+<section><section id="how-to-use" class="titleslide slide level1"><h1><span class="header-section-number">3</span> How to use</h1></section><section id="creation" class="slide level2">
+<h2><span class="header-section-number">3.1</span> Creation</h2>
 <ul>
 <li><p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p></li>
 <li><p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p></li>
 </ul>
+</section><section id="notes" class="slide level2">
+<h2><span class="header-section-number">3.2</span> Notes</h2>
+<p>You can add notes that will be visible in book mode or if <strong>you press the letter 's' on the slides</strong> with <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> and <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</p>
+<aside class="notes">
+This is only visible in book mode or if you press 's' on the slides.
+</aside>
+</section><section id="levels" class="slide level2">
+<h2><span class="header-section-number">3.3</span> Levels</h2>
+<p>You can have as many levels as you want. Example:</p>
+<pre><code># Level 1 (on slides and book)
+
+## Level 2 (on slides and book)
+
+## Level 3 (in book but stays level 2 in slides)</code></pre>
+<p>But only in books. In slides you can only have 2 levels.</p>
+</section><section id="numbering" class="slide level2">
+<h2><span class="header-section-number">3.4</span> Numbering</h2>
+<p>You can name several slides with (I), (II), etc. But only the first one will be exported to the book. Example:</p>
+<pre><code>## Foo Bar (I)
+
+## Foo Bar (II)
+~~ ~
+
+In the book will be:
+</code></pre>
+</section><section id="foo-bar" class="slide level2">
+<h2><span class="header-section-number">3.5</span> Foo Bar</h2>
+<p><sub>~</sub></p>
 </section><section id="configuration" class="slide level2">
-<h2><span class="header-section-number">2.5</span> Configuration</h2>
-<ul>
-<li>We can configure the files that we want to generate from the file <strong>build.properties</strong></li>
-</ul>
+<h2><span class="header-section-number">3.6</span> Configuration</h2>
+<p>We can configure the files that we want to generate from the file <strong>build.properties</strong></p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
 <span class="ot">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
 <span class="ot">BUILD_REVEAL_SLIDES_ONLINE=</span><span class="st">&#39;med&#39;</span>
@@ -216,10 +245,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="ot">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
 <span class="ot">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
-<span class="ot">BUILD_ODT_BOOK=</span><span class="st">&#39;max&#39;</span>
 <span class="ot">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
 </section><section id="build" class="slide level2">
-<h2><span class="header-section-number">2.6</span> Build</h2>
+<h2><span class="header-section-number">3.7</span> Build</h2>
 <ul>
 <li>In the root folder you have to execute:</li>
 </ul>
@@ -230,22 +258,112 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>[<strong>folder</strong>] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
 </ul>
 </section></section>
-<section><section id="author" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Author</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
-<h2><span class="header-section-number">3.1</span> Adolfo Sanz De Diego</h2>
+<section><section id="releases-notes" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Releases notes</h1></section><section id="relese-1.0-i" class="slide level2">
+<h2><span class="header-section-number">4.1</span> Relese 1.0 (I)</h2>
+<ul>
+<li><p>Export slides to:</p>
+<ul>
+<li>reveal-slides</li>
+<li>reveal-slides-pdf</li>
+<li>reveal-slides-alternative</li>
+<li>reveal-slides-alternative-pdf</li>
+<li>beamer-slides</li>
+<li>deck-slides</li>
+<li>deck-slides-alternative</li>
+</ul></li>
+</ul>
+</section><section id="relese-1.0-ii" class="slide level2">
+<h2><span class="header-section-number">4.2</span> Relese 1.0 (II)</h2>
+<ul>
+<li><p>Export books to:</p>
+<ul>
+<li>html-book</li>
+<li>docx-book</li>
+<li>odt-book</li>
+<li>pdf-book</li>
+</ul></li>
+</ul>
+</section><section id="relese-1.0-iii" class="slide level2">
+<h2><span class="header-section-number">4.3</span> Relese 1.0 (III)</h2>
+<ul>
+<li>Added generation modes 'min', 'med' and 'max'.</li>
+<li>Automatic download the external libraries.</li>
+<li>Numbering (I), (II), (III) ...</li>
+</ul>
+</section><section id="relese-2.0-i" class="slide level2">
+<h2><span class="header-section-number">4.4</span> Relese 2.0 (I)</h2>
+<ul>
+<li><p>Export slides to:</p>
+<ul>
+<li>reveal-slides</li>
+<li>reveal-slides-pdf</li>
+<li>reveal-slides-online</li>
+<li>reveal-slides-alternative</li>
+<li>reveal-slides-alternative-pdf</li>
+<li>reveal-slides-alternative-online</li>
+</ul></li>
+</ul>
+</section><section id="relese-2.0-ii" class="slide level2">
+<h2><span class="header-section-number">4.5</span> Relese 2.0 (II)</h2>
+<ul>
+<li><p>Export books to:</p>
+<ul>
+<li>html-book</li>
+<li>docx-book</li>
+<li>epub-book</li>
+</ul></li>
+</ul>
+</section><section id="relese-2.0-iii" class="slide level2">
+<h2><span class="header-section-number">4.6</span> Relese 2.0 (III)</h2>
+<ul>
+<li><p>Deprecated:</p>
+<ul>
+<li>beamer-slides</li>
+<li>deck-slides</li>
+<li>deck-slides-alternative</li>
+<li>odt-book</li>
+<li>pdf-book</li>
+</ul></li>
+</ul>
+</section><section id="relese-2.0-iii-1" class="slide level2">
+<h2><span class="header-section-number">4.7</span> Relese 2.0 (III)</h2>
+<ul>
+<li>Added menu thanks to [Raul Jimenez Ortega] (https://github.com/hhkaos).</li>
+<li>Added dockerfile thanks to [Rubén Gómez García] (https://github.com/kaneproject).</li>
+<li>Clean zip files from libraries thanks to [Cesar Seoane] (https://github.com/cesarseoane).</li>
+<li>Added type 'online' thanks to [Cesar Seoane] (https://github.com/cesarseoane).</li>
+<li>Fixed bug HTTPS images thanks to [Cesar Seoane] (https://github.com/cesarseoane).</li>
+<li>Loading the online libraries with HTTPS thanks to [Cesar Seoane] (https://github.com/cesarseoane).</li>
+<li>Configuration PDF resolution thanks to [Cesar Seoane] (https://github.com/cesarseoane).</li>
+</ul>
+</section><section id="relese-2.0-iv" class="slide level2">
+<h2><span class="header-section-number">4.8</span> Relese 2.0 (IV)</h2>
+<ul>
+<li>New format 'epub'.</li>
+<li>Added 'bash strict mode'.</li>
+<li>Added 'build.properties' to configure file generation.</li>
+<li>Added command 'clean' to clean the lib folder.</li>
+<li>Download a specific version of external library.</li>
+<li>Added notes only visible in book mode or if you press 's' on the slides.</li>
+<li>Normalization of images in slides (witdh = 50% and align = center).</li>
+</ul>
+</section></section>
+<section><section id="author" class="titleslide slide level1"><h1><span class="header-section-number">5</span> Author</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<h2><span class="header-section-number">5.1</span> Adolfo Sanz De Diego</h2>
 <ul>
 <li><p><strong>Old JEE web developer</strong>.</p></li>
 <li><p>Now I'm <strong>Tecnical Teacher Advaisor</strong> in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education, Youth and Sports of the Community of Madrid.</p></li>
 <li><p>In addition I work as <strong>trainer specialized in development technologies</strong>.</p></li>
 </ul>
 </section><section id="algunos-proyectos" class="slide level2">
-<h2><span class="header-section-number">3.2</span> Algunos proyectos</h2>
+<h2><span class="header-section-number">5.2</span> Algunos proyectos</h2>
 <ul>
 <li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: a group created for entrepreneurs and developers who loves hackathones.</p></li>
 <li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: an online password manager.</p></li>
 <li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: a script to create slides from MD files.</p></li>
 </ul>
 </section><section id="where-to-find-me" class="slide level2">
-<h2><span class="header-section-number">3.3</span> Where to find me?</h2>
+<h2><span class="header-section-number">5.3</span> Where to find me?</h2>
 <ul>
 <li><p>Mi nick: <strong>asanzdiego</strong></p>
 <ul>

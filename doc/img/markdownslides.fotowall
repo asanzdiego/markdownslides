@@ -37,21 +37,21 @@
     <content>
       <picture>
         <rect>
-          <x>-80</x>
-          <y>-80</y>
-          <w>160</w>
-          <h>160</h>
+          <x>-81</x>
+          <y>-81</y>
+          <w>162</w>
+          <h>162</h>
         </rect>
         <pos>
-          <x>1250</x>
-          <y>648</y>
+          <x>953</x>
+          <y>686</y>
         </pos>
         <zvalue>2</zvalue>
         <visible>1</visible>
         <frame-class>4097</frame-class>
         <frame-text-enabled>1</frame-text-enabled>
         <frame-text>docx...</frame-text>
-        <transformation yRot="0" xRot="0" zRot="12,99461679191642"/>
+        <transformation yRot="0" xRot="0" zRot="18,6578884741195"/>
         <mirror state="0"/>
         <relativeFilePath>docx.png</relativeFilePath>
         <fileUrl>/home/adolfo/Curro/cursos/markdownslides/doc/img/docx.png</fileUrl>
@@ -85,21 +85,21 @@
       </picture>
       <picture>
         <rect>
-          <x>-66</x>
-          <y>-90</y>
-          <w>132</w>
-          <h>181</h>
+          <x>-61</x>
+          <y>-84</y>
+          <w>123</w>
+          <h>169</h>
         </rect>
         <pos>
-          <x>1136</x>
-          <y>274</y>
+          <x>1183</x>
+          <y>641</y>
         </pos>
         <zvalue>4</zvalue>
         <visible>1</visible>
         <frame-class>4097</frame-class>
         <frame-text-enabled>1</frame-text-enabled>
         <frame-text>html5...</frame-text>
-        <transformation yRot="0" xRot="0" zRot="-18,67971392496827"/>
+        <transformation yRot="0" xRot="0" zRot="8,891286834911037"/>
         <mirror state="0"/>
         <relativeFilePath>html5.png</relativeFilePath>
         <fileUrl>/home/adolfo/Curro/cursos/markdownslides/doc/img/html5.png</fileUrl>
@@ -133,38 +133,14 @@
       </picture>
       <picture>
         <rect>
-          <x>-82</x>
-          <y>-82</y>
-          <w>164</w>
-          <h>164</h>
-        </rect>
-        <pos>
-          <x>1037</x>
-          <y>720</y>
-        </pos>
-        <zvalue>6</zvalue>
-        <visible>1</visible>
-        <frame-class>4097</frame-class>
-        <frame-text-enabled>1</frame-text-enabled>
-        <frame-text>odt...</frame-text>
-        <transformation yRot="0" xRot="0" zRot="7,341225811364141"/>
-        <mirror state="0"/>
-        <relativeFilePath>odt.png</relativeFilePath>
-        <fileUrl>/home/adolfo/Curro/cursos/markdownslides/doc/img/odt.png</fileUrl>
-        <fileUrl>/home/adolfo/Proyectos/markdownslides/doc/img/odt.png</fileUrl>
-        <fileUrl>/home/adolfo/Cursos/markdownslides/doc/img/odt.png</fileUrl>
-        <effects/>
-      </picture>
-      <picture>
-        <rect>
           <x>-76</x>
           <y>-76</y>
           <w>152</w>
           <h>152</h>
         </rect>
         <pos>
-          <x>808</x>
-          <y>700</y>
+          <x>1122</x>
+          <y>239</y>
         </pos>
         <zvalue>7</zvalue>
         <visible>1</visible>
@@ -283,8 +259,8 @@
           <h>82</h>
         </rect>
         <pos>
-          <x>1091</x>
-          <y>541</y>
+          <x>1056</x>
+          <y>546</y>
         </pos>
         <zvalue>13</zvalue>
         <visible>1</visible>
@@ -301,38 +277,14 @@
       </picture>
       <picture>
         <rect>
-          <x>-61</x>
-          <y>-46</y>
-          <w>123</w>
-          <h>93</h>
-        </rect>
-        <pos>
-          <x>814</x>
-          <y>543</y>
-        </pos>
-        <zvalue>14</zvalue>
-        <visible>1</visible>
-        <frame-class>0</frame-class>
-        <frame-text-enabled>1</frame-text-enabled>
-        <frame-text>flecha...</frame-text>
-        <transformation yRot="0" xRot="0" zRot="39,85098985366974"/>
-        <mirror state="0"/>
-        <relativeFilePath>flecha.png</relativeFilePath>
-        <fileUrl>/home/adolfo/Curro/cursos/markdownslides/doc/img/flecha.png</fileUrl>
-        <fileUrl>/home/adolfo/Proyectos/markdownslides/doc/img/flecha.png</fileUrl>
-        <fileUrl>/home/adolfo/Cursos/markdownslides/doc/img/flecha.png</fileUrl>
-        <effects/>
-      </picture>
-      <picture>
-        <rect>
           <x>-60</x>
           <y>-46</y>
           <w>121</w>
           <h>92</h>
         </rect>
         <pos>
-          <x>955</x>
-          <y>563</y>
+          <x>830</x>
+          <y>576</y>
         </pos>
         <zvalue>15</zvalue>
         <visible>1</visible>
@@ -355,8 +307,8 @@
           <h>151</h>
         </rect>
         <pos>
-          <x>1301</x>
-          <y>446</y>
+          <x>1300</x>
+          <y>433</y>
         </pos>
         <zvalue>16</zvalue>
         <visible>1</visible>
@@ -394,6 +346,6 @@
         <effects/>
       </picture>
     </content>
-    <preview><![CDATA[iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAA65JREFUaIHtl01oHGUcxp/d2Y/MbsiGbGq2TUSzWw+JSqDiyYvoYS8eRAWXoMWg4iGgJT2IWOJStDeJiBCJHioehNSsQi+CKGoOQuuiQVnxlOBslzYhTc3uvPPO5+OhOBqTrtlkQpDO7/R+/5/nfWfeDyAkJCQkJCQk5PYlQpKHLWI/RA9bwH4JDdwK13VhWdZBDe8TC2IQy7Jw+Ycqrq2u4netDk3ToGl1HC/kce7Ns347KSVIoisRhbQ8qKq679iBGDBNE6+9/gaEvokutRsXP78AADh1+lW4rgtFUSClxB/PPIRr0sT9F39GUvWCCB2MgVQqheHhu3F1dRUxRcHJ519CKpXCnUODcBwHiqIgkUggcfocjt7zAH58+TGcKH8At3cAiqLsK3Zg2+iXX30NEjjSn8WxozlkMhkkk0lEIpEt7b47WUSu3wV/u4Gh+W+RTqf3FfdAzoHR0VHUarVt5UIIdHUlEI1uX3jbthGPxzuO1dEu5Hlbv1vHcSClhJQShmHAdV00Go0dxZfLZaiqimg0BiEEXNf16774+Azi8TiEEB0baLsCJCGlbLtbbGxsYGFhAWNjY8jn88hmsx0JWF9fx7uLI8heehAvnLmAVCrVUX+wDbZtkySvPDHExrP3kiSbzSaLxSJHRkZIkvPz81xbW+PMzAx1XW83HElyZWWFJDk3N0eS/PSdEicmJv6z361oa4AkPc/jT5d+4fXHs9SeHGwrcnNzs2MBZyeLrNfr/PCtUsd9yV0YIMnLpfuoaRqvLrxHx3H8ctd1t7SzLIvlctnPLy8vkyRnZ2dJkouLi36dbdtsNpvUdZ26rtM0TXqeF7wB27ap6zqFENsE70SpVGKhUNhSNjw87KcbjYafnpqa8tOWZe1K8L/Z1Qrshn/OnhCChmGQvDkBQogts/zXv/X90hVGo1EODg7u2UBglzkpJT6rVJDL5ZBMJpGIx2GaJkzTxPj4OCYnJzE9PY1fazUYhoGPzp/Hkd44Hnn6fVQqlT1f/AI7yAzDgNB1KIqCqKKgp6cHJBGJRKC3WqgsLuGph09AVVXouo7r6+vIHcuhKQ30dWfgOA5isc5vNoGtgKqqEEKg2teHarUKAP41It3djU++WULx1Ns38+k07hgYgG056OvOAMCexAMBGjBNE9n+fjxKopDPwzAMv85xbLzy4nO4K/v3gZhMJjs/tHbgwN/EnufBsix4nodWq4Xe3l4kEonAxg8f9YfN/95ASEhISEhISMjtzJ/995lAPwhHWgAAAABJRU5ErkJggg==]]></preview>
+    <preview><![CDATA[iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAz5JREFUaIHtl01r3EYYx/+SVrsr5eCUJJDGNjR1S2FJ2kMwNYSElFIwxgSbXAIthpK2IZd8gCVgU5d+geS25BMUQ45eMLkZGqfFPSw+x5Xjps5Wh92VNJJm9O/B7tZp/bbVGh86v5s0L8/bPM8zA2g0Go1Go9H8fzFI8qSVyIN50grkRRuwH0opJEnyxr80TRGGIbIs65ucQj82SZIEz3/6Gb9vbeFXbwOe58HzNvDeyLv4/rtvAQBSSti2jcXFRUxOTiKOY5imCdu28wlnH2i1Wrx24zNeGf2YV69/St/36fs+Z778mlJKkmQQBPyj2WS73Wa2IzaO49yy+xIB13Vx8eI7eLW1hYJlYebOXbiui+GhQUgpYVkWXNfFs1OnkH10GebTp/gEQLFYzC27LwZYloUvPr8NEjh39gwuvH0eAwMDKJVKMAyjO+/D16/x1ugoXo6M9EMsgGPqA5VKBWtra3uOSSmRJAlKpRJM00SSJN2kLhaLsCyrJ1k9VaF/Vg8pJYQQEEIgiiIopbC5ubmn8nNzcwCAQqEA13VhmiYMw0D98T3U63U4joM4jntSHsDBSZxlGcMwPDCJfN9nrVbjysoKm81mz0nYarUYRREf3J9mEAQ9rz8wAkopOI6DzVvD+G3mEgCg0+lgfHwclUoFALC0tISpqSksLy/DcZxDHba+vg4AqNVqAID6429QLpcxdFrBdd3+RoDcjsIvKw36U2fo3Ro80Eu9elAIwR8e3uHCwkJP63ZzpD7w/PYlep7HVwuPunWdJJVSb8xLkoTVanXPPSYmJkj+fSyDIKAQgmma/lfdSR7BgDRNGQQBwzD8l8L7MTY2RikloyiiEKL7f35+nmEY8uXND+hNvs/m3asMo97P/W4OrUJ/VQ3HcWCaRyta09PTiOMYhUIBs7OzaDQaEEKgWq1uH1szw9CTBsppB8x7Lcpl/iEs/fiCrajTjVyapoyiiBs3h6kU+eKra7mP0LE0sjRNYds2mEm0Y4F2LDB4+mx3XCm107AIwNh3n6NwbNfp1dVVcDvHYIQJwjAEsG1cHMc73/mUB475SRlFEQzDQLlc3uX1/qLfxCeNNkCj0Wg0Go1Gc3L8CeeBJ6zy3nRXAAAAAElFTkSuQmCC]]></preview>
   </canvas>
 </fotowall>

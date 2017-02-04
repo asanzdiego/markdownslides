@@ -60,35 +60,47 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#about"><span class="toc-section-number">1</span> About</a><ul>
 <li><a href="#what-is-it"><span class="toc-section-number">1.1</span> What is it?</a></li>
 <li><a href="#samples"><span class="toc-section-number">1.2</span> Samples</a></li>
-<li><a href="#licence"><span class="toc-section-number">1.3</span> Licence</a></li>
+<li><a href="#contributors"><span class="toc-section-number">1.3</span> Contributors</a></li>
+<li><a href="#licence"><span class="toc-section-number">1.4</span> Licence</a></li>
 </ul></li>
-<li><a href="#instalation-and-how-to-use"><span class="toc-section-number">2</span> Instalation and how to use</a><ul>
+<li><a href="#instalation"><span class="toc-section-number">2</span> Instalation</a><ul>
 <li><a href="#dependencies"><span class="toc-section-number">2.1</span> Dependencies</a></li>
-<li><a href="#download"><span class="toc-section-number">2.2</span> Download</a></li>
-<li><a href="#docker-under-testing"><span class="toc-section-number">2.3</span> Docker (Under testing)!</a></li>
-<li><a href="#creation"><span class="toc-section-number">2.4</span> Creation</a></li>
-<li><a href="#configuration"><span class="toc-section-number">2.5</span> Configuration</a></li>
-<li><a href="#build"><span class="toc-section-number">2.6</span> Build</a></li>
+<li><a href="#requirements"><span class="toc-section-number">2.2</span> Requirements</a></li>
+<li><a href="#download"><span class="toc-section-number">2.3</span> Download</a></li>
+<li><a href="#docker-under-testing"><span class="toc-section-number">2.4</span> Docker (Under testing)!</a><ul>
+<li><a href="#building-docker-image"><span class="toc-section-number">2.4.1</span> Building docker image</a></li>
+<li><a href="#launch-the-container"><span class="toc-section-number">2.4.2</span> Launch the container</a></li>
 </ul></li>
-<li><a href="#author"><span class="toc-section-number">3</span> Author</a><ul>
-<li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">3.1</span> Adolfo Sanz De Diego</a></li>
-<li><a href="#algunos-proyectos"><span class="toc-section-number">3.2</span> Algunos proyectos</a></li>
-<li><a href="#where-to-find-me"><span class="toc-section-number">3.3</span> Where to find me?</a></li>
+</ul></li>
+<li><a href="#how-to-use"><span class="toc-section-number">3</span> How to use</a><ul>
+<li><a href="#creation"><span class="toc-section-number">3.1</span> Creation</a></li>
+<li><a href="#notes"><span class="toc-section-number">3.2</span> Notes</a></li>
+<li><a href="#levels"><span class="toc-section-number">3.3</span> Levels</a></li>
+<li><a href="#numbering"><span class="toc-section-number">3.4</span> Numbering</a></li>
+<li><a href="#foo-bar"><span class="toc-section-number">3.5</span> Foo Bar</a></li>
+<li><a href="#configuration"><span class="toc-section-number">3.6</span> Configuration</a></li>
+<li><a href="#build"><span class="toc-section-number">3.7</span> Build</a></li>
+</ul></li>
+<li><a href="#releases-notes"><span class="toc-section-number">4</span> Releases notes</a><ul>
+<li><a href="#relese-1.0"><span class="toc-section-number">4.1</span> Relese 1.0</a></li>
+<li><a href="#relese-2.0"><span class="toc-section-number">4.2</span> Relese 2.0</a></li>
+</ul></li>
+<li><a href="#author"><span class="toc-section-number">5</span> Author</a><ul>
+<li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">5.1</span> Adolfo Sanz De Diego</a></li>
+<li><a href="#algunos-proyectos"><span class="toc-section-number">5.2</span> Algunos proyectos</a></li>
+<li><a href="#where-to-find-me"><span class="toc-section-number">5.3</span> Where to find me?</a></li>
 </ul></li>
 </ul>
 </nav>
 <h1 id="about"><span class="header-section-number">1</span> About</h1>
 <h2 id="what-is-it"><span class="header-section-number">1.1</span> What is it?</h2>
-<ul>
-<li><p><strong>MarkdownSlides</strong> is a Reveal.js, Deck.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p></li>
-<li><p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p></li>
-</ul>
-<div style="text-align:center">
-<img src="../img/markdownslides.png" />
-</div>
+<p><strong>MarkdownSlides</strong> is a Reveal.js, Deck.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p>
+<p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p>
+<figure>
+<img src="../img/markdownslides.png" text-align="center" style="width:50.0%" />
+</figure>
 <h2 id="samples"><span class="header-section-number">1.2</span> Samples</h2>
-<ul>
-<li><p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
+<p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
 <ul>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html">reveal-slides</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf">reveal-slides-pdf</a></li>
@@ -99,60 +111,84 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html">html-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx">docx-book</a></li>
-</ul></li>
 </ul>
-<h2 id="licence"><span class="header-section-number">1.3</span> Licence</h2>
+<h2 id="contributors"><span class="header-section-number">1.3</span> Contributors</h2>
 <ul>
-<li><strong>This work is licensed under a:</strong>
+<li>Cesar Seoane: <a href="https://github.com/cesarseoane" class="uri">https://github.com/cesarseoane</a></li>
+<li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
+<li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
+</ul>
+<h2 id="licence"><span class="header-section-number">1.4</span> Licence</h2>
+<ul>
+<li><p><strong>This work is licensed under a:</strong></p>
 <ul>
 <li><a href="http://creativecommons.org/licenses/by-sa/3.0//">Creative Commons Attribution 3.0</a></li>
 </ul></li>
-<li><strong>The program source code are licensed under a:</strong>
+<li><p><strong>The program source code are licensed under a:</strong></p>
 <ul>
 <li><a href="http://www.gnu.org/licenses/gpl.html">GPL 3.0</a></li>
 </ul></li>
 </ul>
-<h1 id="instalation-and-how-to-use"><span class="header-section-number">2</span> Instalation and how to use</h1>
+<h1 id="instalation"><span class="header-section-number">2</span> Instalation</h1>
 <h2 id="dependencies"><span class="header-section-number">2.1</span> Dependencies</h2>
 <ul>
-<li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> (needs to be installed)</li>
-<li><a href="http://phantomjs.org">Phantom.js</a> (needs to be installed)</li>
-<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> (automaticaly downloaded)</li>
-<li><a href="http://imakewebthings.com/deck.js/">Deck.js</a> (automaticaly downloaded)</li>
-<li>Now, only works in Linux (may be on MacOS)</li>
-<li>It can works with Docker, but is in beta.</li>
-</ul>
-<h2 id="download"><span class="header-section-number">2.2</span> Download</h2>
+<li><p>It needs to be installed:</p>
 <ul>
-<li><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></li>
-</ul>
-<h2 id="docker-under-testing"><span class="header-section-number">2.3</span> Docker (Under testing)!</h2>
-<pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
-<ul>
-<li><p>Process to launch container</p>
-<ul>
-<li>Need the directory template doc, or your personalized directory to generate your md files and to receive the exports as usual</li>
+<li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a></li>
+<li><a href="http://phantomjs.org">Phantom.js</a></li>
 </ul></li>
-<li><p>Launch the container, product generated will be as <strong>min</strong> configuration</p></li>
+<li><p>It is automaticaly downloaded:</p>
+<ul>
+<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></li>
+</ul></li>
 </ul>
+<h2 id="requirements"><span class="header-section-number">2.2</span> Requirements</h2>
+<p>Now, only works in Linux (may be on MacOS)</p>
+<p>It can works with Docker, but is in beta.</p>
+<h2 id="download"><span class="header-section-number">2.3</span> Download</h2>
+<p><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></p>
+<h2 id="docker-under-testing"><span class="header-section-number">2.4</span> Docker (Under testing)!</h2>
+<p>Your installation with docker is still <strong>under testing</strong>.</p>
+<p>Any feedback is welcome.</p>
+<h3 id="building-docker-image"><span class="header-section-number">2.4.1</span> Building docker image</h3>
+<p>It will be at dockerhub soon:</p>
+<pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
+<h3 id="launch-the-container"><span class="header-section-number">2.4.2</span> Launch the container</h3>
+<p>Launch the container, product generated will be as <strong>min</strong> configuration</p>
 <pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides</code></pre>
-<ul>
-<li>Changing to <strong>med</strong> configuration</li>
-</ul>
+<p>Changing to <strong>med</strong> configuration</p>
 <pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc</code></pre>
-<ul>
-<li>Changing to <strong>max</strong> configuation</li>
-</ul>
+<p>Changing to <strong>max</strong> configuation</p>
 <pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc</code></pre>
-<h2 id="creation"><span class="header-section-number">2.4</span> Creation</h2>
+<h1 id="how-to-use"><span class="header-section-number">3</span> How to use</h1>
+<h2 id="creation"><span class="header-section-number">3.1</span> Creation</h2>
 <ul>
 <li><p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p></li>
 <li><p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p></li>
 </ul>
-<h2 id="configuration"><span class="header-section-number">2.5</span> Configuration</h2>
-<ul>
-<li>We can configure the files that we want to generate from the file <strong>build.properties</strong></li>
-</ul>
+<h2 id="notes"><span class="header-section-number">3.2</span> Notes</h2>
+<p>You can add notes that will be visible in book mode or if <strong>you press the letter 's' on the slides</strong> with <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> and <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</p>
+<p>This is only visible in book mode or if you press 's' on the slides.</p>
+<h2 id="levels"><span class="header-section-number">3.3</span> Levels</h2>
+<p>You can have as many levels as you want. Example:</p>
+<pre><code># Level 1 (on slides and book)
+
+## Level 2 (on slides and book)
+
+### Level 3 (in book but stays level 2 in slides)</code></pre>
+<p>But only in books. In slides you can only have 2 levels.</p>
+<h2 id="numbering"><span class="header-section-number">3.4</span> Numbering</h2>
+<pre><code>## Foo Bar
+
+
+~~ ~
+
+In the book will be:
+</code></pre>
+<h2 id="foo-bar"><span class="header-section-number">3.5</span> Foo Bar</h2>
+<p><sub>~</sub></p>
+<h2 id="configuration"><span class="header-section-number">3.6</span> Configuration</h2>
+<p>We can configure the files that we want to generate from the file <strong>build.properties</strong></p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
 <span class="ot">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
 <span class="ot">BUILD_REVEAL_SLIDES_ONLINE=</span><span class="st">&#39;med&#39;</span>
@@ -162,9 +198,8 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="ot">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
 <span class="ot">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
-<span class="ot">BUILD_ODT_BOOK=</span><span class="st">&#39;max&#39;</span>
 <span class="ot">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
-<h2 id="build"><span class="header-section-number">2.6</span> Build</h2>
+<h2 id="build"><span class="header-section-number">3.7</span> Build</h2>
 <ul>
 <li>In the root folder you have to execute:</li>
 </ul>
@@ -174,20 +209,83 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><p>[<strong>mode</strong>] can take the next values: <strong>min, med o máx</strong>.</p></li>
 <li><p>[<strong>folder</strong>] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
 </ul>
-<h1 id="author"><span class="header-section-number">3</span> Author</h1>
-<h2 id="adolfo-sanz-de-diego"><span class="header-section-number">3.1</span> Adolfo Sanz De Diego</h2>
+<h1 id="releases-notes"><span class="header-section-number">4</span> Releases notes</h1>
+<h2 id="relese-1.0"><span class="header-section-number">4.1</span> Relese 1.0</h2>
+<ul>
+<li><p>Export slides to:</p>
+<ul>
+<li>reveal-slides</li>
+<li>reveal-slides-pdf</li>
+<li>reveal-slides-alternative</li>
+<li>reveal-slides-alternative-pdf</li>
+<li>beamer-slides</li>
+<li>deck-slides</li>
+<li>deck-slides-alternative</li>
+</ul></li>
+<li><p>Export books to:</p>
+<ul>
+<li>html-book</li>
+<li>docx-book</li>
+<li>odt-book</li>
+<li>pdf-book</li>
+</ul></li>
+<li>Added generation modes 'min', 'med' and 'max'.</li>
+<li><p>Automatic download the external libraries.</p></li>
+</ul>
+<h2 id="relese-2.0"><span class="header-section-number">4.2</span> Relese 2.0</h2>
+<ul>
+<li><p>Export slides to:</p>
+<ul>
+<li>reveal-slides</li>
+<li>reveal-slides-pdf</li>
+<li>reveal-slides-online</li>
+<li>reveal-slides-alternative</li>
+<li>reveal-slides-alternative-pdf</li>
+<li>reveal-slides-alternative-online</li>
+</ul></li>
+<li><p>Export books to:</p>
+<ul>
+<li>html-book</li>
+<li>docx-book</li>
+<li>epub-book</li>
+</ul></li>
+<li><p>Deprecated:</p>
+<ul>
+<li>beamer-slides</li>
+<li>deck-slides</li>
+<li>deck-slides-alternative</li>
+<li>odt-book</li>
+<li>pdf-book</li>
+</ul></li>
+<li>Added menu thanks to [Raul Jimenez Ortega] (https://github.com/hhkaos).</li>
+<li>Added dockerfile thanks to [Rubén Gómez García] (https://github.com/kaneproject).</li>
+<li>Clean zip files from libraries thanks to [Cesar Seoane] (https://github.com/cesarseoane).</li>
+<li>Added type 'online' thanks to [Cesar Seoane] (https://github.com/cesarseoane).</li>
+<li>Fixed bug HTTPS images thanks to [Cesar Seoane] (https://github.com/cesarseoane).</li>
+<li>Loading the online libraries with HTTPS thanks to [Cesar Seoane] (https://github.com/cesarseoane).</li>
+<li><p>Configuration PDF resolution thanks to [Cesar Seoane] (https://github.com/cesarseoane).</p></li>
+<li>New format 'epub'.</li>
+<li>Added 'bash strict mode'.</li>
+<li>Added 'build.properties' to configure file generation.</li>
+<li>Added command 'clean' to clean the lib folder.</li>
+<li>Download a specific version of external library.</li>
+<li>Added notes only visible in book mode or if you press 's' on the slides.</li>
+<li><p>Normalization of images in slides (witdh = 50% and align = center).</p></li>
+</ul>
+<h1 id="author"><span class="header-section-number">5</span> Author</h1>
+<h2 id="adolfo-sanz-de-diego"><span class="header-section-number">5.1</span> Adolfo Sanz De Diego</h2>
 <ul>
 <li><p><strong>Old JEE web developer</strong>.</p></li>
 <li><p>Now I'm <strong>Tecnical Teacher Advaisor</strong> in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education, Youth and Sports of the Community of Madrid.</p></li>
 <li><p>In addition I work as <strong>trainer specialized in development technologies</strong>.</p></li>
 </ul>
-<h2 id="algunos-proyectos"><span class="header-section-number">3.2</span> Algunos proyectos</h2>
+<h2 id="algunos-proyectos"><span class="header-section-number">5.2</span> Algunos proyectos</h2>
 <ul>
 <li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: a group created for entrepreneurs and developers who loves hackathones.</p></li>
 <li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: an online password manager.</p></li>
 <li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: a script to create slides from MD files.</p></li>
 </ul>
-<h2 id="where-to-find-me"><span class="header-section-number">3.3</span> Where to find me?</h2>
+<h2 id="where-to-find-me"><span class="header-section-number">5.3</span> Where to find me?</h2>
 <ul>
 <li><p>Mi nick: <strong>asanzdiego</strong></p>
 <ul>

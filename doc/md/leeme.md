@@ -1,6 +1,6 @@
 % Markdown Slides [ES]
 % Adolfo Sanz De Diego
-% Septiembre 2016
+% Enero 2017
 
 # Acerca de
 

@@ -3,10 +3,6 @@
 
 ## English
 
-% Markdown Slides [EN]
-% Adolfo Sanz De Diego
-% September 2016
-
 ### About
 
 #### What is it?
@@ -17,7 +13,7 @@
 - The idea is that **from a same MARKDOWN file we can get slides and books**
   without worrying about style, just worrying about content.
 
-![](../img/markdownslides.png)
+![](./doc/img/markdownslides.png)
 
 #### Samples
 
@@ -142,7 +138,7 @@ BUILD_EPUB_BOOK='max'
 - La idea es que **a partir de un mismo fichero MARKDOWN podamos obtener slides y libros**
   sin preocuparnos por el estilo, solo por el contenido.
 
-![](../img/markdownslides.png)
+![](./doc/img/markdownslides.png)
 
 #### Ejemplos
 

@@ -141,9 +141,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html">reveal-slides-alternative</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf">reveal-slides-alternative-pdf</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online-alternative.html">reveal-slides-alternative-online</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub">epub-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html">html-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx">docx-book</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub">epub-book</a></li>
 </ul></li>
 </ul>
 </section><section id="licencia" class="slide level2">
@@ -174,14 +174,36 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></li>
 </ul>
-</section><section id="creación-i" class="slide level2">
-<h2><span class="header-section-number">2.3</span> Creación (I)</h2>
+</section><section id="docker-en-pruebas" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Docker (En pruebas)!</h2>
+<ul>
+<li>Construyendo la imagen (Estará en Dockerhub pronto)</li>
+</ul>
+<pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
+<ul>
+<li><p>Proceso para lanzar el contenedor</p>
+<ul>
+<li>Necesitamos el directorio plantilla doc, o tu directorio personalizado para generar los ficheros md y recibir los exports como siempre</li>
+</ul></li>
+<li><p>Lanzamos el contenedor, el producto generado sera como la configuración <strong>min</strong></p></li>
+</ul>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides</code></pre>
+<ul>
+<li>Cambiando a configuración <strong>med</strong></li>
+</ul>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc</code></pre>
+<ul>
+<li>Cambiando a configuración <strong>max</strong></li>
+</ul>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc</code></pre>
+</section><section id="creación" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Creación</h2>
 <ul>
 <li><p>Primero <strong>copia la carpeta doc y renombrala a tu gusto</strong>. Esto no es necesario pero te ayuda a organizar tus documentos.</p></li>
 <li><p><strong>Crea los ficheros md</strong> que quieras generar en la <strong>carpeta md</strong>. Los ficheros md son ficheros <a href="http://es.wikipedia.org/wiki/Markdown">Markdown</a>, que no son nada más que ficheros de texto plano, con extensión md, y con un marcado ligero (que hay que conocer pero que es muy sencillo).</p></li>
 </ul>
 </section><section id="configuración" class="slide level2">
-<h2><span class="header-section-number">2.4</span> Configuración</h2>
+<h2><span class="header-section-number">2.5</span> Configuración</h2>
 <ul>
 <li>Podemos configurar los ficheros que queremos generar desde el fichero <strong>build.properties</strong></li>
 </ul>
@@ -196,7 +218,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="ot">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
 <span class="ot">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
 </section><section id="generación" class="slide level2">
-<h2><span class="header-section-number">2.5</span> Generación</h2>
+<h2><span class="header-section-number">2.6</span> Generación</h2>
 <ul>
 <li>Hay que posicionarse en la carpeta raiz, y ejecutar:</li>
 </ul>

@@ -141,10 +141,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html">reveal-slides-alternative</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf">reveal-slides-alternative-pdf</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online-alternative.html">reveal-slides-alternative-online</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html">html-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx">docx-book</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.odt">odt-book</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
 </ul></li>
 </ul>
 </section><section id="licence" class="slide level2">
@@ -175,14 +174,36 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></li>
 </ul>
-</section><section id="creation-i" class="slide level2">
-<h2><span class="header-section-number">2.3</span> Creation (I)</h2>
+</section><section id="docker-under-testing" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Docker (Under testing)!</h2>
+<ul>
+<li>Building docker image (It will be at dockerhub soon!)</li>
+</ul>
+<pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
+<ul>
+<li><p>Process to launch container</p>
+<ul>
+<li>Need the directory template doc, or your personalized directory to generate your md files and to receive the exports as usual</li>
+</ul></li>
+<li><p>Launch the container, product generated will be as <strong>min</strong> configuration</p></li>
+</ul>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides</code></pre>
+<ul>
+<li>Changing to <strong>med</strong> configuration</li>
+</ul>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc</code></pre>
+<ul>
+<li>Changing to <strong>max</strong> configuation</li>
+</ul>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc</code></pre>
+</section><section id="creation" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Creation</h2>
 <ul>
 <li><p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p></li>
 <li><p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p></li>
 </ul>
 </section><section id="configuration" class="slide level2">
-<h2><span class="header-section-number">2.4</span> Configuration</h2>
+<h2><span class="header-section-number">2.5</span> Configuration</h2>
 <ul>
 <li>We can configure the files that we want to generate from the file <strong>build.properties</strong></li>
 </ul>
@@ -198,7 +219,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="ot">BUILD_ODT_BOOK=</span><span class="st">&#39;max&#39;</span>
 <span class="ot">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
 </section><section id="build" class="slide level2">
-<h2><span class="header-section-number">2.5</span> Build</h2>
+<h2><span class="header-section-number">2.6</span> Build</h2>
 <ul>
 <li>In the root folder you have to execute:</li>
 </ul>

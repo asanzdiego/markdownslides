@@ -28,9 +28,9 @@
     - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html)
     - [reveal-slides-alternative-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
     - [reveal-slides-alternative-online](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online-alternative.html)
+    - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub)
     - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html)
     - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx)
-    - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub)
 
 
 ## Licencia
@@ -55,6 +55,36 @@
 ## Descarga
 
 - [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
+
+### Docker (En pruebas)!
+
+- Construyendo la imagen (Estará en Dockerhub pronto)
+
+~~~
+$ docker build -t asanzdiego/markdownslides .
+~~~
+
+- Proceso para lanzar el contenedor
+
+     - Necesitamos el directorio plantilla doc, o tu directorio personalizado para generar los ficheros md y recibir los exports como siempre
+     
+- Lanzamos el contenedor, el producto generado sera como la configuración **min**
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
+~~~
+
+- Cambiando a configuración **med**
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
+~~~
+     
+- Cambiando a configuración **max**
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc
+~~~
 
 ## Creación
 

@@ -28,10 +28,9 @@
     - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html)
     - [reveal-slides-alternative-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf)
     - [reveal-slides-alternative-online](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online-alternative.html)
+    - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub)
     - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html)
     - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
-    - [odt-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.odt)
-    - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub)
 
 ## Licence
 
@@ -55,6 +54,36 @@
 ## Download
 
 - [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
+
+## Docker (Under testing)!
+
+
+
+~~~
+$ docker build -t asanzdiego/markdownslides .
+~~~
+
+- Process to launch container
+    
+     - Need the directory template doc, or your personalized directory to generate your md files and to receive the exports as usual
+     
+- Launch the container, product generated will be as **min** configuration 
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
+~~~
+     
+- Changing to **med** configuration
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
+~~~
+     
+- Changing to **max** configuation
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc
+~~~
 
 ## Creation
 

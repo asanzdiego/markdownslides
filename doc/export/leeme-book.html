@@ -64,7 +64,9 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#instalación-y-manejo"><span class="toc-section-number">2</span> Instalación y manejo</a><ul>
 <li><a href="#dependencias"><span class="toc-section-number">2.1</span> Dependencias</a></li>
-<li><a href="#descarga"><span class="toc-section-number">2.2</span> Descarga</a></li>
+<li><a href="#descarga"><span class="toc-section-number">2.2</span> Descarga</a><ul>
+<li><a href="#docker-en-pruebas"><span class="toc-section-number">2.2.1</span> Docker (En pruebas)!</a></li>
+</ul></li>
 <li><a href="#creación"><span class="toc-section-number">2.3</span> Creación</a></li>
 <li><a href="#configuración"><span class="toc-section-number">2.4</span> Configuración</a></li>
 <li><a href="#generación"><span class="toc-section-number">2.5</span> Generación</a></li>
@@ -95,9 +97,9 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html">reveal-slides-alternative</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf">reveal-slides-alternative-pdf</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online-alternative.html">reveal-slides-alternative-online</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub">epub-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html">html-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx">docx-book</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub">epub-book</a></li>
 </ul></li>
 </ul>
 <h2 id="licencia"><span class="header-section-number">1.3</span> Licencia</h2>
@@ -125,6 +127,27 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></li>
 </ul>
+<h3 id="docker-en-pruebas"><span class="header-section-number">2.2.1</span> Docker (En pruebas)!</h3>
+<ul>
+<li>Construyendo la imagen (Estará en Dockerhub pronto)</li>
+</ul>
+<pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
+<ul>
+<li><p>Proceso para lanzar el contenedor</p>
+<ul>
+<li>Necesitamos el directorio plantilla doc, o tu directorio personalizado para generar los ficheros md y recibir los exports como siempre</li>
+</ul></li>
+<li><p>Lanzamos el contenedor, el producto generado sera como la configuración <strong>min</strong></p></li>
+</ul>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides</code></pre>
+<ul>
+<li>Cambiando a configuración <strong>med</strong></li>
+</ul>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc</code></pre>
+<ul>
+<li>Cambiando a configuración <strong>max</strong></li>
+</ul>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc</code></pre>
 <h2 id="creación"><span class="header-section-number">2.3</span> Creación</h2>
 <ul>
 <li><p>Primero <strong>copia la carpeta doc y renombrala a tu gusto</strong>. Esto no es necesario pero te ayuda a organizar tus documentos.</p></li>

@@ -55,7 +55,37 @@
 
 - [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
-## Creación (I)
+### Docker (En pruebas)!
+
+- Construyendo la imagen (Estará en Dockerhub pronto)
+
+~~~
+$ docker build -t asanzdiego/markdownslides .
+~~~
+
+- Proceso para lanzar el contenedor
+
+     - Necesitamos el directorio plantilla doc, o tu directorio personalizado para generar los ficheros md y recibir los exports como siempre
+     
+- Lanzamos el contenedor, el producto generado sera como la configuración **min**
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
+~~~
+
+- Cambiando a configuración **med**
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
+~~~
+     
+- Cambiando a configuración **max**
+
+~~~
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc
+~~~
+
+## Creación
 
 - Primero **copia la carpeta doc y renombrala a tu gusto**. Esto no es necesario pero
   te ayuda a organizar tus documentos.

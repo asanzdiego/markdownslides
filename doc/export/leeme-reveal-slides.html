@@ -12,6 +12,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../lib/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="../lib/reveal.js-menu/menu.css">
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="../lib/reveal.js/css/theme/league.css" id="theme">
 
   <!-- For syntax highlighting -->
@@ -85,7 +122,8 @@
 <section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">1</span> Acerca de</h1></section><section id="qué-es-esto-i" class="slide level2">
 <h2><span class="header-section-number">1.1</span> ¿Qué es esto? (I)</h2>
 <ul>
-<li><strong>MarkdownSlides</strong> es un generador de <strong>slides</strong> Reveal.js, Deck.js y PDF a <strong>partir de ficheros MARKDOWN</strong>, que también genera documentos HTML, ODT y DOCX.</li>
+<li><p><strong>MarkdownSlides</strong> es un generador de <strong>slides</strong> Reveal.js y PDF a <strong>partir de ficheros MARKDOWN</strong>, que también genera documentos HTML, EPUB y DOCX.</p></li>
+<li><p>La idea es que <strong>a partir de un mismo fichero MARKDOWN podamos obtener slides y libros</strong> sin preocuparnos por el estilo, solo por el contenido.</p></li>
 </ul>
 </section><section id="qué-es-esto-ii" class="slide level2">
 <h2><span class="header-section-number">1.2</span> ¿Qué es esto? (II)</h2>
@@ -97,15 +135,15 @@
 <ul>
 <li><p>A partir de un fichero <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md">MARKDOWN</a> genera:</p>
 <ul>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides.html">deck-slides</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides-alternative.html">deck-slides-alternative</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html">reveal-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf">reveal-slides-pdf</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online.html">reveal-slides-online</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html">reveal-slides-alternative</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf">reveal-pdf-slides</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf">reveal-pdf-slides-alternative</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.html">html</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.docx">docx</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme.odt">odt</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf">reveal-slides-alternative-pdf</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online-alternative.html">reveal-slides-alternative-online</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html">html-book</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx">docx-book</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub">epub-book</a></li>
 </ul></li>
 </ul>
 </section><section id="licencia" class="slide level2">
@@ -129,6 +167,7 @@
 <li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> (bajado automáticamente)</li>
 <li><a href="http://imakewebthings.com/deck.js/">Deck.js</a> (bajado automáticamente)</li>
 <li>Por ahora, solo funciona en Linux (y puede que en MacOS)</li>
+<li>Puede funcionar con Docker, pero todavía está en beta.</li>
 </ul>
 </section><section id="descarga" class="slide level2">
 <h2><span class="header-section-number">2.2</span> Descarga</h2>
@@ -141,35 +180,31 @@
 <li><p>Primero <strong>copia la carpeta doc y renombrala a tu gusto</strong>. Esto no es necesario pero te ayuda a organizar tus documentos.</p></li>
 <li><p><strong>Crea los ficheros md</strong> que quieras generar en la <strong>carpeta md</strong>. Los ficheros md son ficheros <a href="http://es.wikipedia.org/wiki/Markdown">Markdown</a>, que no son nada más que ficheros de texto plano, con extensión md, y con un marcado ligero (que hay que conocer pero que es muy sencillo).</p></li>
 </ul>
-</section><section id="creación-ii" class="slide level2">
-<h2><span class="header-section-number">2.4</span> Creación (II)</h2>
+</section><section id="configuración" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Configuración</h2>
 <ul>
-<li><p>Una vez creado los md, <strong>podemos generar con un script</strong>:</p>
-<ul>
-<li>reveal-slides</li>
-<li>reveal-pdf-slides</li>
-<li>deck-slides</li>
-<li>pdf-beamer</li>
-<li>pdf</li>
-<li>html</li>
-<li>docx</li>
-<li>odt</li>
-</ul></li>
+<li>Podemos configurar los ficheros que queremos generar desde el fichero <strong>build.properties</strong></li>
 </ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_ONLINE=</span><span class="st">&#39;med&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_ALTERNATIVE=</span><span class="st">&#39;max&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF=</span><span class="st">&#39;max&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE=</span><span class="st">&#39;max&#39;</span>
+
+<span class="ot">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
+<span class="ot">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
+<span class="ot">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
 </section><section id="generación" class="slide level2">
 <h2><span class="header-section-number">2.5</span> Generación</h2>
 <ul>
 <li>Hay que posicionarse en la carpeta raiz, y ejecutar:</li>
 </ul>
-<pre><code>./build.sh [modo] [carpeta]</code></pre>
+<pre><code>./build.sh [clean] [modo] [carpeta]</code></pre>
 <ul>
-<li><p>Donde [<strong>modo</strong>] puede tomar los siguientes valores:</p>
-<ul>
-<li>&quot;<strong>min</strong>&quot;: genera deck-slides y html plano.</li>
-<li>&quot;<strong>med</strong>&quot;: genera ademas reveal-slides, docx y odt (<strong>valor por defecto</strong>)</li>
-<li>&quot;<strong>max</strong>&quot;: genera todos los formatos.</li>
-</ul></li>
-<li><p>Y donde [<strong>carpeta</strong>] es la carpeta donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.</p></li>
+<li><p>Si añades [<strong>clean</strong>] se limpiará la carpeta <strong>lib</strong> y se volverán a bajar las dependencias.</p></li>
+<li><p>[<strong>modo</strong>] puede tomar los siguientes valores: <strong>min, med o máx</strong>.</p></li>
+<li><p>[<strong>carpeta</strong>] es la carpeta donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.</p></li>
 </ul>
 </section></section>
 <section><section id="autor" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
@@ -196,6 +231,7 @@
 <li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
 <li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
 <li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/" class="uri">http://www.slideshare.net/asanzdiego/</a></li>
 <li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
 </ul></li>
 </ul>

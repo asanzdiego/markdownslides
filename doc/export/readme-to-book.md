@@ -7,7 +7,10 @@
 ## What is it?
 
 - **MarkdownSlides** is a Reveal.js, Deck.js and PDF **slides** generator
-  **from MARKDOWN files**, that also generate HTML, ODT and DOCX documents.
+  **from MARKDOWN files**, that also generate HTML, EPUB and DOCX documents.
+
+- The idea is that **from a same MARKDOWN file we can get slides and books**
+  without worrying about style, just worrying about content.
 
 
 
@@ -19,15 +22,16 @@
 - From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
   generate:
 
-    - [deck-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides.html)
-    - [deck-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides-alternative.html)
     - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html)
+    - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
+    - [reveal-slides-online](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online.html)
     - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html)
-    - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
-    - [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf)
-    - [html](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
-    - [docx](http://asanzdiego.github.io/markdownslides/doc/export/readme.docx)
-    - [odt](http://asanzdiego.github.io/markdownslides/doc/export/readme.odt)
+    - [reveal-slides-alternative-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf)
+    - [reveal-slides-alternative-online](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online-alternative.html)
+    - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html)
+    - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
+    - [odt-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.odt)
+    - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub)
 
 ## Licence
 
@@ -46,6 +50,7 @@
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) (automaticaly downloaded)
 - [Deck.js](http://imakewebthings.com/deck.js/) (automaticaly downloaded)
 - Now, only works in Linux (may be on MacOS)
+- It can works with Docker, but is in beta.
 
 ## Download
 
@@ -61,41 +66,44 @@
   which are nothing more than plain text files with extension md,
   and a lightweight markup (we should know it but it is very simple).
 
+## Configuration
 
+- We can configure the files that we want to generate from the file **build.properties**
 
-- Once created the md files, **we can generate with an script**.
+~~~{.bash}
+BUILD_REVEAL_SLIDES='min'
+BUILD_REVEAL_SLIDES_PDF='med'
+BUILD_REVEAL_SLIDES_ONLINE='med'
+BUILD_REVEAL_SLIDES_ALTERNATIVE='max'
+BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF='max'
+BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE='max'
 
-    - reveal-slides
-    - reveal-pdf-slides
-    - deck-slides
-    - pdf-beamer
-    - pdf
-    - html
-    - docx
-    - odt
+BUILD_HTML_BOOK='min'
+BUILD_DOCX_BOOK='med'
+BUILD_ODT_BOOK='max'
+BUILD_EPUB_BOOK='max'
+~~~
 
 ## Build
 
 - In the root folder you have to execute:
 
 ~~~
-./build.sh [mode] [folder]
+./build.sh [clean] [mode] [folder]
 ~~~
 
-- Where [**mode**] can take the next values:
+- If you add [**cleaN**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
 
-    - "**min**": generate deck-slides and plain html.
-    - "**med**": generate also reveal-slides, docx and odt (**default value**)
-    - "**max**": generate all formats.
+- [**mode**] can take the next values: **min, med o máx**.
 
-- And where [**folder**] is the name of the folder wher to find
+- [**folder**] is the name of the folder wher to find
   the md files. If no folder name, it will convert all md files of all the folders.
 
 # Author
 
 ## Adolfo Sanz De Diego
 
-- **Old JEE web developer**
+- **Old JEE web developer**.
 
 - Now I'm **Tecnical Teacher Advaisor** in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education, Youth and Sports of the Community of Madrid.
 
@@ -113,9 +121,10 @@
 
 - Mi nick: **asanzdiego**
 
-    - AboutMe:  <http://about.me/asanzdiego>
-    - GitHub:   <http://github.com/asanzdiego>
-    - Twitter:  <http://twitter.com/asanzdiego>
-    - Blog:     <http://asanzdiego.blogspot.com.es>
-    - LinkedIn: <http://www.linkedin.com/in/asanzdiego>
-    - Google+:  <http://plus.google.com/+AdolfoSanzDeDiego>
+    - AboutMe:    <http://about.me/asanzdiego>
+    - GitHub:     <http://github.com/asanzdiego>
+    - Twitter:    <http://twitter.com/asanzdiego>
+    - Blog:       <http://asanzdiego.blogspot.com.es>
+    - LinkedIn:   <http://www.linkedin.com/in/asanzdiego>
+    - SlideShare: <http://www.slideshare.net/asanzdiego/>
+    - Google+:    <http://plus.google.com/+AdolfoSanzDeDiego>

@@ -12,6 +12,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../lib/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="../lib/reveal.js-menu/menu.css">
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="../lib/reveal.js/css/theme/beige.css" id="theme">
 
 	<!-- For syntax highlighting -->
@@ -89,7 +126,8 @@
 <section><section id="about" class="titleslide slide level1"><h1><span class="header-section-number">1</span> About</h1></section><section id="what-is-it-i" class="slide level2">
 <h2><span class="header-section-number">1.1</span> What is it? (I)</h2>
 <ul>
-<li><strong>MarkdownSlides</strong> is a Reveal.js, Deck.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, ODT and DOCX documents.</li>
+<li><p><strong>MarkdownSlides</strong> is a Reveal.js, Deck.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p></li>
+<li><p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p></li>
 </ul>
 </section><section id="what-is-it-ii" class="slide level2">
 <h2><span class="header-section-number">1.2</span> What is it? (II)</h2>
@@ -101,15 +139,16 @@
 <ul>
 <li><p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
 <ul>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides.html">deck-slides</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-deck-slides-alternative.html">deck-slides-alternative</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html">reveal-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf">reveal-slides-pdf</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online.html">reveal-slides-online</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html">reveal-slides-alternative</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf">reveal-pdf-slides</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf">reveal-pdf-slides-alternative</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.html">html</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.docx">docx</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.odt">odt</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf">reveal-slides-alternative-pdf</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online-alternative.html">reveal-slides-alternative-online</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html">html-book</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx">docx-book</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.odt">odt-book</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
 </ul></li>
 </ul>
 </section><section id="licence" class="slide level2">
@@ -133,6 +172,7 @@
 <li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> (automaticaly downloaded)</li>
 <li><a href="http://imakewebthings.com/deck.js/">Deck.js</a> (automaticaly downloaded)</li>
 <li>Now, only works in Linux (may be on MacOS)</li>
+<li>It can works with Docker, but is in beta.</li>
 </ul>
 </section><section id="download" class="slide level2">
 <h2><span class="header-section-number">2.2</span> Download</h2>
@@ -145,41 +185,38 @@
 <li><p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p></li>
 <li><p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p></li>
 </ul>
-</section><section id="creation-ii" class="slide level2">
-<h2><span class="header-section-number">2.4</span> Creation (II)</h2>
+</section><section id="configuration" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Configuration</h2>
 <ul>
-<li><p>Once created the md files, <strong>we can generate with an script</strong>.</p>
-<ul>
-<li>reveal-slides</li>
-<li>reveal-pdf-slides</li>
-<li>deck-slides</li>
-<li>pdf-beamer</li>
-<li>pdf</li>
-<li>html</li>
-<li>docx</li>
-<li>odt</li>
-</ul></li>
+<li>We can configure the files that we want to generate from the file <strong>build.properties</strong></li>
 </ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_ONLINE=</span><span class="st">&#39;med&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_ALTERNATIVE=</span><span class="st">&#39;max&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF=</span><span class="st">&#39;max&#39;</span>
+<span class="ot">BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE=</span><span class="st">&#39;max&#39;</span>
+
+<span class="ot">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
+<span class="ot">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
+<span class="ot">BUILD_ODT_BOOK=</span><span class="st">&#39;max&#39;</span>
+<span class="ot">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
 </section><section id="build" class="slide level2">
 <h2><span class="header-section-number">2.5</span> Build</h2>
 <ul>
 <li>In the root folder you have to execute:</li>
 </ul>
-<pre><code>./build.sh [mode] [folder]</code></pre>
+<pre><code>./build.sh [clean] [mode] [folder]</code></pre>
 <ul>
-<li><p>Where [<strong>mode</strong>] can take the next values:</p>
-<ul>
-<li>&quot;<strong>min</strong>&quot;: generate deck-slides and plain html.</li>
-<li>&quot;<strong>med</strong>&quot;: generate also reveal-slides, docx and odt (<strong>default value</strong>)</li>
-<li>&quot;<strong>max</strong>&quot;: generate all formats.</li>
-</ul></li>
-<li><p>And where [<strong>folder</strong>] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
+<li><p>If you add [<strong>cleaN</strong>] the folder <strong>lib</strong> will be cleaned and the dependencies will be downloaded again.</p></li>
+<li><p>[<strong>mode</strong>] can take the next values: <strong>min, med o máx</strong>.</p></li>
+<li><p>[<strong>folder</strong>] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
 </ul>
 </section></section>
 <section><section id="author" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Author</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
 <h2><span class="header-section-number">3.1</span> Adolfo Sanz De Diego</h2>
 <ul>
-<li><p><strong>Old JEE web developer</strong></p></li>
+<li><p><strong>Old JEE web developer</strong>.</p></li>
 <li><p>Now I'm <strong>Tecnical Teacher Advaisor</strong> in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education, Youth and Sports of the Community of Madrid.</p></li>
 <li><p>In addition I work as <strong>trainer specialized in development technologies</strong>.</p></li>
 </ul>
@@ -200,6 +237,7 @@
 <li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
 <li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
 <li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/" class="uri">http://www.slideshare.net/asanzdiego/</a></li>
 <li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
 </ul></li>
 </ul>

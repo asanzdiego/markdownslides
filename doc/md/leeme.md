@@ -6,8 +6,11 @@
 
 ## ¿Qué es esto? (I)
 
-- **MarkdownSlides** es un generador de **slides** Reveal.js, Deck.js y PDF
-  a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, ODT y DOCX.
+- **MarkdownSlides** es un generador de **slides** Reveal.js y PDF
+  a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, EPUB y DOCX.
+
+- La idea es que **a partir de un mismo fichero MARKDOWN podamos obtener slides y libros**
+  sin preocuparnos por el estilo, solo por el contenido.
 
 ## ¿Qué es esto? (II)
 
@@ -18,15 +21,16 @@
 - A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
   genera:
 
-    - [deck-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides.html)
-    - [deck-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-deck-slides-alternative.html)
     - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html)
+    - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
+    - [reveal-slides-online](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online.html)
     - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html)
-    - [reveal-pdf-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
-    - [reveal-pdf-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
-    - [html](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
-    - [docx](http://asanzdiego.github.io/markdownslides/doc/export/leeme.docx)
-    - [odt](http://asanzdiego.github.io/markdownslides/doc/export/leeme.odt)
+    - [reveal-slides-alternative-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
+    - [reveal-slides-alternative-online](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online-alternative.html)
+    - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub)
+    - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html)
+    - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx)
+
 
 ## Licencia
 
@@ -45,6 +49,7 @@
 - [Reveal.js](http://lab.hakim.se/reveal-js/#/) (bajado automáticamente)
 - [Deck.js](http://imakewebthings.com/deck.js/) (bajado automáticamente)
 - Por ahora, solo funciona en Linux (y puede que en MacOS)
+- Puede funcionar con Docker, pero todavía está en beta.
 
 ## Descarga
 
@@ -60,36 +65,37 @@
   que no son nada más que ficheros de texto plano, con extensión md,
   y con un marcado ligero (que hay que conocer pero que es muy sencillo).
 
-## Creación (II)
+## Configuración
 
-- Una vez creado los md, **podemos generar con un script**:
+- Podemos configurar los ficheros que queremos generar desde el fichero **build.properties**
 
-    - reveal-slides
-    - reveal-pdf-slides
-    - deck-slides
-    - pdf-beamer
-    - pdf
-    - html
-    - docx
-    - odt
+~~~{.bash}
+BUILD_REVEAL_SLIDES='min'
+BUILD_REVEAL_SLIDES_PDF='med'
+BUILD_REVEAL_SLIDES_ONLINE='med'
+BUILD_REVEAL_SLIDES_ALTERNATIVE='max'
+BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF='max'
+BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE='max'
+
+BUILD_HTML_BOOK='min'
+BUILD_DOCX_BOOK='med'
+BUILD_EPUB_BOOK='max'
+~~~
 
 ## Generación
 
 - Hay que posicionarse en la carpeta raiz, y ejecutar:
 
 ~~~
-./build.sh [modo] [carpeta]
+./build.sh [clean] [modo] [carpeta]
 ~~~
 
-- Donde [**modo**] puede tomar los siguientes valores:
+- Si añades [**clean**] se limpiará la carpeta **lib** y se volverán a bajar las dependencias.
 
-    - "**min**": genera deck-slides y html plano.
-    - "**med**": genera ademas reveal-slides, docx y odt (**valor por defecto**)
-    - "**max**": genera todos los formatos.
+- [**modo**] puede tomar los siguientes valores: **min, med o máx**.
 
-- Y donde [**carpeta**] es la carpeta donde va a buscar
-  los ficheros md. Si no se indica nada convertirá todos los ficheros md
-  de todas las carpetas.
+- [**carpeta**] es la carpeta donde va a buscar los ficheros md.
+  Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
 
 # Autor
 
@@ -113,9 +119,10 @@
 
 - Mi nick: **asanzdiego**
 
-    - AboutMe:  <http://about.me/asanzdiego>
-    - GitHub:   <http://github.com/asanzdiego>
-    - Twitter:  <http://twitter.com/asanzdiego>
-    - Blog:     <http://asanzdiego.blogspot.com.es>
-    - LinkedIn: <http://www.linkedin.com/in/asanzdiego>
-    - Google+:  <http://plus.google.com/+AdolfoSanzDeDiego>
+    - AboutMe:    <http://about.me/asanzdiego>
+    - GitHub:     <http://github.com/asanzdiego>
+    - Twitter:    <http://twitter.com/asanzdiego>
+    - Blog:       <http://asanzdiego.blogspot.com.es>
+    - LinkedIn:   <http://www.linkedin.com/in/asanzdiego>
+    - SlideShare: <http://www.slideshare.net/asanzdiego/>
+    - Google+:    <http://plus.google.com/+AdolfoSanzDeDiego>

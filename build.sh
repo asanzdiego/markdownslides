@@ -12,7 +12,7 @@ echo -e $ORIGIN
 function downloadLib() {
 
   LIB_FOLDER="../lib"
-
+  
   if [ -e $LIB_FOLDER ]; then
     if [ ! -d $LIB_FOLDER ]; then
       echo "ERROR: $LIB_FOLDER exists and is not a folder"
@@ -22,11 +22,13 @@ function downloadLib() {
     mkdir $LIB_FOLDER
   fi
 
-  GIT_USER=$1
-  GIT_PROJECT=$2
+  URL_DOWNLOAD=$1
+  FOLDER_NAME=$2
+  PROYECT_NAME=$3
 
-  DOWNLOAD_FOLDER="$LIB_FOLDER/$GIT_PROJECT-master"
-  ZIP_FILE="$LIB_FOLDER/$GIT_PROJECT.zip"
+  DOWNLOAD_FOLDER="$LIB_FOLDER/$PROYECT_NAME"
+  ZIP_FILE="$LIB_FOLDER/$FOLDER_NAME.zip"
+  ZIP_FOLDER="$LIB_FOLDER/$FOLDER_NAME"
 
   if [ -e $DOWNLOAD_FOLDER ]; then
 
@@ -37,12 +39,33 @@ function downloadLib() {
 
   else
 
-    echo -e "Downloading...                 from https://github.com/$GIT_USER/$GIT_PROJECT"
-    wget -q -O $LIB_FOLDER/$GIT_PROJECT.zip https://github.com/$GIT_USER/$GIT_PROJECT/archive/master.zip
+    echo -e "Downloading...                 $ZIP_FILE from $URL_DOWNLOAD"
+    wget -q -O $ZIP_FILE $URL_DOWNLOAD
 
     echo -e "Extracting...                  $ZIP_FILE"
     unzip -q -d $LIB_FOLDER $ZIP_FILE
-    rm $LIB_FOLDER/$GIT_PROJECT.zip
+    rm $ZIP_FILE
+    mv $ZIP_FOLDER $DOWNLOAD_FOLDER
+  fi
+}
+
+function initLibFolder() {
+
+  LIB_FOLDER=$1"/lib"
+
+  if [ -e $LIB_FOLDER ]; then
+    if [ ! -d $LIB_FOLDER ]; then
+      echo "ERROR: $LIB_FOLDER exists and is not a folder"
+      exit -1
+    else
+      if [ "$CLEAN_LIB_FOLDER" == "yes" ]; then
+        echo -e "Cleaning lib folder...         ../lib"
+        rm -R $LIB_FOLDER
+        mkdir $LIB_FOLDER
+      fi
+    fi
+  else
+    mkdir $LIB_FOLDER
   fi
 }
 
@@ -51,26 +74,20 @@ function initExportFolder() {
   FOLDER=$1"/export"
 
   if [ -e $FOLDER ]; then
-
     if [ -d $FOLDER ]; then
-
       if [ ! -w $FOLDER ]; then
           echo -e "ERROR: no write permision in $FOLDER"
           exit -1
       fi
-
-      echo -e "Cleaning folder...             ../export"
+      echo -e "Cleaning export folder...      ../export"
       rm -R $FOLDER
       mkdir $FOLDER
-
     else
       echo -e "ERROR: $FOLDER exists and is not a folder"
       exit -1
     fi
-
   else
-
-    echo -e "Creating folder...             ../export"
+    echo -e "Cleaning export folder...      ../export"
     mkdir $FOLDER
   fi
 
@@ -163,9 +180,9 @@ function cleanMdToBook() {
 
 function buildDeckSlides() {
 
-  downloadLib imakewebthings deck.js
-  downloadLib markahon deck.search.js
-  downloadLib mikeharris100 deck.js-transition-cube
+  downloadLib https://github.com/imakewebthings/deck.js/archive/1.1.0.zip deck.js-1.1.0 deck.js
+  downloadLib https://github.com/markahon/deck.search.js/archive/master.zip deck.search.js-master deck.search.js
+  downloadLib https://github.com/mikeharris100/deck.js-transition-cube/archive/master.zip deck.js-transition-cube-master deck.js-transition-cube 
 
   echo -e "Exporting...                   ../export/$1-deck-slides$2.html DEPRECATED!!!"
 
@@ -178,8 +195,8 @@ function buildDeckSlides() {
 
 function buildRevealSlides() {
 
-  downloadLib hakimel reveal.js
-  downloadLib denehyg reveal.js-menu
+  downloadLib https://github.com/hakimel/reveal.js/archive/3.3.0.zip reveal.js-3.3.0 reveal.js
+  downloadLib https://github.com/denehyg/reveal.js-menu/archive/0.7.2.zip reveal.js-menu-0.7.2 reveal.js-menu
 
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.html"
 
@@ -192,8 +209,8 @@ function buildRevealSlides() {
 
 function buildRevealSlidesOnline() {
 
-  revealSrc=https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-master/
-  revealMenuSrc=https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-menu-master/
+  revealSrc=$REVEAL_JS_SRC_ONLINE
+  revealMenuSrc=$REVEAL_JS_MENU_SRC_ONLINE
 
   echo -e "Exporting...                   ../export/$1-reveal-online-slides$2.html"
 
@@ -208,7 +225,7 @@ function buildRevealSlidesPdf() {
 
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.pdf"
 
-  phantomjs --ssl-protocol=any ../lib/reveal.js-master/plugin/print-pdf/print-pdf.js "file://`pwd`/../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf $RESOLUTION_WIDTH'x'$RESOLUTION_HEIGHT > /dev/null
+  phantomjs --ssl-protocol=any ../lib/reveal.js/plugin/print-pdf/print-pdf.js "file://`pwd`/../export/$1-reveal-slides$2.html?print-pdf" ../export/$1-reveal-slides$2.pdf $RESOLUTION_WIDTH'x'$RESOLUTION_HEIGHT > /dev/null
 }
 
 function buildBeamerSlides() {
@@ -260,15 +277,12 @@ function build() {
   if [ $FUNCTION_NAME == "min" ]; then
     echo "YES"
   fi
-
   if [ $FUNCTION_NAME == "med" -a $GENERATION_MODE == "med" ]; then
     echo "YES"
   fi
-
   if [ $FUNCTION_NAME == "med" -a $GENERATION_MODE == "max" ]; then
     echo "YES"
   fi
-
   if [ $FUNCTION_NAME == "max" -a $GENERATION_MODE == "max" ]; then
     echo "YES"
   fi
@@ -338,8 +352,10 @@ function exportMdFile() {
 
 function processFolder() {
 
+  echo -e "==============================="
   echo -e "Procesing folder...            ../"$1
 
+  initLibFolder $1
   initExportFolder $1
 
   cd $1"/md"
@@ -355,8 +371,6 @@ function processFolder() {
   done
 
   cd - > /dev/null
-
-  echo -e "==============================="
 }
 
 function processFolders() {
@@ -371,7 +385,7 @@ function processFolders() {
 
 function process() {
 
-  echo -e "Generation mode...             "$GENERATION_MODE
+  echo -e "Generation mode...              "$GENERATION_MODE
 
   if [ "x$1" != "x" ]; then
     processFolder $1
@@ -379,6 +393,13 @@ function process() {
     processFolders
   fi
 }
+
+if [ "$1" == "clean" ]; then
+  CLEAN_LIB_FOLDER='yes'
+  shift
+fi
+
+echo -e "Clean lib folder...             "$CLEAN_LIB_FOLDER
 
 case "$1" in
 "max")

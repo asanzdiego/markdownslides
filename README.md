@@ -68,7 +68,7 @@ It can works with Docker, but is in beta.
 
 [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
-#### Docker (Under testing)!
+#### Docker
 
 Your installation with docker is still **under testing**.
 
@@ -128,11 +128,11 @@ This is only visible in book mode or if you press 's' on the slides.
 You can have as many levels as you want. Example:
 
 ~~~
-### Level 1 (on slides and book)
+# Level 1 (on slides and book)
 
-#### Level 2 (on slides and book)
+## Level 2 (on slides and book)
 
-##### Level 3 (in book but stays level 2 in slides)
+### Level 3 (in book but stays level 2 in slides)
 ~~~
 
 But only in books. In slides you can only have 2 levels.
@@ -142,10 +142,10 @@ But only in books. In slides you can only have 2 levels.
 You can name several slides with (I), (II), etc. But only the first one will be exported to the book. Example:
 
 ~~~
-#### Foo Bar (I)
+## Foo Bar (I)
 
-#### Foo Bar (II)
-~~ ~
+## Foo Bar (II)
+~~~
 
 In the book will be:
 
@@ -178,12 +178,11 @@ BUILD_EPUB_BOOK='max'
 ./build.sh [clean] [mode] [folder]
 ~~~
 
-- If you add [**cleaN**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
+    - If you add [**cleaN**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
 
-- [**mode**] can take the next values: **min, med o máx**.
+    - [**mode**] can take the next values: **min, med o máx**.
 
-- [**folder**] is the name of the folder wher to find
-  the md files. If no folder name, it will convert all md files of all the folders.
+    - [**folder**] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.
 
 ### Releases notes
 

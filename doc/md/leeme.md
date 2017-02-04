@@ -184,8 +184,7 @@ BUILD_EPUB_BOOK='max'
 
     - [**modo**] puede tomar los siguientes valores: **min, med o máx**.
 
-    - [**carpeta**] es la carpeta donde va a buscar los ficheros md.
-      Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
+    - [**carpeta**] es la carpeta donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
 
 # Releases notes
 

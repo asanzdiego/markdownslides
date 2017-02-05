@@ -186,8 +186,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section><section id="download" class="slide level2">
 <h2><span class="header-section-number">2.3</span> Download</h2>
 <p><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></p>
-</section><section id="docker-under-testing" class="slide level2">
-<h2><span class="header-section-number">2.4</span> Docker (Under testing)!</h2>
+</section><section id="docker" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Docker</h2>
 <p>Your installation with docker is still <strong>under testing</strong>.</p>
 <p>Any feedback is welcome.</p>
 </section><section id="building-docker-image" class="slide level2">
@@ -229,16 +229,11 @@ This is only visible in book mode or if you press 's' on the slides.
 <p>You can name several slides with (I), (II), etc. But only the first one will be exported to the book. Example:</p>
 <pre><code>## Foo Bar (I)
 
-## Foo Bar (II)
-~~ ~
-
-In the book will be:
-</code></pre>
-</section><section id="foo-bar" class="slide level2">
-<h2><span class="header-section-number">3.5</span> Foo Bar</h2>
-<p><sub>~</sub></p>
+## Foo Bar (II)</code></pre>
+<p>In the book will be:</p>
+<pre><code>## Foo Bar</code></pre>
 </section><section id="configuration" class="slide level2">
-<h2><span class="header-section-number">3.6</span> Configuration</h2>
+<h2><span class="header-section-number">3.5</span> Configuration</h2>
 <p>We can configure the files that we want to generate from the file <strong>build.properties</strong></p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
 <span class="ot">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
@@ -251,16 +246,16 @@ In the book will be:
 <span class="ot">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
 <span class="ot">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
 </section><section id="build" class="slide level2">
-<h2><span class="header-section-number">3.7</span> Build</h2>
+<h2><span class="header-section-number">3.6</span> Build</h2>
 <ul>
 <li>In the root folder you have to execute:</li>
 </ul>
 <pre><code>./build.sh [clean] [mode] [folder]</code></pre>
-<ul>
-<li><p>If you add [<strong>cleaN</strong>] the folder <strong>lib</strong> will be cleaned and the dependencies will be downloaded again.</p></li>
-<li><p>[<strong>mode</strong>] can take the next values: <strong>min, med o máx</strong>.</p></li>
-<li><p>[<strong>folder</strong>] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
-</ul>
+<pre><code>- If you add [**clean**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
+
+- [**mode**] can take the next values: **min, med o máx**.
+
+- [**folder**] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</code></pre>
 </section></section>
 <section><section id="releases-notes" class="titleslide slide level1"><h1><span class="header-section-number">4</span> Releases notes</h1></section><section id="relese-1.0-i" class="slide level2">
 <h2><span class="header-section-number">4.1</span> Relese 1.0 (I)</h2>

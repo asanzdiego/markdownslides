@@ -67,7 +67,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#dependencies"><span class="toc-section-number">2.1</span> Dependencies</a></li>
 <li><a href="#requirements"><span class="toc-section-number">2.2</span> Requirements</a></li>
 <li><a href="#download"><span class="toc-section-number">2.3</span> Download</a></li>
-<li><a href="#docker-under-testing"><span class="toc-section-number">2.4</span> Docker (Under testing)!</a><ul>
+<li><a href="#docker"><span class="toc-section-number">2.4</span> Docker</a><ul>
 <li><a href="#building-docker-image"><span class="toc-section-number">2.4.1</span> Building docker image</a></li>
 <li><a href="#launch-the-container"><span class="toc-section-number">2.4.2</span> Launch the container</a></li>
 </ul></li>
@@ -77,9 +77,8 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#notes"><span class="toc-section-number">3.2</span> Notes</a></li>
 <li><a href="#levels"><span class="toc-section-number">3.3</span> Levels</a></li>
 <li><a href="#numbering"><span class="toc-section-number">3.4</span> Numbering</a></li>
-<li><a href="#foo-bar"><span class="toc-section-number">3.5</span> Foo Bar</a></li>
-<li><a href="#configuration"><span class="toc-section-number">3.6</span> Configuration</a></li>
-<li><a href="#build"><span class="toc-section-number">3.7</span> Build</a></li>
+<li><a href="#configuration"><span class="toc-section-number">3.5</span> Configuration</a></li>
+<li><a href="#build"><span class="toc-section-number">3.6</span> Build</a></li>
 </ul></li>
 <li><a href="#releases-notes"><span class="toc-section-number">4</span> Releases notes</a><ul>
 <li><a href="#relese-1.0"><span class="toc-section-number">4.1</span> Relese 1.0</a></li>
@@ -147,7 +146,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <p>It can works with Docker, but is in beta.</p>
 <h2 id="download"><span class="header-section-number">2.3</span> Download</h2>
 <p><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></p>
-<h2 id="docker-under-testing"><span class="header-section-number">2.4</span> Docker (Under testing)!</h2>
+<h2 id="docker"><span class="header-section-number">2.4</span> Docker</h2>
 <p>Your installation with docker is still <strong>under testing</strong>.</p>
 <p>Any feedback is welcome.</p>
 <h3 id="building-docker-image"><span class="header-section-number">2.4.1</span> Building docker image</h3>
@@ -180,14 +179,10 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="numbering"><span class="header-section-number">3.4</span> Numbering</h2>
 <pre><code>## Foo Bar
 
-
-~~ ~
-
-In the book will be:
 </code></pre>
-<h2 id="foo-bar"><span class="header-section-number">3.5</span> Foo Bar</h2>
-<p><sub>~</sub></p>
-<h2 id="configuration"><span class="header-section-number">3.6</span> Configuration</h2>
+<p>In the book will be:</p>
+<pre><code>## Foo Bar</code></pre>
+<h2 id="configuration"><span class="header-section-number">3.5</span> Configuration</h2>
 <p>We can configure the files that we want to generate from the file <strong>build.properties</strong></p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
 <span class="ot">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
@@ -199,16 +194,16 @@ In the book will be:
 <span class="ot">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
 <span class="ot">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
 <span class="ot">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
-<h2 id="build"><span class="header-section-number">3.7</span> Build</h2>
+<h2 id="build"><span class="header-section-number">3.6</span> Build</h2>
 <ul>
 <li>In the root folder you have to execute:</li>
 </ul>
 <pre><code>./build.sh [clean] [mode] [folder]</code></pre>
-<ul>
-<li><p>If you add [<strong>cleaN</strong>] the folder <strong>lib</strong> will be cleaned and the dependencies will be downloaded again.</p></li>
-<li><p>[<strong>mode</strong>] can take the next values: <strong>min, med o máx</strong>.</p></li>
-<li><p>[<strong>folder</strong>] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
-</ul>
+<pre><code>- If you add [**clean**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
+
+- [**mode**] can take the next values: **min, med o máx**.
+
+- [**folder**] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</code></pre>
 <h1 id="releases-notes"><span class="header-section-number">4</span> Releases notes</h1>
 <h2 id="relese-1.0"><span class="header-section-number">4.1</span> Relese 1.0</h2>
 <ul>

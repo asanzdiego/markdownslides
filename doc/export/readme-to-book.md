@@ -71,7 +71,7 @@ It can works with Docker, but is in beta.
 
 [https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
-## Docker (Under testing)!
+## Docker
 
 Your installation with docker is still **under testing**.
 
@@ -148,7 +148,7 @@ But only in books. In slides you can only have 2 levels.
 ## Foo Bar
 
 
-~~ ~
+~~~
 
 In the book will be:
 
@@ -181,12 +181,11 @@ BUILD_EPUB_BOOK='max'
 ./build.sh [clean] [mode] [folder]
 ~~~
 
-- If you add [**cleaN**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
+    - If you add [**clean**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
 
-- [**mode**] can take the next values: **min, med o máx**.
+    - [**mode**] can take the next values: **min, med o máx**.
 
-- [**folder**] is the name of the folder wher to find
-  the md files. If no folder name, it will convert all md files of all the folders.
+    - [**folder**] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.
 
 # Releases notes
 

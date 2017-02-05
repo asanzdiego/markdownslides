@@ -1,5 +1,58 @@
 # Markdown Slides
 
+Table of Contents
+=================
+
+   * [Markdown Slides](#markdown-slides)
+      * [English](#english)
+         * [About](#about)
+            * [What is it?](#what-is-it)
+            * [Samples](#samples)
+            * [Contributors](#contributors)
+            * [Licence](#licence)
+         * [Instalation](#instalation)
+            * [Dependencies](#dependencies)
+            * [Requirements](#requirements)
+            * [Download](#download)
+            * [Docker](#docker)
+               * [Building docker image](#building-docker-image)
+               * [Launch the container](#launch-the-container)
+         * [How to use](#how-to-use)
+            * [Creation](#creation)
+            * [Notes](#notes)
+            * [Levels](#levels)
+            * [Numbering](#numbering)
+            * [Configuration](#configuration)
+            * [Build](#build)
+         * [Releases notes](#releases-notes)
+            * [Relese 1.0](#relese-10)
+            * [Relese 2.0](#relese-20)
+      * [Español](#español)
+         * [Acerca de](#acerca-de)
+            * [¿Qué es esto?](#qué-es-esto)
+            * [Ejemplos](#ejemplos)
+            * [Colaboradores](#colaboradores)
+            * [Licencia](#licencia)
+         * [Instalación](#instalación)
+            * [Dependencias](#dependencias)
+            * [Requisitos](#requisitos)
+            * [Descarga](#descarga)
+            * [Docker](#docker-1)
+               * [Construir la imagen](#construir-la-imagen)
+               * [Lanzar el contenedor](#lanzar-el-contenedor)
+         * [Manejo](#manejo)
+            * [Creación](#creación)
+            * [Notas](#notas)
+            * [Niveles](#niveles)
+            * [Numeración](#numeración)
+            * [Configuración](#configuración)
+            * [Generación](#generación)
+         * [Releases notes](#releases-notes-1)
+            * [Relese 1.0](#relese-10-1)
+            * [Relese 2.0](#relese-20-1)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+
 ## English
 
 ### About
@@ -178,11 +231,11 @@ BUILD_EPUB_BOOK='max'
 ./build.sh [clean] [mode] [folder]
 ~~~
 
-    - If you add [**cleaN**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
+- If you add [**cleaN**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
 
-    - [**mode**] can take the next values: **min, med o máx**.
+- [**mode**] can take the next values: **min, med o máx**.
 
-    - [**folder**] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.
+- [**folder**] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.
 
 ### Releases notes
 
@@ -212,28 +265,22 @@ BUILD_EPUB_BOOK='max'
 #### Relese 2.0
 
 - Export slides to:
-
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-online
     - reveal-slides-alternative
     - reveal-slides-alternative-pdf
     - reveal-slides-alternative-online
-
 - Export books to:
-
     - html-book
     - docx-book
     - epub-book
-
 - Deprecated:
-
     - beamer-slides
     - deck-slides
     - deck-slides-alternative
     - odt-book
     - pdf-book
-
 - Added menu thanks to [Raul Jimenez Ortega] (https://github.com/hhkaos).
 - Added dockerfile thanks to [Rubén Gómez García] (https://github.com/kaneproject).
 - Clean zip files from libraries thanks to [Cesar Seoane] (https://github.com/cesarseoane).
@@ -241,7 +288,6 @@ BUILD_EPUB_BOOK='max'
 - Fixed bug HTTPS images thanks to [Cesar Seoane] (https://github.com/cesarseoane).
 - Loading the online libraries with HTTPS thanks to [Cesar Seoane] (https://github.com/cesarseoane).
 - Configuration PDF resolution thanks to [Cesar Seoane] (https://github.com/cesarseoane).
-
 - New format 'epub'.
 - Added 'bash strict mode'.
 - Added 'build.properties' to configure file generation.
@@ -428,19 +474,18 @@ BUILD_EPUB_BOOK='max'
 ./build.sh [clean] [modo] [carpeta]
 ~~~
 
-    - Si añades [**clean**] se limpiará la carpeta **lib** y se volverán a bajar las dependencias.
+- Si añades [**clean**] se limpiará la carpeta **lib** y se volverán a bajar las dependencias.
 
-    - [**modo**] puede tomar los siguientes valores: **min, med o máx**.
+- [**modo**] puede tomar los siguientes valores: **min, med o máx**.
 
-    - [**carpeta**] es la carpeta donde va a buscar los ficheros md.
-      Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
+- [**carpeta**] es la carpeta donde va a buscar los ficheros md.
+  Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
 
 ### Releases notes
 
 #### Relese 1.0
 
 - Exporta slides a:
-
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-alternative
@@ -448,14 +493,11 @@ BUILD_EPUB_BOOK='max'
     - beamer-slides
     - deck-slides
     - deck-slides-alternative
-
 - Exporta books a:
-
     - html-book
     - docx-book
     - odt-book
     - pdf-book
-
 - Añadidos los modos de generación 'min', 'med' y 'max'.
 - Descarga automática de librerías externas.
 - Numeración (I), (II), (III)...
@@ -463,28 +505,22 @@ BUILD_EPUB_BOOK='max'
 #### Relese 2.0
 
 - Exporta slides a:
-
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-online
     - reveal-slides-alternative
     - reveal-slides-alternative-pdf
     - reveal-slides-alternative-online
-
 - Exporta books a:
-
     - html-book
     - docx-book
     - epub-book
-
 - Deprecated:
-
     - beamer-slides
     - deck-slides
     - deck-slides-alternative
     - odt-book
     - pdf-book
-
 - Añadido menú gracias a [Raul Jimenez Ortega](https://github.com/hhkaos).
 - Añadido dockerfile gracías a [Rubén Gómez García](https://github.com/kaneproject).
 - Limpieza de ficheros zip de las librerías gracias a [Cesar Seoane](https://github.com/cesarseoane).
@@ -492,7 +528,6 @@ BUILD_EPUB_BOOK='max'
 - Arreglado fallo imágenes HTTPS gracias a [Cesar Seoane](https://github.com/cesarseoane).
 - Carga de librerias 'online' por HTTPS gracias a [Cesar Seoane](https://github.com/cesarseoane).
 - Configuración resolución PDF gracias a [Cesar Seoane](https://github.com/cesarseoane).
-
 - Nuevo formato 'epub'.
 - Añadido 'bash strict mode'.
 - Añadido 'build.properties' para configurar la generación de ficheros.

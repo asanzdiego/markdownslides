@@ -242,7 +242,6 @@ BUILD_EPUB_BOOK='max'
 #### Relese 1.0
 
 - Export slides to:
-
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-alternative
@@ -250,14 +249,11 @@ BUILD_EPUB_BOOK='max'
     - beamer-slides
     - deck-slides
     - deck-slides-alternative
-
 - Export books to:
-
     - html-book
     - docx-book
     - odt-book
     - pdf-book
-
 - Added generation modes 'min', 'med' and 'max'.
 - Automatic download the external libraries.
 - Numbering (I), (II), (III) ...

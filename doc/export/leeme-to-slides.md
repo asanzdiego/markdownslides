@@ -122,9 +122,11 @@ y con un marcado ligero (que hay que conocer pero que es muy sencillo).
 Puedes añadir notas que serán visibles en modo libro o si **pulsas la letra 's' en las slides**
 mediante **@start-notes** y **@end-notes**.
 
+~~~
 <aside class="notes">
 Esto solo es visible en modo libro o si pulsas 's' en las slides.
 </aside> 
+~~~
 
 ## Niveles
 

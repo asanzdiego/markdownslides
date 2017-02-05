@@ -121,9 +121,11 @@ docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides 
 You can add notes that will be visible in book mode or if **you press the letter 's' on the slides**
 with **@start-notes** and **@end-notes**.
 
+~~~
 @start-notes
 This is only visible in book mode or if you press 's' on the slides.
 @end-notes
+~~~
 
 ## Levels
 

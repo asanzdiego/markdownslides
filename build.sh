@@ -264,7 +264,7 @@ function buildBeamerSlides() {
   echo -e "Exporting...                   ../export/$1-beamer-slides.pdf DEPRECATED!!!"
 
   sed '/.gif/d' ../export/$1-to-slides.md | pandoc -w beamer \
-    --number-sections --table-of-contents --chapters -V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer-slides.pdf
+    --number-sections --table-of-contents  --top-level-division=chapter-V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer-slides.pdf
 }
 
 function buildHtmlBook() {
@@ -279,28 +279,28 @@ function buildDocxBook() {
 
   echo -e "Exporting...                   ../export/$1-book.docx"
 
-  pandoc -w docx --number-sections --table-of-contents --chapters -o ../export/$1-book.docx ../export/$1-to-book.md
+  pandoc -w docx --number-sections --table-of-contents  --top-level-division=chapter-o ../export/$1-book.docx ../export/$1-to-book.md
 }
 
 function buildOdtBook() {
 
   echo -e "Exporting...                   ../export/$1-book.odt"
 
-  pandoc -w odt --number-sections --table-of-contents --chapters -o ../export/$1-book.odt ../export/$1-to-book.md
+  pandoc -w odt --number-sections --table-of-contents  --top-level-division=chapter-o ../export/$1-book.odt ../export/$1-to-book.md
 }
 
 function buildEpubBook() {
 
   echo -e "Exporting...                   ../export/$1-book.epub"
 
-  pandoc -w epub --number-sections --table-of-contents --chapters -o ../export/$1-book.epub ../export/$1-to-book.md
+  pandoc -w epub --number-sections --table-of-contents  --top-level-division=chapter-o ../export/$1-book.epub ../export/$1-to-book.md
 }
 
 function buildPdfBook() {
 
   echo -e "Exporting...                   ../export/$1-book.pdf DEPRECATED!!!"
 
-  sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --table-of-contents --chapters -o ../export/$1-book.pdf
+  sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --table-of-contents  --top-level-division=chapter-o ../export/$1-book.pdf
 }
 
 function build() {

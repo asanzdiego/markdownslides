@@ -223,7 +223,7 @@ function buildRevealSlides() {
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.html"
 
   pandoc -w revealjs --template $ORIGIN/templates/reveal-slides-template$2.html \
-    --variable width=$RESOLUTION_WIDTH --variable height=$RESOLUTION_HEIGHT \
+    --variable width=$WIDTH --variable height=$HEIGHT \
     --variable margin=$MARGIN --variable minScale=$MIN_SCALE --variable maxScale=$MAX_SCALE \
     --number-sections --email-obfuscation=none -o ../export/$1-reveal-slides$2.html ../export/$1-to-slides.md
 
@@ -241,7 +241,7 @@ function buildRevealSlidesOnline() {
 
   pandoc -w revealjs --template $ORIGIN/templates/reveal-slides-online-template$2.html \
     --variable revealSrc="$revealSrc" --variable revealMenuSrc="$revealMenuSrc" \
-    --variable width=$RESOLUTION_WIDTH --variable height=$RESOLUTION_HEIGHT \
+    --variable width=$WIDTH --variable height=$HEIGHT \
     --variable margin=$MARGIN --variable minScale=$MIN_SCALE --variable maxScale=$MAX_SCALE \
     --number-sections --email-obfuscation=none -o ../export/$1-reveal-slides-online$2.html ../export/$1-to-slides.md
 
@@ -256,7 +256,7 @@ function buildRevealSlidesPdf() {
 
   phantomjs --ssl-protocol=any ../lib/reveal.js/plugin/print-pdf/print-pdf.js \
     "file://`pwd`/../export/$1-reveal-slides$2.html?print-pdf" \
-    ../export/$1-reveal-slides$2.pdf $RESOLUTION_WIDTH'x'$RESOLUTION_HEIGHT > /dev/null
+    ../export/$1-reveal-slides$2.pdf $PHANTOMJS_RESOLUTION > /dev/null
 }
 
 function buildBeamerSlides() {
@@ -264,7 +264,7 @@ function buildBeamerSlides() {
   echo -e "Exporting...                   ../export/$1-beamer-slides.pdf DEPRECATED!!!"
 
   sed '/.gif/d' ../export/$1-to-slides.md | pandoc -w beamer \
-    --number-sections --table-of-contents  --top-level-division=chapter-V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer-slides.pdf
+    --number-sections --table-of-contents --chapters -V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer-slides.pdf
 }
 
 function buildHtmlBook() {
@@ -272,35 +272,36 @@ function buildHtmlBook() {
   echo -e "Exporting...                   ../export/$1-book.html"
 
   pandoc -w html5 --template $ORIGIN/templates/html-book-template.html \
-    --number-sections --email-obfuscation=none --toc --highlight-style=tango -o ../export/$1-book.html ../export/$1-to-book.md
+    --number-sections --email-obfuscation=none --table-of-contents --chapters \
+    --highlight-style=tango -o ../export/$1-book.html ../export/$1-to-book.md
 }
 
 function buildDocxBook() {
 
   echo -e "Exporting...                   ../export/$1-book.docx"
 
-  pandoc -w docx --number-sections --table-of-contents  --top-level-division=chapter-o ../export/$1-book.docx ../export/$1-to-book.md
+  pandoc -w docx --number-sections --table-of-contents --chapters -o ../export/$1-book.docx ../export/$1-to-book.md
 }
 
 function buildOdtBook() {
 
   echo -e "Exporting...                   ../export/$1-book.odt"
 
-  pandoc -w odt --number-sections --table-of-contents  --top-level-division=chapter-o ../export/$1-book.odt ../export/$1-to-book.md
+  pandoc -w odt --number-sections --table-of-contents  --chapters -o ../export/$1-book.odt ../export/$1-to-book.md
 }
 
 function buildEpubBook() {
 
   echo -e "Exporting...                   ../export/$1-book.epub"
 
-  pandoc -w epub --number-sections --table-of-contents  --top-level-division=chapter-o ../export/$1-book.epub ../export/$1-to-book.md
+  pandoc -w epub --number-sections --table-of-contents  --chapters -o ../export/$1-book.epub ../export/$1-to-book.md
 }
 
 function buildPdfBook() {
 
   echo -e "Exporting...                   ../export/$1-book.pdf DEPRECATED!!!"
 
-  sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --table-of-contents  --top-level-division=chapter-o ../export/$1-book.pdf
+  sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --table-of-contents  --chapters -o ../export/$1-book.pdf
 }
 
 function build() {

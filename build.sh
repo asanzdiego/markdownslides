@@ -392,6 +392,10 @@ function processFolder() {
   initLibFolder $1
   initExportFolder $1
 
+  if [ -e $1/build.properties ]; then
+    echo -e "Overwriting properties...      ../build.properties"
+    . $1/build.properties
+  fi
   cd $1"/md"
 
   for FILE in *.md; do

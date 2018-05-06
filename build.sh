@@ -396,6 +396,17 @@ function processFolder() {
     echo -e "Overwriting properties...      ../build.properties"
     . $1/build.properties
   fi
+
+  if [ "x$GENERATION_MODE" == "x" ]; then
+    GENERATION_MODE=$DEFAULT_GENERATION_MODE
+  fi
+
+  if [ "x$GENERATION_MODE" == "x" ]; then
+    GENERATION_MODE='med'
+  fi
+
+  echo -e "Generation mode...             "$GENERATION_MODE
+
   cd $1"/md"
 
   for FILE in *.md; do
@@ -422,8 +433,6 @@ function processFolders() {
 }
 
 function process() {
-
-  echo -e "Generation mode...             "$GENERATION_MODE
 
   if [ "x$1" != "x" ]; then
     processFolder $1

@@ -59,7 +59,7 @@ function initLibFolder() {
       exit -1
     else
       if [ "$CLEAN_LIB_FOLDER" == "yes" ]; then
-        echo -e "Cleaning lib folder...         ../lib"
+        echo -e "Cleaning lib folder...         .."$LIB_FOLDER
         rm -R $LIB_FOLDER
         mkdir $LIB_FOLDER
       fi
@@ -71,26 +71,35 @@ function initLibFolder() {
 
 function initExportFolder() {
 
-  FOLDER=$1"/export"
+  EXPORT_FOLDER=$1"/export"
+  IMG_FOLDER_FROM=$1"/img"
+  IMG_FOLDER_TO=$EXPORT_FOLDER"/img"
 
-  if [ -e $FOLDER ]; then
-    if [ -d $FOLDER ]; then
-      if [ ! -w $FOLDER ]; then
-          echo -e "ERROR: no write permision in $FOLDER"
+  if [ -e $EXPORT_FOLDER ]; then
+    if [ -d $EXPORT_FOLDER ]; then
+      if [ ! -w $EXPORT_FOLDER ]; then
+          echo -e "ERROR: no write permision in $EXPORT_FOLDER"
           exit -1
       fi
-      echo -e "Cleaning export folder...      ../export"
-      rm -R $FOLDER
-      mkdir $FOLDER
+      echo -e "Cleaning export folder...      .."$EXPORT_FOLDER
+      touch $EXPORT_FOLDER/k.k
+      rm $EXPORT_FOLDER/*.*
     else
-      echo -e "ERROR: $FOLDER exists and is not a folder"
+      echo -e "ERROR: $EXPORT_FOLDER exists and is not a folder"
       exit -1
     fi
   else
-    echo -e "Cleaning export folder...      ../export"
-    mkdir $FOLDER
+    echo -e "Creating export folder...      .."$EXPORT_FOLDER
+    mkdir $EXPORT_FOLDER
   fi
 
+  if [ "$COPY_IMG_FOLDER" == "yes" ]; then
+    echo -e "Coping img folder...           .."$IMG_FOLDER_FROM
+    if [ -e $IMG_FOLDER_TO ]; then
+      rm -rf $IMG_FOLDER_TO 
+    fi
+    cp -r $IMG_FOLDER_FROM $EXPORT_FOLDER
+  fi
 }
 
 function normaliceImages() {
@@ -389,15 +398,15 @@ function processFolder() {
   echo -e "==============================="
   echo -e "Procesing folder...            ../"$1
 
-  initLibFolder $1
-  initExportFolder $1
-
   if [ -e $1/build.properties ]; then
     echo -e "Overwriting properties...      ../build.properties"
     . $1/build.properties
   else
     echo -e "Overwriting properties...      no"
   fi
+
+  initLibFolder $1
+  initExportFolder $1
 
   if [ "x$GENERATION_MODE" == "x" ]; then
     GENERATION_MODE=$DEFAULT_GENERATION_MODE
@@ -407,7 +416,7 @@ function processFolder() {
     GENERATION_MODE='med'
   fi
 
-  echo -e "Generation mode...             "$GENERATION_MODE
+  echo -e "Generation mode...             .."$GENERATION_MODE
 
   cd $1"/md"
 
@@ -422,6 +431,14 @@ function processFolder() {
   done
 
   cd - > /dev/null
+
+  if [ "$ZIP_EXPORT_FOLDER" == "yes" ]; then
+    echo -e "-------------------------------"
+    echo -e "Zipig export folder...         .."/export/export.zip
+    cd $1"/export"
+    zip -r export.zip . > /dev/null
+    cd - > /dev/null
+  fi
 }
 
 function processFolders() {
@@ -445,6 +462,16 @@ function process() {
 
 if [ "x$1" == "xclean" ]; then
   CLEAN_LIB_FOLDER='yes'
+  shift
+fi
+
+if [ "x$1" == "ximg" ]; then
+  COPY_IMG_FOLDER='yes'
+  shift
+fi
+
+if [ "x$1" == "xzip" ]; then
+  ZIP_EXPORT_FOLDER='yes'
   shift
 fi
 

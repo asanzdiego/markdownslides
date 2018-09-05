@@ -395,6 +395,8 @@ function processFolder() {
   if [ -e $1/build.properties ]; then
     echo -e "Overwriting properties...      ../build.properties"
     . $1/build.properties
+  else
+    echo -e "Overwriting properties...      no"
   fi
 
   if [ "x$GENERATION_MODE" == "x" ]; then

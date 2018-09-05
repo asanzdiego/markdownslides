@@ -403,10 +403,18 @@ function processFolder() {
     . $1/build.properties
   fi
 
-  echo -e "Generation mode...             .."$GENERATION_MODE
-
   initLibFolder $1
   initExportFolder $1
+
+  if [ "x$GENERATION_MODE" == "x" ]; then
+    GENERATION_MODE=$DEFAULT_GENERATION_MODE
+  fi
+
+  if [ "x$GENERATION_MODE" == "x" ]; then
+    GENERATION_MODE='med'
+  fi
+
+  echo -e "Generation mode...             .."$GENERATION_MODE
 
   cd $1"/md"
 

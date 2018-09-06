@@ -84,8 +84,7 @@ function initExportFolder() {
           exit -1
       fi
       echo -e "Cleaning export folder...      ../"$EXPORT_FOLDER
-      touch $EXPORT_FOLDER/k.k
-      rm $EXPORT_FOLDER/*.*
+      rm $EXPORT_FOLDER/*
     else
       echo -e "ERROR: $EXPORT_FOLDER exists and is not a folder"
       exit -1
@@ -97,9 +96,6 @@ function initExportFolder() {
 
   if [ "$COPY_IMG_FOLDER" == "yes" ]; then
     echo -e "Coping img folder...           ../"$IMG_FOLDER_FROM
-    if [ -e $IMG_FOLDER_TO ]; then
-      rm -rf $IMG_FOLDER_TO 
-    fi
     cp -r $IMG_FOLDER_FROM $EXPORT_FOLDER
   fi
 }

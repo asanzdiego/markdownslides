@@ -411,6 +411,8 @@ function processFolder() {
   if [ -e $1/build.properties ]; then
     echo -e "Overwriting properties...      ../"$1/build.properties
     . $1/build.properties
+  else
+    echo -e "Overwriting properties...      no"
   fi
 
   initLibFolder $1

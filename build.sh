@@ -7,6 +7,8 @@ clear
 ORIGIN=`pwd`
 echo -e $ORIGIN
 
+CURRENT_NUMBER_OFFSET=1
+
 . ./build.properties
 
 function downloadLib() {
@@ -59,7 +61,7 @@ function initLibFolder() {
       exit -1
     else
       if [ "$CLEAN_LIB_FOLDER" == "yes" ]; then
-        echo -e "Cleaning lib folder...         .."$LIB_FOLDER
+        echo -e "Cleaning lib folder...         ../"$LIB_FOLDER
         rm -R $LIB_FOLDER
         mkdir $LIB_FOLDER
       fi
@@ -81,7 +83,7 @@ function initExportFolder() {
           echo -e "ERROR: no write permision in $EXPORT_FOLDER"
           exit -1
       fi
-      echo -e "Cleaning export folder...      .."$EXPORT_FOLDER
+      echo -e "Cleaning export folder...      ../"$EXPORT_FOLDER
       touch $EXPORT_FOLDER/k.k
       rm $EXPORT_FOLDER/*.*
     else
@@ -89,12 +91,12 @@ function initExportFolder() {
       exit -1
     fi
   else
-    echo -e "Creating export folder...      .."$EXPORT_FOLDER
+    echo -e "Creating export folder...      ../"$EXPORT_FOLDER
     mkdir $EXPORT_FOLDER
   fi
 
   if [ "$COPY_IMG_FOLDER" == "yes" ]; then
-    echo -e "Coping img folder...           .."$IMG_FOLDER_FROM
+    echo -e "Coping img folder...           ../"$IMG_FOLDER_FROM
     if [ -e $IMG_FOLDER_TO ]; then
       rm -rf $IMG_FOLDER_TO 
     fi
@@ -215,7 +217,7 @@ function buildDeckSlides() {
   echo -e "Exporting...                   ../export/$1-deck-slides$2.html"
 
   pandoc -w dzslides --template $ORIGIN/templates/deck-slides-template$2.html \
-    --number-sections --email-obfuscation=none -o ../export/$1-deck-slides$2.html ../export/$1-to-slides.md
+    --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --email-obfuscation=none -o ../export/$1-deck-slides$2.html ../export/$1-to-slides.md
 
   sed -i s/h1\>/h2\>/g ../export/$1-deck-slides$2.html
   sed -i s/\>\<h2/\>\<h1/g ../export/$1-deck-slides$2.html
@@ -234,7 +236,7 @@ function buildRevealSlides() {
   pandoc -w revealjs --template $ORIGIN/templates/reveal-slides-template$2.html \
     --variable width=$WIDTH --variable height=$HEIGHT \
     --variable margin=$MARGIN --variable minScale=$MIN_SCALE --variable maxScale=$MAX_SCALE \
-    --number-sections --email-obfuscation=none -o ../export/$1-reveal-slides$2.html ../export/$1-to-slides.md
+    --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --email-obfuscation=none -o ../export/$1-reveal-slides$2.html ../export/$1-to-slides.md
 
   sed -i s/h1\>/h2\>/g ../export/$1-reveal-slides$2.html
   sed -i s/\>\<h2/\>\<h1/g ../export/$1-reveal-slides$2.html
@@ -252,7 +254,7 @@ function buildRevealSlidesOnline() {
     --variable revealSrc="$revealSrc" --variable revealMenuSrc="$revealMenuSrc" \
     --variable width=$WIDTH --variable height=$HEIGHT \
     --variable margin=$MARGIN --variable minScale=$MIN_SCALE --variable maxScale=$MAX_SCALE \
-    --number-sections --email-obfuscation=none -o ../export/$1-reveal-slides-online$2.html ../export/$1-to-slides.md
+    --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --email-obfuscation=none -o ../export/$1-reveal-slides-online$2.html ../export/$1-to-slides.md
 
   sed -i s/h1\>/h2\>/g ../export/$1-reveal-slides-online$2.html
   sed -i s/\>\<h2/\>\<h1/g ../export/$1-reveal-slides-online$2.html
@@ -273,7 +275,7 @@ function buildBeamerSlides() {
   echo -e "Exporting...                   ../export/$1-beamer-slides.pdf"
 
   sed '/.gif/d' ../export/$1-to-slides.md | pandoc -w beamer \
-    --number-sections --table-of-contents --chapters -V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer-slides.pdf
+    --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents --chapters -V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer-slides.pdf
 }
 
 function buildHtmlBook() {
@@ -281,7 +283,7 @@ function buildHtmlBook() {
   echo -e "Exporting...                   ../export/$1-book.html"
 
   pandoc -w html5 --template $ORIGIN/templates/html-book-template.html \
-    --number-sections --email-obfuscation=none --table-of-contents --chapters \
+    --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --email-obfuscation=none --table-of-contents --chapters \
     --highlight-style=tango -o ../export/$1-book.html ../export/$1-to-book.md
 }
 
@@ -289,28 +291,28 @@ function buildDocxBook() {
 
   echo -e "Exporting...                   ../export/$1-book.docx"
 
-  pandoc -w docx --number-sections --table-of-contents --chapters -o ../export/$1-book.docx ../export/$1-to-book.md
+  pandoc -w docx --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents --chapters -o ../export/$1-book.docx ../export/$1-to-book.md
 }
 
 function buildOdtBook() {
 
   echo -e "Exporting...                   ../export/$1-book.odt"
 
-  pandoc -w odt --number-sections --table-of-contents  --chapters -o ../export/$1-book.odt ../export/$1-to-book.md
+  pandoc -w odt --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents  --chapters -o ../export/$1-book.odt ../export/$1-to-book.md
 }
 
 function buildEpubBook() {
 
   echo -e "Exporting...                   ../export/$1-book.epub"
 
-  pandoc -w epub --number-sections --table-of-contents  --chapters -o ../export/$1-book.epub ../export/$1-to-book.md
+  pandoc -w epub --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents  --chapters -o ../export/$1-book.epub ../export/$1-to-book.md
 }
 
 function buildPdfBook() {
 
   echo -e "Exporting...                   ../export/$1-book.pdf"
 
-  sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --table-of-contents  --chapters -o ../export/$1-book.pdf
+  sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents  --chapters -o ../export/$1-book.pdf
 }
 
 function build() {
@@ -318,16 +320,16 @@ function build() {
   FUNCTION_NAME=$1
 
   if [ $FUNCTION_NAME == "min" ]; then
-    echo "YES"
+    echo "yes"
   fi
   if [ $FUNCTION_NAME == "med" -a $GENERATION_MODE == "med" ]; then
-    echo "YES"
+    echo "yes"
   fi
   if [ $FUNCTION_NAME == "med" -a $GENERATION_MODE == "max" ]; then
-    echo "YES"
+    echo "yes"
   fi
   if [ $FUNCTION_NAME == "max" -a $GENERATION_MODE == "max" ]; then
-    echo "YES"
+    echo "yes"
   fi
 }
 
@@ -335,31 +337,31 @@ function exportMdToSlides() {
 
   cleanMdToSlides $1
 
-  if [ "`build $BUILD_REVEAL_SLIDES`" == "YES" ]; then
+  if [ "`build $BUILD_REVEAL_SLIDES`" == "yes" ]; then
     buildRevealSlides $1 ""
   fi
-  if [ "`build $BUILD_REVEAL_SLIDES_PDF`" == "YES" ]; then
+  if [ "`build $BUILD_REVEAL_SLIDES_PDF`" == "yes" ]; then
     buildRevealSlidesPdf $1 ""
   fi
-  if [ "`build $BUILD_REVEAL_SLIDES_ONLINE`" == "YES" ]; then
+  if [ "`build $BUILD_REVEAL_SLIDES_ONLINE`" == "yes" ]; then
     buildRevealSlidesOnline $1 ""
   fi
-  if [ "`build $BUILD_REVEAL_SLIDES_ALTERNATIVE`" == "YES" ]; then
+  if [ "`build $BUILD_REVEAL_SLIDES_ALTERNATIVE`" == "yes" ]; then
     buildRevealSlides $1 -alternative
   fi
-  if [ "`build $BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF`" == "YES" ]; then
+  if [ "`build $BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF`" == "yes" ]; then
     buildRevealSlidesPdf $1 -alternative
   fi
-  if [ "`build $BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE`" == "YES" ]; then
+  if [ "`build $BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE`" == "yes" ]; then
     buildRevealSlidesOnline $1 -alternative
   fi
-  if [ "`build $BUILD_BEAMER_SLIDES`" == "YES" ]; then
+  if [ "`build $BUILD_BEAMER_SLIDES`" == "yes" ]; then
     buildBeamerSlides $1
   fi
-  if [ "`build $BUILD_DECK_SLIDES`" == "YES" ]; then
+  if [ "`build $BUILD_DECK_SLIDES`" == "yes" ]; then
     buildDeckSlides $1 ""
   fi
-  if [ "`build $BUILD_DECK_SLIDES_ALTERNATIVE`" == "YES" ]; then
+  if [ "`build $BUILD_DECK_SLIDES_ALTERNATIVE`" == "yes" ]; then
     buildDeckSlides $1 -alternative
   fi
 
@@ -369,28 +371,36 @@ function exportMdToBook() {
 
   cleanMdToBook $1
 
-  if [ "`build $BUILD_HTML_BOOK`" == "YES" ]; then
+  if [ "`build $BUILD_HTML_BOOK`" == "yes" ]; then
     buildHtmlBook $1
   fi
-  if [ "`build $BUILD_DOCX_BOOK`" == "YES" ]; then
+  if [ "`build $BUILD_DOCX_BOOK`" == "yes" ]; then
     buildDocxBook $1
   fi
-  if [ "`build $BUILD_ODT_BOOK`" == "YES" ]; then
+  if [ "`build $BUILD_ODT_BOOK`" == "yes" ]; then
     buildOdtBook $1
   fi
-  if [ "`build $BUILD_EPUB_BOOK`" == "YES" ]; then
+  if [ "`build $BUILD_EPUB_BOOK`" == "yes" ]; then
     buildEpubBook $1
   fi
-  if [ "`build $BUILD_PDF_BOOK`" == "YES" ]; then
+  if [ "`build $BUILD_PDF_BOOK`" == "yes" ]; then
     buildPdfBook $1
   fi
 }
 
 function exportMdFile() {
+  
+  if [ $NUMBER_OFFSET == "yes" ]; then
+    echo -e "Current number offset...       .."$CURRENT_NUMBER_OFFSET
+  fi
 
   exportMdToSlides $1
   echo -e "- - - - - - - - - - - - - - - -"
   exportMdToBook $1
+  
+  if [ $NUMBER_OFFSET == "yes" ]; then
+    CURRENT_NUMBER_OFFSET=$((CURRENT_NUMBER_OFFSET+1))
+  fi
 }
 
 function processFolder() {
@@ -399,7 +409,7 @@ function processFolder() {
   echo -e "Procesing folder...            ../"$1
 
   if [ -e $1/build.properties ]; then
-    echo -e "Overwriting properties...      ../build.properties"
+    echo -e "Overwriting properties...      ../"$1/build.properties
     . $1/build.properties
   fi
 
@@ -460,16 +470,6 @@ function process() {
 
 if [ "x$1" == "xclean" ]; then
   CLEAN_LIB_FOLDER='yes'
-  shift
-fi
-
-if [ "x$1" == "ximg" ]; then
-  COPY_IMG_FOLDER='yes'
-  shift
-fi
-
-if [ "x$1" == "xzip" ]; then
-  ZIP_EXPORT_FOLDER='yes'
   shift
 fi
 

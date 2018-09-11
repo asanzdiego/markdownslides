@@ -84,7 +84,7 @@ function initExportFolder() {
           exit -1
       fi
       echo -e "Cleaning export folder...      ../"$EXPORT_FOLDER
-      rm $EXPORT_FOLDER/*
+      rm -rf $EXPORT_FOLDER/*
     else
       echo -e "ERROR: $EXPORT_FOLDER exists and is not a folder"
       exit -1
@@ -361,6 +361,10 @@ function exportMdToSlides() {
     buildDeckSlides $1 -alternative
   fi
 
+  if [ $REMOVE_MD_TO_SLIDES == "yes" ]; then
+    rm ../export/$1-to-slides.md
+    echo -e "Removing md to slides...       ../export/$1-to-slides.md"
+  fi
 }
 
 function exportMdToBook() {
@@ -381,6 +385,11 @@ function exportMdToBook() {
   fi
   if [ "`build $BUILD_PDF_BOOK`" == "yes" ]; then
     buildPdfBook $1
+  fi
+
+  if [ $REMOVE_MD_TO_BOOK == "yes" ]; then
+    rm ../export/$1-to-book.md
+    echo -e "Removing md to book...         ../export/$1-to-book.md"
   fi
 }
 

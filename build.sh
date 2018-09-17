@@ -411,7 +411,7 @@ function exportMdFile() {
 function processFolder() {
 
   echo -e "==============================="
-  echo -e "Procesing folder...            ../"$1
+  echo -e "ProceSsing folder...           ../"$1
 
   if [ -e $1/build.properties ]; then
     echo -e "Overwriting properties...      ../"$1/build.properties
@@ -449,9 +449,9 @@ function processFolder() {
 
   if [ "$ZIP_EXPORT_FOLDER" == "yes" ]; then
     echo -e "-------------------------------"
-    echo -e "Zipig export folder...         .."/export/export.zip
+    echo -e "Ziping export folder...        .."/export/$1.zip
     cd $1"/export"
-    zip -r export.zip . > /dev/null
+    zip -r $1.zip . > /dev/null
     cd - > /dev/null
   fi
 }

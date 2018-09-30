@@ -456,6 +456,7 @@ function processFolder() {
   fi
 
   chmod 555 -R $1"/export"
+  chmod 777 $1"/export"
 }
 
 function processFolders() {

@@ -110,22 +110,10 @@ $ docker build -t asanzdiego/markdownslides .
 
 ##### Launch the container
 
-Launch the container, product generated will be as **min** configuration 
+Launch the container:
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
-~~~
-
-Changing to **med** configuration
-
-~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
-~~~
-     
-Changing to **max** configuation
-
-~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc
+docker run -it -v ${PWD}:/home/master asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
 ~~~
 
 ### How to use
@@ -374,22 +362,10 @@ $ docker build -t asanzdiego/markdownslides .
 
 ##### Lanzar el contenedor
 
-Lanzamos el contenedor con la configuración **min**
+Lanzamos el contenedor:
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
-~~~
-
-Cambiando a configuración **med**
-
-~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
-~~~
-     
-Cambiando a configuración **max**
-
-~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc
+docker run -it -v ${PWD}:/home/master asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
 ~~~
 
 ### Manejo

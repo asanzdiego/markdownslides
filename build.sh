@@ -271,7 +271,7 @@ function buildBeamerSlides() {
   echo -e "Exporting...                   ../export/$1-beamer-slides.pdf"
 
   sed '/.gif/d' ../export/$1-to-slides.md | pandoc -w beamer \
-    --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents --chapters -V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer-slides.pdf
+    --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents --top-level-division=chapter -V fontsize=9pt -V theme=Warsaw -o ../export/$1-beamer-slides.pdf
 }
 
 function buildHtmlBook() {
@@ -279,7 +279,7 @@ function buildHtmlBook() {
   echo -e "Exporting...                   ../export/$1-book.html"
 
   pandoc -w html5 --template $ORIGIN/templates/html-book-template.html \
-    --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --email-obfuscation=none --table-of-contents --chapters \
+    --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --email-obfuscation=none --table-of-contents --top-level-division=chapter \
     --highlight-style=tango -o ../export/$1-book.html ../export/$1-to-book.md
 }
 
@@ -287,28 +287,28 @@ function buildDocxBook() {
 
   echo -e "Exporting...                   ../export/$1-book.docx"
 
-  pandoc -w docx --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents --chapters -o ../export/$1-book.docx ../export/$1-to-book.md
+  pandoc -w docx --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents --top-level-division=chapter -o ../export/$1-book.docx ../export/$1-to-book.md
 }
 
 function buildOdtBook() {
 
   echo -e "Exporting...                   ../export/$1-book.odt"
 
-  pandoc -w odt --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents  --chapters -o ../export/$1-book.odt ../export/$1-to-book.md
+  pandoc -w odt --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents  --top-level-division=chapter -o ../export/$1-book.odt ../export/$1-to-book.md
 }
 
 function buildEpubBook() {
 
   echo -e "Exporting...                   ../export/$1-book.epub"
 
-  pandoc -w epub --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents  --chapters -o ../export/$1-book.epub ../export/$1-to-book.md
+  pandoc -w epub --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents  --top-level-division=chapter -o ../export/$1-book.epub ../export/$1-to-book.md
 }
 
 function buildPdfBook() {
 
   echo -e "Exporting...                   ../export/$1-book.pdf"
 
-  sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents  --chapters -o ../export/$1-book.pdf
+  sed '/.gif/d' ../export/$1-to-book.md | pandoc --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --table-of-contents  --top-level-division=chapter -o ../export/$1-book.pdf
 }
 
 function build() {
@@ -454,6 +454,8 @@ function processFolder() {
     zip -r $1.zip . > /dev/null
     cd - > /dev/null
   fi
+
+  chmod 777 $1"/export"
 }
 
 function processFolders() {

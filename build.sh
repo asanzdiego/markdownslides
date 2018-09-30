@@ -455,7 +455,7 @@ function processFolder() {
     cd - > /dev/null
   fi
 
-  chmod 777 $1"/export"
+  chmod 555 -R $1"/export"
 }
 
 function processFolders() {

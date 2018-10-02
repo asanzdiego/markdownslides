@@ -13,5 +13,5 @@ RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x
 WORKDIR /home/
 RUN wget https://github.com/asanzdiego/markdownslides/archive/master.zip && \
     unzip master.zip
-WORKDIR /home/master
-ADD . /home/master
+WORKDIR /home/markdownslides-master
+ADD . /home/markdownslides-master

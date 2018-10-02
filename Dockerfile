@@ -14,4 +14,5 @@ WORKDIR /home/
 RUN wget https://github.com/asanzdiego/markdownslides/archive/master.zip && \
     unzip master.zip
 WORKDIR /home/markdownslides-master
+RUN rm -rf doc
 ADD . /home/markdownslides-master

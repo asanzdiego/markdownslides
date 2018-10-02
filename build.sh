@@ -83,19 +83,19 @@ function initExportFolder() {
           echo -e "ERROR: no write permision in $EXPORT_FOLDER"
           exit -1
       fi
-      echo -e "Cleaning export folder...      ../"$EXPORT_FOLDER
+      echo -e "Cleaning export folder...      ../export"
       rm -rf $EXPORT_FOLDER/*
     else
       echo -e "ERROR: $EXPORT_FOLDER exists and is not a folder"
       exit -1
     fi
   else
-    echo -e "Creating export folder...      ../"$EXPORT_FOLDER
+    echo -e "Creating export folder...      ../export"
     mkdir $EXPORT_FOLDER
   fi
 
   if [ "$COPY_IMG_FOLDER" == "yes" ]; then
-    echo -e "Coping img folder...           ../"$IMG_FOLDER_FROM
+    echo -e "Coping img folder...           ../export/img"
     cp -r $IMG_FOLDER_FROM $EXPORT_FOLDER
   fi
 }
@@ -414,7 +414,7 @@ function processFolder() {
   echo -e "ProceSsing folder...           ../"$1
 
   if [ -e $1/build.properties ]; then
-    echo -e "Overwriting properties...      ../"$1/build.properties
+    echo -e "Overwriting properties...      ../build.properties"
     . $1/build.properties
   else
     echo -e "Overwriting properties...      no"
@@ -455,8 +455,8 @@ function processFolder() {
     cd - > /dev/null
   fi
 
-  chmod 555 -R $1"/export"
-  chmod 777 $1"/export"
+  chmod 666 -R $1"/export"
+  chmod 755 $1"/export"
 }
 
 function processFolders() {

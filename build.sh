@@ -100,14 +100,18 @@ function initExportFolder() {
   fi
 }
 
-function normaliceImages() {
+function normalizeImages() {
 
+  echo "normalizeImages1"
+  
   # open div before ![
   sed -i 's/!\[/<div style="text-align:center">!\[/g' ../export/$1-to-$2.md
 }
 
-function normaliceImages() {
+function normalizeImages() {
 
+  echo "normalizeImages2"
+  
   # close div after .png)
   sed -i 's/.png)$/.png){ width=50% text-align=center }\n/g' ../export/$1-to-$2.md
 
@@ -162,7 +166,7 @@ function cleanMdToSlides() {
 
   # normalizeMd $1 slides
 
-  normaliceImages $1 slides
+  normalizeImages $1 slides
 
   # replace @start-notes with <aside class="notes">
   sed -i 's/^@start-notes/<aside class="notes">/g' ../export/$1-to-slides.md
@@ -192,7 +196,7 @@ function cleanMdToBook() {
 
   # convertMainListsIntoParagraphs $1 book
 
-  normaliceImages $1 book
+  normalizeImages $1 book
 
   # remove @start-notes
   sed -i 's/^@start-notes//g' ../export/$1-to-book.md
@@ -410,18 +414,20 @@ function exportMdFile() {
 
 function processFolder() {
 
-  echo -e "==============================="
-  echo -e "ProceSsing folder...           ../"$1
+  FOLDER=${1%/}
 
-  if [ -e $1/build.properties ]; then
+  echo -e "==============================="
+  echo -e "ProceSsing folder...           ../"$FOLDER
+
+  if [ -e $FOLDER/build.properties ]; then
     echo -e "Overwriting properties...      ../build.properties"
-    . $1/build.properties
+    . $FOLDER/build.properties
   else
     echo -e "Overwriting properties...      no"
   fi
 
-  initLibFolder $1
-  initExportFolder $1
+  initLibFolder $FOLDER
+  initExportFolder $FOLDER
 
   if [ "x$GENERATION_MODE" == "x" ]; then
     GENERATION_MODE=$DEFAULT_GENERATION_MODE
@@ -433,7 +439,7 @@ function processFolder() {
 
   echo -e "Generation mode...             .."$GENERATION_MODE
 
-  cd $1"/md"
+  cd $FOLDER"/md"
 
   for FILE in *.md; do
 
@@ -449,14 +455,14 @@ function processFolder() {
 
   if [ "$ZIP_EXPORT_FOLDER" == "yes" ]; then
     echo -e "-------------------------------"
-    echo -e "Ziping export folder...        .."/export/$1.zip
-    cd $1"/export"
-    zip -r $1.zip . > /dev/null
+    echo -e "Ziping export folder...        .."/export/$FOLDER.zip
+    cd $FOLDER"/export"
+    zip -r $FOLDER.zip . > /dev/null
     cd - > /dev/null
   fi
 
-  chmod 666 -R $1"/export"
-  chmod 755 $1"/export"
+  chmod 666 -R $FOLDER"/export"
+  chmod 755 $FOLDER"/export"
 }
 
 function processFolders() {

@@ -113,7 +113,7 @@ $ docker build -t asanzdiego/markdownslides .
 Launch the container:
 
 ~~~
-docker run -it -v ${PWD}:/home/master asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
+docker run -it -v "${PWD}":/home/markdownslides-master/"${PWD##*/}" asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
 ~~~
 
 ### How to use

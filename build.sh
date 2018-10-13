@@ -469,7 +469,7 @@ function processFolders() {
 
   for PROJECT in */; do
 
-    if [ -d $PROJECT -a "$PROJECT" != "templates/" -a "$PROJECT" != "lib/" ]; then
+    if [ -d $PROJECT -a "$PROJECT" != "templates/" -a "$PROJECT" != "lib/" -a "$PROJECT" != "doc/" ]; then
       processFolder $PROJECT
     fi
   done

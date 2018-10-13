@@ -101,16 +101,6 @@ function initExportFolder() {
 }
 
 function normalizeImages() {
-
-  echo "normalizeImages1"
-  
-  # open div before ![
-  sed -i 's/!\[/<div style="text-align:center">!\[/g' ../export/$1-to-$2.md
-}
-
-function normalizeImages() {
-
-  echo "normalizeImages2"
   
   # close div after .png)
   sed -i 's/.png)$/.png){ width=50% text-align=center }\n/g' ../export/$1-to-$2.md

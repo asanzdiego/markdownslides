@@ -452,7 +452,10 @@ function processFolder() {
   fi
 
   chmod 666 -R $FOLDER"/export"
-  chmod 755 $FOLDER"/export"
+  chmod 555 $FOLDER"/export"
+  if [ -e $FOLDER"/export/img" ]; then
+    chmod 555 $FOLDER"/export/img"
+  fi
 }
 
 function processFolders() {

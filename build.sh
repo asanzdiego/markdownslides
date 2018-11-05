@@ -225,7 +225,8 @@ function buildRevealSlides() {
 
   pandoc -w revealjs --template $ORIGIN/templates/reveal-slides-template$2.html \
     --variable width=$WIDTH --variable height=$HEIGHT \
-    --variable margin=$MARGIN --variable minScale=$MIN_SCALE --variable maxScale=$MAX_SCALE \
+    --variable margin=$MARGIN --variable transition=$TRANSITION \
+    --variable minScale=$MIN_SCALE --variable maxScale=$MAX_SCALE \
     --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --email-obfuscation=none -o ../export/$1-reveal-slides$2.html ../export/$1-to-slides.md
 
   sed -i s/h1\>/h2\>/g ../export/$1-reveal-slides$2.html
@@ -243,7 +244,8 @@ function buildRevealSlidesOnline() {
   pandoc -w revealjs --template $ORIGIN/templates/reveal-slides-online-template$2.html \
     --variable revealSrc="$revealSrc" --variable revealMenuSrc="$revealMenuSrc" \
     --variable width=$WIDTH --variable height=$HEIGHT \
-    --variable margin=$MARGIN --variable minScale=$MIN_SCALE --variable maxScale=$MAX_SCALE \
+    --variable margin=$MARGIN --variable transition=$TRANSITION \
+    --variable minScale=$MIN_SCALE --variable maxScale=$MAX_SCALE \
     --number-sections --number-offset=$CURRENT_NUMBER_OFFSET --email-obfuscation=none -o ../export/$1-reveal-slides-online$2.html ../export/$1-to-slides.md
 
   sed -i s/h1\>/h2\>/g ../export/$1-reveal-slides-online$2.html

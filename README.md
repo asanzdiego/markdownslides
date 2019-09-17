@@ -25,8 +25,9 @@
   * [Configuration](#configuration)
   * [Build](#build)
 * [Releases notes](#releases-notes)
-  * [Relese 1.0](#relese-10)
-  * [Relese 2.0](#relese-20)
+  * [Release 1.0](#release-10)
+  * [Release 2.0](#release-20)
+  * [Release 3.0](#release-30)
 
 ### About
 
@@ -47,10 +48,6 @@ generate:
 
   - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html)
   - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
-  - [reveal-slides-online](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online.html)
-  - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html)
-  - [reveal-slides-alternative-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf)
-  - [reveal-slides-alternative-online](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online-alternative.html)
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
@@ -78,7 +75,7 @@ generate:
 - It needs to be installed:
 
     - [Pandoc](http://johnmacfarlane.net/pandoc/)
-    - [Phantom.js](http://phantomjs.org)
+    - [DeckTape](https://github.com/astefanutti/decktape)
 
 - It is automaticaly downloaded:
 
@@ -92,7 +89,7 @@ It can works with Docker, but is in beta.
 
 #### Download
 
-[https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
+[github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 #### Docker
 
@@ -174,16 +171,41 @@ In the book will be:
 We can configure the files that we want to generate from the file **build.properties**
 
 ~~~{.bash}
+#GENERATION_MODE='min|med|max'
+DEFAULT_GENERATION_MODE='min'
+
 BUILD_REVEAL_SLIDES='min'
 BUILD_REVEAL_SLIDES_PDF='med'
-BUILD_REVEAL_SLIDES_ONLINE='med'
-BUILD_REVEAL_SLIDES_ALTERNATIVE='max'
-BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF='max'
-BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE='max'
 
-BUILD_HTML_BOOK='min'
-BUILD_DOCX_BOOK='med'
+BUILD_HTML_BOOK='max'
+BUILD_DOCX_BOOK='max'
 BUILD_EPUB_BOOK='max'
+~~~
+
+We can configure also some stufs from the file **build.properties**
+
+~~~{.bash}
+CLEAN_LIB_FOLDER='no'
+COPY_IMG_FOLDER='no'
+ZIP_EXPORT_FOLDER='no'
+NUMBER_SECTIONS='yes'
+NUMBER_OFFSET='no'
+CURRENT_NUMBER_OFFSET=1
+REMOVE_MD_TO_BOOK='yes'
+REMOVE_MD_TO_SLIDES='yes'
+~~~
+
+We can configure also some stufs about reveal.js from the file **build.properties**
+
+~~~{.bash}
+#THEME='black|white|league|sky|beige|simple|serif|blood|night|moon|solarized'
+REVEAL_JS_THEME='beige'
+REVEAL_JS_SHOW_TITLE_FOOTER='yes'
+REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
+REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
+REVEAL_JS_URL='../lib/reveal.js/'
+REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
+REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
 ~~~
 
 #### Build
@@ -194,11 +216,11 @@ BUILD_EPUB_BOOK='max'
 ./build.sh [clean] [mode] [folder]
 ~~~
 
-- If you add [**cleaN**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
+- [**clean**] clean the folder **lib** and download the dependencies again.
 
 - [**mode**] can take the next values: **min, med o máx**.
 
-- [**folder**] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.
+- [**folder**] folder wher to find the md files. If no folder name, it will convert all md files of all the folders.
 
 ### Releases notes
 
@@ -255,6 +277,14 @@ BUILD_EPUB_BOOK='max'
 - Added notes only visible in book mode or if you press 's' on the slides.
 - Normalization of images in slides (witdh = 50% and align = center).
 
+#### Relese 3.0
+
+- Clean the code.
+- Remove deprecated exportation files.
+- Improve de configuration in build.properties file.
+- Update [Reveal.js](http://lab.hakim.se/reveal-js/#/) dependencies.
+- Export to PDF with [DeckTape](https://github.com/astefanutti/decktape).
+
 ## Español
 
 * [Acerca de](#acerca-de)
@@ -276,9 +306,10 @@ BUILD_EPUB_BOOK='max'
   * [Numeración](#numeración)
   * [Configuración](#configuración)
   * [Generación](#generación)
-* [Releases notes](#releases-notes-1)
-  * [Relese 1.0](#relese-10-1)
-  * [Relese 2.0](#relese-20-1)
+* [Notas de las versiones](#notas-de-las-versiones)
+  * [version 1.0](#version-10)
+  * [Versión 2.0](#version-20)
+  * [Versión 3.0](#version-30)
   
 ### Acerca de
 
@@ -299,10 +330,6 @@ genera:
 
   - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html)
   - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
-  - [reveal-slides-online](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online.html)
-  - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html)
-  - [reveal-slides-alternative-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
-  - [reveal-slides-alternative-online](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online-alternative.html)
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx)
@@ -330,7 +357,7 @@ genera:
 - Necesita ser instalado:
 
     - [Pandoc](http://johnmacfarlane.net/pandoc/)
-    - [Phantom.js](http://phantomjs.org)
+    - [DeckTape](https://github.com/astefanutti/decktape)
 
 - Descargado automáticamente:
 
@@ -344,7 +371,7 @@ Puede funcionar con Docker, pero todavía está en pruebas.
 
 #### Descarga
 
-[https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
+[github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 #### Docker
 
@@ -426,16 +453,41 @@ En el libro quedará:
 Podemos configurar los ficheros que queremos generar desde el fichero **build.properties**
 
 ~~~{.bash}
+#GENERATION_MODE='min|med|max'
+DEFAULT_GENERATION_MODE='min'
+
 BUILD_REVEAL_SLIDES='min'
 BUILD_REVEAL_SLIDES_PDF='med'
-BUILD_REVEAL_SLIDES_ONLINE='med'
-BUILD_REVEAL_SLIDES_ALTERNATIVE='max'
-BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF='max'
-BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE='max'
 
-BUILD_HTML_BOOK='min'
-BUILD_DOCX_BOOK='med'
+BUILD_HTML_BOOK='max'
+BUILD_DOCX_BOOK='max'
 BUILD_EPUB_BOOK='max'
+~~~
+
+Podemos configurar también algunas cosas más desde el fichero **build.properties**
+
+~~~{.bash}
+CLEAN_LIB_FOLDER='no'
+COPY_IMG_FOLDER='no'
+ZIP_EXPORT_FOLDER='no'
+NUMBER_SECTIONS='yes'
+NUMBER_OFFSET='no'
+CURRENT_NUMBER_OFFSET=1
+REMOVE_MD_TO_BOOK='yes'
+REMOVE_MD_TO_SLIDES='yes'
+~~~
+
+Podemos configurar también algunas cosas más sobre reveal.js desde el fichero **build.properties**
+
+~~~{.bash}
+#THEME='black|white|league|sky|beige|simple|serif|blood|night|moon|solarized'
+REVEAL_JS_THEME='beige'
+REVEAL_JS_SHOW_TITLE_FOOTER='yes'
+REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
+REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
+REVEAL_JS_URL='../lib/reveal.js/'
+REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
+REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
 ~~~
 
 #### Generación
@@ -446,12 +498,11 @@ BUILD_EPUB_BOOK='max'
 ./build.sh [clean] [modo] [carpeta]
 ~~~
 
-- Si añades [**clean**] se limpiará la carpeta **lib** y se volverán a bajar las dependencias.
+- [**clean**] limpia la carpeta **lib** y vuelve a a bajar las dependencias.
 
-- [**modo**] puede tomar los siguientes valores: **min, med o máx**.
+- [**modo**] puede tomar los valores: **min, med o máx**.
 
-- [**carpeta**] es la carpeta donde va a buscar los ficheros md.
-  Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
+- [**carpeta**] donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
 
 ### Releases notes
 
@@ -507,3 +558,11 @@ BUILD_EPUB_BOOK='max'
 - Descarga de una versión concreta de librería externa.
 - Añadidas notas solo visibles en modo libro o si pulsas 's' en las slides.
 - Normalización de imágenes en slides (witdh=50% y align=center).
+
+#### Relese 3.0
+
+- Limpieza de código.
+- Eliminada la exportación de archivos "deprecated".
+- Mejora de la configuración en el fichero build.properties.
+- Actualización de las dependencias de [Reveal.js](http://lab.hakim.se/reveal-js/#/).
+- Exportación a PDF con [DeckTape](https://github.com/astefanutti/decktape).

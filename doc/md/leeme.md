@@ -1,10 +1,10 @@
 % Markdown Slides [ES]
 % Adolfo Sanz De Diego
-% Enero 2017
+% Septiembre 2019
 
 # Acerca de
 
-## ¿Qué es esto? (I)
+## ¿Qué es esto?
 
 **MarkdownSlides** es un generador de **slides** Reveal.js y PDF
 a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, EPUB y DOCX.
@@ -12,7 +12,7 @@ a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, EPUB y 
 La idea es que **a partir de un mismo fichero MARKDOWN podamos obtener slides y libros**
 sin preocuparnos por el estilo, solo por el contenido.
 
-## ¿Qué es esto? (II)
+------------------
 
 ![](../img/markdownslides.png)
 
@@ -23,10 +23,6 @@ genera:
 
   - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html)
   - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
-  - [reveal-slides-online](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online.html)
-  - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html)
-  - [reveal-slides-alternative-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf)
-  - [reveal-slides-alternative-online](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online-alternative.html)
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx)
@@ -39,25 +35,20 @@ genera:
 
 ## Licencia
 
-- **Este obra está bajo una licencia:**
-
-    - [Creative Commons Reconocimiento-CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/es/)
-
-- **El código fuente de los programas están bajo una licencia:**
-
-    - [GPL 3.0](http://www.viti.es/gnu/licenses/gpl.html)
+> - **Este obra está bajo una licencia:**
+>       - [Creative Commons Reconocimiento-CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/es/)
+> - **El código fuente de los programas están bajo una licencia:**
+>       - [GPL 3.0](http://www.viti.es/gnu/licenses/gpl.html)
 
 # Instalación
 
 ## Dependencias
 
 - Necesita ser instalado:
-
     - [Pandoc](http://johnmacfarlane.net/pandoc/)
-    - [Phantom.js](http://phantomjs.org)
+    - [DeckTape](https://github.com/astefanutti/decktape)
 
 - Descargado automáticamente:
-
     - [Reveal.js](http://lab.hakim.se/reveal-js/#/)
 
 ## Requisitos
@@ -68,7 +59,7 @@ Puede funcionar con Docker, pero todavía está en pruebas.
 
 ## Descarga
 
-[https://github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
+[github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 ## Docker
 
@@ -89,19 +80,22 @@ $ docker build -t asanzdiego/markdownslides .
 Lanzamos el contenedor con la configuración **min**
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
+    asanzdiego/markdownslides
 ~~~
 
 Cambiando a configuración **med**
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
+    asanzdiego/markdownslides ./build.sh med doc
 ~~~
      
 Cambiando a configuración **max**
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
+    asanzdiego/markdownslides ./build.sh max doc
 ~~~
 
 # Manejo
@@ -126,6 +120,10 @@ mediante **@start-notes** y **@end-notes**.
 Esto solo es visible en modo libro o si pulsas 's' en las slides.
 @end-notes 
 ~~~
+
+@start-notes
+Esto solo es visible en modo libro o si pulsas 's' en las slides.
+@end-notes 
 
 ## Niveles
 
@@ -157,36 +155,65 @@ En el libro quedará:
 ## Foo Bar
 ~~~
 
-## Configuración
+## Configuración (I)
 
 Podemos configurar los ficheros que queremos generar desde el fichero **build.properties**
 
 ~~~{.bash}
+#GENERATION_MODE='min|med|max'
+DEFAULT_GENERATION_MODE='min'
+
 BUILD_REVEAL_SLIDES='min'
 BUILD_REVEAL_SLIDES_PDF='med'
-BUILD_REVEAL_SLIDES_ONLINE='med'
-BUILD_REVEAL_SLIDES_ALTERNATIVE='max'
-BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF='max'
-BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE='max'
 
-BUILD_HTML_BOOK='min'
-BUILD_DOCX_BOOK='med'
+BUILD_HTML_BOOK='max'
+BUILD_DOCX_BOOK='max'
 BUILD_EPUB_BOOK='max'
+~~~
+
+## Configuración (II)
+
+Podemos configurar también algunas cosas más desde el fichero **build.properties**
+
+~~~{.bash}
+CLEAN_LIB_FOLDER='no'
+COPY_IMG_FOLDER='no'
+ZIP_EXPORT_FOLDER='no'
+NUMBER_SECTIONS='yes'
+NUMBER_OFFSET='no'
+CURRENT_NUMBER_OFFSET=1
+REMOVE_MD_TO_BOOK='yes'
+REMOVE_MD_TO_SLIDES='yes'
+~~~
+
+## Configuración (III)
+
+Podemos configurar también algunas cosas más sobre reveal.js desde el fichero **build.properties**
+
+~~~{.bash}
+#THEME='black|white|league|sky|beige|simple|serif|blood|night|moon|solarized'
+REVEAL_JS_THEME='beige'
+REVEAL_JS_SHOW_TITLE_FOOTER='yes'
+REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
+REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
+REVEAL_JS_URL='../lib/reveal.js/'
+REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
+REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
 ~~~
 
 ## Generación
 
-- Hay que posicionarse en la carpeta raiz, y ejecutar:
+Hay que posicionarse en la carpeta raiz, y ejecutar:
 
-~~~
+~~~{.bash}
 ./build.sh [clean] [modo] [carpeta]
 ~~~
 
-    - Si añades [**clean**] se limpiará la carpeta **lib** y se volverán a bajar las dependencias.
+- [**clean**] limpia la carpeta **lib** y vuelve a a bajar las dependencias.
 
-    - [**modo**] puede tomar los siguientes valores: **min, med o máx**.
+- [**modo**] puede tomar los valores: **min, med o máx**.
 
-    - [**carpeta**] es la carpeta donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
+- [**carpeta**] donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
 
 # Releases notes
 
@@ -196,11 +223,8 @@ BUILD_EPUB_BOOK='max'
 
     - reveal-slides
     - reveal-slides-pdf
-    - reveal-slides-alternative
-    - reveal-slides-alternative-pdf
     - beamer-slides
     - deck-slides
-    - deck-slides-alternative
 
 ## Relese 1.0 (II)
 
@@ -224,9 +248,6 @@ BUILD_EPUB_BOOK='max'
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-online
-    - reveal-slides-alternative
-    - reveal-slides-alternative-pdf
-    - reveal-slides-alternative-online
 
 ## Relese 2.0 (II)
 
@@ -242,19 +263,18 @@ BUILD_EPUB_BOOK='max'
 
     - beamer-slides
     - deck-slides
-    - deck-slides-alternative
     - odt-book
     - pdf-book
 
 ## Relese 2.0 (III)
 
-- Añadido menú gracias a [Raul Jimenez Ortega](https://github.com/hhkaos).
-- Añadido dockerfile gracías a [Rubén Gómez García](https://github.com/kaneproject).
-- Limpieza de ficheros zip de las librerías gracias a [Cesar Seoane](https://github.com/cesarseoane).
-- Añadido tipo 'online' gracias a [Cesar Seoane](https://github.com/cesarseoane).
-- Arreglado fallo imágenes HTTPS gracias a [Cesar Seoane](https://github.com/cesarseoane).
-- Carga de librerias 'online' por HTTPS gracias a [Cesar Seoane](https://github.com/cesarseoane).
-- Configuración resolución PDF gracias a [Cesar Seoane](https://github.com/cesarseoane).
+- Añadido menú gracias a [Raúl Jimenez Ortega](https://github.com/hhkaos)
+- Añadido dockerfile gracías a [Rubén Gómez García](https://github.com/kaneproject)
+- Limpieza de ficheros zip de las librerías gracias a [Cesar Seoane](https://github.com/cesarseoane)
+- Añadido tipo 'online' gracias a [Cesar Seoane](https://github.com/cesarseoane)
+- Arreglado fallo imágenes HTTPS gracias a [Cesar Seoane](https://github.com/cesarseoane)
+- Carga de librerias 'online' por HTTPS gracias a [Cesar Seoane](https://github.com/cesarseoane)
+- Configuración resolución PDF gracias a [Cesar Seoane](https://github.com/cesarseoane)
 
 ## Relese 2.0 (IV)
 
@@ -264,7 +284,15 @@ BUILD_EPUB_BOOK='max'
 - Añadido comando 'clean' para limpiar la carpeta lib.
 - Descarga de una versión concreta de librería externa.
 - Añadidas notas solo visibles en modo libro o si pulsas 's' en las slides.
-- Normalización de imágenes en slides (witdh=50% y align=center).
+- Normalización de imágenes en slides.
+
+## Relese 3.0
+
+- Limpieza de código.
+- Eliminada la exportación de archivos "deprecated".
+- Mejora de la configuración en el fichero build.properties.
+- Actualización de las dependencias de [Reveal.js](http://lab.hakim.se/reveal-js/#/).
+- Exportación a PDF con [DeckTape](https://github.com/astefanutti/decktape).
 
 # Autor
 
@@ -278,20 +306,18 @@ BUILD_EPUB_BOOK='max'
 
 ## Algunos proyectos
 
-- **Hackathon Lovers** <http://hackathonlovers.com>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.
+- ![Hackathon Lovers](../img/hackathon-lovers-logo.png){height=30} [Hackathon Lovers](http://hackathonlovers.com): un grupo creado para emprendedores y desarrolladores amantes de los hackathones.
 
-- **Password Manager Generator** <http://pasmangen.github.io>: un gestor de contraseñas online.
+- [Password Manager Generator](http://pasmangen.github.io): un gestor de contraseñas online.
 
-- **MarkdownSlides** <https://github.com/asanzdiego/markdownslides>: un script para crear slides a partir de ficheros MD.
+- [MarkdownSlides](https://github.com/asanzdiego/markdownslides): un script para crear slides a partir de ficheros MD.
 
 ## ¿Donde encontrarme?
 
 - Mi nick: **asanzdiego**
 
-    - AboutMe:    <http://about.me/asanzdiego>
-    - GitHub:     <http://github.com/asanzdiego>
-    - Twitter:    <http://twitter.com/asanzdiego>
-    - Blog:       <http://asanzdiego.blogspot.com.es>
-    - LinkedIn:   <http://www.linkedin.com/in/asanzdiego>
-    - SlideShare: <http://www.slideshare.net/asanzdiego/>
-    - Google+:    <http://plus.google.com/+AdolfoSanzDeDiego>
+    - Blog:       [asanzdiego.com](http://asanzdiego.com)
+    - GitHub:     [github.com/asanzdiego](http://github.com/asanzdiego)
+    - Twitter:    [twitter.com/asanzdiego](http://twitter.com/asanzdiego)
+    - LinkedIn:   [linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)
+    - SlideShare: [slideshare.net/asanzdiego](http://www.slideshare.net/asanzdiego)

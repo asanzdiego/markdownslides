@@ -4,15 +4,15 @@
 
 # About
 
-## What is it? (I)
+## What is it?
 
-**MarkdownSlides** is a Reveal.js, Deck.js and PDF **slides** generator
+**MarkdownSlides** is a Reveal.jsand PDF **slides** generator
 **from MARKDOWN files**, that also generate HTML, EPUB and DOCX documents.
 
 The idea is that **from a same MARKDOWN file we can get slides and books**
 without worrying about style, just worrying about content.
 
-## What is it? (II)
+------------------
 
 ![](../img/markdownslides.png)
 
@@ -23,10 +23,6 @@ generate:
 
   - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html)
   - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
-  - [reveal-slides-online](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online.html)
-  - [reveal-slides-alternative](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.html)
-  - [reveal-slides-alternative-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-alternative.pdf)
-  - [reveal-slides-alternative-online](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides-online-alternative.html)
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
@@ -39,25 +35,20 @@ generate:
 
 ## Licence
 
-- **This work is licensed under a:**
-
-    - [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by-sa/3.0//)
-
-- **The program source code are licensed under a:**
-
-    - [GPL 3.0](http://www.gnu.org/licenses/gpl.html)
+> - **This work is licensed under a:**
+>       - [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by-sa/3.0//)
+> - **The program source code are licensed under a:**
+>       - [GPL 3.0](http://www.gnu.org/licenses/gpl.html)
 
 # Instalation
 
 ## Dependencies
 
 - It needs to be installed:
-
     - [Pandoc](http://johnmacfarlane.net/pandoc/)
-    - [Phantom.js](http://phantomjs.org)
+    - [DeckTape](https://github.com/astefanutti/decktape)
 
-- It is automaticaly downloaded:
-
+ - It is automaticaly downloaded:
     - [Reveal.js](http://lab.hakim.se/reveal-js/#/)
 
 ## Requirements
@@ -89,19 +80,22 @@ $ docker build -t asanzdiego/markdownslides .
 Launch the container, product generated will be as **min** configuration 
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
+    asanzdiego/markdownslides
 ~~~
 
 Changing to **med** configuration
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
+    asanzdiego/markdownslides ./build.sh med doc
 ~~~
      
 Changing to **max** configuation
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc
+docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
+    asanzdiego/markdownslides ./build.sh max doc
 ~~~
 
 # How to use
@@ -126,6 +120,10 @@ with **@start-notes** and **@end-notes**.
 This is only visible in book mode or if you press 's' on the slides.
 @end-notes
 ~~~
+
+@start-notes
+This is only visible in book mode or if you press 's' on the slides.
+@end-notes
 
 ## Levels
 
@@ -157,36 +155,53 @@ In the book will be:
 ## Foo Bar
 ~~~
 
-## Configuration
+## Configuration (I)
 
 We can configure the files that we want to generate from the file **build.properties**
 
 ~~~{.bash}
 BUILD_REVEAL_SLIDES='min'
-BUILD_REVEAL_SLIDES_PDF='med'
-BUILD_REVEAL_SLIDES_ONLINE='med'
-BUILD_REVEAL_SLIDES_ALTERNATIVE='max'
-BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF='max'
-BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE='max'
+BUILD_REVEAL_SLIDES_PDF='min'
+BUILD_REVEAL_SLIDES_ALTERNATIVE='med'
+BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF='med'
+BUILD_REVEAL_SLIDES_ONLINE='max'
+BUILD_REVEAL_SLIDES_ONLINE_ALTERNATIVE='max'
 
 BUILD_HTML_BOOK='min'
 BUILD_DOCX_BOOK='med'
 BUILD_EPUB_BOOK='max'
 ~~~
 
+## Configuration (II)
+
+There are some extra configuration:
+
+~~~{.bash}
+CLEAN_LIB_FOLDER='no'
+COPY_IMG_FOLDER='no'
+ZIP_EXPORT_FOLDER='no'
+NUMBER_SECTIONS='no'
+NUMBER_OFFSET='no'
+CURRENT_NUMBER_OFFSET=1
+REMOVE_MD_TO_BOOK='yes'
+REMOVE_MD_TO_SLIDES='yes'
+DEFAULT_GENERATION_MODE='min'
+TRANSITION='fade'
+~~~
+
 ## Build
 
-- In the root folder you have to execute:
+In the root folder you have to execute:
 
-~~~
+~~~{.bash}
 ./build.sh [clean] [mode] [folder]
 ~~~
 
-    - If you add [**clean**] the folder **lib** will be cleaned and the dependencies will be downloaded again.
+- [**clean**] clean the folder **lib** and download the dependencies again.
 
-    - [**mode**] can take the next values: **min, med o máx**.
+- [**mode**] can take the next values: **min, med o máx**.
 
-    - [**folder**] is the name of the folder wher to find the md files. If no folder name, it will convert all md files of all the folders.
+- [**folder**] folder wher to find the md files. If no folder name, it will convert all md files of all the folders.
 
 # Releases notes
 
@@ -196,11 +211,8 @@ BUILD_EPUB_BOOK='max'
 
     - reveal-slides
     - reveal-slides-pdf
-    - reveal-slides-alternative
-    - reveal-slides-alternative-pdf
     - beamer-slides
     - deck-slides
-    - deck-slides-alternative
 
 ## Relese 1.0 (II)
 
@@ -224,9 +236,6 @@ BUILD_EPUB_BOOK='max'
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-online
-    - reveal-slides-alternative
-    - reveal-slides-alternative-pdf
-    - reveal-slides-alternative-online
 
 ## Relese 2.0 (II)
 
@@ -242,19 +251,18 @@ BUILD_EPUB_BOOK='max'
 
     - beamer-slides
     - deck-slides
-    - deck-slides-alternative
     - odt-book
     - pdf-book
 
 ## Relese 2.0 (III)
 
-- Added menu thanks to [Raul Jimenez Ortega] (https://github.com/hhkaos).
-- Added dockerfile thanks to [Rubén Gómez García] (https://github.com/kaneproject).
-- Clean zip files from libraries thanks to [Cesar Seoane] (https://github.com/cesarseoane).
-- Added type 'online' thanks to [Cesar Seoane] (https://github.com/cesarseoane).
-- Fixed bug HTTPS images thanks to [Cesar Seoane] (https://github.com/cesarseoane).
-- Loading the online libraries with HTTPS thanks to [Cesar Seoane] (https://github.com/cesarseoane).
-- Configuration PDF resolution thanks to [Cesar Seoane] (https://github.com/cesarseoane).
+- Added menu thanks to [Raul Jimenez Ortega](https://github.com/hhkaos).
+- Added dockerfile thanks to [Rubén Gómez García](https://github.com/kaneproject).
+- Clean zip files from libraries thanks to [Cesar Seoane](https://github.com/cesarseoane).
+- Added type 'online' thanks to [Cesar Seoane](https://github.com/cesarseoane).
+- Fixed bug HTTPS images thanks to [Cesar Seoane](https://github.com/cesarseoane).
+- Loading the online libraries with HTTPS thanks to [Cesar Seoane](https://github.com/cesarseoane).
+- Configuration PDF resolution thanks to [Cesar Seoane](https://github.com/cesarseoane).
 
 ## Relese 2.0 (IV)
 
@@ -264,7 +272,15 @@ BUILD_EPUB_BOOK='max'
 - Added command 'clean' to clean the lib folder.
 - Download a specific version of external library.
 - Added notes only visible in book mode or if you press 's' on the slides.
-- Normalization of images in slides (witdh = 50% and align = center).
+- Normalization of images in slides.
+
+## Relese 3.0
+
+- Clean the code.
+- Remove deprecated exportation files.
+- Improve de configuration in build.properties file.
+- Update [Reveal.js](http://lab.hakim.se/reveal-js/#/) dependencies.
+- Export to PDF with [DeckTape](https://github.com/astefanutti/decktape).
 
 # Author
 
@@ -278,20 +294,18 @@ BUILD_EPUB_BOOK='max'
 
 ## Algunos proyectos
 
-- **Hackathon Lovers** <http://hackathonlovers.com>:  a group created for entrepreneurs and developers who loves hackathones.
+- ![Hackathon Lovers](../img/hackathon-lovers-logo.png){height=30} [Hackathon Lovers](http://hackathonlovers.com): a group created for entrepreneurs and developers who loves hackathones.
 
-- **Password Manager Generator** <http://pasmangen.github.io>: an online password manager.
+- [Password Manager Generator](http://pasmangen.github.io): an online password manager.
 
-- **MarkdownSlides** <https://github.com/asanzdiego/markdownslides>: a script to create slides from MD files.
+- [MarkdownSlides](https://github.com/asanzdiego/markdownslides): a script to create slides from MD files.
 
 ## Where to find me?
 
 - Mi nick: **asanzdiego**
 
-    - AboutMe:    <http://about.me/asanzdiego>
-    - GitHub:     <http://github.com/asanzdiego>
-    - Twitter:    <http://twitter.com/asanzdiego>
-    - Blog:       <http://asanzdiego.blogspot.com.es>
-    - LinkedIn:   <http://www.linkedin.com/in/asanzdiego>
-    - SlideShare: <http://www.slideshare.net/asanzdiego/>
-    - Google+:    <http://plus.google.com/+AdolfoSanzDeDiego>
+    - Blog:       [asanzdiego.com](http://asanzdiego.com)
+    - GitHub:     [github.com/asanzdiego](http://github.com/asanzdiego)
+    - Twitter:    [twitter.com/asanzdiego](http://twitter.com/asanzdiego)
+    - LinkedIn:   [linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)
+    - SlideShare: [slideshare.net/asanzdiego](http://www.slideshare.net/asanzdiego)

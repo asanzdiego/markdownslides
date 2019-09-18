@@ -246,6 +246,8 @@ function buildRevealSlidesPdf() {
 
   decktape --size "$DECKTAPE_RESOLUTION" --pause "$DECKTAPE_PAUSE" reveal \
     "file://$(pwd)/../export/$1-reveal-slides-pdf.html" "../export/$1-reveal-slides.pdf" > /dev/null
+
+  rm -f "../export/$1-reveal-slides-pdf.html"
 }
 
 function buildHtmlBook() {

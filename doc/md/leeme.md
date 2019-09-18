@@ -196,6 +196,7 @@ REVEAL_JS_THEME='beige'
 REVEAL_JS_SHOW_TITLE_FOOTER='yes'
 REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
 REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
+REVEAL_JS_SHOW_MENU='yes'
 REVEAL_JS_URL='../lib/reveal.js/'
 REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
 REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
@@ -220,7 +221,6 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 ## Relese 1.0 (I)
 
 - Exporta slides a:
-
     - reveal-slides
     - reveal-slides-pdf
     - beamer-slides
@@ -229,7 +229,6 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 ## Relese 1.0 (II)
 
 - Exporta books a:
-
     - html-book
     - docx-book
     - odt-book
@@ -244,7 +243,6 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 ## Relese 2.0 (I)
 
 - Exporta slides a:
-
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-online
@@ -252,7 +250,6 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 ## Relese 2.0 (II)
 
 - Exporta books a:
-
     - html-book
     - docx-book
     - epub-book
@@ -260,7 +257,6 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 ## Relese 2.0 (III)
 
 - Deprecated:
-
     - beamer-slides
     - deck-slides
     - odt-book
@@ -315,7 +311,6 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 ## ¿Donde encontrarme?
 
 - Mi nick: **asanzdiego**
-
     - Blog:       [asanzdiego.com](http://asanzdiego.com)
     - GitHub:     [github.com/asanzdiego](http://github.com/asanzdiego)
     - Twitter:    [twitter.com/asanzdiego](http://twitter.com/asanzdiego)

@@ -61,11 +61,8 @@ generate:
 #### Licence
 
 - **This work is licensed under a:**
-
     - [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by-sa/3.0//)
-
 - **The program source code are licensed under a:**
-
     - [GPL 3.0](http://www.gnu.org/licenses/gpl.html)
 
 ### Instalation
@@ -73,12 +70,9 @@ generate:
 #### Dependencies
 
 - It needs to be installed:
-
     - [Pandoc](http://johnmacfarlane.net/pandoc/)
     - [DeckTape](https://github.com/astefanutti/decktape)
-
 - It is automaticaly downloaded:
-
     - [Reveal.js](http://lab.hakim.se/reveal-js/#/)
 
 #### Requirements
@@ -203,6 +197,7 @@ REVEAL_JS_THEME='beige'
 REVEAL_JS_SHOW_TITLE_FOOTER='yes'
 REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
 REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
+REVEAL_JS_SHOW_MENU='yes'
 REVEAL_JS_URL='../lib/reveal.js/'
 REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
 REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
@@ -343,11 +338,8 @@ genera:
 #### Licencia
 
 - **Este obra está bajo una licencia:**
-
     - [Creative Commons Reconocimiento-CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/es/)
-
 - **El código fuente de los programas están bajo una licencia:**
-
     - [GPL 3.0](http://www.viti.es/gnu/licenses/gpl.html)
 
 ### Instalación
@@ -355,12 +347,9 @@ genera:
 #### Dependencias
 
 - Necesita ser instalado:
-
     - [Pandoc](http://johnmacfarlane.net/pandoc/)
     - [DeckTape](https://github.com/astefanutti/decktape)
-
 - Descargado automáticamente:
-
     - [Reveal.js](http://lab.hakim.se/reveal-js/#/)
 
 #### Requisitos
@@ -485,6 +474,7 @@ REVEAL_JS_THEME='beige'
 REVEAL_JS_SHOW_TITLE_FOOTER='yes'
 REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
 REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
+REVEAL_JS_SHOW_MENU='yes'
 REVEAL_JS_URL='../lib/reveal.js/'
 REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
 REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'

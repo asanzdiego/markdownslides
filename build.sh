@@ -211,11 +211,16 @@ function buildRevealSlides() {
       REVEAL_JS_TITLE_FOOTER="null"
     fi
   else
-    REVEAL_JS_TITLE_FOOTER="revealjs-title-footer="
+    REVEAL_JS_TITLE_FOOTER=""
+  fi
+
+  if [ "$2" == "-pdf" ] || [ "$REVEAL_JS_SHOW_MENU" != "yes" ]; then
+    REVEAL_JS_SHOW_MENU=""
   fi
 
   pandoc -w revealjs --template "$ORIGIN/templates/reveal-slides-template.html" \
     --variable "revealjs-title-footer=$REVEAL_JS_TITLE_FOOTER" \
+    --variable "revealjs-show-menu=$REVEAL_JS_SHOW_MENU" \
     --variable "theme=$REVEAL_JS_THEME" \
     --variable "revealjs-url=$REVEAL_JS_URL" \
     --variable "revealjs-menu-url=$REVEAL_JS_MENU_URL" \
@@ -235,10 +240,12 @@ function buildRevealSlides() {
 
 function buildRevealSlidesPdf() {
 
-  echo -e "Exporting...                   ../export/$1-reveal-slides$2.pdf"
+  buildRevealSlides $1 "-pdf"
+
+  echo -e "Exporting...                   ../export/$1-reveal-slides.pdf"
 
   decktape --size "$DECKTAPE_RESOLUTION" --pause "$DECKTAPE_PAUSE" reveal \
-    "file://$(pwd)/../export/$1-reveal-slides$2.html" "../export/$1-reveal-slides$2.pdf" > /dev/null
+    "file://$(pwd)/../export/$1-reveal-slides-pdf.html" "../export/$1-reveal-slides.pdf" > /dev/null
 }
 
 function buildHtmlBook() {
@@ -358,7 +365,7 @@ function processFolder() {
       NUMBERS='--number-sections'
     fi
   else
-    NUMBERS='--eol=native'
+    NUMBERS='--tab-stop=4' # hack to solve bash problem :-)
   fi
 
   initLibFolder "$FOLDER"

@@ -20,8 +20,14 @@ $endif$
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../lib/reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="../lib/reveal.js-menu/menu.css">
+  <link rel="stylesheet" href="$revealjs-url$/css/reveal.css">
+$if(revealjs-title-footer)$
+  <link rel="stylesheet" href="$revealjs-title-footer-url$/plugin/title-footer.css">
+$endif$
+$if(revealjs-show-menu)$
+  <link rel="stylesheet" href="$revealjs-menu-url$/menu.css">
+$endif$
+<style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
 $if(quotes)$
   <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
 $endif$
@@ -31,23 +37,19 @@ $highlighting-css$
   </style>
 $endif$
 $if(theme)$
-  <link rel="stylesheet" href="../lib/reveal.js/css/theme/$theme$.css" id="theme">
+  <link rel="stylesheet" href="$revealjs-url$/css/theme/$theme$.css" id="theme">
 $else$
-  <link rel="stylesheet" href="../lib/reveal.js/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="$revealjs-url$/css/theme/beige.css" id="theme">
 $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$"/>
 $endfor$
-
-	<!-- For syntax highlighting -->
-	<link rel="stylesheet" href="../lib/reveal.js/lib/css/zenburn.css">
-
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal.js/css/print/pdf.css' : '../lib/reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '$revealjs-url$/css/print/pdf.css' : '$revealjs-url$/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
 
@@ -64,9 +66,10 @@ $endfor$
       color: rgba(0, 0, 0, 0.7);
     }
     .reveal section img {
-      margin: 15px 0px;
-      padding: 15px;
+      margin: 0px;
+      padding: 0px;
       background: rgba(255, 255, 255, 0.9);
+      border: 0px;
     }
     strong {
       color: #777
@@ -94,9 +97,18 @@ $endfor$
       h2 { font-size: 200% !important; }
       h3 { font-size: 150% !important; }
     }
+    footer p {
+      font-size: 75% !important;
+      text-align: center;
+    }
+    footer {
+      position: absolute;
+      bottom: 0%;
+      width: 100%;
+    }
   </style>
   <!--[if lt IE 9]>
-  <script src="../lib/reveal.js/lib/js/html5shiv.js"></script>
+  <script src="$revealjs-url$/lib/js/html5shiv.js"></script>
   <![endif]-->
 $if(math)$
   $math$
@@ -113,12 +125,9 @@ $endfor$
     <div class="slides">
 
 $if(title)$
-<section id="only-print-parent">
-    <div id="only-print-child">
+<section class="only-print-parent">
+    <div class="only-print-child">
       <h1 class="title">$title$</h1>
-$if(subtitle)$
-      <h1 class="subtitle">$subtitle$</h1>
-$endif$
 $for(author)$
       <h2 class="author">$author$</h2>
 $endfor$
@@ -138,8 +147,8 @@ $body$
     </div>
   </div>
 
-  <script src="../lib/reveal.js/lib/js/head.min.js"></script>
-  <script src="../lib/reveal.js/js/reveal.js"></script>
+  <script src="$revealjs-url$/lib/js/head.min.js"></script>
+  <script src="$revealjs-url$/js/reveal.js"></script>
 
   <script>
 
@@ -314,17 +323,17 @@ $endif$
             // Specifies the themes that will be available in the themes
             // menu panel. Set to 'false' to hide themes panel.
             themes: [
-                { name: 'Black', theme: '../lib/reveal.js/css/theme/black.css' },
-                { name: 'White', theme: '../lib/reveal.js/css/theme/white.css' },
-                { name: 'League', theme: '../lib/reveal.js/css/theme/league.css' },
-                { name: 'Sky', theme: '../lib/reveal.js/css/theme/sky.css' },
-                { name: 'Beige', theme: '../lib/reveal.js/css/theme/beige.css' },
-                { name: 'Simple', theme: '../lib/reveal.js/css/theme/simple.css' },
-                { name: 'Serif', theme: '../lib/reveal.js/css/theme/serif.css' },
-                { name: 'Blood', theme: '../lib/reveal.js/css/theme/blood.css' },
-                { name: 'Night', theme: '../lib/reveal.js/css/theme/night.css' },
-                { name: 'Moon', theme: '../lib/reveal.js/css/theme/moon.css' },
-                { name: 'Solarized', theme: '../lib/reveal.js/css/theme/solarized.css' }
+                { name: 'Black', theme: '$revealjs-url$/css/theme/black.css' },
+                { name: 'White', theme: '$revealjs-url$/css/theme/white.css' },
+                { name: 'League', theme: '$revealjs-url$/css/theme/league.css' },
+                { name: 'Sky', theme: '$revealjs-url$/css/theme/sky.css' },
+                { name: 'Beige', theme: '$revealjs-url$/css/theme/beige.css' },
+                { name: 'Simple', theme: '$revealjs-url$/css/theme/simple.css' },
+                { name: 'Serif', theme: '$revealjs-url$/css/theme/serif.css' },
+                { name: 'Blood', theme: '$revealjs-url$/css/theme/blood.css' },
+                { name: 'Night', theme: '$revealjs-url$/css/theme/night.css' },
+                { name: 'Moon', theme: '$revealjs-url$/css/theme/moon.css' },
+                { name: 'Solarized', theme: '$revealjs-url$/css/theme/solarized.css' }
             ],
 
             // Specifies if the transitions menu panel will be shown.
@@ -347,11 +356,17 @@ $endif$
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: '../lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '../lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: '../lib/reveal.js/plugin/notes/notes.js', async: true },
-          //{ src: '../lib/reveal.js/plugin/search/search.js', async: true },
-          { src: '../lib/reveal.js-menu/menu.js', async: true }
+$if(revealjs-title-footer)$
+          { src: '$revealjs-title-footer-url$/plugin/title-footer/title-footer.js', async: true, callback: function() { 
+              title_footer.initialize($revealjs-title-footer$, 'rgba(0,0,0,0)');
+            } },
+$endif$
+$if(revealjs-show-menu)$
+          { src: '$revealjs-menu-url$/menu.js', async: true },
+$endif$
+          { src: '$revealjs-url$/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '$revealjs-url$/plugin/zoom-js/zoom.js', async: true },
+          { src: '$revealjs-url$/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

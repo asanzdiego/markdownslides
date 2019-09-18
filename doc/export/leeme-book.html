@@ -2,15 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="Markdown Slides [ES]" />
-  <meta name="author" content="Adolfo Sanz De Diego" />
+  <meta name="description" content="Markdown Slides [ES]">
+  <meta name="author" content="Adolfo Sanz De Diego">
   <title>Markdown Slides [ES]</title>
   <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -48,12 +45,15 @@ code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header>
 <h1 class="title">Markdown Slides [ES]</h1>
-<h2 class="author">Adolfo Sanz De Diego</h2>
-<h3 class="date">Enero 2017</h3>
+<p class="author">Adolfo Sanz De Diego</p>
+<p class="date">Septiembre 2019</p>
 </header>
 <nav id="TOC">
 <ul>
@@ -83,6 +83,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#releases-notes"><span class="toc-section-number">4</span> Releases notes</a><ul>
 <li><a href="#relese-1.0"><span class="toc-section-number">4.1</span> Relese 1.0</a></li>
 <li><a href="#relese-2.0"><span class="toc-section-number">4.2</span> Relese 2.0</a></li>
+<li><a href="#relese-3.0"><span class="toc-section-number">4.3</span> Relese 3.0</a></li>
 </ul></li>
 <li><a href="#autor"><span class="toc-section-number">5</span> Autor</a><ul>
 <li><a href="#adolfo-sanz-de-diego"><span class="toc-section-number">5.1</span> Adolfo Sanz De Diego</a></li>
@@ -95,18 +96,15 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="qué-es-esto"><span class="header-section-number">1.1</span> ¿Qué es esto?</h2>
 <p><strong>MarkdownSlides</strong> es un generador de <strong>slides</strong> Reveal.js y PDF a <strong>partir de ficheros MARKDOWN</strong>, que también genera documentos HTML, EPUB y DOCX.</p>
 <p>La idea es que <strong>a partir de un mismo fichero MARKDOWN podamos obtener slides y libros</strong> sin preocuparnos por el estilo, solo por el contenido.</p>
+<hr />
 <figure>
-<img src="../img/markdownslides.png" text-align="center" style="width:50.0%" />
+<img src="../img/markdownslides.png" text-align="center" style="width:80.0%" />
 </figure>
 <h2 id="ejemplos"><span class="header-section-number">1.2</span> Ejemplos</h2>
 <p>A partir de un fichero <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md">MARKDOWN</a> genera:</p>
 <ul>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html">reveal-slides</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf">reveal-slides-pdf</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online.html">reveal-slides-online</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.html">reveal-slides-alternative</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-alternative.pdf">reveal-slides-alternative-pdf</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides-online-alternative.html">reveal-slides-alternative-online</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub">epub-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html">html-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx">docx-book</a></li>
@@ -118,25 +116,27 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
 </ul>
 <h2 id="licencia"><span class="header-section-number">1.4</span> Licencia</h2>
+<blockquote>
 <ul>
-<li><p><strong>Este obra está bajo una licencia:</strong></p>
+<li><strong>Este obra está bajo una licencia:</strong>
 <ul>
 <li><a href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Reconocimiento-CompartirIgual 3.0</a></li>
 </ul></li>
-<li><p><strong>El código fuente de los programas están bajo una licencia:</strong></p>
+<li><strong>El código fuente de los programas están bajo una licencia:</strong>
 <ul>
 <li><a href="http://www.viti.es/gnu/licenses/gpl.html">GPL 3.0</a></li>
 </ul></li>
 </ul>
+</blockquote>
 <h1 id="instalación"><span class="header-section-number">2</span> Instalación</h1>
 <h2 id="dependencias"><span class="header-section-number">2.1</span> Dependencias</h2>
 <ul>
-<li><p>Necesita ser instalado:</p>
+<li>Necesita ser instalado:
 <ul>
 <li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a></li>
-<li><a href="http://phantomjs.org">Phantom.js</a></li>
+<li><a href="https://github.com/astefanutti/decktape">DeckTape</a></li>
 </ul></li>
-<li><p>Descargado automáticamente:</p>
+<li>Descargado automáticamente:
 <ul>
 <li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></li>
 </ul></li>
@@ -145,7 +145,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <p>Por ahora, solo funciona en Linux (y puede que en MacOS).</p>
 <p>Puede funcionar con Docker, pero todavía está en pruebas.</p>
 <h2 id="descarga"><span class="header-section-number">2.3</span> Descarga</h2>
-<p><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></p>
+<p><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip">github.com/asanzdiego/markdownslides/archive/master.zip</a></p>
 <h2 id="docker"><span class="header-section-number">2.4</span> Docker</h2>
 <p>Su instalación con docker está todavía <strong>en pruebas</strong>.</p>
 <p>Cualquier feedback es bienvenido.</p>
@@ -154,11 +154,14 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
 <h3 id="lanzar-el-contenedor"><span class="header-section-number">2.4.2</span> Lanzar el contenedor</h3>
 <p>Lanzamos el contenedor con la configuración <strong>min</strong></p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides</code></pre>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
+    asanzdiego/markdownslides</code></pre>
 <p>Cambiando a configuración <strong>med</strong></p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh med doc</code></pre>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
+    asanzdiego/markdownslides ./build.sh med doc</code></pre>
 <p>Cambiando a configuración <strong>max</strong></p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc asanzdiego/markdownslides ./build.sh max doc</code></pre>
+<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
+    asanzdiego/markdownslides ./build.sh max doc</code></pre>
 <h1 id="manejo"><span class="header-section-number">3</span> Manejo</h1>
 <h2 id="creación"><span class="header-section-number">3.1</span> Creación</h2>
 <p>Primero <strong>copia la carpeta doc y renombrala a tu gusto</strong>. Esto no es necesario pero te ayuda a organizar tus documentos.</p>
@@ -168,6 +171,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>
 Esto solo es visible en modo libro o si pulsas &#39;s&#39; en las slides.
  </code></pre>
+<p>Esto solo es visible en modo libro o si pulsas 's' en las slides.</p>
 <h2 id="niveles"><span class="header-section-number">3.3</span> Niveles</h2>
 <p>Puedes tener tantos niveles como quieras. Ejemplo:</p>
 <pre><code># Nivel 1 (en slides y libro)
@@ -184,40 +188,53 @@ Esto solo es visible en modo libro o si pulsas &#39;s&#39; en las slides.
 <pre><code>## Foo Bar</code></pre>
 <h2 id="configuración"><span class="header-section-number">3.5</span> Configuración</h2>
 <p>Podemos configurar los ficheros que queremos generar desde el fichero <strong>build.properties</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ot">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
-<span class="ot">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
-<span class="ot">BUILD_REVEAL_SLIDES_ONLINE=</span><span class="st">&#39;med&#39;</span>
-<span class="ot">BUILD_REVEAL_SLIDES_ALTERNATIVE=</span><span class="st">&#39;max&#39;</span>
-<span class="ot">BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF=</span><span class="st">&#39;max&#39;</span>
-<span class="ot">BUILD_REVEAL_SLIDES_ALTERNATIVE_ONLINE=</span><span class="st">&#39;max&#39;</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#GENERATION_MODE=&#39;min|med|max&#39;</span>
+<span class="va">DEFAULT_GENERATION_MODE=</span><span class="st">&#39;min&#39;</span>
 
-<span class="ot">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
-<span class="ot">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
-<span class="ot">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
+<span class="va">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
+<span class="va">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
+
+<span class="va">BUILD_HTML_BOOK=</span><span class="st">&#39;max&#39;</span>
+<span class="va">BUILD_DOCX_BOOK=</span><span class="st">&#39;max&#39;</span>
+<span class="va">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
+<p>Podemos configurar también algunas cosas más desde el fichero <strong>build.properties</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">CLEAN_LIB_FOLDER=</span><span class="st">&#39;no&#39;</span>
+<span class="va">COPY_IMG_FOLDER=</span><span class="st">&#39;no&#39;</span>
+<span class="va">ZIP_EXPORT_FOLDER=</span><span class="st">&#39;no&#39;</span>
+<span class="va">NUMBER_SECTIONS=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">NUMBER_OFFSET=</span><span class="st">&#39;no&#39;</span>
+<span class="va">CURRENT_NUMBER_OFFSET=</span>1
+<span class="va">REMOVE_MD_TO_BOOK=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REMOVE_MD_TO_SLIDES=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
+<p>Podemos configurar también algunas cosas más sobre reveal.js desde el fichero <strong>build.properties</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#THEME=&#39;black|white|league|sky|beige|simple|serif|blood|night|moon|solarized&#39;</span>
+<span class="va">REVEAL_JS_THEME=</span><span class="st">&#39;beige&#39;</span>
+<span class="va">REVEAL_JS_SHOW_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REVEAL_JS_DEFAULT_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REVEAL_JS_TITLE_FOOTER=</span><span class="st">&quot;&#39;MarkdownSlides by @asanzdiego :-)&#39;&quot;</span>
+<span class="va">REVEAL_JS_SHOW_MENU=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REVEAL_JS_URL=</span><span class="st">&#39;../lib/reveal.js/&#39;</span>
+<span class="va">REVEAL_JS_MENU_URL=</span><span class="st">&#39;../lib/reveal.js-menu/&#39;</span>
+<span class="va">REVEAL_JS_TITLE_FOOTER_URL=</span><span class="st">&#39;../lib/reveal.js-title-footer/&#39;</span></code></pre></div>
 <h2 id="generación"><span class="header-section-number">3.6</span> Generación</h2>
+<p>Hay que posicionarse en la carpeta raiz, y ejecutar:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">./build.sh</span> [clean] [modo] [carpeta]</code></pre></div>
 <ul>
-<li>Hay que posicionarse en la carpeta raiz, y ejecutar:</li>
+<li><p>[<strong>clean</strong>] limpia la carpeta <strong>lib</strong> y vuelve a a bajar las dependencias.</p></li>
+<li><p>[<strong>modo</strong>] puede tomar los valores: <strong>min, med o máx</strong>.</p></li>
+<li><p>[<strong>carpeta</strong>] donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.</p></li>
 </ul>
-<pre><code>./build.sh [clean] [modo] [carpeta]</code></pre>
-<pre><code>- Si añades [**clean**] se limpiará la carpeta **lib** y se volverán a bajar las dependencias.
-
-- [**modo**] puede tomar los siguientes valores: **min, med o máx**.
-
-- [**carpeta**] es la carpeta donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.</code></pre>
 <h1 id="releases-notes"><span class="header-section-number">4</span> Releases notes</h1>
 <h2 id="relese-1.0"><span class="header-section-number">4.1</span> Relese 1.0</h2>
 <ul>
-<li><p>Exporta slides a:</p>
+<li>Exporta slides a:
 <ul>
 <li>reveal-slides</li>
 <li>reveal-slides-pdf</li>
-<li>reveal-slides-alternative</li>
-<li>reveal-slides-alternative-pdf</li>
 <li>beamer-slides</li>
 <li>deck-slides</li>
-<li>deck-slides-alternative</li>
 </ul></li>
-<li><p>Exporta books a:</p>
+<li>Exporta books a:
 <ul>
 <li>html-book</li>
 <li>docx-book</li>
@@ -225,47 +242,51 @@ Esto solo es visible en modo libro o si pulsas &#39;s&#39; en las slides.
 <li>pdf-book</li>
 </ul></li>
 <li>Añadidos los modos de generación 'min', 'med' y 'max'.</li>
-<li><p>Descarga automática de librerías externas.</p></li>
+<li>Descarga automática de librerías externas.</li>
 </ul>
 <h2 id="relese-2.0"><span class="header-section-number">4.2</span> Relese 2.0</h2>
 <ul>
-<li><p>Exporta slides a:</p>
+<li>Exporta slides a:
 <ul>
 <li>reveal-slides</li>
 <li>reveal-slides-pdf</li>
 <li>reveal-slides-online</li>
-<li>reveal-slides-alternative</li>
-<li>reveal-slides-alternative-pdf</li>
-<li>reveal-slides-alternative-online</li>
 </ul></li>
-<li><p>Exporta books a:</p>
+<li>Exporta books a:
 <ul>
 <li>html-book</li>
 <li>docx-book</li>
 <li>epub-book</li>
 </ul></li>
-<li><p>Deprecated:</p>
+<li>Deprecated:
 <ul>
 <li>beamer-slides</li>
 <li>deck-slides</li>
-<li>deck-slides-alternative</li>
 <li>odt-book</li>
 <li>pdf-book</li>
 </ul></li>
-<li>Añadido menú gracias a <a href="https://github.com/hhkaos">Raul Jimenez Ortega</a>.</li>
-<li>Añadido dockerfile gracías a <a href="https://github.com/kaneproject">Rubén Gómez García</a>.</li>
-<li>Limpieza de ficheros zip de las librerías gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
-<li>Añadido tipo 'online' gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
-<li>Arreglado fallo imágenes HTTPS gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
-<li>Carga de librerias 'online' por HTTPS gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
-<li><p>Configuración resolución PDF gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</p></li>
+<li>Añadido menú gracias a <a href="https://github.com/hhkaos">Raúl Jimenez Ortega</a></li>
+<li>Añadido dockerfile gracías a <a href="https://github.com/kaneproject">Rubén Gómez García</a></li>
+<li>Limpieza de ficheros zip de las librerías gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></li>
+<li>Añadido tipo 'online' gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></li>
+<li>Arreglado fallo imágenes HTTPS gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></li>
+<li>Carga de librerias 'online' por HTTPS gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></li>
+<li><p>Configuración resolución PDF gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></p></li>
 <li>Nuevo formato 'epub'.</li>
 <li>Añadido 'bash strict mode'.</li>
 <li>Añadido 'build.properties' para configurar la generación de ficheros.</li>
 <li>Añadido comando 'clean' para limpiar la carpeta lib.</li>
 <li>Descarga de una versión concreta de librería externa.</li>
 <li>Añadidas notas solo visibles en modo libro o si pulsas 's' en las slides.</li>
-<li><p>Normalización de imágenes en slides (witdh=50% y align=center).</p></li>
+<li><p>Normalización de imágenes en slides.</p></li>
+</ul>
+<h2 id="relese-3.0"><span class="header-section-number">4.3</span> Relese 3.0</h2>
+<ul>
+<li>Limpieza de código.</li>
+<li>Eliminada la exportación de archivos &quot;deprecated&quot;.</li>
+<li>Mejora de la configuración en el fichero build.properties.</li>
+<li>Actualización de las dependencias de <a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a>.</li>
+<li>Exportación a PDF con <a href="https://github.com/astefanutti/decktape">DeckTape</a>.</li>
 </ul>
 <h1 id="autor"><span class="header-section-number">5</span> Autor</h1>
 <h2 id="adolfo-sanz-de-diego"><span class="header-section-number">5.1</span> Adolfo Sanz De Diego</h2>
@@ -276,21 +297,19 @@ Esto solo es visible en modo libro o si pulsas &#39;s&#39; en las slides.
 </ul>
 <h2 id="algunos-proyectos"><span class="header-section-number">5.2</span> Algunos proyectos</h2>
 <ul>
-<li><p><strong>Hackathon Lovers</strong> <a href="http://hackathonlovers.com" class="uri">http://hackathonlovers.com</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
-<li><p><strong>Password Manager Generator</strong> <a href="http://pasmangen.github.io" class="uri">http://pasmangen.github.io</a>: un gestor de contraseñas online.</p></li>
-<li><p><strong>MarkdownSlides</strong> <a href="https://github.com/asanzdiego/markdownslides" class="uri">https://github.com/asanzdiego/markdownslides</a>: un script para crear slides a partir de ficheros MD.</p></li>
+<li><p><img src="../img/hackathon-lovers-logo.png" alt="Hackathon Lovers" height="30" /> <a href="http://hackathonlovers.com">Hackathon Lovers</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
+<li><p><a href="http://pasmangen.github.io">Password Manager Generator</a>: un gestor de contraseñas online.</p></li>
+<li><p><a href="https://github.com/asanzdiego/markdownslides">MarkdownSlides</a>: un script para crear slides a partir de ficheros MD.</p></li>
 </ul>
 <h2 id="donde-encontrarme"><span class="header-section-number">5.3</span> ¿Donde encontrarme?</h2>
 <ul>
-<li><p>Mi nick: <strong>asanzdiego</strong></p>
+<li>Mi nick: <strong>asanzdiego</strong>
 <ul>
-<li>AboutMe: <a href="http://about.me/asanzdiego" class="uri">http://about.me/asanzdiego</a></li>
-<li>GitHub: <a href="http://github.com/asanzdiego" class="uri">http://github.com/asanzdiego</a></li>
-<li>Twitter: <a href="http://twitter.com/asanzdiego" class="uri">http://twitter.com/asanzdiego</a></li>
-<li>Blog: <a href="http://asanzdiego.blogspot.com.es" class="uri">http://asanzdiego.blogspot.com.es</a></li>
-<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego" class="uri">http://www.linkedin.com/in/asanzdiego</a></li>
-<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/" class="uri">http://www.slideshare.net/asanzdiego/</a></li>
-<li>Google+: <a href="http://plus.google.com/+AdolfoSanzDeDiego" class="uri">http://plus.google.com/+AdolfoSanzDeDiego</a></li>
+<li>Blog: <a href="http://asanzdiego.com">asanzdiego.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">linkedin.com/in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego">slideshare.net/asanzdiego</a></li>
 </ul></li>
 </ul>
 </body>

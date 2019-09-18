@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Reveal.js-Title-Footer - Footer showing title for Reveal.js HTML presentations</title>
+
+	<meta name="description" content="Reveal.js-Title-Footer - Footer showing title for Reveal.js HTML presentations">
+	<meta name="author" content="Igor Leturia">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Title-Footer plugin -->
+	<link rel="stylesheet" href="plugin/title-footer/title-footer.css">
+
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+		if( window.location.search.match( /print-pdf/gi ) ) {
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = 'css/print/pdf.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		}
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+	<div class="slides">
+
+	<section>
+
+		<section data-state="no-toc-progress">
+			<h1 class="no-toc-progress">Reveal.js-Title-Footer</h1>
+			<h3>Footer showing title for Reveal.js HTML presentations</h3>
+			<p>
+				<small>Created by <a href="https://github.com/e-gor">Igor Leturia <em>e-gor</em></a> / <a href="http://twitter.com/ileturia">@ileturia</a> / <a href="http://eibar.org/blogak/e-gorblog">http://eibar.org/blogak/e-gorblog</a></small>
+			</p>
+		</section>
+
+	</section>
+
+	<section>
+
+		<section>
+			<h2>Description</h2>
+		</section>
+
+		<section>
+			<h3>What is Reveal.js-Title-Footer?</h3>
+			<p>Reveal.js-Title-Footer is a plugin for the Reveal.js framework for HTML presentations (<a href="https://github.com/hakimel/reveal.js">https://github.com/hakimel/reveal.js</a>).</p>
+		</section>
+
+		<section>
+			<h3>What does Reveal.js-Title-Footer do?</h3>
+			<p>Reveal.js-Title-Footer includes a footer in all the slides of a Reveal.js presentation (with optional exclusion of some slides) that will show the title of the presentation.</p>
+		</section>
+
+		<section>
+			<h3>Configurable options</h3>
+			<p>The title to show on the footer is configurable.</p>
+			<p>The background color of the footer is also configurable.</p>
+		</section>
+
+	</section>
+
+	<section>
+
+		<section>
+			<h2>Installation</h2>
+		</section>
+
+		<section>
+			<h3>Necessary files</h3>
+			<p>The <code>title-footer</code> folder of the <code>plugin</code> folder has to be copied to the <code>plugin</code> folder of the Reveal.js presentation.</p>
+		</section>
+
+		<section>
+			<h3>CSS</h3>
+			<p>The CSS of the Reveal.js-Title-Footer plugin is included dynamically when it is initialized. However, if we configure the presentation not to include the Reveal.js-Title-Footer footer in the first page, this will be shown until the CSS is loaded dynamically, causing an ugly effect. To avoid it, include the CSS in the header of the Reveal.js presentation, with this line:</p>
+			<pre><code><link rel="stylesheet" href="plugin/title-footer/title-footer.css"></code></pre>
+		</section>
+
+		<section>
+			<h3>Plugin initialization</h3>
+			<p>Include Reveal.js-Title-Footer among the Reveal.js plugin initializations, like this:</p>
+			<pre><code>
+Reveal.initialize
+(
+    {
+        ...
+        dependencies:
+        [
+            ...
+            {
+                src: 'plugin/title-footer/title-footer.js',
+                async: true,
+                callback: function()
+                {
+                    title_footer.initialize();
+                }
+            }
+        ]
+    }
+);
+			</code></pre>
+		</section>
+
+		<section>
+			<h3>Customization</h3>
+			<p>The <code>title_footer.initialize</code> function can take two parameters:</p>
+			<ul>
+				<li><code>title</code>: the title to show in the footer; if <code>null</code>, it will take the <code>h1</code>, <code>h2</code> and <code>h3</code> elements of the first slide.</li>
+				<li><code>background</code>: a string of the form <code>'rgba(0,255,0,0.1)'</code>, for the background colour of the footer.</li>
+			</ul>
+		</section>
+
+		<section>
+			<p>For further customization (like making the footer a header, for example), arrange the <code>plugin/title-footer/title-footer.css</code> file accordingly.</p>
+		</section>
+
+	</section>
+
+	<section>
+
+		<section>
+			<h2>Use</h2>
+		</section>
+
+		<section>
+			<h3>Title</h3>
+			<p>The Reveal.js-Title-Footer plugin takes the first <code>h1</code>, <code>h2</code> and <code>h3</code> tags from the first slide as the title, if another title is not explicitly passed as parameter in the initialization.</p>
+		</section>
+
+		<section>
+			<h3>Exclusion from slides</h3>
+			<p>The Reveal.js-Title-Footer footer will not be shown in a slide if the corresponding section has a <code>data-state</code> attribute with a value of <code>no-title-footer</code>.</p>
+		</section>
+
+		<section>
+			<h3>Compatibility with Reveal.js-TOC-Progress</h3>
+			<p>If the Reveal.js-TOC-Progress is also used, the Reveal.js-Title-Footer footer is shown just above it. For not showing any of them in a slide, include a <code>data-state</code> attribute with a value of <code>no-toc-progress</code> in the corresponding section.</p>
+		</section>
+
+	</section>
+
+	<section>
+		<h2>Links</h2>
+		<ul>
+			<li>Source code on GitHub: <a href="https://github.com/e-gor/Reveal.js-Title-Footer">https://github.com/e-gor/Reveal.js-Title-Footer</a></li>
+			<li>Demo presentation with Reveal.js-Title-Footer: <a href="http://e-gor.github.io/Reveal.js-Title-Footer/demo">http://e-gor.github.io/Reveal.js-Title-Footer/demo</a></li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>License</h2>
+		<p>GPL v3 (<a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>).</p>
+	</section>
+
+	<section>
+
+		<section data-state="no-toc-progress">
+			<h1 class="no-toc-progress">Reveal.js-Title-Footer</h1>
+			<h3>Footer showing title for Reveal.js HTML presentations</h3>
+			<p>
+				<small>Created by <a href="https://github.com/e-gor">Igor Leturia <em>e-gor</em></a> / <a href="http://twitter.com/ileturia">@ileturia</a> / <a href="http://eibar.org/blogak/e-gorblog">http://eibar.org/blogak/e-gorblog</a></small>
+			</p>
+		</section>
+
+	</section>
+
+	</div>
+
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Parallax scrolling
+			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+			// parallaxBackgroundSize: '2100px 900px',
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+				// Title-Footer plugin
+				{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(); } }
+			]
+		});
+
+	</script>
+
+</body>
+
+</html>

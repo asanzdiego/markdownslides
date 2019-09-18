@@ -174,19 +174,33 @@ BUILD_EPUB_BOOK='max'
 
 ## Configuration (II)
 
-There are some extra configuration:
+We can also configure some other stufs from the file **build.properties**
 
 ~~~{.bash}
 CLEAN_LIB_FOLDER='no'
 COPY_IMG_FOLDER='no'
 ZIP_EXPORT_FOLDER='no'
-NUMBER_SECTIONS='no'
+NUMBER_SECTIONS='yes'
 NUMBER_OFFSET='no'
 CURRENT_NUMBER_OFFSET=1
 REMOVE_MD_TO_BOOK='yes'
 REMOVE_MD_TO_SLIDES='yes'
-DEFAULT_GENERATION_MODE='min'
-TRANSITION='fade'
+~~~
+
+## Configuración (III)
+
+We can also configure some other stufs aboout reveal.js from the file **build.properties**
+
+~~~{.bash}
+#THEME='black|white|league|sky|beige|simple|serif|blood|night|moon|solarized'
+REVEAL_JS_THEME='beige'
+REVEAL_JS_SHOW_TITLE_FOOTER='yes'
+REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
+REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
+REVEAL_JS_SHOW_MENU='yes'
+REVEAL_JS_URL='../lib/reveal.js/'
+REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
+REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
 ~~~
 
 ## Build
@@ -208,7 +222,6 @@ In the root folder you have to execute:
 ## Relese 1.0 (I)
 
 - Export slides to:
-
     - reveal-slides
     - reveal-slides-pdf
     - beamer-slides
@@ -217,7 +230,6 @@ In the root folder you have to execute:
 ## Relese 1.0 (II)
 
 - Export books to:
-
     - html-book
     - docx-book
     - odt-book
@@ -232,7 +244,6 @@ In the root folder you have to execute:
 ## Relese 2.0 (I)
 
 - Export slides to:
-
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-online
@@ -240,7 +251,6 @@ In the root folder you have to execute:
 ## Relese 2.0 (II)
 
 - Export books to:
-
     - html-book
     - docx-book
     - epub-book
@@ -248,7 +258,6 @@ In the root folder you have to execute:
 ## Relese 2.0 (III)
 
 - Deprecated:
-
     - beamer-slides
     - deck-slides
     - odt-book
@@ -303,7 +312,6 @@ In the root folder you have to execute:
 ## Where to find me?
 
 - Mi nick: **asanzdiego**
-
     - Blog:       [asanzdiego.com](http://asanzdiego.com)
     - GitHub:     [github.com/asanzdiego](http://github.com/asanzdiego)
     - Twitter:    [twitter.com/asanzdiego](http://twitter.com/asanzdiego)

@@ -66,7 +66,6 @@ Reveal.initialize({
 
 You can configure the menu for your presentation by providing a ```menu``` option in the reveal.js initialization options. Note that all config values are optional and will default as specified below.
 
-
 ```javascript
 Reveal.initialize({
 	// ...
@@ -75,6 +74,12 @@ Reveal.initialize({
 		// Specifies which side of the presentation the menu will 
 		// be shown. Use 'left' or 'right'.
 		side: 'left',
+
+		// Specifies the width of the menu.
+		// Can be one of the following:
+		// 'normal', 'wide', 'third', 'half', 'full', or
+		// any valid css length value
+		width: 'normal',
 
 		// Add slide numbers to the titles in the slide list.
 		// Use 'true' or format string (same as reveal.js slide numbers)
@@ -89,13 +94,18 @@ Reveal.initialize({
 		// with a menu-title class will take precedence over this option
 		titleSelector: 'h1, h2, h3, h4, h5, h6',
 
+		// If slides do not have a matching title, attempt to use the
+		// start of the text content as the title instead
+		useTextContentForMissingTitles: false,
+
 		// Hide slides from the menu that do not have a title.
 		// Set to 'true' to only list slides with titles.
 		hideMissingTitles: false,
 
-		// Add markers to the slide titles to indicate the 
-		// progress through the presentation
-		markers: false,
+		// Adds markers to the slide titles to indicate the 
+		// progress through the presentation. Set to 'false'
+		// to hide the markers.
+		markers: true,
 
 		// Specify custom panels to be included in the menu, by
 		// providing an array of objects with 'title', 'icon'
@@ -103,23 +113,32 @@ Reveal.initialize({
 		custom: false,
 
 		// Specifies the themes that will be available in the themes
-		// menu panel. Set to 'false' to hide themes panel.
-		themes: [
-			{ name: 'Black', theme: 'css/theme/black.css' },
-			{ name: 'White', theme: 'css/theme/white.css' },
-			{ name: 'League', theme: 'css/theme/league.css' },
-			{ name: 'Sky', theme: 'css/theme/sky.css' },
-			{ name: 'Beige', theme: 'css/theme/beige.css' },
-			{ name: 'Simple', theme: 'css/theme/simple.css' },
-			{ name: 'Serif', theme: 'css/theme/serif.css' },
-			{ name: 'Blood', theme: 'css/theme/blood.css' },
-			{ name: 'Night', theme: 'css/theme/night.css' },
-			{ name: 'Moon', theme: 'css/theme/moon.css' },
-			{ name: 'Solarized', theme: 'css/theme/solarized.css' }
-		],
+		// menu panel. Set to 'true' to show the themes menu panel
+		// with the default themes list. Alternatively, provide an
+		// array to specify the themes to make available in the
+		// themes menu panel, for example...
+		// [
+		//     { name: 'Black', theme: 'css/theme/black.css' },
+		//     { name: 'White', theme: 'css/theme/white.css' },
+		//     { name: 'League', theme: 'css/theme/league.css' }
+		// ]
+		themes: false,
+
+		// Specifies the path to the default theme files. If your
+		// presentation uses a different path to the standard reveal
+		// layout then you need to provide this option, but only
+		// when 'themes' is set to 'true'. If you provide your own 
+		// list of themes or 'themes' is set to 'false' the 
+		// 'themesPath' option is ignored.
+		themesPath: 'css/theme/',
 
 		// Specifies if the transitions menu panel will be shown.
-		transitions: true,
+		// Set to 'true' to show the transitions menu panel with
+		// the default transitions list. Alternatively, provide an
+		// array to specify the transitions to make available in
+		// the transitions panel, for example...
+		// ['None', 'Fade', 'Slide']
+		transitions: false,
 
 		// Adds a menu button to the slides to open the menu panel.
 		// Set to 'false' to hide the button.
@@ -133,10 +152,45 @@ Reveal.initialize({
 		// If true allows the user to open and navigate the menu using
 		// the keyboard. Standard keyboard interaction with reveal
 		// will be disabled while the menu is open.
-		keyboard: true
+		keyboard: true,
+
+		// Normally the menu will close on user actions such as
+		// selecting a menu item, or clicking the presentation area.
+		// If 'true', the sticky option will leave the menu open
+		// until it is explicitly closed, that is, using the close
+		// button or pressing the ESC or m key (when the keyboard 
+		// interaction option is enabled).
+		sticky: false,
+
+		// If 'true' standard menu items will be automatically opened
+		// when navigating using the keyboard. Note: this only takes 
+		// effect when both the 'keyboard' and 'sticky' options are enabled.
+		autoOpen: true,
+
+		// If 'true' the menu will not be created until it is explicitly
+		// requested by calling RevealMenu.init(). Note this will delay
+		// the creation of all menu panels, including custom panels, and
+		// the menu button.
+		delayInit: false,
+
+		// If 'true' the menu will be shown when the menu is initialised.
+		openOnInit: false,
+
+		// By default the menu will load it's own font-awesome library
+		// icons. If your presentation needs to load a different
+		// font-awesome library the 'loadIcons' option can be set to false
+		// and the menu will not attempt to load the font-awesome library.
+		loadIcons: true
 	},
 
 });
+```
+
+### Themes Stylesheet
+
+If you are using the themes panel you need to ensure the theme stylesheet in the presentation uses the ```id="theme"``` attribute. For example...
+```html
+<link rel="stylesheet" href="css/theme/black.css" id="theme">
 ```
 
 ## Slide Titles
@@ -240,8 +294,8 @@ You are not limited to linking to presentation slides. You can provide any link 
 ```html
 <h1>External Links</h1>
 <ul class="slide-menu-items">
-	<li class="slide-menu-item"><a href="https://github.com/denehyg/reveal.js-menu" target="_blank">Reveal.js-menu</a></li>
-	<li class="slide-menu-item"><a href="https://github.com/hakimel/reveal.js" target="_blank">Reveal.js</a></li>
+	<li class="slide-menu-item"><a href="https://github.com/denehyg/reveal.js-menu">Reveal.js-menu</a></li>
+	<li class="slide-menu-item"><a href="https://github.com/hakimel/reveal.js">Reveal.js</a></li>
 </ul>
 ```
 
@@ -258,7 +312,21 @@ Reveal.addEventListener( 'menu-ready', function( event ) {
 } );
 ```
 
- 
+## API
+
+The `RevealMenu` object exposes a JavaScript API for controlling the menu:
+
+| Function                 | Description   |
+|--------------------------|---------------|
+| toggle(event)            | Toggles the open state of the menu, ie open if it is closed, and close if it is open |
+| openMenu(event)          | Opens the menu |
+| closeMenu(event, force)  | Closes the menu. To force the menu to close (ie when `sticky` option is `true`) call `closeMenu(null, true)` | 
+| openPanel(event, ref)    | Opens the menu to a specific panel, passing the name of the panel or the panel element itself |
+| isOpen()                 | Returns true if the menu is open |
+| init()                   | Initialises the menu if it has not already been initialised. Used in conjunction with the `delayInit` option |
+| isInit()                 | Returns true if the menu has been initialised |
+
+
 ## License
 
 MIT licensed

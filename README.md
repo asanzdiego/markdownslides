@@ -302,9 +302,9 @@ REVEAL_JS_ONLINE='yes'
   * [Configuración](#configuración)
   * [Generación](#generación)
 * [Notas de las versiones](#notas-de-las-versiones)
-  * [version 1.0](#version-10)
-  * [Versión 2.0](#version-20)
-  * [Versión 3.0](#version-30)
+  * [version 1.0](#versión-10)
+  * [Versión 2.0](#versión-20)
+  * [Versión 3.0](#versión-30)
   
 ### Acerca de
 

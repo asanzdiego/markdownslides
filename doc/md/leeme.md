@@ -216,7 +216,7 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 
 # Releases notes
 
-## Relese 1.0 (I)
+## Versión 1.0 (I)
 
 - Exporta slides a:
     - reveal-slides
@@ -224,7 +224,7 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
     - beamer-slides
     - deck-slides
 
-## Relese 1.0 (II)
+## Versión 1.0 (II)
 
 - Exporta books a:
     - html-book
@@ -232,27 +232,27 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
     - odt-book
     - pdf-book
 
-## Relese 1.0 (III)
+## Versión 1.0 (III)
 
 - Añadidos los modos de generación 'min', 'med' y 'max'.
 - Descarga automática de librerías externas.
 - Numeración (I), (II), (III)...
 
-## Relese 2.0 (I)
+## Versión 2.0 (I)
 
 - Exporta slides a:
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-online
 
-## Relese 2.0 (II)
+## Versión 2.0 (II)
 
 - Exporta books a:
     - html-book
     - docx-book
     - epub-book
 
-## Relese 2.0 (III)
+## Versión 2.0 (III)
 
 - Deprecated:
     - beamer-slides
@@ -260,7 +260,7 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
     - odt-book
     - pdf-book
 
-## Relese 2.0 (III)
+## Versión 2.0 (III)
 
 - Añadido menú gracias a [Raúl Jimenez Ortega](https://github.com/hhkaos)
 - Añadido dockerfile gracías a [Rubén Gómez García](https://github.com/kaneproject)
@@ -270,7 +270,7 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 - Carga de librerias 'online' por HTTPS gracias a [Cesar Seoane](https://github.com/cesarseoane)
 - Configuración resolución PDF gracias a [Cesar Seoane](https://github.com/cesarseoane)
 
-## Relese 2.0 (IV)
+## Versión 2.0 (IV)
 
 - Nuevo formato 'epub'.
 - Añadido 'bash strict mode'.
@@ -280,14 +280,14 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 - Añadidas notas solo visibles en modo libro o si pulsas 's' en las slides.
 - Normalización de imágenes en slides.
 
-## Relese 3.0
+## Versión 3.0
 
 - Limpieza de código.
 - Eliminada la exportación de archivos "deprecated".
-- Mejora de la configuración en el fichero build.properties.
 - Actualización de las dependencias de [Reveal.js](http://lab.hakim.se/reveal-js/#/).
 - Exportación a PDF con [DeckTape](https://github.com/astefanutti/decktape).
-- Nuevas funcionalidades.
+- Creación de libro de varios ficheros md con numeración.
+- Posibilidad de añadir un footer a las slides.
 
 # Autor
 

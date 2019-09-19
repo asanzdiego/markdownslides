@@ -288,7 +288,8 @@ In the root folder you have to execute:
 - Improve de configuration in build.properties file.
 - Update [Reveal.js](http://lab.hakim.se/reveal-js/#/) dependencies.
 - Export to PDF with [DeckTape](https://github.com/astefanutti/decktape).
-- New features.
+- Book creation from some md files with enumeration.
+- Possibility of adding a footer to the slides.
 
 # Author
 

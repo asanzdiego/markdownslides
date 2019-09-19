@@ -277,7 +277,8 @@ REVEAL_JS_ONLINE='yes'
 - Improve de configuration in build.properties file.
 - Update [Reveal.js](http://lab.hakim.se/reveal-js/#/) dependencies.
 - Export to PDF with [DeckTape](https://github.com/astefanutti/decktape).
-- New features.
+- Book creation from some md files with enumeration.
+- Possibility of adding a footer to the slides.
 
 ## Español
 
@@ -491,9 +492,9 @@ REVEAL_JS_ONLINE='yes'
 
 - [**carpeta**] donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
 
-### Releases notes
+### Notas de las versiones
 
-#### Relese 1.0
+#### Versión 1.0
 
 - Exporta slides a:
     - reveal-slides
@@ -512,7 +513,7 @@ REVEAL_JS_ONLINE='yes'
 - Descarga automática de librerías externas.
 - Numeración (I), (II), (III)...
 
-#### Relese 2.0
+#### Versión 2.0
 
 - Exporta slides a:
     - reveal-slides
@@ -546,11 +547,12 @@ REVEAL_JS_ONLINE='yes'
 - Añadidas notas solo visibles en modo libro o si pulsas 's' en las slides.
 - Normalización de imágenes en slides (witdh=50% y align=center).
 
-#### Relese 3.0
+#### Versión 3.0
 
 - Limpieza de código.
 - Eliminada la exportación de archivos "deprecated".
 - Mejora de la configuración en el fichero build.properties.
 - Actualización de las dependencias de [Reveal.js](http://lab.hakim.se/reveal-js/#/).
 - Exportación a PDF con [DeckTape](https://github.com/astefanutti/decktape).
-- Nuevas funcionalidades.
+- Creación de libro de varios ficheros md con numeración.
+- Posibilidad de añadir un footer a las slides.

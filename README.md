@@ -198,9 +198,7 @@ REVEAL_JS_SHOW_TITLE_FOOTER='yes'
 REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
 REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
 REVEAL_JS_SHOW_MENU='yes'
-REVEAL_JS_URL='../lib/reveal.js/'
-REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
-REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
+REVEAL_JS_ONLINE='yes'
 ~~~
 
 #### Build
@@ -279,6 +277,7 @@ REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
 - Improve de configuration in build.properties file.
 - Update [Reveal.js](http://lab.hakim.se/reveal-js/#/) dependencies.
 - Export to PDF with [DeckTape](https://github.com/astefanutti/decktape).
+- New features.
 
 ## Español
 
@@ -475,9 +474,7 @@ REVEAL_JS_SHOW_TITLE_FOOTER='yes'
 REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
 REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
 REVEAL_JS_SHOW_MENU='yes'
-REVEAL_JS_URL='../lib/reveal.js/'
-REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
-REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
+REVEAL_JS_ONLINE='yes'
 ~~~
 
 #### Generación
@@ -556,3 +553,4 @@ REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
 - Mejora de la configuración en el fichero build.properties.
 - Actualización de las dependencias de [Reveal.js](http://lab.hakim.se/reveal-js/#/).
 - Exportación a PDF con [DeckTape](https://github.com/astefanutti/decktape).
+- Nuevas funcionalidades.

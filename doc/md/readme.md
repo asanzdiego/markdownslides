@@ -1,6 +1,6 @@
 % Markdown Slides [EN]
 % Adolfo Sanz De Diego
-% Enero 2017
+% Septiembre 2019
 
 # About
 
@@ -33,7 +33,7 @@ generate:
 - Rubén Gómez García: <https://github.com/kaneproject>
 - Raul Jimenez Ortega: <https://github.com/hhkaos>
 
-## Licence
+## ![Creative Commons Attribution 3.0](../img/cc-by-sa.png)
 
 > - **This work is licensed under a:**
 >       - [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by-sa/3.0//)
@@ -144,15 +144,15 @@ But only in books. In slides you can only have 2 levels.
 You can name several slides with (I), (II), etc. But only the first one will be exported to the book. Example:
 
 ~~~
-## Foo Bar (I)
+ ## Foo Bar (I)
 
-## Foo Bar (II)
+ ## Foo Bar (II)
 ~~~
 
 In the book will be:
 
 ~~~
-## Foo Bar
+ ## Foo Bar
 ~~~
 
 ## Configuration (I)
@@ -198,9 +198,7 @@ REVEAL_JS_SHOW_TITLE_FOOTER='yes'
 REVEAL_JS_DEFAULT_TITLE_FOOTER='yes'
 REVEAL_JS_TITLE_FOOTER="'MarkdownSlides by @asanzdiego :-)'"
 REVEAL_JS_SHOW_MENU='yes'
-REVEAL_JS_URL='../lib/reveal.js/'
-REVEAL_JS_MENU_URL='../lib/reveal.js-menu/'
-REVEAL_JS_TITLE_FOOTER_URL='../lib/reveal.js-title-footer/'
+REVEAL_JS_ONLINE='yes'
 ~~~
 
 ## Build
@@ -290,6 +288,7 @@ In the root folder you have to execute:
 - Improve de configuration in build.properties file.
 - Update [Reveal.js](http://lab.hakim.se/reveal-js/#/) dependencies.
 - Export to PDF with [DeckTape](https://github.com/astefanutti/decktape).
+- New features.
 
 # Author
 

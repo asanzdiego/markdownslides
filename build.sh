@@ -52,6 +52,16 @@ function downloadLib() {
   fi
 }
 
+function downloadLibs() {
+
+    downloadLib https://github.com/hakimel/reveal.js/archive/3.6.0.zip \
+      reveal.js-3.6.0 reveal.js
+    downloadLib https://github.com/denehyg/reveal.js-menu/archive/1.2.0.zip \
+      reveal.js-menu-1.2.0 reveal.js-menu
+    downloadLib https://github.com/e-gor/Reveal.js-Title-Footer/archive/master.zip \
+      Reveal.js-Title-Footer-master reveal.js-title-footer
+}
+
 function initLibFolder() {
 
   LIB_FOLDER="$1/lib"
@@ -102,14 +112,22 @@ function initExportFolder() {
 
 function normalizeImages() {
   
-  # close div after .png)
-  sed -i 's/.png)$/.png){ width=80% text-align=center }\n/g' "../export/$1-to-$2.md"
+  if [ "$2" == "slides" ]; then
+    # close div after .png)
+    sed -i 's/.png)$/.png){ width=80% class=center }\n/g' "../export/$1-to-$2.md"
+    # close div after .jpg)
+    sed -i 's/.jpg)$/.jpg){ width=80% class=center }\n/g' "../export/$1-to-$2.md"
+    # close div after .gif)
+    sed -i 's/.gif)$/.gif){ width=80% class=center }\n/g' "../export/$1-to-$2.md"
+  else
+    # close div after .png)
+    sed -i 's/.png)$/.png){ width=50% class=center }\n/g' "../export/$1-to-$2.md"
+    # close div after .jpg)
+    sed -i 's/.jpg)$/.jpg){ width=50% class=center }\n/g' "../export/$1-to-$2.md"
+    # close div after .gif)
+    sed -i 's/.gif)$/.gif){ width=50% class=center }\n/g' "../export/$1-to-$2.md"
+  fi
 
-  # close div after .jpg)
-  sed -i 's/.jpg)$/.jpg){ width=80% text-align=center }\n/g' "../export/$1-to-$2.md"
-
-  # close div after .gif)
-  sed -i 's/.gif)$/.gif){ width=80% text-align=center }\n/g' "../export/$1-to-$2.md"
 }
 
 function convertMainListsIntoParagraphs() {
@@ -130,17 +148,17 @@ function convertMainListsIntoParagraphs() {
 
 function normalizeMd() {
 
-  echo -e "Normalizing...                 ../export/$1-to-$2.md"
-
-  # remove blank lines
-  sed -i '/^$/d' "../export/$1-to-$2.md"
-
-  # add new line before #
-  sed -i ':a;N;$!ba;s/\n#/\n\n#/g' "../export/$1-to-$2.md"
-  sed -i ':a;N;$!ba;s/\n    #/\n\n    #/g' "../export/$1-to-$2.md"
-
   # replace multiple empty lines with one empty line
   sed -i '/^$/N;/^\n$/D' "../export/$1-to-$2.md"
+}
+
+function replaceNotes() {
+
+  # replace @start-notes with <aside class="notes">
+  sed -i 's/^@start-notes/<aside class="notes">/g' "../export/$1-to-$2.md"
+
+  # replace @end-notes with </aside>
+  sed -i 's/^@end-notes/<\/aside>/g' "../export/$1-to-$2.md"
 }
 
 function cleanMdToSlides() {
@@ -154,15 +172,11 @@ function cleanMdToSlides() {
   sed -i 's/###*/##/g' "../export/$1-to-slides.md"
   sed -i 's/##\\#/###/g' "../export/$1-to-slides.md"
 
-  # normalizeMd $1 slides
-
   normalizeImages "$1" slides
 
-  # replace @start-notes with <aside class="notes">
-  sed -i 's/^@start-notes/<aside class="notes">/g' "../export/$1-to-slides.md"
+  replaceNotes "$1" slides
 
-  # replace @end-notes with </aside>
-  sed -i 's/^@end-notes/<\/aside>/g' "../export/$1-to-slides.md"
+  normalizeMd "$1" slides
 }
 
 function cleanMdToBook() {
@@ -177,32 +191,40 @@ function cleanMdToBook() {
   # remove (I) from lines
   sed -i 's/ (I)//g' "../export/$1-to-book.md"
 
-  # remove all lines with (I) (II)...
-  sed -i 's/.*(I.*//g' "../export/$1-to-book.md"
-  sed -i 's/.*(V.*//g' "../export/$1-to-book.md"
-  sed -i 's/.*(X.*//g' "../export/$1-to-book.md"
+  # remove all lines with (II) (III)...
+  sed -i 's/^#.*(I.*$/@delete/g' "../export/$1-to-book.md"
+  sed -i 's/^#.*(V.*$/@delete/g' "../export/$1-to-book.md"
+  sed -i 's/^#.*(X.*$/@delete/g' "../export/$1-to-book.md"
 
-  # normalizeMd $1 book
+  sed -i ':a;N;$!ba;s/\n@delete\n\n//g' "../export/$1-to-book.md"
 
-  # convertMainListsIntoParagraphs $1 book
+  # convertMainListsIntoParagraphs "$1" book
 
   normalizeImages "$1" book
 
-  # remove @start-notes
-  sed -i 's/^@start-notes//g' "../export/$1-to-book.md"
+  replaceNotes "$1" book
 
-  # remove @end-notes
-  sed -i 's/^@end-notes//g' "../export/$1-to-book.md"
+  # remove '> ' at the beginning of the line
+  sed -i 's/^> //g' "../export/$1-to-book.md"
+
+  # remove '--' at the beginning of the line
+  sed -i 's/^-*$//g' "../export/$1-to-book.md"
+
+  normalizeMd "$1" book
 }
 
 function buildRevealSlides() {
 
-  downloadLib https://github.com/hakimel/reveal.js/archive/3.6.0.zip \
-    reveal.js-3.6.0 reveal.js
-  downloadLib https://github.com/denehyg/reveal.js-menu/archive/1.2.0.zip \
-    reveal.js-menu-1.2.0 reveal.js-menu
-  downloadLib https://github.com/e-gor/Reveal.js-Title-Footer/archive/master.zip \
-    Reveal.js-Title-Footer-master reveal.js-title-footer
+  if [ "$REVEAL_JS_ONLINE" == "yes" ]; then
+    REVEAL_JS_URL=$REVEAL_JS_URL_ONLINE
+    REVEAL_JS_MENU_URL=$REVEAL_JS_MENU_URL_ONLINE
+    REVEAL_JS_TITLE_FOOTER_URL=$REVEAL_JS_TITLE_FOOTER_URL_ONLINE
+  else
+    downloadLibs
+    REVEAL_JS_URL=$REVEAL_JS_URL_OFFLINE
+    REVEAL_JS_MENU_URL=$REVEAL_JS_MENU_URL_OFFLINE
+    REVEAL_JS_TITLE_FOOTER_URL=$REVEAL_JS_TITLE_FOOTER_URL_OFFLINE
+  fi
 
   echo -e "Exporting...                   ../export/$1-reveal-slides$2.html"
   

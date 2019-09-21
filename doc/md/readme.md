@@ -6,7 +6,7 @@
 
 ## What is it?
 
-**MarkdownSlides** is a Reveal.jsand PDF **slides** generator
+**MarkdownSlides** is a Reveal.js and PDF **slides** generator
 **from MARKDOWN files**, that also generate HTML, EPUB and DOCX documents.
 
 The idea is that **from a same MARKDOWN file we can get slides and books**

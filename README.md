@@ -1,7 +1,22 @@
 # Markdown Slides
 
-* [English](#english)
-* [Español](#español)
+![](./doc/img/markdownslides.png)
+
+**MarkdownSlides** is a Reveal.js and PDF **slides** generator
+**from MARKDOWN files**, that also generate HTML, EPUB and DOCX documents.
+
+The idea is that **from a same MARKDOWN file we can get slides and books**
+without worrying about style, just worrying about content.
+
+* [English documentation](#english)
+
+**MarkdownSlides** es un generador de **slides** Reveal.js y PDF
+a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, EPUB y DOCX.
+
+La idea es que **a partir de un mismo fichero MARKDOWN podamos obtener slides y libros**
+sin preocuparnos por el estilo, solo por el contenido.
+
+* [Documentación en español](#español)
 
 ## English
       
@@ -33,13 +48,11 @@
 
 #### What is it?
 
-**MarkdownSlides** is a Reveal.js, Deck.js and PDF **slides** generator
+**MarkdownSlides** is a Reveal.js and PDF **slides** generator
 **from MARKDOWN files**, that also generate HTML, EPUB and DOCX documents.
 
 The idea is that **from a same MARKDOWN file we can get slides and books**
 without worrying about style, just worrying about content.
-
-![](./doc/img/markdownslides.png)
 
 #### Samples
 
@@ -77,19 +90,13 @@ generate:
 
 #### Requirements
 
-Now, only works in Linux (may be on MacOS)
-
-It can works with Docker, but is in beta.
+Now, only works in Linux (may be on MacOS), but it can works with Docker :-)
 
 #### Download
 
 [github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 #### Docker
-
-Your installation with docker is still **under testing**.
-
-Any feedback is welcome.
 
 ##### Building docker image 
 
@@ -316,8 +323,6 @@ a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, EPUB y 
 La idea es que **a partir de un mismo fichero MARKDOWN podamos obtener slides y libros**
 sin preocuparnos por el estilo, solo por el contenido.
 
-![](./doc/img/markdownslides.png)
-
 #### Ejemplos
 
 A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
@@ -354,19 +359,13 @@ genera:
 
 #### Requisitos
 
-Por ahora, solo funciona en Linux (y puede que en MacOS).
-
-Puede funcionar con Docker, pero todavía está en pruebas.
+Por ahora, solo funciona en Linux (y puede que en MacOS), pero puede funcionar con Docker :-)
 
 #### Descarga
 
 [github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 #### Docker
-
-Su instalación con docker está todavía **en pruebas**.
-
-Cualquier feedback es bienvenido.
 
 ##### Construir la imagen
 

@@ -73,7 +73,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#what-is-it">What is it?</a></li>
 <li><a href="#samples">Samples</a></li>
 <li><a href="#contributors">Contributors</a></li>
-<li><a href="#creative-commons-attribution-3.0"><img src="../img/cc-by-sa.png" alt="Creative Commons Attribution 3.0" class="center" style="width:50.0%" /></a></li>
+<li><a href="#licence">Licence</a></li>
 </ul></li>
 <li><a href="#instalation">Instalation</a><ul>
 <li><a href="#dependencies">Dependencies</a></li>
@@ -97,7 +97,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#relese-2.0">Relese 2.0</a></li>
 <li><a href="#relese-3.0">Relese 3.0</a></li>
 </ul></li>
-<li><a href="#author">Author</a><ul>
+<li><a href="#adolfo-sanz-de-diego-author"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Author</a><ul>
 <li><a href="#adolfo-sanz-de-diego">Adolfo Sanz De Diego</a></li>
 <li><a href="#algunos-proyectos">Algunos proyectos</a></li>
 <li><a href="#where-to-find-me">Where to find me?</a></li>
@@ -126,7 +126,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
 <li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
 </ul>
-<h2 id="creative-commons-attribution-3.0"><img src="../img/cc-by-sa.png" alt="Creative Commons Attribution 3.0" class="center" style="width:50.0%" /></h2>
+<h2 id="licence">Licence</h2>
 <ul>
 <li><strong>This work is licensed under a:</strong>
 <ul>
@@ -162,15 +162,9 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <p>It will be at dockerhub soon:</p>
 <pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
 <h3 id="launch-the-container">Launch the container</h3>
-<p>Launch the container, product generated will be as <strong>min</strong> configuration</p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides</code></pre>
-<p>Changing to <strong>med</strong> configuration</p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh med doc</code></pre>
-<p>Changing to <strong>max</strong> configuation</p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh max doc</code></pre>
+<p>Launch the container:</p>
+<pre><code>docker run -it -v &quot;${PWD}&quot;:/home/markdownslides-master/&quot;${PWD##*/}&quot; \
+    asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]</code></pre>
 <h1 id="how-to-use">How to use</h1>
 <h2 id="creation">Creation</h2>
 <ul>
@@ -304,7 +298,7 @@ This is only visible in book mode or if you press 's' on the slides.
 <li>Book creation from some md files with enumeration.</li>
 <li>Possibility of adding a footer to the slides.</li>
 </ul>
-<h1 id="author">Author</h1>
+<h1 id="adolfo-sanz-de-diego-author"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Author</h1>
 <h2 id="adolfo-sanz-de-diego">Adolfo Sanz De Diego</h2>
 <ul>
 <li><p><strong>Old JEE web developer</strong>.</p></li>

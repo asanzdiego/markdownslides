@@ -33,7 +33,7 @@ generate:
 - Rubén Gómez García: <https://github.com/kaneproject>
 - Raul Jimenez Ortega: <https://github.com/hhkaos>
 
-## ![Creative Commons Attribution 3.0](../img/cc-by-sa.png)
+## Licence
 
 > - **This work is licensed under a:**
 >       - [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by-sa/3.0//)
@@ -77,25 +77,11 @@ $ docker build -t asanzdiego/markdownslides .
 
 ### Launch the container
 
-Launch the container, product generated will be as **min** configuration 
+Launch the container:
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides
-~~~
-
-Changing to **med** configuration
-
-~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh med doc
-~~~
-     
-Changing to **max** configuation
-
-~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh max doc
+docker run -it -v "${PWD}":/home/markdownslides-master/"${PWD##*/}" \
+    asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
 ~~~
 
 # How to use
@@ -291,7 +277,7 @@ In the root folder you have to execute:
 - Book creation from some md files with enumeration.
 - Possibility of adding a footer to the slides.
 
-# Author
+# ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 
 ## Adolfo Sanz De Diego
 

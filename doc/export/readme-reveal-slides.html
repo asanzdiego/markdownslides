@@ -156,8 +156,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
 <li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
 </ul>
-</section><section id="creative-commons-attribution-3.0" class="slide level2">
-<h2><img src="../img/cc-by-sa.png" alt="Creative Commons Attribution 3.0" class="center" style="width:80.0%" /></h2>
+</section><section id="licence" class="slide level2">
+<h2>Licence</h2>
 <ul>
 <li class="fragment"><strong>This work is licensed under a:</strong>
 <ul>
@@ -199,15 +199,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
 </section><section id="launch-the-container" class="slide level2">
 <h2>Launch the container</h2>
-<p>Launch the container, product generated will be as <strong>min</strong> configuration</p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides</code></pre>
-<p>Changing to <strong>med</strong> configuration</p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh med doc</code></pre>
-<p>Changing to <strong>max</strong> configuation</p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh max doc</code></pre>
+<p>Launch the container:</p>
+<pre><code>docker run -it -v &quot;${PWD}&quot;:/home/markdownslides-master/&quot;${PWD##*/}&quot; \
+    asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]</code></pre>
 </section></section>
 <section><section id="how-to-use" class="titleslide slide level1"><h1>How to use</h1></section><section id="creation" class="slide level2">
 <h2>Creation</h2>
@@ -379,7 +373,7 @@ This is only visible in book mode or if you press 's' on the slides.
 <li>Possibility of adding a footer to the slides.</li>
 </ul>
 </section></section>
-<section><section id="author" class="titleslide slide level1"><h1>Author</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
+<section><section id="adolfo-sanz-de-diego-author" class="titleslide slide level1"><h1><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Author</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
 <h2>Adolfo Sanz De Diego</h2>
 <ul>
 <li><p><strong>Old JEE web developer</strong>.</p></li>
@@ -430,7 +424,6 @@ This is only visible in book mode or if you press 's' on the slides.
         // Bounds for smallest/largest possible scale to apply to content
         minScale: 0.9,
         maxScale: 1.1,
-
         menu: {
             // Specifies which side of the presentation the menu will
             // be shown. Use 'left' or 'right'.

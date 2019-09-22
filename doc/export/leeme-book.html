@@ -73,7 +73,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#qué-es-esto">¿Qué es esto?</a></li>
 <li><a href="#ejemplos">Ejemplos</a></li>
 <li><a href="#colaboradores">Colaboradores</a></li>
-<li><a href="#creative-commons-attribution-3.0"><img src="../img/cc-by-sa.png" alt="Creative Commons Attribution 3.0" height="30" /></a></li>
+<li><a href="#licencia">Licencia</a></li>
 </ul></li>
 <li><a href="#instalación">Instalación</a><ul>
 <li><a href="#dependencias">Dependencias</a></li>
@@ -97,7 +97,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#versión-2.0">Versión 2.0</a></li>
 <li><a href="#versión-3.0">Versión 3.0</a></li>
 </ul></li>
-<li><a href="#autor">Autor</a><ul>
+<li><a href="#adolfo-sanz-de-diego-autor"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Autor</a><ul>
 <li><a href="#adolfo-sanz-de-diego">Adolfo Sanz De Diego</a></li>
 <li><a href="#algunos-proyectos">Algunos proyectos</a></li>
 <li><a href="#donde-encontrarme">¿Donde encontrarme?</a></li>
@@ -126,7 +126,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
 <li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
 </ul>
-<h2 id="creative-commons-attribution-3.0"><img src="../img/cc-by-sa.png" alt="Creative Commons Attribution 3.0" height="30" /></h2>
+<h2 id="licencia">Licencia</h2>
 <ul>
 <li><strong>Este obra está bajo una licencia:</strong>
 <ul>
@@ -162,15 +162,9 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <p>Estará en Dockerhub pronto:</p>
 <pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
 <h3 id="lanzar-el-contenedor">Lanzar el contenedor</h3>
-<p>Lanzamos el contenedor con la configuración <strong>min</strong></p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides</code></pre>
-<p>Cambiando a configuración <strong>med</strong></p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh med doc</code></pre>
-<p>Cambiando a configuración <strong>max</strong></p>
-<pre><code>docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh max doc</code></pre>
+<p>Lanzamos el contenedor:</p>
+<pre><code>docker run -it -v &quot;${PWD}&quot;:/home/markdownslides-master/&quot;${PWD##*/}&quot; \
+    asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]</code></pre>
 <h1 id="manejo">Manejo</h1>
 <h2 id="creación">Creación</h2>
 <p>Primero <strong>copia la carpeta doc y renombrala a tu gusto</strong>. Esto no es necesario pero te ayuda a organizar tus documentos.</p>
@@ -300,7 +294,7 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 <li>Creación de libro de varios ficheros md con numeración.</li>
 <li>Posibilidad de añadir un footer a las slides.</li>
 </ul>
-<h1 id="autor">Autor</h1>
+<h1 id="adolfo-sanz-de-diego-autor"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Autor</h1>
 <h2 id="adolfo-sanz-de-diego">Adolfo Sanz De Diego</h2>
 <ul>
 <li><p>Empecé <strong>desarrollando aplicaciones web</strong>, hasta que di el salto a la docencia.</p></li>

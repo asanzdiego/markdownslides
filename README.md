@@ -111,7 +111,8 @@ $ docker build -t asanzdiego/markdownslides .
 Launch the container:
 
 ~~~
-docker run -it -v "${PWD}":/home/markdownslides-master/"${PWD##*/}" asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
+docker run -it -v "${PWD}":/home/markdownslides-master/"${PWD##*/}" \
+    asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
 ~~~
 
 ### How to use
@@ -366,7 +367,7 @@ Por ahora, solo funciona en Linux (y puede que en MacOS), pero puede funcionar c
 [github.com/asanzdiego/markdownslides/archive/master.zip](https://github.com/asanzdiego/markdownslides/archive/master.zip)
 
 #### Docker
-
+            
 ##### Construir la imagen
 
 Estará en Dockerhub pronto:
@@ -380,7 +381,8 @@ $ docker build -t asanzdiego/markdownslides .
 Lanzamos el contenedor:
 
 ~~~
-docker run -it -v ${PWD}:/home/master asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
+docker run -it -v "${PWD}":/home/markdownslides-master/"${PWD##*/}" \
+    asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
 ~~~
 
 ### Manejo

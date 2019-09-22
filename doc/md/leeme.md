@@ -33,7 +33,7 @@ genera:
 - Rubén Gómez García: <https://github.com/kaneproject>
 - Raul Jimenez Ortega: <https://github.com/hhkaos>
 
-## ![Creative Commons Attribution 3.0](../img/cc-by-sa.png){height=30}
+## Licencia
 
 > - **Este obra está bajo una licencia:**
 >       - [Creative Commons Reconocimiento-CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/es/)
@@ -77,25 +77,11 @@ $ docker build -t asanzdiego/markdownslides .
 
 ### Lanzar el contenedor
 
-Lanzamos el contenedor con la configuración **min**
+Lanzamos el contenedor:
 
 ~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides
-~~~
-
-Cambiando a configuración **med**
-
-~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh med doc
-~~~
-     
-Cambiando a configuración **max**
-
-~~~
-docker run -it -v ${PWD}/doc:/home/markdownslides/doc \
-    asanzdiego/markdownslides ./build.sh max doc
+docker run -it -v "${PWD}":/home/markdownslides-master/"${PWD##*/}" \
+    asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
 ~~~
 
 # Manejo
@@ -289,7 +275,7 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 - Creación de libro de varios ficheros md con numeración.
 - Posibilidad de añadir un footer a las slides.
 
-# Autor
+# ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 
 ## Adolfo Sanz De Diego
 

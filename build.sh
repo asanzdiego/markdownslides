@@ -253,7 +253,7 @@ function buildRevealSlidesPdf() {
 
   echo -e "Exporting...                   ../export/$1.pdf"
 
-  decktape --chrome-arg=--allow-file-access-from-files \
+  decktape --chrome-arg=--no-sandbox \
     --size "$DECKTAPE_RESOLUTION" --pause "$DECKTAPE_PAUSE" reveal \
     "file://$(pwd)/../export/$1-pdf.html" "../export/$1.pdf" > /dev/null
 

@@ -226,7 +226,7 @@ function buildRevealSlides() {
   if [ "$2" == "-pdf" ] || [ "$REVEAL_JS_SHOW_MENU" != "yes" ]; then
     REVEAL_JS_SHOW_MENU_MD=""
   fi
-echo "REVEAL_JS_SHOW_MENU_MD=$REVEAL_JS_SHOW_MENU_MD" 
+ 
   pandoc -w revealjs --template "$ORIGIN/templates/reveal-slides-template.html" \
     --variable "revealjs-title-footer=$REVEAL_JS_TITLE_FOOTER" \
     --variable "revealjs-show-menu=$REVEAL_JS_SHOW_MENU_MD" \

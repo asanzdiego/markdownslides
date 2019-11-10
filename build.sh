@@ -15,11 +15,17 @@ source ./build.properties
 function downloadLib() {
 
   LIB_FOLDER="../lib"
-  
+
   if [ -e "$LIB_FOLDER" ]; then
     if [ ! -d "$LIB_FOLDER" ]; then
       echo "ERROR: $LIB_FOLDER exists and is not a folder"
       exit -1
+    else
+      if [ "$CLEAN_LIB_FOLDER" == "yes" ]; then
+        echo -e "Cleaning lib folder...         ../$LIB_FOLDER"
+        rm -R "$LIB_FOLDER"
+        mkdir "$LIB_FOLDER"
+      fi
     fi
   else
     mkdir "$LIB_FOLDER"
@@ -60,26 +66,6 @@ function downloadLibs() {
       reveal.js-menu-1.2.0 reveal.js-menu
     downloadLib https://github.com/e-gor/Reveal.js-Title-Footer/archive/master.zip \
       Reveal.js-Title-Footer-master reveal.js-title-footer
-}
-
-function initLibFolder() {
-
-  LIB_FOLDER="$1/lib"
-
-  if [ -e "$LIB_FOLDER" ]; then
-    if [ ! -d "$LIB_FOLDER" ]; then
-      echo "ERROR: $LIB_FOLDER exists and is not a folder"
-      exit -1
-    else
-      if [ "$CLEAN_LIB_FOLDER" == "yes" ]; then
-        echo -e "Cleaning lib folder...         ../$LIB_FOLDER"
-        rm -R "$LIB_FOLDER"
-        mkdir "$LIB_FOLDER"
-      fi
-    fi
-  else
-    mkdir "$LIB_FOLDER"
-  fi
 }
 
 function initExportFolder() {
@@ -226,7 +212,7 @@ function buildRevealSlides() {
     REVEAL_JS_TITLE_FOOTER_URL=$REVEAL_JS_TITLE_FOOTER_URL_OFFLINE
   fi
 
-  echo -e "Exporting...                   ../export/$1-reveal-slides$2.html"
+  echo -e "Exporting...                   ../export/$1$2.html"
   
   if [ "$REVEAL_JS_SHOW_TITLE_FOOTER" == "yes" ]; then
     if [ "$REVEAL_JS_DEFAULT_TITLE_FOOTER" == "yes" ]; then
@@ -253,23 +239,23 @@ function buildRevealSlides() {
     --variable "transition=$REVEAL_JS_TRANSITION" \
     --variable "minScale=$REVEAL_JS_MIN_SCALE" \
     --variable "maxScale=$REVEAL_JS_MAX_SCALE" \
-    "$NUMBERS" -o "../export/$1-reveal-slides$2.html" "../export/$1-to-slides.md"
+    "$NUMBERS" -o "../export/$1$2.html" "../export/$1-to-slides.md"
 
-  sed -i s/h1\>/h2\>/g "../export/$1-reveal-slides$2.html"
-  sed -i s/\>\<h2/\>\<h1/g "../export/$1-reveal-slides$2.html"
-  sed -i s/\\/h2\>\</\\/h1\>\</g "../export/$1-reveal-slides$2.html"
+  sed -i s/h1\>/h2\>/g "../export/$1$2.html"
+  sed -i s/\>\<h2/\>\<h1/g "../export/$1$2.html"
+  sed -i s/\\/h2\>\</\\/h1\>\</g "../export/$1$2.html"
 }
 
 function buildRevealSlidesPdf() {
 
   buildRevealSlides $1 "-pdf"
 
-  echo -e "Exporting...                   ../export/$1-reveal-slides.pdf"
+  echo -e "Exporting...                   ../export/$1.pdf"
 
   decktape --size "$DECKTAPE_RESOLUTION" --pause "$DECKTAPE_PAUSE" reveal \
-    "file://$(pwd)/../export/$1-reveal-slides-pdf.html" "../export/$1-reveal-slides.pdf" > /dev/null
+    "file://$(pwd)/../export/$1-pdf.html" "../export/$1.pdf" > /dev/null
 
-  rm -f "../export/$1-reveal-slides-pdf.html"
+  rm -f "../export/$1-pdf.html"
 }
 
 function buildHtmlBook() {
@@ -283,18 +269,18 @@ function buildHtmlBook() {
 
 function buildDocxBook() {
 
-  echo -e "Exporting...                   ../export/$1-book.docx"
+  echo -e "Exporting...                   ../export/$1.docx"
 
   pandoc -w docx --table-of-contents --top-level-division=chapter \
-    "$NUMBERS" -o "../export/$1-book.docx" "../export/$1-to-book.md"
+    "$NUMBERS" -o "../export/$1.docx" "../export/$1-to-book.md"
 }
 
 function buildEpubBook() {
 
-  echo -e "Exporting...                   ../export/$1-book.epub"
+  echo -e "Exporting...                   ../export/$1.epub"
 
   pandoc -w epub --table-of-contents --top-level-division=chapter \
-    "$NUMBERS" -o "../export/$1-book.epub" "../export/$1-to-book.md"
+    "$NUMBERS" -o "../export/$1.epub" "../export/$1-to-book.md"
 }
 
 function build() {
@@ -392,7 +378,6 @@ function processFolder() {
     NUMBERS='--tab-stop=4' # hack to solve bash problem :-)
   fi
 
-  initLibFolder "$FOLDER"
   initExportFolder "$FOLDER"
 
   if [ "x$GENERATION_MODE" == "x" ]; then

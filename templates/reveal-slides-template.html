@@ -22,7 +22,7 @@ $endif$
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="$revealjs-url$/css/reveal.css">
 $if(revealjs-title-footer)$
-  <link rel="stylesheet" href="$revealjs-title-footer-url$/plugin/title-footer.css">
+  <link rel="stylesheet" href="$revealjs-title-footer-url$/plugin/title-footer/title-footer.css">
 $endif$
 $if(revealjs-show-menu)$
   <link rel="stylesheet" href="$revealjs-menu-url$/menu.css">
@@ -98,13 +98,8 @@ $endfor$
       h3 { font-size: 150% !important; }
     }
     footer p {
-      font-size: 75% !important;
-      text-align: center;
-    }
-    footer {
-      position: absolute;
-      bottom: 0%;
-      width: 100%;
+      font-size: 200% !important;
+      margin-top: -3% !important;
     }
   </style>
   <!--[if lt IE 9]>
@@ -156,6 +151,7 @@ $body$
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         pdfMaxPagesPerSlide: 1,
+        history: true,
 $if(controls)$
         // Display controls in the bottom right corner
         controls: $controls$,
@@ -167,10 +163,6 @@ $endif$
 $if(slideNumber)$
         // Display the page number of the current slide
         slideNumber: $slideNumber$,
-$endif$
-$if(history)$
-        // Push each slide change to the browser history
-        history: $history$,
 $endif$
 $if(keyboard)$
         // Enable keyboard shortcuts for navigation

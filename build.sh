@@ -222,13 +222,14 @@ function buildRevealSlides() {
     REVEAL_JS_TITLE_FOOTER=""
   fi
 
+  REVEAL_JS_SHOW_MENU_MD="$REVEAL_JS_SHOW_MENU" 
   if [ "$2" == "-pdf" ] || [ "$REVEAL_JS_SHOW_MENU" != "yes" ]; then
-    REVEAL_JS_SHOW_MENU=""
+    REVEAL_JS_SHOW_MENU_MD=""
   fi
-
+echo "REVEAL_JS_SHOW_MENU_MD=$REVEAL_JS_SHOW_MENU_MD" 
   pandoc -w revealjs --template "$ORIGIN/templates/reveal-slides-template.html" \
     --variable "revealjs-title-footer=$REVEAL_JS_TITLE_FOOTER" \
-    --variable "revealjs-show-menu=$REVEAL_JS_SHOW_MENU" \
+    --variable "revealjs-show-menu=$REVEAL_JS_SHOW_MENU_MD" \
     --variable "theme=$REVEAL_JS_THEME" \
     --variable "revealjs-url=$REVEAL_JS_URL" \
     --variable "revealjs-menu-url=$REVEAL_JS_MENU_URL" \
@@ -253,9 +254,9 @@ function buildRevealSlidesPdf() {
   echo -e "Exporting...                   ../export/$1.pdf"
 
   decktape --size "$DECKTAPE_RESOLUTION" --pause "$DECKTAPE_PAUSE" reveal \
-    "file://$(pwd)/../export/$1-pdf.html" "../export/$1.pdf" > /dev/null
+    "file://$(pwd)/../export/$1-pdf.html" "../export/$1.pdf"
 
-  rm -f "../export/$1-pdf.html"
+  #rm -f "../export/$1-pdf.html"
 }
 
 function buildHtmlBook() {

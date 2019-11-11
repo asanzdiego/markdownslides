@@ -264,13 +264,13 @@ REVEAL_JS_ONLINE='yes'
     - deck-slides-alternative
     - odt-book
     - pdf-book
-- Added menu thanks to [Raul Jimenez Ortega] (https://github.com/hhkaos).
-- Added dockerfile thanks to [Rubén Gómez García] (https://github.com/kaneproject).
-- Clean zip files from libraries thanks to [Cesar Seoane] (https://github.com/cesarseoane).
-- Added type 'online' thanks to [Cesar Seoane] (https://github.com/cesarseoane).
-- Fixed bug HTTPS images thanks to [Cesar Seoane] (https://github.com/cesarseoane).
-- Loading the online libraries with HTTPS thanks to [Cesar Seoane] (https://github.com/cesarseoane).
-- Configuration PDF resolution thanks to [Cesar Seoane] (https://github.com/cesarseoane).
+- Added menu thanks to [Raul Jimenez Ortega](https://github.com/hhkaos).
+- Added dockerfile thanks to [Rubén Gómez García](https://github.com/kaneproject).
+- Clean zip files from libraries thanks to [Cesar Seoane](https://github.com/cesarseoane).
+- Added type 'online' thanks to [Cesar Seoane](https://github.com/cesarseoane).
+- Fixed bug HTTPS images thanks to [Cesar Seoane](https://github.com/cesarseoane).
+- Loading the online libraries with HTTPS thanks to [Cesar Seoane](https://github.com/cesarseoane).
+- Configuration PDF resolution thanks to [Cesar Seoane](https://github.com/cesarseoane).
 - New format 'epub'.
 - Added 'bash strict mode'.
 - Added 'build.properties' to configure file generation.

@@ -345,8 +345,16 @@ $endif$
             keyboard: true
         },
 
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+          // pass other options into `MathJax.Hub.Config()`
+          TeX: { Macros: { RR: "{\\bf R}" } }
+        },
+
         // Optional reveal.js plugins
         dependencies: [
+          { src: '$revealjs-url$/plugin/math/math.js', async: true }, 
 $if(revealjs-title-footer)$
           { src: '$revealjs-title-footer-url$/plugin/title-footer/title-footer.js', async: true, callback: function() { 
               title_footer.initialize($revealjs-title-footer$, 'rgba(0,0,0,0)');

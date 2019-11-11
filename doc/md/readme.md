@@ -32,6 +32,7 @@ generate:
 - Cesar Seoane: <https://github.com/cesarseoane>
 - Rubén Gómez García: <https://github.com/kaneproject>
 - Raul Jimenez Ortega: <https://github.com/hhkaos>
+- Pablo J. Triviño: <https://twitter.com/p_trivino>
 
 ## Licence
 
@@ -110,6 +111,20 @@ This is only visible in book mode or if you press 's' on the slides.
 @start-notes
 This is only visible in book mode or if you press 's' on the slides.
 @end-notes
+
+## MathJax
+
+You can use the [MathJax](https://www.mathjax.org/) lib.
+
+So this:
+
+~~~
+$$x = {-b \pm \sqrt{b^2-4ac}}.$$
+~~~
+
+Will be converted to:
+
+$$x = {-b \pm \sqrt{b^2-4ac}}.$$
 
 ## Levels
 
@@ -282,6 +297,7 @@ In the root folder you have to execute:
 - Fix some bugs.
 - Add bookmarks to the slides.
 - Improve file names.
+- Add [MathJax/](https://www.mathjax.org/) lib thanks to [Pablo J. Triviño](https://twitter.com/p_trivino).
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 

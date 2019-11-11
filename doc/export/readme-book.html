@@ -87,6 +87,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#how-to-use">How to use</a><ul>
 <li><a href="#creation">Creation</a></li>
 <li><a href="#notes">Notes</a></li>
+<li><a href="#mathjax">MathJax</a></li>
 <li><a href="#levels">Levels</a></li>
 <li><a href="#numbering">Numbering</a></li>
 <li><a href="#configuration">Configuration</a></li>
@@ -126,6 +127,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li>Cesar Seoane: <a href="https://github.com/cesarseoane" class="uri">https://github.com/cesarseoane</a></li>
 <li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
 <li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
+<li>Pablo J. Triviño: <a href="https://twitter.com/p_trivino" class="uri">https://twitter.com/p_trivino</a></li>
 </ul>
 <h2 id="licence">Licence</h2>
 <ul>
@@ -180,6 +182,12 @@ This is only visible in book mode or if you press &#39;s&#39; on the slides.
 <aside class="notes">
 This is only visible in book mode or if you press 's' on the slides.
 </aside>
+<h2 id="mathjax">MathJax</h2>
+<p>You can use the <a href="https://www.mathjax.org/">MathJax</a> lib.</p>
+<p>So this:</p>
+<pre><code>$$x = {-b \pm \sqrt{b^2-4ac}}.$$</code></pre>
+<p>Will be converted to:</p>
+<p><br /><span class="math display">$$x = {-b \pm \sqrt{b^2-4ac}}.$$</span><br /></p>
 <h2 id="levels">Levels</h2>
 <p>You can have as many levels as you want. Example:</p>
 <pre><code># Level 1 (on slides and book)
@@ -304,6 +312,7 @@ This is only visible in book mode or if you press 's' on the slides.
 <li>Fix some bugs.</li>
 <li>Add bookmarks to the slides.</li>
 <li>Improve file names.</li>
+<li>Add <a href="https://www.mathjax.org/">MathJax/</a> lib thanks to <a href="https://twitter.com/p_trivino">Pablo J. Triviño</a>.</li>
 </ul>
 <h1 id="adolfo-sanz-de-diego-author"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Author</h1>
 <h2 id="adolfo-sanz-de-diego">Adolfo Sanz De Diego</h2>
@@ -329,5 +338,7 @@ This is only visible in book mode or if you press 's' on the slides.
 <li>SlideShare: <a href="http://www.slideshare.net/asanzdiego">slideshare.net/asanzdiego</a></li>
 </ul></li>
 </ul>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </body>
 </html>

@@ -151,6 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Cesar Seoane: <a href="https://github.com/cesarseoane" class="uri">https://github.com/cesarseoane</a></li>
 <li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
 <li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
+<li>Pablo J. Triviño: <a href="https://twitter.com/p_trivino" class="uri">https://twitter.com/p_trivino</a></li>
 </ul>
 </section><section id="licence" class="slide level2">
 <h2>Licence</h2>
@@ -214,6 +215,13 @@ This is only visible in book mode or if you press &#39;s&#39; on the slides.
 <aside class="notes">
 This is only visible in book mode or if you press 's' on the slides.
 </aside>
+</section><section id="mathjax" class="slide level2">
+<h2>MathJax</h2>
+<p>You can use the <a href="https://www.mathjax.org/">MathJax</a> lib.</p>
+<p>So this:</p>
+<pre><code>$$x = {-b \pm \sqrt{b^2-4ac}}.$$</code></pre>
+<p>Will be converted to:</p>
+<p><br /><span class="math display">$$x = {-b \pm \sqrt{b^2-4ac}}.$$</span><br /></p>
 </section><section id="levels" class="slide level2">
 <h2>Levels</h2>
 <p>You can have as many levels as you want. Example:</p>
@@ -374,6 +382,7 @@ This is only visible in book mode or if you press 's' on the slides.
 <li>Fix some bugs.</li>
 <li>Add bookmarks to the slides.</li>
 <li>Improve file names.</li>
+<li>Add <a href="https://www.mathjax.org/">MathJax/</a> lib thanks to <a href="https://twitter.com/p_trivino">Pablo J. Triviño</a>.</li>
 </ul>
 </section></section>
 <section><section id="adolfo-sanz-de-diego-author" class="titleslide slide level1"><h1><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Author</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
@@ -493,8 +502,16 @@ This is only visible in book mode or if you press 's' on the slides.
             keyboard: true
         },
 
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+          // pass other options into `MathJax.Hub.Config()`
+          TeX: { Macros: { RR: "{\\bf R}" } }
+        },
+
         // Optional reveal.js plugins
         dependencies: [
+          { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//plugin/math/math.js', async: true }, 
           { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-title-footer//plugin/title-footer/title-footer.js', async: true, callback: function() { 
               title_footer.initialize(null, 'rgba(0,0,0,0)');
             } },

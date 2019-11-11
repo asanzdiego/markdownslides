@@ -35,6 +35,7 @@ sin preocuparnos por el estilo, solo por el contenido.
 * [How to use](#how-to-use)
   * [Creation](#creation)
   * [Notes](#notes)
+  * [MathJax](#mathjax)
   * [Levels](#levels)
   * [Numbering](#numbering)
   * [Configuration](#configuration)
@@ -71,6 +72,7 @@ generate:
 - Cesar Seoane: <https://github.com/cesarseoane>
 - Rubén Gómez García: <https://github.com/kaneproject>
 - Raul Jimenez Ortega: <https://github.com/hhkaos>
+- Pablo J. Triviño: <https://twitter.com/p_trivino>
 
 #### Licence
 
@@ -138,6 +140,10 @@ with **@start-notes** and **@end-notes**.
 This is only visible in book mode or if you press 's' on the slides.
 @end-notes
 ~~~
+
+#### MathJax
+
+You can use the [MathJax](https://www.mathjax.org/) lib.
 
 #### Levels
 
@@ -226,7 +232,7 @@ REVEAL_JS_ONLINE='yes'
 
 ### Releases notes
 
-#### Relese 1.0
+#### Release 1.0
 
 - Export slides to:
     - reveal-slides
@@ -245,7 +251,7 @@ REVEAL_JS_ONLINE='yes'
 - Automatic download the external libraries.
 - Numbering (I), (II), (III) ...
 
-#### Relese 2.0
+#### Release 2.0
 
 - Export slides to:
     - reveal-slides
@@ -279,7 +285,7 @@ REVEAL_JS_ONLINE='yes'
 - Added notes only visible in book mode or if you press 's' on the slides.
 - Normalization of images in slides (witdh = 50% and align = center).
 
-#### Relese 3.0
+#### Release 3.0
 
 - Clean the code.
 - Remove deprecated exportation files.
@@ -289,11 +295,12 @@ REVEAL_JS_ONLINE='yes'
 - Book creation from some md files with enumeration.
 - Possibility of adding a footer to the slides.
 
-#### Relese 4.0
+#### Release 4.0
 
 - Fix some bugs.
 - Add bookmarks to the slides.
 - Improve file names.
+- Add [MathJax/](https://www.mathjax.org/) lib thanks to [Pablo J. Triviño](https://twitter.com/p_trivino).
 
 ## Español
 
@@ -312,6 +319,7 @@ REVEAL_JS_ONLINE='yes'
 * [Manejo](#manejo)
   * [Creación](#creación)
   * [Notas](#notas)
+  * [MathJax](#mathjax)
   * [Niveles](#niveles)
   * [Numeración](#numeración)
   * [Configuración](#configuración)
@@ -348,6 +356,7 @@ genera:
 - Cesar Seoane: <https://github.com/cesarseoane>
 - Rubén Gómez García: <https://github.com/kaneproject>
 - Raul Jimenez Ortega: <https://github.com/hhkaos>
+- Pablo J. Triviño: <https://twitter.com/p_trivino>
 
 #### Licencia
 
@@ -415,6 +424,10 @@ mediante **@start-notes** y **@end-notes**.
 Esto solo es visible en modo libro o si pulsas 's' en las slides.
 @end-notes 
 ~~~
+
+#### MathJax
+
+Se puede utilizar la librería [MathJax](https://www.mathjax.org/).
 
 #### Niveles
 
@@ -571,3 +584,4 @@ REVEAL_JS_ONLINE='yes'
 - Arreglados algunos fallos.
 - Añadidos marcadores a las transparncias.
 - Mejorado los nombre de ficheros.
+- Añadida la librería [MathJax/](https://www.mathjax.org/) gracias a [Pablo J. Triviño](https://twitter.com/p_trivino).

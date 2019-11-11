@@ -32,6 +32,7 @@ genera:
 - Cesar Seoane: <https://github.com/cesarseoane>
 - Rubén Gómez García: <https://github.com/kaneproject>
 - Raul Jimenez Ortega: <https://github.com/hhkaos>
+- Pablo J. Triviño: <https://twitter.com/p_trivino>
 
 ## Licencia
 
@@ -110,6 +111,20 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 @start-notes
 Esto solo es visible en modo libro o si pulsas 's' en las slides.
 @end-notes 
+
+## MathJax
+
+Se puede utilizar la librería [MathJax](https://www.mathjax.org/).
+
+Así esto:
+
+~~~
+$$x = {-b \pm \sqrt{b^2-4ac}}.$$
+~~~
+
+Se transforma en:
+
+$$x = {-b \pm \sqrt{b^2-4ac}}.$$
 
 ## Niveles
 
@@ -280,6 +295,7 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 - Arreglados algunos fallos.
 - Añadidos marcadores a las transparncias.
 - Mejorado los nombre de ficheros.
+- Añadida la librería [MathJax/](https://www.mathjax.org/) gracias a [Pablo J. Triviño](https://twitter.com/p_trivino).
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 

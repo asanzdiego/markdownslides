@@ -151,6 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Cesar Seoane: <a href="https://github.com/cesarseoane" class="uri">https://github.com/cesarseoane</a></li>
 <li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
 <li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
+<li>Pablo J. Triviño: <a href="https://twitter.com/p_trivino" class="uri">https://twitter.com/p_trivino</a></li>
 </ul>
 </section><section id="licencia" class="slide level2">
 <h2>Licencia</h2>
@@ -212,6 +213,13 @@ Esto solo es visible en modo libro o si pulsas &#39;s&#39; en las slides.
 <aside class="notes">
 Esto solo es visible en modo libro o si pulsas 's' en las slides.
 </aside>
+</section><section id="mathjax" class="slide level2">
+<h2>MathJax</h2>
+<p>Se puede utilizar la librería <a href="https://www.mathjax.org/">MathJax</a>.</p>
+<p>Así esto:</p>
+<pre><code>$$x = {-b \pm \sqrt{b^2-4ac}}.$$</code></pre>
+<p>Se transforma en:</p>
+<p><br /><span class="math display">$$x = {-b \pm \sqrt{b^2-4ac}}.$$</span><br /></p>
 </section><section id="niveles" class="slide level2">
 <h2>Niveles</h2>
 <p>Puedes tener tantos niveles como quieras. Ejemplo:</p>
@@ -370,6 +378,7 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 <li>Arreglados algunos fallos.</li>
 <li>Añadidos marcadores a las transparncias.</li>
 <li>Mejorado los nombre de ficheros.</li>
+<li>Añadida la librería <a href="https://www.mathjax.org/">MathJax/</a> gracias a <a href="https://twitter.com/p_trivino">Pablo J. Triviño</a>.</li>
 </ul>
 </section></section>
 <section><section id="adolfo-sanz-de-diego-autor" class="titleslide slide level1"><h1><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Autor</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
@@ -489,8 +498,16 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
             keyboard: true
         },
 
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+          // pass other options into `MathJax.Hub.Config()`
+          TeX: { Macros: { RR: "{\\bf R}" } }
+        },
+
         // Optional reveal.js plugins
         dependencies: [
+          { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//plugin/math/math.js', async: true }, 
           { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-title-footer//plugin/title-footer/title-footer.js', async: true, callback: function() { 
               title_footer.initialize(null, 'rgba(0,0,0,0)');
             } },

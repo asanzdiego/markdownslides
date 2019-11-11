@@ -43,6 +43,7 @@ sin preocuparnos por el estilo, solo por el contenido.
   * [Release 1.0](#release-10)
   * [Release 2.0](#release-20)
   * [Release 3.0](#release-30)
+  * [Release 4.0](#release-40)
 
 ### About
 
@@ -59,8 +60,8 @@ without worrying about style, just worrying about content.
 From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
 generate:
 
-  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html)
-  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
+  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
+  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf)
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
@@ -288,6 +289,12 @@ REVEAL_JS_ONLINE='yes'
 - Book creation from some md files with enumeration.
 - Possibility of adding a footer to the slides.
 
+#### Relese 4.0
+
+- Fix some bugs.
+- Add bookmarks to the slides.
+- Improve file names.
+
 ## Español
 
 * [Acerca de](#acerca-de)
@@ -313,6 +320,7 @@ REVEAL_JS_ONLINE='yes'
   * [version 1.0](#versión-10)
   * [Versión 2.0](#versión-20)
   * [Versión 3.0](#versión-30)
+  * [Versión 4.0](#versión-40)
   
 ### Acerca de
 
@@ -329,8 +337,8 @@ sin preocuparnos por el estilo, solo por el contenido.
 A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
 genera:
 
-  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html)
-  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
+  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
+  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf)
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx)
@@ -557,3 +565,9 @@ REVEAL_JS_ONLINE='yes'
 - Exportación a PDF con [DeckTape](https://github.com/astefanutti/decktape).
 - Creación de libro de varios ficheros md con numeración.
 - Posibilidad de añadir un footer a las slides.
+
+#### Versión 4.0
+
+- Arreglados algunos fallos.
+- Añadidos marcadores a las transparncias.
+- Mejorado los nombre de ficheros.

@@ -271,18 +271,18 @@ function buildHtmlBook() {
 
 function buildDocxBook() {
 
-  echo -e "Exporting...                   ../export/$1.docx"
+  echo -e "Exporting...                   ../export/$1-book.docx"
 
   pandoc -w docx --table-of-contents --top-level-division=chapter \
-    "$NUMBERS" -o "../export/$1.docx" "../export/$1-to-book.md"
+    "$NUMBERS" -o "../export/$1-book.docx" "../export/$1-to-book.md"
 }
 
 function buildEpubBook() {
 
-  echo -e "Exporting...                   ../export/$1.epub"
+  echo -e "Exporting...                   ../export/$1-book.epub"
 
   pandoc -w epub --table-of-contents --top-level-division=chapter \
-    "$NUMBERS" -o "../export/$1.epub" "../export/$1-to-book.md"
+    "$NUMBERS" -o "../export/$1-book.epub" "../export/$1-to-book.md"
 }
 
 function build() {

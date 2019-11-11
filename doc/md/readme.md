@@ -21,8 +21,8 @@ without worrying about style, just worrying about content.
 From a [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md) file
 generate:
 
-  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.html)
-  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-reveal-slides.pdf)
+  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
+  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf)
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
@@ -276,6 +276,12 @@ In the root folder you have to execute:
 - Export to PDF with [DeckTape](https://github.com/astefanutti/decktape).
 - Book creation from some md files with enumeration.
 - Possibility of adding a footer to the slides.
+
+## Relese 4.0
+
+- Fix some bugs.
+- Add bookmarks to the slides.
+- Improve file names.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 

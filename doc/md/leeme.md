@@ -21,8 +21,8 @@ sin preocuparnos por el estilo, solo por el contenido.
 A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
 genera:
 
-  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.html)
-  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-reveal-slides.pdf)
+  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
+  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf)
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx)
@@ -274,6 +274,12 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 - Exportación a PDF con [DeckTape](https://github.com/astefanutti/decktape).
 - Creación de libro de varios ficheros md con numeración.
 - Posibilidad de añadir un footer a las slides.
+
+## Versión 4.0
+
+- Arreglados algunos fallos.
+- Añadidos marcadores a las transparncias.
+- Mejorado los nombre de ficheros.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 

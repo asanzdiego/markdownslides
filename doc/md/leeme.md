@@ -1,6 +1,6 @@
 % Markdown Slides [ES]
 % Adolfo Sanz De Diego
-% Septiembre 2019
+% @asanzdiego
 
 # Acerca de
 

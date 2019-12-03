@@ -285,6 +285,15 @@ function buildEpubBook() {
     "$NUMBERS" -o "../export/$1-book.epub" "../export/$1-to-book.md"
 }
 
+function buildPdfBook() {
+
+  echo -e "Exporting...                   ../export/$1-book.pdf"
+
+  sed '/.gif/d' ../export/$1-to-book.md | pandoc \
+    --table-of-contents --top-level-division=chapter \
+    "$NUMBERS" -o ../export/$1-book.pdf
+}
+
 function build() {
 
   FUNCTION_NAME="$1"
@@ -332,6 +341,9 @@ function exportMdToBook() {
   fi
   if [ "$(build "$BUILD_EPUB_BOOK")" == "yes" ]; then
     buildEpubBook "$1"
+  fi
+  if [ "$(build "$BUILD_PDF_BOOK")" == "yes" ]; then
+    buildPdfBook "$1"
   fi
 
   if [ "$REMOVE_MD_TO_BOOK" == "yes" ]; then

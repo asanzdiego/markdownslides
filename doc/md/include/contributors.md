@@ -1,0 +1,4 @@
+- Cesar Seoane: <https://github.com/cesarseoane>
+- Rubén Gómez García: <https://github.com/kaneproject>
+- Raul Jimenez Ortega: <https://github.com/hhkaos>
+- Pablo J. Triviño: <https://twitter.com/p_trivino>

@@ -26,6 +26,7 @@ generate:
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
+  - [pdf-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.pdf)
 
 ## Contributors
 
@@ -48,6 +49,7 @@ generate:
 - It needs to be installed:
     - [Pandoc](http://johnmacfarlane.net/pandoc/)
     - [DeckTape](https://github.com/astefanutti/decktape)
+    - [TeX Live](https://tug.org/texlive/)
 
  - It is automaticaly downloaded:
     - [Reveal.js](http://lab.hakim.se/reveal-js/#/)
@@ -298,6 +300,12 @@ In the root folder you have to execute:
 - Add bookmarks to the slides.
 - Improve file names.
 - Add [MathJax/](https://www.mathjax.org/) lib thanks to [Pablo J. Triviño](https://twitter.com/p_trivino).
+
+## Relese 5.0
+
+- Fixed some bugs.
+- Added again the option to export to PDF in book format.
+- Added the possibility to import files or fragments from an external file.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 

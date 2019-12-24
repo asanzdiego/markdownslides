@@ -147,11 +147,17 @@ function replaceNotes() {
   sed -i 's/^@end-notes/<\/aside>/g' "../export/$1-to-$2.md"
 }
 
+function addImportsToMD() {
+
+}
+
 function cleanMdToSlides() {
 
   cp "$1.md" "../export/$1-to-slides.md"
 
   echo -e "Cleaning md to slides...       ../export/$1-to-slides.md"
+
+  addImportsToMD "$1" slides
 
   # replace ### or #### with ##
   # only <h2> is allowed in slides
@@ -170,6 +176,8 @@ function cleanMdToBook() {
   cp "$1.md" "../export/$1-to-book.md"
 
   echo -e "Cleaning md to book...         ../export/$1-to-book.md"
+
+  addImportsToMD "$1" book
 
   # remove % if img
   sed -i 's/% !\[/!\[/g' "../export/$1-to-book.md"

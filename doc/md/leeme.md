@@ -26,6 +26,7 @@ genera:
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.epub)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx)
+  - [pdf-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.pdf)
 
 ## Colaboradores
 
@@ -48,6 +49,7 @@ genera:
 - Necesita ser instalado:
     - [Pandoc](http://johnmacfarlane.net/pandoc/)
     - [DeckTape](https://github.com/astefanutti/decktape)
+    - [TeX Live](https://tug.org/texlive/)
 
 - Descargado automáticamente:
     - [Reveal.js](http://lab.hakim.se/reveal-js/#/)
@@ -296,6 +298,12 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 - Añadidos marcadores a las transparncias.
 - Mejorado los nombre de ficheros.
 - Añadida la librería [MathJax/](https://www.mathjax.org/) gracias a [Pablo J. Triviño](https://twitter.com/p_trivino).
+
+## Versión 5.0
+
+- Arreglados algunos fallos.
+- Añadido de nuevo la opción de espotación a PDF en formato libro.
+- Añadida la posibilidad de importar ficheros o fragmentos de un fichero externo.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 

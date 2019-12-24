@@ -1,0 +1,4 @@
+    - [Pandoc](http://johnmacfarlane.net/pandoc/)
+    - [DeckTape](https://github.com/astefanutti/decktape)
+    - [TeX Live](https://tug.org/texlive/)
+    - [pandoc-include-code](https://github.com/owickstrom/pandoc-include-code)

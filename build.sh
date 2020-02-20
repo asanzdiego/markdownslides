@@ -147,18 +147,11 @@ function replaceNotes() {
   sed -i 's/^@end-notes/<\/aside>/g' "../export/$1-to-$2.md"
 }
 
-function addImportsToMD() {
-
-  echo "TO-DO" > /dev/null
-}
-
 function cleanMdToSlides() {
 
-  cp "$1.md" "../export/$1-to-slides.md"
+  cp "../export/$1-import.md" "../export/$1-to-slides.md"
 
   echo -e "Cleaning md to slides...       ../export/$1-to-slides.md"
-
-  addImportsToMD "$1" slides
 
   # replace ### or #### with ##
   # only <h2> is allowed in slides
@@ -174,11 +167,9 @@ function cleanMdToSlides() {
 
 function cleanMdToBook() {
 
-  cp "$1.md" "../export/$1-to-book.md"
+  cp "../export/$1-import.md" "../export/$1-to-book.md"
 
   echo -e "Cleaning md to book...         ../export/$1-to-book.md"
-
-  addImportsToMD "$1" book
 
   # remove % if img
   sed -i 's/% !\[/!\[/g' "../export/$1-to-book.md"
@@ -258,7 +249,7 @@ function buildRevealSlides() {
 
 function buildRevealSlidesPdf() {
 
-  buildRevealSlides $1 "-pdf"
+  buildRevealSlides "$1" "-pdf"
 
   echo -e "Exporting...                   ../export/$1.pdf"
 
@@ -298,9 +289,9 @@ function buildPdfBook() {
 
   echo -e "Exporting...                   ../export/$1-book.pdf"
 
-  sed '/.gif/d' ../export/$1-to-book.md | pandoc \
+  sed '/.gif/d' "../export/$1-to-book.md" | pandoc \
     --table-of-contents --top-level-division=chapter \
-    "$NUMBERS" -o ../export/$1-book.pdf
+    "$NUMBERS" -o "../export/$1-book.pdf"
 }
 
 function build() {
@@ -361,16 +352,37 @@ function exportMdToBook() {
   fi
 }
 
+function addImportsToMD() {
+
+  echo -e "Importing files...             ../export/$1-import.md"
+
+  echo "" > "../export/$1-import.md"
+
+  NUMBER_OF_LINES=1
+  while IFS= read -r line; do
+    echo "$line" >> "../export/$1-import.md"
+    NUMBER_OF_LINES=$((NUMBER_OF_LINES+1))
+  done < "$1.md"
+}
+
 function exportMdFile() {
   
   if [ "$NUMBER_OFFSET" == "yes" ]; then
     echo -e "Current number offset...       .."$CURRENT_NUMBER_OFFSET
   fi
 
+  addImportsToMD "$1"
+  echo -e "- - - - - - - - - - - - - - - -"
   exportMdToSlides "$1"
   echo -e "- - - - - - - - - - - - - - - -"
   exportMdToBook "$1"
+  echo -e "- - - - - - - - - - - - - - - -"
   
+  if [ "$REMOVE_MD_IMPORT" == "yes" ]; then
+    rm "../export/$1-import.md"
+    echo -e "Removing md import...          ../export/$1-import.md"
+  fi
+
   if [ "$NUMBER_OFFSET" == "yes" ]; then
     CURRENT_NUMBER_OFFSET=$((CURRENT_NUMBER_OFFSET+1))
   fi

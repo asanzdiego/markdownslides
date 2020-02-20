@@ -51,7 +51,7 @@ generate:
     - [DeckTape](https://github.com/astefanutti/decktape)
     - [TeX Live](https://tug.org/texlive/)
 
- - It is automaticaly downloaded:
+- It is automaticaly downloaded:
     - [Reveal.js](http://lab.hakim.se/reveal-js/#/)
 
 ## Requirements
@@ -306,6 +306,7 @@ In the root folder you have to execute:
 - Fixed some bugs.
 - Added again the option to export to PDF in book format.
 - Added the possibility to import files or fragments from an external file.
+- Added the plugin <https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard>
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 
@@ -313,13 +314,13 @@ In the root folder you have to execute:
 
 - **Old JEE web developer**.
 
-- Now I'm **Tecnical Teacher Advaisor** in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education, Youth and Sports of the Community of Madrid.
+- Now I'm **Tecnical Teacher Advaisor** in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education and Youth of the Community of Madrid.
 
 - In addition I work as **trainer specialized in development technologies**.
 
-## Algunos proyectos
+## Some projects
 
-- ![Hackathon Lovers](../img/hackathon-lovers-logo.png){height=30} [Hackathon Lovers](http://hackathonlovers.com): a group created for entrepreneurs and developers who loves hackathones.
+- ![Hackathon Lovers](../img/hackathon-lovers-logo.png){height=30} [Hackathon Lovers](http://hackathonlovers.com): a group created for entrepreneurs and developers who loves hackathons.
 
 - [Password Manager Generator](http://pasmangen.github.io): an online password manager.
 
@@ -327,7 +328,7 @@ In the root folder you have to execute:
 
 ## Where to find me?
 
-- Mi nick: **asanzdiego**
+- My nick: **asanzdiego**
     - Blog:       [asanzdiego.com](http://asanzdiego.com)
     - GitHub:     [github.com/asanzdiego](http://github.com/asanzdiego)
     - Twitter:    [twitter.com/asanzdiego](http://twitter.com/asanzdiego)

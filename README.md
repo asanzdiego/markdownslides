@@ -2,6 +2,8 @@
 
 ![](./doc/img/markdownslides.png)
 
+## English
+
 **MarkdownSlides** is a Reveal.js and PDF **slides** generator
 **from MARKDOWN files**, that also generate HTML, EPUB and DOCX documents.
 
@@ -18,7 +20,9 @@ file that generate all this formats:
   - [pdf-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.pdf)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
   - [epub-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub)
- 
+
+## Español
+
 **MarkdownSlides** es un generador de **slides** Reveal.js y PDF
 a **partir de ficheros MARKDOWN**,  que también genera documentos HTML, EPUB y DOCX.
 

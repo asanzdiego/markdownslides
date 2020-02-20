@@ -302,8 +302,9 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 ## Versión 5.0
 
 - Arreglados algunos fallos.
-- Añadido de nuevo la opción de espotación a PDF en formato libro.
+- Añadido de nuevo la opción de expotación a PDF en formato libro.
 - Añadida la posibilidad de importar ficheros o fragmentos de un fichero externo.
+- Añadido el plugin <https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard>
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 

@@ -230,9 +230,10 @@ Podemos configurar también algunas cosas más desde el fichero **build.properti
 CLEAN_LIB_FOLDER='no'
 COPY_IMG_FOLDER='no'
 ZIP_EXPORT_FOLDER='no'
-NUMBER_SECTIONS='yes'
+NUMBER_SECTIONS='no'
 NUMBER_OFFSET='no'
 CURRENT_NUMBER_OFFSET=1
+REMOVE_MD_IMPORT='yes'
 REMOVE_MD_TO_BOOK='yes'
 REMOVE_MD_TO_SLIDES='yes'
 ~~~
@@ -353,6 +354,7 @@ Hay que posicionarse en la carpeta raiz, y ejecutar:
 - Añadido de nuevo la opción de expotación a PDF en formato libro.
 - Añadida la posibilidad de importar ficheros o fragmentos de un fichero externo.
 - Añadido el plugin <https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard>
+- Añadida la posibilidad de crear una versión 'plus' con información extra en slides y libros.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 

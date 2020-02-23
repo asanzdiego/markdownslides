@@ -1,4 +1,3 @@
     - [Pandoc](http://johnmacfarlane.net/pandoc/)
     - [DeckTape](https://github.com/astefanutti/decktape)
     - [TeX Live](https://tug.org/texlive/)
-    - [Reveal.js](http://lab.hakim.se/reveal-js/#/)

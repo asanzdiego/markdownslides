@@ -4,7 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="generator" content="pandoc">
-  <title></title>
+  <meta name="description" content="Markdown Slides [ES]" />
+  <meta name="author" content="Adolfo Sanz De Diego">
+  <title>Markdown Slides [ES]</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -116,11 +118,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <div class="reveal">
     <div class="slides">
 
-
-<section class="slide level2">
-
-<p>% Markdown Slides [ES] % Adolfo Sanz De Diego % <span class="citation" data-cites="asanzdiego">@asanzdiego</span></p>
+<section class="only-print-parent">
+    <div class="only-print-child">
+      <h1 class="title">Markdown Slides [ES]</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date"><span class="citation" data-cites="asanzdiego">@asanzdiego</span></h3>
+    </div>
 </section>
+
 <section><section id="acerca-de" class="titleslide slide level1"><h1>Acerca de</h1></section><section id="qué-es-esto" class="slide level2">
 <h2>¿Qué es esto?</h2>
 <p><strong>MarkdownSlides</strong> es un generador de <strong>slides</strong> Reveal.js y PDF a <strong>partir de ficheros MARKDOWN</strong>, que también genera documentos HTML, EPUB y DOCX.</p>
@@ -169,11 +174,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a></li>
 <li><a href="https://github.com/astefanutti/decktape">DeckTape</a></li>
-<li><a href="https://tug.org/texlive/">TeX Live</a></li>
+<li><p><a href="https://tug.org/texlive/">TeX Live</a></p></li>
+<li><p><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></p></li>
 </ul></li>
 <li>Descargado automáticamente:
 <ul>
-<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></li>
+<li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a></li>
+<li><a href="https://github.com/astefanutti/decktape">DeckTape</a></li>
+<li><p><a href="https://tug.org/texlive/">TeX Live</a></p></li>
+<li><p><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></p></li>
 </ul></li>
 </ul>
 </section><section id="requisitos" class="slide level2">
@@ -201,6 +210,43 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2>Creación</h2>
 <p>Primero <strong>copia la carpeta doc y renombrala a tu gusto</strong>. Esto no es necesario pero te ayuda a organizar tus documentos.</p>
 <p><strong>Crea los ficheros md</strong> que quieras generar en la <strong>carpeta md</strong>. Los ficheros md son ficheros <a href="http://es.wikipedia.org/wiki/Markdown">Markdown</a>, que no son nada más que ficheros de texto plano, con extensión md, y con un marcado ligero (que hay que conocer pero que es muy sencillo).</p>
+</section><section id="imports-i" class="slide level2">
+<h2>Imports (I)</h2>
+<p>Podemos añadir fichero con <strong><span class="citation" data-cites="import">@import</span> NOMBRE_FICHERO [startLine=NUMERO] [endLine=NUMERO] [showNumberLines]</strong></p>
+<p>Primer ejemplo:</p>
+<pre><code> ~~~
+ @import import/contributors.md
+ ~~~</code></pre>
+<pre><code>- Cesar Seoane: &lt;https://github.com/cesarseoane&gt;
+- Rubén Gómez García: &lt;https://github.com/kaneproject&gt;
+- Raul Jimenez Ortega: &lt;https://github.com/hhkaos&gt;
+- Pablo J. Triviño: &lt;https://twitter.com/p_trivino&gt;</code></pre>
+</section><section id="imports-ii" class="slide level2">
+<h2>Imports (II)</h2>
+<p>Segundo ejemplo:</p>
+<pre><code> @import import/import-1.md endLine=4</code></pre>
+<ul>
+<li>Line 1 of import-1.md</li>
+<li>Line 2 of import-1.md</li>
+<li>Line 3 of import-1.md</li>
+<li>Line 4 of import-1.md</li>
+</ul>
+</section><section id="imports-iii" class="slide level2">
+<h2>Imports (III)</h2>
+<p>Tercer ejemplo:</p>
+<pre><code> @import import/import-1.md startLine=6</code></pre>
+<pre><code>- Line 1 of import-2.md
+- Line 2 of import-2.md
+- Line 3 of import-2.md
+- Line 4 of import-2.md</code></pre>
+</section><section id="imports-iv" class="slide level2">
+<h2>Imports (IV)</h2>
+<p>Cuarto ejemplo:</p>
+<pre><code> ~~~
+ @import import/import-1.md startLine=2 endLine=3 showNumberLines
+ ~~~</code></pre>
+<pre><code>2 - Line 2 of import-1.md
+3 - Line 3 of import-1.md</code></pre>
 </section><section id="notas" class="slide level2">
 <h2>Notas</h2>
 <p>Puedes añadir notas que serán visibles en modo libro o si <strong>pulsas la letra 's' en las slides</strong> mediante <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> y <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</p>
@@ -409,6 +455,7 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 <li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
 <li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
 <li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">linkedin.com/in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego">slideshare.net/asanzdiego</a></li>
 </ul></li>
 </ul>
 </section></section>

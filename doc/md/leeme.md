@@ -47,12 +47,10 @@ genera:
 ## Dependencias
 
 - Necesita ser instalado:
-    - [Pandoc](http://johnmacfarlane.net/pandoc/)
-    - [DeckTape](https://github.com/astefanutti/decktape)
-    - [TeX Live](https://tug.org/texlive/)
+@import import/dependencies-1.md
 
 - Descargado automáticamente:
-    - [Reveal.js](http://lab.hakim.se/reveal-js/#/)
+@import import/dependencies-2.md
 
 ## Requisitos
 
@@ -98,6 +96,56 @@ te ayuda a organizar tus documentos.
 Los ficheros md son ficheros [Markdown](http://es.wikipedia.org/wiki/Markdown),
 que no son nada más que ficheros de texto plano, con extensión md,
 y con un marcado ligero (que hay que conocer pero que es muy sencillo).
+
+## Imports (I)
+
+Podemos añadir fichero con **@import NOMBRE_FICHERO [startLine=NUMERO] [endLine=NUMERO] [showNumberLines]**
+
+Primer ejemplo: 
+
+~~~
+ ~~~
+ @import import/contributors.md
+ ~~~
+~~~
+
+~~~
+@import import/contributors.md
+~~~
+
+## Imports (II)
+
+Segundo ejemplo: 
+
+~~~
+ @import import/import-1.md endLine=4
+~~~
+
+@import import/import-1.md endLine=4
+
+## Imports (III)
+
+Tercer ejemplo: 
+
+~~~
+ @import import/import-1.md startLine=6
+~~~
+
+@import import/import-1.md startLine=6
+
+## Imports (IV)
+
+Cuarto ejemplo: 
+
+~~~
+ ~~~
+ @import import/import-1.md startLine=2 endLine=3 showNumberLines
+ ~~~
+~~~
+
+~~~
+@import import/import-1.md startLine=2 endLine=3 showNumberLines
+~~~
 
 ## Notas
 

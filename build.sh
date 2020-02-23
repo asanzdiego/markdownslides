@@ -182,7 +182,7 @@ function cleanMdToBook() {
   sed -i 's/^#.*(V.*$/@delete/g' "../export/$1-to-book.md"
   sed -i 's/^#.*(X.*$/@delete/g' "../export/$1-to-book.md"
 
-  sed -i ':a;N;$!ba;s/\n@delete\n\n//g' "../export/$1-to-book.md"
+  sed -i ':a;N;$!ba;s/@delete\n\n//g' "../export/$1-to-book.md"
 
   # convertMainListsIntoParagraphs "$1" book
 
@@ -352,16 +352,61 @@ function exportMdToBook() {
   fi
 }
 
+function addImportToMD() {
+
+  local FILE_TO_IMPORT="-"
+  local START_LINE=1
+  local END_LINE=0
+  local SHOW_NUMBER_LINES="false"
+  local NUMBER_LINES=1
+
+  for i in $(echo "$2" | tr " " "\n"); do
+    if [ "${i:0:9}" == "startLine" ]; then
+      START_LINE="${i:10}"
+    elif [ "${i:0:7}" == "endLine" ]; then
+      END_LINE="${i:8}"
+    elif [ "${i:0:15}" == "showNumberLines" ]; then
+      SHOW_NUMBER_LINES="true"
+    else
+      FILE_TO_IMPORT="$i"
+    fi
+  done
+
+  echo -e "Importing file...              $FILE_TO_IMPORT"
+
+  if [[ $END_LINE -eq 0 ]]; then
+    END_LINE=$(wc -l "$FILE_TO_IMPORT" | cut -d " " -f 1)
+    END_LINE=$((END_LINE+1))
+  fi
+
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    if [[ $NUMBER_LINES -ge $START_LINE ]] && [[ $NUMBER_LINES -le $END_LINE ]]; then
+      if [ "${line:0:7}" == "@import" ]; then
+        addImportToMD "$1" "${line:7}"
+      else
+        if [ "$SHOW_NUMBER_LINES" == "true" ]; then
+          echo "$NUMBER_LINES $line" >> "../export/$1-import.md"
+        else
+          echo "$line" >> "../export/$1-import.md"
+        fi
+      fi
+    fi
+    NUMBER_LINES=$((NUMBER_LINES+1))
+  done < "$FILE_TO_IMPORT"
+}
+
 function addImportsToMD() {
 
   echo -e "Importing files...             ../export/$1-import.md"
 
-  echo "" > "../export/$1-import.md"
+  touch "../export/$1-import.md"
 
-  NUMBER_OF_LINES=1
-  while IFS= read -r line; do
-    echo "$line" >> "../export/$1-import.md"
-    NUMBER_OF_LINES=$((NUMBER_OF_LINES+1))
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    if [ "${line:0:7}" == "@import" ]; then
+      addImportToMD "$1" "${line:7}"
+    else
+      echo "$line" >> "../export/$1-import.md"
+    fi
   done < "$1.md"
 }
 
@@ -423,7 +468,7 @@ function processFolder() {
     GENERATION_MODE='med'
   fi
 
-  echo -e "Generation mode...             ..$GENERATION_MODE"
+  echo -e "Generation mode...             $GENERATION_MODE"
 
   cd "$FOLDER/md"
 

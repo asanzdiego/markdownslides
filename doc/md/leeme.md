@@ -47,10 +47,10 @@ genera:
 ## Dependencias
 
 - Necesita ser instalado:
-@import import/dependencies-1.md
+@import dependencies-1
 
 - Descargado automáticamente:
-@import import/dependencies-2.md
+@import dependencies-2
 
 ## Requisitos
 
@@ -105,12 +105,12 @@ Primer ejemplo:
 
 ~~~
  ~~~
- @import import/contributors.md
+ @import contributors
  ~~~
 ~~~
 
 ~~~
-@import import/contributors.md
+@import contributors
 ~~~
 
 ## Imports (II)
@@ -118,20 +118,20 @@ Primer ejemplo:
 Segundo ejemplo: 
 
 ~~~
- @import import/import-1.md endLine=4
+ @import import-1 endLine=4
 ~~~
 
-@import import/import-1.md endLine=4
+@import import-1 endLine=4
 
 ## Imports (III)
 
 Tercer ejemplo: 
 
 ~~~
- @import import/import-1.md startLine=6
+ @import import-1 startLine=6
 ~~~
 
-@import import/import-1.md startLine=6
+@import import-1 startLine=6
 
 ## Imports (IV)
 
@@ -139,12 +139,12 @@ Cuarto ejemplo:
 
 ~~~
  ~~~
- @import import/import-1.md startLine=2 endLine=3 showNumberLines
+ @import import-1 startLine=2 endLine=3 showNumberLines
  ~~~
 ~~~
 
 ~~~
-@import import/import-1.md startLine=2 endLine=3 showNumberLines
+@import import-1 startLine=2 endLine=3 showNumberLines
 ~~~
 
 ## Notas

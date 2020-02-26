@@ -322,11 +322,6 @@ function exportMdToSlides() {
   if [ "$(build "$BUILD_REVEAL_SLIDES_PDF")" == "yes" ]; then
     buildRevealSlidesPdf "$1"
   fi
-
-  if [ "$REMOVE_MD_TO_SLIDES" == "yes" ]; then
-    rm "../export/$1-to-slides.md"
-    echo -e "Removing md to slides...       ../export/$1-to-slides.md"
-  fi
 }
 
 function exportMdToBook() {
@@ -345,14 +340,11 @@ function exportMdToBook() {
   if [ "$(build "$BUILD_PDF_BOOK")" == "yes" ]; then
     buildPdfBook "$1"
   fi
-
-  if [ "$REMOVE_MD_TO_BOOK" == "yes" ]; then
-    rm "../export/$1-to-book.md"
-    echo -e "Removing md to book...         ../export/$1-to-book.md"
-  fi
 }
 
 function addImportToMD() {
+
+  echo "$@"
 
   local FILE_TO_IMPORT="-"
   local START_LINE=1
@@ -372,80 +364,61 @@ function addImportToMD() {
     fi
   done
 
-  echo -e "Importing file...              $FILE_TO_IMPORT"
+  echo -e "Importing file...              ../md/import/$FILE_TO_IMPORT.md"
+
+  generatePlusAndNormalMD "$FILE_TO_IMPORT" "import-"
 
   if [[ $END_LINE -eq 0 ]]; then
-    END_LINE=$(wc -l "$FILE_TO_IMPORT" | cut -d " " -f 1)
+    END_LINE=$(wc -l "../export/import-$FILE_TO_IMPORT$3.md" | cut -d " " -f 1)
     END_LINE=$((END_LINE+1))
   fi
 
   while IFS= read -r line || [[ -n "$line" ]]; do
-
     if [[ $NUMBER_LINES -ge $START_LINE ]] && [[ $NUMBER_LINES -le $END_LINE ]]; then
-
-      local IS_NORMAL_LINE='yes'
-      if [ "${line:0:5}" == "@plus" ]; then
-        IS_NORMAL_LINE='no'
-        line=${line:0:5}
-      fi
-
       if [ "${line:0:7}" == "@import" ]; then
-
-        addImportToMD "$1" "${line:7}"
-        if [ "$IS_NORMAL_LINE" == "yes" ]; then
-          addImportToMD "$1" "${line:7}"
-        fi
-
+        addImportToMD "$1" "${line:7}" "$3"
       else
-
         if [ "$SHOW_NUMBER_LINES" == "true" ]; then
-
-          echo "$NUMBER_LINES $line" >> "../export/$1-plus-import.md"
-          if [ "$IS_NORMAL_LINE" == "yes" ]; then
-          echo "$NUMBER_LINES $line" >> "../export/$1-import.md"
-          fi
-
+          echo "$NUMBER_LINES $line" >> "../export/$1$3-import.md"
         else
-
-          echo "$line" >> "../export/$1-plus-import.md"
-          if [ "$IS_NORMAL_LINE" == "yes" ]; then
-            echo "$line" >> "../export/$1-import.md"
-          fi
+          echo "$line" >> "../export/$1$3-import.md"
         fi
       fi
     fi
     NUMBER_LINES=$((NUMBER_LINES+1))
-  done < "$FILE_TO_IMPORT"
+  done < "../export/import-$FILE_TO_IMPORT$3.md"
 }
 
 function addImportsToMD() {
 
-  echo -e "Importing files...             ../export/$1-import.md"
-  touch "../export/$1-import.md"
-
-  echo -e "Importing files...             ../export/$1-plus-import.md"
-  touch "../export/$1-plus-import.md"
+  echo -e "Importing files...             ../export/$1$3-import.md"
+  touch "../export/$1$3-import.md"
 
   while IFS= read -r line || [[ -n "$line" ]]; do
-
-    local IS_NORMAL_LINE='yes'
-    if [ "${line:0:5}" == "@plus" ]; then
-      IS_NORMAL_LINE='no'
-      line=${line:0:5}
-    fi
-
     if [ "${line:0:7}" == "@import" ]; then
-      addImportToMD "$1" "${line:7}"
-      if [ "$IS_NORMAL_LINE" == "yes" ]; then
-        addImportToMD "$1" "${line:7}"
-      fi
+      addImportToMD "$1" "${line:7}" "$3"
     else
-      echo "$line" >> "../export/$1-plus-import.md"
-      if [ "$IS_NORMAL_LINE" == "yes" ]; then
-        echo "$line" >> "../export/$1-import.md"
-      fi
+      echo "$line" >> "../export/$1$3-import.md"
     fi
   done < "$1.md"
+}
+
+function generatePlusAndNormalMD() {
+
+  echo -e "Generating file...             ../export/$2$1.md"
+  touch "../export/$2$1.md"
+
+  echo -e "Generating file...             ../export/$2$1-plus.md"
+  touch "../export/$2$1-plus.md"
+
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    if [ "${line:0:5}" == "@plus" ]; then
+      echo "${line:0:5}" >>  "../export/$2$1-plus.md"
+    else
+      echo "$line" >>  "../export/$2$1.md"
+      echo "$line" >>  "../export/$2$1-plus.md"
+    fi
+  done < "$2$1.md"
 }
 
 function exportMdFile() {
@@ -454,6 +427,9 @@ function exportMdFile() {
     echo -e "Current number offset...       .."$CURRENT_NUMBER_OFFSET
   fi
 
+  generatePlusAndNormalMD "$1"
+  echo -e "- - - - - - - - - - - - - - - -"
+  addImportsToMD "$1" "-plus"
   addImportsToMD "$1"
   echo -e "- - - - - - - - - - - - - - - -"
   exportMdToSlides "$1"
@@ -461,9 +437,9 @@ function exportMdFile() {
   exportMdToBook "$1"
   echo -e "- - - - - - - - - - - - - - - -"
   
-  if [ "$REMOVE_MD_IMPORT" == "yes" ]; then
-    rm "../export/$1-import.md"
-    echo -e "Removing md import...          ../export/$1-import.md"
+  if [ "$REMOVE_GENERATE_MD_FILE" == "yes" ]; then
+    rm "../export/$1.*.md"
+    echo -e "Removing generated md files... ../export/$1.*.md"
   fi
 
   if [ "$NUMBER_OFFSET" == "yes" ]; then

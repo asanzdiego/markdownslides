@@ -14,8 +14,8 @@ For example, the MarkdownSlides documentation is in a
 [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md)
 file that generate all this formats:
 
-  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme.html)
-  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf)
+  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html)
+  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html)
   - [pdf-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.pdf)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
@@ -33,8 +33,8 @@ Por ejemplo, la documentación de MarkdownSlides está en un fichero
 [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
 que genera todos estos formatos:
 
-  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme.html)
-  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme.pdf)
+  - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.html)
+  - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pdf)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html)
   - [pdf-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.pdf)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx)

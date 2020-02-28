@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Markdown Slides [EN]">
+  <meta name="author" content="Adolfo Sanz De Diego">
+  <title>Markdown Slides [EN]</title>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <style type="text/css">
+    pre, code {
+      background-color: #ddd;
+      white-space: pre;
+    }
+    aside.notes{
+      background-color: yellow;
+    }
+    img.center {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Markdown Slides [EN]</h1>
+<p class="author">Adolfo Sanz De Diego</p>
+<p class="date"><span class="citation" data-cites="asanzdiego">@asanzdiego</span></p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#about">About</a><ul>
+<li><a href="#what-is-it">What is it?</a></li>
+<li><a href="#samples">Samples</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#licence">Licence</a></li>
+</ul></li>
+<li><a href="#instalation">Instalation</a><ul>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#download">Download</a></li>
+<li><a href="#docker">Docker</a><ul>
+<li><a href="#building-docker-image">Building docker image</a></li>
+<li><a href="#launch-the-container">Launch the container</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#how-to-use">How to use</a><ul>
+<li><a href="#creation">Creation</a></li>
+<li><a href="#notes">Notes</a></li>
+<li><a href="#mathjax">MathJax</a></li>
+<li><a href="#levels">Levels</a></li>
+<li><a href="#numbering">Numbering</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#build">Build</a></li>
+</ul></li>
+<li><a href="#releases-notes">Releases notes</a><ul>
+<li><a href="#relese-1.0">Relese 1.0</a></li>
+<li><a href="#relese-2.0">Relese 2.0</a></li>
+<li><a href="#relese-3.0">Relese 3.0</a></li>
+<li><a href="#relese-4.0">Relese 4.0</a></li>
+<li><a href="#relese-5.0">Relese 5.0</a></li>
+</ul></li>
+<li><a href="#adolfo-sanz-de-diego-author"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Author</a><ul>
+<li><a href="#adolfo-sanz-de-diego">Adolfo Sanz De Diego</a></li>
+<li><a href="#some-projects">Some projects</a></li>
+<li><a href="#where-to-find-me">Where to find me?</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="about">About</h1>
+<h2 id="what-is-it">What is it?</h2>
+<p><strong>MarkdownSlides</strong> is a Reveal.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p>
+<p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p>
+<figure>
+<img src="../img/markdownslides.png" class="center" style="width:50.0%" />
+</figure>
+<h2 id="samples">Samples</h2>
+<p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
+<ul>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.html">reveal-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf">reveal-slides-pdf</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html">html-book</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx">docx-book</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.pdf">pdf-book</a></li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<ul>
+<li>Cesar Seoane: <a href="https://github.com/cesarseoane" class="uri">https://github.com/cesarseoane</a></li>
+<li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
+<li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
+<li>Pablo J. Triviño: <a href="https://twitter.com/p_trivino" class="uri">https://twitter.com/p_trivino</a></li>
+</ul>
+<h2 id="licence">Licence</h2>
+<ul>
+<li><strong>This work is licensed under a:</strong>
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0//">Creative Commons Attribution 3.0</a></li>
+</ul></li>
+<li><strong>The program source code are licensed under a:</strong>
+<ul>
+<li><a href="http://www.gnu.org/licenses/gpl.html">GPL 3.0</a></li>
+</ul></li>
+</ul>
+<h1 id="instalation">Instalation</h1>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>It needs to be installed:
+<ul>
+<li><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a></li>
+<li><a href="https://github.com/astefanutti/decktape">DeckTape</a></li>
+<li><a href="https://tug.org/texlive/">TeX Live</a></li>
+</ul></li>
+<li>It is automaticaly downloaded:
+<ul>
+<li><a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></li>
+</ul></li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>Now, only works in Linux (may be on MacOS)</p>
+<p>It can works with Docker, but is in beta.</p>
+<h2 id="download">Download</h2>
+<p><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></p>
+<h2 id="docker">Docker</h2>
+<p>Your installation with docker is still <strong>under testing</strong>.</p>
+<p>Any feedback is welcome.</p>
+<h3 id="building-docker-image">Building docker image</h3>
+<p>It will be at dockerhub soon:</p>
+<pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
+<h3 id="launch-the-container">Launch the container</h3>
+<p>Launch the container:</p>
+<pre><code>docker run -it -v &quot;${PWD}&quot;:/home/markdownslides-master/&quot;${PWD##*/}&quot; \
+    asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]</code></pre>
+<h1 id="how-to-use">How to use</h1>
+<h2 id="creation">Creation</h2>
+<ul>
+<li><p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p></li>
+<li><p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p></li>
+</ul>
+<h2 id="notes">Notes</h2>
+<p>You can add notes that will be visible in book mode or if <strong>you press the letter 's' on the slides</strong> with <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> and <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</p>
+<pre><code>&lt;aside class=&quot;notes&quot;&gt;
+This is only visible in book mode or if you press &#39;s&#39; on the slides.
+&lt;/aside&gt;</code></pre>
+<aside class="notes">
+This is only visible in book mode or if you press 's' on the slides.
+</aside>
+<h2 id="mathjax">MathJax</h2>
+<p>You can use the <a href="https://www.mathjax.org/">MathJax</a> lib.</p>
+<p>So this:</p>
+<pre><code>$$x = {-b \pm \sqrt{b^2-4ac}}.$$</code></pre>
+<p>Will be converted to:</p>
+<p><br /><span class="math display">$$x = {-b \pm \sqrt{b^2-4ac}}.$$</span><br /></p>
+<h2 id="levels">Levels</h2>
+<p>You can have as many levels as you want. Example:</p>
+<pre><code># Level 1 (on slides and book)
+
+## Level 2 (on slides and book)
+
+### Level 3 (in book but stays level 2 in slides)</code></pre>
+<p>But only in books. In slides you can only have 2 levels.</p>
+<h2 id="numbering">Numbering</h2>
+<p>You can name several slides with, (II), etc. But only the first one will be exported to the book. Example:</p>
+<pre><code> ## Foo Bar
+
+ ## Foo Bar (II)</code></pre>
+<p>In the book will be:</p>
+<pre><code> ## Foo Bar</code></pre>
+<h2 id="configuration">Configuration</h2>
+<p>We can configure the files that we want to generate from the file <strong>build.properties</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
+<span class="va">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;min&#39;</span>
+<span class="va">BUILD_REVEAL_SLIDES_ALTERNATIVE=</span><span class="st">&#39;med&#39;</span>
+<span class="va">BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF=</span><span class="st">&#39;med&#39;</span>
+<span class="va">BUILD_REVEAL_SLIDES_ONLINE=</span><span class="st">&#39;max&#39;</span>
+<span class="va">BUILD_REVEAL_SLIDES_ONLINE_ALTERNATIVE=</span><span class="st">&#39;max&#39;</span>
+
+<span class="va">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
+<span class="va">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
+<span class="va">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
+<p>We can also configure some other stufs from the file <strong>build.properties</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">CLEAN_LIB_FOLDER=</span><span class="st">&#39;no&#39;</span>
+<span class="va">COPY_IMG_FOLDER=</span><span class="st">&#39;no&#39;</span>
+<span class="va">ZIP_EXPORT_FOLDER=</span><span class="st">&#39;no&#39;</span>
+<span class="va">NUMBER_SECTIONS=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">NUMBER_OFFSET=</span><span class="st">&#39;no&#39;</span>
+<span class="va">CURRENT_NUMBER_OFFSET=</span>1
+<span class="va">REMOVE_MD_TO_BOOK=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REMOVE_MD_TO_SLIDES=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
+<p>We can also configure some other stufs aboout reveal.js from the file <strong>build.properties</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#THEME=&#39;black|white|league|sky|beige|simple|serif|blood|night|moon|solarized&#39;</span>
+<span class="va">REVEAL_JS_THEME=</span><span class="st">&#39;beige&#39;</span>
+<span class="va">REVEAL_JS_SHOW_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REVEAL_JS_DEFAULT_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REVEAL_JS_TITLE_FOOTER=</span><span class="st">&quot;&#39;MarkdownSlides by @asanzdiego :-)&#39;&quot;</span>
+<span class="va">REVEAL_JS_SHOW_MENU=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REVEAL_JS_ONLINE=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
+<h2 id="build">Build</h2>
+<p>In the root folder you have to execute:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">./build.sh</span> [clean] [mode] [folder]</code></pre></div>
+<ul>
+<li><p>[<strong>clean</strong>] clean the folder <strong>lib</strong> and download the dependencies again.</p></li>
+<li><p>[<strong>mode</strong>] can take the next values: <strong>min, med o máx</strong>.</p></li>
+<li><p>[<strong>folder</strong>] folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
+</ul>
+<h1 id="releases-notes">Releases notes</h1>
+<h2 id="relese-1.0">Relese 1.0</h2>
+<ul>
+<li>Export slides to:
+<ul>
+<li>reveal-slides</li>
+<li>reveal-slides-pdf</li>
+<li>beamer-slides</li>
+<li>deck-slides</li>
+</ul></li>
+<li>Export books to:
+<ul>
+<li>html-book</li>
+<li>docx-book</li>
+<li>odt-book</li>
+<li>pdf-book</li>
+</ul></li>
+<li>Added generation modes 'min', 'med' and 'max'.</li>
+<li>Automatic download the external libraries.</li>
+<li>Numbering, (II), (III) ...</li>
+</ul>
+<h2 id="relese-2.0">Relese 2.0</h2>
+<ul>
+<li>Export slides to:
+<ul>
+<li>reveal-slides</li>
+<li>reveal-slides-pdf</li>
+<li>reveal-slides-online</li>
+</ul></li>
+<li>Export books to:
+<ul>
+<li>html-book</li>
+<li>docx-book</li>
+<li>epub-book</li>
+</ul></li>
+<li>Deprecated:
+<ul>
+<li>beamer-slides</li>
+<li>deck-slides</li>
+<li>odt-book</li>
+<li>pdf-book</li>
+</ul></li>
+<li>Added menu thanks to <a href="https://github.com/hhkaos">Raul Jimenez Ortega</a>.</li>
+<li>Added dockerfile thanks to <a href="https://github.com/kaneproject">Rubén Gómez García</a>.</li>
+<li>Clean zip files from libraries thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
+<li>Added type 'online' thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
+<li>Fixed bug HTTPS images thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
+<li>Loading the online libraries with HTTPS thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
+<li><p>Configuration PDF resolution thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</p></li>
+<li>New format 'epub'.</li>
+<li>Added 'bash strict mode'.</li>
+<li>Added 'build.properties' to configure file generation.</li>
+<li>Added command 'clean' to clean the lib folder.</li>
+<li>Download a specific version of external library.</li>
+<li>Added notes only visible in book mode or if you press 's' on the slides.</li>
+<li><p>Normalization of images in slides.</p></li>
+</ul>
+<h2 id="relese-3.0">Relese 3.0</h2>
+<ul>
+<li>Clean the code.</li>
+<li>Remove deprecated exportation files.</li>
+<li>Improve de configuration in build.properties file.</li>
+<li>Update <a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> dependencies.</li>
+<li>Export to PDF with <a href="https://github.com/astefanutti/decktape">DeckTape</a>.</li>
+<li>Book creation from some md files with enumeration.</li>
+<li>Possibility of adding a footer to the slides.</li>
+</ul>
+<h2 id="relese-4.0">Relese 4.0</h2>
+<ul>
+<li>Fix some bugs.</li>
+<li>Add bookmarks to the slides.</li>
+<li>Improve file names.</li>
+<li>Add <a href="https://www.mathjax.org/">MathJax/</a> lib thanks to <a href="https://twitter.com/p_trivino">Pablo J. Triviño</a>.</li>
+</ul>
+<h2 id="relese-5.0">Relese 5.0</h2>
+<ul>
+<li>Fixed some bugs.</li>
+<li>Added again the option to export to PDF in book format.</li>
+<li>Added the possibility to import files or fragments from an external file.</li>
+<li>Added the plugin <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard" class="uri">https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard</a></li>
+</ul>
+<h1 id="adolfo-sanz-de-diego-author"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Author</h1>
+<h2 id="adolfo-sanz-de-diego">Adolfo Sanz De Diego</h2>
+<ul>
+<li><p><strong>Old JEE web developer</strong>.</p></li>
+<li><p>Now I'm <strong>Tecnical Teacher Advaisor</strong> in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education and Youth of the Community of Madrid.</p></li>
+<li><p>In addition I work as <strong>trainer specialized in development technologies</strong>.</p></li>
+</ul>
+<h2 id="some-projects">Some projects</h2>
+<ul>
+<li><p><img src="../img/hackathon-lovers-logo.png" alt="Hackathon Lovers" height="30" /> <a href="http://hackathonlovers.com">Hackathon Lovers</a>: a group created for entrepreneurs and developers who loves hackathons.</p></li>
+<li><p><a href="http://pasmangen.github.io">Password Manager Generator</a>: an online password manager.</p></li>
+<li><p><a href="https://github.com/asanzdiego/markdownslides">MarkdownSlides</a>: a script to create slides from MD files.</p></li>
+</ul>
+<h2 id="where-to-find-me">Where to find me?</h2>
+<ul>
+<li>My nick: <strong>asanzdiego</strong>
+<ul>
+<li>Blog: <a href="http://asanzdiego.com">asanzdiego.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">linkedin.com/in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego">slideshare.net/asanzdiego</a></li>
+</ul></li>
+</ul>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

@@ -47,10 +47,10 @@ genera:
 ## Dependencias
 
 - Necesita ser instalado:
-@import dependencies-1
+@import import/dependencies-1.md
 
 - Descargado automáticamente:
-@import dependencies-2
+@import import/dependencies-2.md
 
 ## Requisitos
 
@@ -82,7 +82,7 @@ Lanzamos el contenedor:
 
 ~~~
 docker run -it -v "${PWD}":/home/markdownslides-master/"${PWD##*/}" \
-    asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]
+    asanzdiego/markdownslides ./build.sh [mode] [folder]
 ~~~
 
 # Manejo
@@ -99,18 +99,18 @@ y con un marcado ligero (que hay que conocer pero que es muy sencillo).
 
 ## Imports (I)
 
-Podemos añadir fichero con **@import NOMBRE_FICHERO [startLine=NUMERO] [endLine=NUMERO] [showNumberLines]**
+Podemos añadir fichero con **@import import/NOMBRE_FICHERO [startLine=NUMERO] [endLine=NUMERO] [showNumberLines]**
 
 Primer ejemplo: 
 
 ~~~
  ~~~
- @import contributors
+ @import import/import-1.md
  ~~~
 ~~~
 
 ~~~
-@import contributors
+@import import/import-1.md
 ~~~
 
 ## Imports (II)
@@ -118,20 +118,20 @@ Primer ejemplo:
 Segundo ejemplo: 
 
 ~~~
- @import import-1 endLine=4
+ @import import/import-1.md endLine=4
 ~~~
 
-@import import-1 endLine=4
+@import import/import-1.md endLine=4
 
 ## Imports (III)
 
 Tercer ejemplo: 
 
 ~~~
- @import import-1 startLine=6
+ @import import/import-1.md startLine=6
 ~~~
 
-@import import-1 startLine=6
+@import import/import-1.md startLine=6
 
 ## Imports (IV)
 
@@ -139,12 +139,12 @@ Cuarto ejemplo:
 
 ~~~
  ~~~
- @import import-1 startLine=2 endLine=3 showNumberLines
+ @import import/import-1.md startLine=2 endLine=3 showNumberLines
  ~~~
 ~~~
 
 ~~~
-@import import-1 startLine=2 endLine=3 showNumberLines
+@import import/import-1.md startLine=2 endLine=3 showNumberLines
 ~~~
 
 ## Notas
@@ -161,6 +161,19 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 @start-notes
 Esto solo es visible en modo libro o si pulsas 's' en las slides.
 @end-notes 
+
+## Notas plus
+
+Puedes crear notas con **@plus** que solo estarán disponibles en ficherros "plus"
+siempre y cuando en el build.properties tengas **GENERATE_PLUS_VERSION='yes'** 
+
+~~~
+ @plus esto solo estará disponible en la versión plus
+ @plus @import import/import-1.md
+~~~
+
+@plus esto solo estará disponible en la versión plus
+@plus @import import/import-1.md
 
 ## MathJax
 
@@ -257,10 +270,8 @@ REVEAL_JS_ONLINE='yes'
 Hay que posicionarse en la carpeta raiz, y ejecutar:
 
 ~~~{.bash}
-./build.sh [clean] [modo] [carpeta]
+./build.sh [modo] [carpeta]
 ~~~
-
-- [**clean**] limpia la carpeta **lib** y vuelve a a bajar las dependencias.
 
 - [**modo**] puede tomar los valores: **min, med o máx**.
 

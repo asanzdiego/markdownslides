@@ -89,6 +89,12 @@ $endfor$
     h3 {
       font-size: 100% !important;
     }
+    #toggle-chalkboard {
+      inset: auto auto 30px 70px !important;
+    }
+    #toggle-notes {
+      inset: auto auto 30px 110px !important;
+    }
     @media print {
       #only-print-parent { display: table !important; }
       #only-print-child { display: table-cell !important; vertical-align: middle;}
@@ -352,6 +358,18 @@ $endif$
           TeX: { Macros: { RR: "{\\bf R}" } }
         },
 
+$if(revealjs-show-chalkboard)$
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+          8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+          88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+          89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+        },
+$endif$
+
         // Optional reveal.js plugins
         dependencies: [
           { src: '$revealjs-url$/plugin/math/math.js', async: true }, 
@@ -362,6 +380,9 @@ $if(revealjs-title-footer)$
 $endif$
 $if(revealjs-show-menu)$
           { src: '$revealjs-menu-url$/menu.js', async: true },
+$endif$
+$if(revealjs-show-chalkboard)$
+          { src: '$revealjs-chalkboard-url$/chalkboard.js', async: true },
 $endif$
           { src: '$revealjs-url$/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: '$revealjs-url$/plugin/zoom-js/zoom.js', async: true },

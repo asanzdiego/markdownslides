@@ -72,6 +72,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#about">About</a><ul>
 <li><a href="#what-is-it">What is it?</a></li>
 <li><a href="#samples">Samples</a></li>
+<li><a href="#samples-1">Samples</a></li>
 <li><a href="#contributors">Contributors</a></li>
 <li><a href="#licence">Licence</a></li>
 </ul></li>
@@ -86,7 +87,9 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#how-to-use">How to use</a><ul>
 <li><a href="#creation">Creation</a></li>
+<li><a href="#imports">Imports</a></li>
 <li><a href="#notes">Notes</a></li>
+<li><a href="#plus-notes">Plus notes</a></li>
 <li><a href="#mathjax">MathJax</a></li>
 <li><a href="#levels">Levels</a></li>
 <li><a href="#numbering">Numbering</a></li>
@@ -109,20 +112,36 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 </nav>
 <h1 id="about">About</h1>
 <h2 id="what-is-it">What is it?</h2>
-<p><strong>MarkdownSlides</strong> is a Reveal.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p>
-<p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p>
+<ul>
+<li><p><strong>MarkdownSlides</strong> is a Reveal.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p></li>
+<li><p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p></li>
+</ul>
 <figure>
 <img src="../img/markdownslides.png" class="center" style="width:50.0%" />
 </figure>
 <h2 id="samples">Samples</h2>
-<p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
 <ul>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.html">reveal-slides</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf">reveal-slides-pdf</a></li>
+<li>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:
+<ul>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html">reveal-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf">reveal-slides-pdf</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html">html-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx">docx-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.pdf">pdf-book</a></li>
+</ul></li>
+</ul>
+<h2 id="samples-1">Samples</h2>
+<ul>
+<li>From this same <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file <strong>&quot;plus&quot; files</strong> can be generated:
+<ul>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-plus.html">reveal-slides-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-plus.pdf">reveal-slides-pdf-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.epub">epub-book-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.html">html-book-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.docx">docx-book-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.pdf">pdf-book-plus</a></li>
+</ul></li>
 </ul>
 <h2 id="contributors">Contributors</h2>
 <ul>
@@ -130,6 +149,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
 <li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
 <li>Pablo J. Triviño: <a href="https://twitter.com/p_trivino" class="uri">https://twitter.com/p_trivino</a></li>
+<li>Marcos Chavarría: <a href="https://twitter.com/chavarria1991" class="uri">https://twitter.com/chavarria1991</a></li>
 </ul>
 <h2 id="licence">Licence</h2>
 <ul>
@@ -157,18 +177,26 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul>
 <h2 id="requirements">Requirements</h2>
-<p>Now, only works in Linux (may be on MacOS)</p>
-<p>It can works with Docker, but is in beta.</p>
+<ul>
+<li><p>Now, only works in Linux (may be on MacOS)</p></li>
+<li><p>It can works with Docker, but is in beta.</p></li>
+</ul>
 <h2 id="download">Download</h2>
-<p><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></p>
+<p><a href="https://github.com/asanzdiego/markdownslides/archive/5.0.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/5.0.zip</a></p>
 <h2 id="docker">Docker</h2>
-<p>Your installation with docker is still <strong>under testing</strong>.</p>
-<p>Any feedback is welcome.</p>
+<ul>
+<li><p>Your installation with docker is still <strong>under testing</strong>.</p></li>
+<li><p>Any feedback is welcome.</p></li>
+</ul>
 <h3 id="building-docker-image">Building docker image</h3>
-<p>It will be at dockerhub soon:</p>
+<ul>
+<li>It will be at dockerhub soon:</li>
+</ul>
 <pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
 <h3 id="launch-the-container">Launch the container</h3>
-<p>Launch the container:</p>
+<ul>
+<li>Launch the container:</li>
+</ul>
 <pre><code>docker run -it -v &quot;${PWD}&quot;:/home/markdownslides-master/&quot;${PWD##*/}&quot; \
     asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]</code></pre>
 <h1 id="how-to-use">How to use</h1>
@@ -177,22 +205,74 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p></li>
 <li><p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p></li>
 </ul>
+<h2 id="imports">Imports</h2>
+<ul>
+<li>We can add a file with <strong><span class="citation" data-cites="import">@import</span> import/NOMBRE_FICHERO [startLine=NUMERO] [endLine=NUMERO] [showNumberLines]</strong></li>
+</ul>
+<p>Firt example:</p>
+<pre><code> @import import/import-2.md</code></pre>
+<ul>
+<li>Line 1 of import-2.md</li>
+<li>Line 2 of import-2.md</li>
+<li>Line 3 of import-2.md</li>
+<li>Line 4 of import-2.md</li>
+</ul>
+<p>Second example:</p>
+<pre><code> @import import/import-1.md endLine=4</code></pre>
+<ul>
+<li>Line 1 of import-1.md</li>
+<li>Line 2 of import-1.md</li>
+<li>Line 3 of import-1.md</li>
+<li>Line 4 of import-1.md</li>
+</ul>
+<p>Third example:</p>
+<pre><code> @import import/import-1.md startLine=6</code></pre>
+<pre><code>- Line 1 of import-2.md
+- Line 2 of import-2.md
+- Line 3 of import-2.md
+- Line 4 of import-2.md</code></pre>
+<p>Fourth example:</p>
+<pre><code> ~~~
+ @import import/import-1.md startLine=2 endLine=3 showNumberLines
+ ~~~</code></pre>
+<pre><code>2 - Line 2 of import-1.md
+3 - Line 3 of import-1.md</code></pre>
 <h2 id="notes">Notes</h2>
-<p>You can add notes that will be visible in book mode or if <strong>you press the letter 's' on the slides</strong> with <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> and <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</p>
+<ul>
+<li>We can add notes that will be visible in book mode or if <strong>you press the letter 's' on the slides</strong> with <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> and <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</li>
+</ul>
 <pre><code>&lt;aside class=&quot;notes&quot;&gt;
 This is only visible in book mode or if you press &#39;s&#39; on the slides.
 &lt;/aside&gt;</code></pre>
 <aside class="notes">
 This is only visible in book mode or if you press 's' on the slides.
 </aside>
+<h2 id="plus-notes">Plus notes</h2>
+<ul>
+<li>We can create notes with <strong><span class="citation" data-cites="plus">@plus</span></strong> that will be only visible in &quot;plus&quot; files as long as in the build.properties we have <strong>GENERATE_PLUS_VERSION='yes'</strong></li>
+</ul>
+<pre><code> @plus the lines below will only be available in the plus version
+
+ @plus @import import/import-2.md</code></pre>
+<p>the lines below will only be available in the plus version</p>
+<ul>
+<li>Line 1 of import-2.md</li>
+<li>Line 2 of import-2.md</li>
+<li>Line 3 of import-2.md</li>
+<li>Line 4 of import-2.md</li>
+</ul>
 <h2 id="mathjax">MathJax</h2>
-<p>You can use the <a href="https://www.mathjax.org/">MathJax</a> lib.</p>
+<ul>
+<li>We can use the <a href="https://www.mathjax.org/">MathJax</a> lib.</li>
+</ul>
 <p>So this:</p>
 <pre><code>$$x = {-b \pm \sqrt{b^2-4ac}}.$$</code></pre>
 <p>Will be converted to:</p>
 <p><br /><span class="math display">$$x = {-b \pm \sqrt{b^2-4ac}}.$$</span><br /></p>
 <h2 id="levels">Levels</h2>
-<p>You can have as many levels as you want. Example:</p>
+<ul>
+<li>You can have as many levels as you want. Example:</li>
+</ul>
 <pre><code># Level 1 (on slides and book)
 
 ## Level 2 (on slides and book)
@@ -200,7 +280,9 @@ This is only visible in book mode or if you press 's' on the slides.
 ### Level 3 (in book but stays level 2 in slides)</code></pre>
 <p>But only in books. In slides you can only have 2 levels.</p>
 <h2 id="numbering">Numbering</h2>
-<p>You can name several slides with, (II), etc. But only the first one will be exported to the book. Example:</p>
+<ul>
+<li>You can name several slides with, (II), etc. But only the first one will be exported to the book. Example:</li>
+</ul>
 <pre><code> ## Foo Bar
 
  ## Foo Bar (II)</code></pre>
@@ -208,25 +290,26 @@ This is only visible in book mode or if you press 's' on the slides.
 <pre><code> ## Foo Bar</code></pre>
 <h2 id="configuration">Configuration</h2>
 <p>We can configure the files that we want to generate from the file <strong>build.properties</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;min&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_ALTERNATIVE=</span><span class="st">&#39;med&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF=</span><span class="st">&#39;med&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_ONLINE=</span><span class="st">&#39;max&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_ONLINE_ALTERNATIVE=</span><span class="st">&#39;max&#39;</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#GENERATION_MODE=&#39;min|med|max&#39;</span>
+<span class="va">DEFAULT_GENERATION_MODE=</span><span class="st">&#39;min&#39;</span>
+
+<span class="va">GENERATE_PLUS_VERSION=</span><span class="st">&#39;yes&#39;</span>
+
+<span class="va">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
+<span class="va">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
 
 <span class="va">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
-<span class="va">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
+<span class="va">BUILD_PDF_BOOK=</span><span class="st">&#39;med&#39;</span>
+<span class="va">BUILD_DOCX_BOOK=</span><span class="st">&#39;max&#39;</span>
 <span class="va">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
 <p>We can also configure some other stufs from the file <strong>build.properties</strong></p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">CLEAN_LIB_FOLDER=</span><span class="st">&#39;no&#39;</span>
 <span class="va">COPY_IMG_FOLDER=</span><span class="st">&#39;no&#39;</span>
 <span class="va">ZIP_EXPORT_FOLDER=</span><span class="st">&#39;no&#39;</span>
-<span class="va">NUMBER_SECTIONS=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">NUMBER_SECTIONS=</span><span class="st">&#39;no&#39;</span>
 <span class="va">NUMBER_OFFSET=</span><span class="st">&#39;no&#39;</span>
 <span class="va">CURRENT_NUMBER_OFFSET=</span>1
-<span class="va">REMOVE_MD_TO_BOOK=</span><span class="st">&#39;yes&#39;</span>
-<span class="va">REMOVE_MD_TO_SLIDES=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
+<span class="va">REMOVE_GENERATE_MD_FILES=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
 <p>We can also configure some other stufs aboout reveal.js from the file <strong>build.properties</strong></p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#THEME=&#39;black|white|league|sky|beige|simple|serif|blood|night|moon|solarized&#39;</span>
 <span class="va">REVEAL_JS_THEME=</span><span class="st">&#39;beige&#39;</span>
@@ -234,12 +317,14 @@ This is only visible in book mode or if you press 's' on the slides.
 <span class="va">REVEAL_JS_DEFAULT_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span>
 <span class="va">REVEAL_JS_TITLE_FOOTER=</span><span class="st">&quot;&#39;MarkdownSlides by @asanzdiego :-)&#39;&quot;</span>
 <span class="va">REVEAL_JS_SHOW_MENU=</span><span class="st">&#39;yes&#39;</span>
-<span class="va">REVEAL_JS_ONLINE=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
+<span class="va">REVEAL_JS_SHOW_CHALKBOARD=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REVEAL_JS_ONLINE=</span><span class="st">&#39;no&#39;</span></code></pre></div>
 <h2 id="build">Build</h2>
-<p>In the root folder you have to execute:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">./build.sh</span> [clean] [mode] [folder]</code></pre></div>
 <ul>
-<li><p>[<strong>clean</strong>] clean the folder <strong>lib</strong> and download the dependencies again.</p></li>
+<li>In the root folder you have to execute:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">./build.sh</span> [mode] [folder]</code></pre></div>
+<ul>
 <li><p>[<strong>mode</strong>] can take the next values: <strong>min, med o máx</strong>.</p></li>
 <li><p>[<strong>folder</strong>] folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
 </ul>
@@ -295,7 +380,7 @@ This is only visible in book mode or if you press 's' on the slides.
 <li>New format 'epub'.</li>
 <li>Added 'bash strict mode'.</li>
 <li>Added 'build.properties' to configure file generation.</li>
-<li>Added command 'clean' to clean the lib folder.</li>
+<li>Added the command 'clean' to clean the lib folder.</li>
 <li>Download a specific version of external library.</li>
 <li>Added notes only visible in book mode or if you press 's' on the slides.</li>
 <li><p>Normalization of images in slides.</p></li>
@@ -319,10 +404,13 @@ This is only visible in book mode or if you press 's' on the slides.
 </ul>
 <h2 id="relese-5.0">Relese 5.0</h2>
 <ul>
+<li>Clean the code.</li>
 <li>Fixed some bugs.</li>
+<li>Removed the command 'clean' to clean the lib folder because it can be done via properties file.</li>
 <li>Added again the option to export to PDF in book format.</li>
 <li>Added the possibility to import files or fragments from an external file.</li>
-<li>Added the plugin <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard" class="uri">https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard</a></li>
+<li>Added the plugin <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard">chalkboard</a> thanks to <a href="https://twitter.com/chavarria1991">Marcos Chavarría</a>.</li>
+<li>Added the possibility to create a 'plus' version with extra information in slides and books.</li>
 </ul>
 <h1 id="adolfo-sanz-de-diego-author"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Author</h1>
 <h2 id="adolfo-sanz-de-diego">Adolfo Sanz De Diego</h2>

@@ -2,3 +2,4 @@
 - Rubén Gómez García: <https://github.com/kaneproject>
 - Raul Jimenez Ortega: <https://github.com/hhkaos>
 - Pablo J. Triviño: <https://twitter.com/p_trivino>
+- Marcos Chavarría: <https://twitter.com/chavarria1991>

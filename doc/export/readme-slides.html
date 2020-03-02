@@ -10,9 +10,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/reveal.css">
-  <link rel="stylesheet" href="https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-title-footer//plugin/title-footer/title-footer.css">
-  <link rel="stylesheet" href="https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-menu//menu.css">
+  <link rel="stylesheet" href="../lib/reveal.js//css/reveal.css">
+  <link rel="stylesheet" href="../lib/reveal.js-title-footer//plugin/title-footer/title-footer.css">
+  <link rel="stylesheet" href="../lib/reveal.js-menu//menu.css">
 <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -51,13 +51,13 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
-  <link rel="stylesheet" href="https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../lib/reveal.js//css/theme/beige.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/print/pdf.css' : 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal.js//css/print/pdf.css' : '../lib/reveal.js//css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
 
@@ -97,6 +97,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     h3 {
       font-size: 100% !important;
     }
+    #toggle-chalkboard {
+      inset: auto auto 30px 70px !important;
+    }
+    #toggle-notes {
+      inset: auto auto 30px 110px !important;
+    }
     @media print {
       #only-print-parent { display: table !important; }
       #only-print-child { display: table-cell !important; vertical-align: middle;}
@@ -111,7 +117,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     }
   </style>
   <!--[if lt IE 9]>
-  <script src="https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//lib/js/html5shiv.js"></script>
+  <script src="../lib/reveal.js//lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -128,23 +134,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section><section id="about" class="titleslide slide level1"><h1>About</h1></section><section id="what-is-it" class="slide level2">
 <h2>What is it?</h2>
-<p><strong>MarkdownSlides</strong> is a Reveal.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p>
-<p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p>
+<ul>
+<li><p><strong>MarkdownSlides</strong> is a Reveal.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p></li>
+<li><p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p></li>
+</ul>
 </section><section class="slide level2">
 
 <figure>
 <img src="../img/markdownslides.png" class="center" style="width:50.0%" />
 </figure>
-</section><section id="samples" class="slide level2">
-<h2>Samples</h2>
-<p>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:</p>
+</section><section id="samples-i" class="slide level2">
+<h2>Samples (I)</h2>
 <ul>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.html">reveal-slides</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme.pdf">reveal-slides-pdf</a></li>
+<li>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:
+<ul>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html">reveal-slides</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf">reveal-slides-pdf</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html">html-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx">docx-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.pdf">pdf-book</a></li>
+</ul></li>
+</ul>
+</section><section id="samples-i-1" class="slide level2">
+<h2>Samples (I)</h2>
+<ul>
+<li>From this same <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file <strong>&quot;plus&quot; files</strong> can be generated:
+<ul>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-plus.html">reveal-slides-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-plus.pdf">reveal-slides-pdf-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.epub">epub-book-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.html">html-book-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.docx">docx-book-plus</a></li>
+<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.pdf">pdf-book-plus</a></li>
+</ul></li>
 </ul>
 </section><section id="contributors" class="slide level2">
 <h2>Contributors</h2>
@@ -153,6 +176,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
 <li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
 <li>Pablo J. Triviño: <a href="https://twitter.com/p_trivino" class="uri">https://twitter.com/p_trivino</a></li>
+<li>Marcos Chavarría: <a href="https://twitter.com/chavarria1991" class="uri">https://twitter.com/chavarria1991</a></li>
 </ul>
 </section><section id="licence" class="slide level2">
 <h2>Licence</h2>
@@ -183,22 +207,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </section><section id="requirements" class="slide level2">
 <h2>Requirements</h2>
-<p>Now, only works in Linux (may be on MacOS)</p>
-<p>It can works with Docker, but is in beta.</p>
+<ul>
+<li><p>Now, only works in Linux (may be on MacOS)</p></li>
+<li><p>It can works with Docker, but is in beta.</p></li>
+</ul>
 </section><section id="download" class="slide level2">
 <h2>Download</h2>
-<p><a href="https://github.com/asanzdiego/markdownslides/archive/master.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/master.zip</a></p>
+<p><a href="https://github.com/asanzdiego/markdownslides/archive/5.0.zip" class="uri">https://github.com/asanzdiego/markdownslides/archive/5.0.zip</a></p>
 </section><section id="docker" class="slide level2">
 <h2>Docker</h2>
-<p>Your installation with docker is still <strong>under testing</strong>.</p>
-<p>Any feedback is welcome.</p>
+<ul>
+<li><p>Your installation with docker is still <strong>under testing</strong>.</p></li>
+<li><p>Any feedback is welcome.</p></li>
+</ul>
 </section><section id="building-docker-image" class="slide level2">
 <h2>Building docker image</h2>
-<p>It will be at dockerhub soon:</p>
+<ul>
+<li>It will be at dockerhub soon:</li>
+</ul>
 <pre><code>$ docker build -t asanzdiego/markdownslides .</code></pre>
 </section><section id="launch-the-container" class="slide level2">
 <h2>Launch the container</h2>
-<p>Launch the container:</p>
+<ul>
+<li>Launch the container:</li>
+</ul>
 <pre><code>docker run -it -v &quot;${PWD}&quot;:/home/markdownslides-master/&quot;${PWD##*/}&quot; \
     asanzdiego/markdownslides ./build.sh [clean] [mode] [folder]</code></pre>
 </section></section>
@@ -208,25 +240,78 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p></li>
 <li><p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p></li>
 </ul>
+</section><section id="imports-i" class="slide level2">
+<h2>Imports (I)</h2>
+<ul>
+<li>We can add a file with <strong><span class="citation" data-cites="import">@import</span> import/NOMBRE_FICHERO [startLine=NUMERO] [endLine=NUMERO] [showNumberLines]</strong></li>
+</ul>
+<p>Firt example:</p>
+<pre><code> @import import/import-2.md</code></pre>
+<ul>
+<li>Line 1 of import-2.md</li>
+<li>Line 2 of import-2.md</li>
+<li>Line 3 of import-2.md</li>
+<li>Line 4 of import-2.md</li>
+</ul>
+</section><section id="imports-ii" class="slide level2">
+<h2>Imports (II)</h2>
+<p>Second example:</p>
+<pre><code> @import import/import-1.md endLine=4</code></pre>
+<ul>
+<li>Line 1 of import-1.md</li>
+<li>Line 2 of import-1.md</li>
+<li>Line 3 of import-1.md</li>
+<li>Line 4 of import-1.md</li>
+</ul>
+</section><section id="imports-iii" class="slide level2">
+<h2>Imports (III)</h2>
+<p>Third example:</p>
+<pre><code> @import import/import-1.md startLine=6</code></pre>
+<pre><code>- Line 1 of import-2.md
+- Line 2 of import-2.md
+- Line 3 of import-2.md
+- Line 4 of import-2.md</code></pre>
+</section><section id="imports-iv" class="slide level2">
+<h2>Imports (IV)</h2>
+<p>Fourth example:</p>
+<pre><code> ~~~
+ @import import/import-1.md startLine=2 endLine=3 showNumberLines
+ ~~~</code></pre>
+<pre><code>2 - Line 2 of import-1.md
+3 - Line 3 of import-1.md</code></pre>
 </section><section id="notes" class="slide level2">
 <h2>Notes</h2>
-<p>You can add notes that will be visible in book mode or if <strong>you press the letter 's' on the slides</strong> with <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> and <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</p>
+<ul>
+<li>We can add notes that will be visible in book mode or if <strong>you press the letter 's' on the slides</strong> with <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> and <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</li>
+</ul>
 <pre><code>&lt;aside class=&quot;notes&quot;&gt;
 This is only visible in book mode or if you press &#39;s&#39; on the slides.
 &lt;/aside&gt;</code></pre>
 <aside class="notes">
 This is only visible in book mode or if you press 's' on the slides.
 </aside>
+</section><section id="plus-notes" class="slide level2">
+<h2>Plus notes</h2>
+<ul>
+<li>We can create notes with <strong><span class="citation" data-cites="plus">@plus</span></strong> that will be only visible in &quot;plus&quot; files as long as in the build.properties we have <strong>GENERATE_PLUS_VERSION='yes'</strong></li>
+</ul>
+<pre><code> @plus the lines below will only be available in the plus version
+
+ @plus @import import/import-2.md</code></pre>
 </section><section id="mathjax" class="slide level2">
 <h2>MathJax</h2>
-<p>You can use the <a href="https://www.mathjax.org/">MathJax</a> lib.</p>
+<ul>
+<li>We can use the <a href="https://www.mathjax.org/">MathJax</a> lib.</li>
+</ul>
 <p>So this:</p>
 <pre><code>$$x = {-b \pm \sqrt{b^2-4ac}}.$$</code></pre>
 <p>Will be converted to:</p>
 <p><br /><span class="math display">$$x = {-b \pm \sqrt{b^2-4ac}}.$$</span><br /></p>
 </section><section id="levels" class="slide level2">
 <h2>Levels</h2>
-<p>You can have as many levels as you want. Example:</p>
+<ul>
+<li>You can have as many levels as you want. Example:</li>
+</ul>
 <pre><code># Level 1 (on slides and book)
 
 ## Level 2 (on slides and book)
@@ -235,7 +320,9 @@ This is only visible in book mode or if you press 's' on the slides.
 <p>But only in books. In slides you can only have 2 levels.</p>
 </section><section id="numbering" class="slide level2">
 <h2>Numbering</h2>
-<p>You can name several slides with (I), (II), etc. But only the first one will be exported to the book. Example:</p>
+<ul>
+<li>You can name several slides with (I), (II), etc. But only the first one will be exported to the book. Example:</li>
+</ul>
 <pre><code> ## Foo Bar (I)
 
  ## Foo Bar (II)</code></pre>
@@ -244,15 +331,17 @@ This is only visible in book mode or if you press 's' on the slides.
 </section><section id="configuration-i" class="slide level2">
 <h2>Configuration (I)</h2>
 <p>We can configure the files that we want to generate from the file <strong>build.properties</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;min&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_ALTERNATIVE=</span><span class="st">&#39;med&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_ALTERNATIVE_PDF=</span><span class="st">&#39;med&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_ONLINE=</span><span class="st">&#39;max&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_ONLINE_ALTERNATIVE=</span><span class="st">&#39;max&#39;</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#GENERATION_MODE=&#39;min|med|max&#39;</span>
+<span class="va">DEFAULT_GENERATION_MODE=</span><span class="st">&#39;min&#39;</span>
+
+<span class="va">GENERATE_PLUS_VERSION=</span><span class="st">&#39;yes&#39;</span>
+
+<span class="va">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
+<span class="va">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
 
 <span class="va">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
-<span class="va">BUILD_DOCX_BOOK=</span><span class="st">&#39;med&#39;</span>
+<span class="va">BUILD_PDF_BOOK=</span><span class="st">&#39;med&#39;</span>
+<span class="va">BUILD_DOCX_BOOK=</span><span class="st">&#39;max&#39;</span>
 <span class="va">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
 </section><section id="configuration-ii" class="slide level2">
 <h2>Configuration (II)</h2>
@@ -260,11 +349,10 @@ This is only visible in book mode or if you press 's' on the slides.
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">CLEAN_LIB_FOLDER=</span><span class="st">&#39;no&#39;</span>
 <span class="va">COPY_IMG_FOLDER=</span><span class="st">&#39;no&#39;</span>
 <span class="va">ZIP_EXPORT_FOLDER=</span><span class="st">&#39;no&#39;</span>
-<span class="va">NUMBER_SECTIONS=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">NUMBER_SECTIONS=</span><span class="st">&#39;no&#39;</span>
 <span class="va">NUMBER_OFFSET=</span><span class="st">&#39;no&#39;</span>
 <span class="va">CURRENT_NUMBER_OFFSET=</span>1
-<span class="va">REMOVE_MD_TO_BOOK=</span><span class="st">&#39;yes&#39;</span>
-<span class="va">REMOVE_MD_TO_SLIDES=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
+<span class="va">REMOVE_GENERATE_MD_FILES=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
 </section><section id="configuración-iii" class="slide level2">
 <h2>Configuración (III)</h2>
 <p>We can also configure some other stufs aboout reveal.js from the file <strong>build.properties</strong></p>
@@ -274,13 +362,15 @@ This is only visible in book mode or if you press 's' on the slides.
 <span class="va">REVEAL_JS_DEFAULT_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span>
 <span class="va">REVEAL_JS_TITLE_FOOTER=</span><span class="st">&quot;&#39;MarkdownSlides by @asanzdiego :-)&#39;&quot;</span>
 <span class="va">REVEAL_JS_SHOW_MENU=</span><span class="st">&#39;yes&#39;</span>
-<span class="va">REVEAL_JS_ONLINE=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
+<span class="va">REVEAL_JS_SHOW_CHALKBOARD=</span><span class="st">&#39;yes&#39;</span>
+<span class="va">REVEAL_JS_ONLINE=</span><span class="st">&#39;no&#39;</span></code></pre></div>
 </section><section id="build" class="slide level2">
 <h2>Build</h2>
-<p>In the root folder you have to execute:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">./build.sh</span> [clean] [mode] [folder]</code></pre></div>
 <ul>
-<li><p>[<strong>clean</strong>] clean the folder <strong>lib</strong> and download the dependencies again.</p></li>
+<li>In the root folder you have to execute:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">./build.sh</span> [mode] [folder]</code></pre></div>
+<ul>
 <li><p>[<strong>mode</strong>] can take the next values: <strong>min, med o máx</strong>.</p></li>
 <li><p>[<strong>folder</strong>] folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
 </ul>
@@ -362,7 +452,7 @@ This is only visible in book mode or if you press 's' on the slides.
 <li>New format 'epub'.</li>
 <li>Added 'bash strict mode'.</li>
 <li>Added 'build.properties' to configure file generation.</li>
-<li>Added command 'clean' to clean the lib folder.</li>
+<li>Added the command 'clean' to clean the lib folder.</li>
 <li>Download a specific version of external library.</li>
 <li>Added notes only visible in book mode or if you press 's' on the slides.</li>
 <li>Normalization of images in slides.</li>
@@ -389,10 +479,13 @@ This is only visible in book mode or if you press 's' on the slides.
 </section><section id="relese-5.0" class="slide level2">
 <h2>Relese 5.0</h2>
 <ul>
+<li>Clean the code.</li>
 <li>Fixed some bugs.</li>
+<li>Removed the command 'clean' to clean the lib folder because it can be done via properties file.</li>
 <li>Added again the option to export to PDF in book format.</li>
 <li>Added the possibility to import files or fragments from an external file.</li>
-<li>Added the plugin <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard" class="uri">https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard</a></li>
+<li>Added the plugin <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard">chalkboard</a> thanks to <a href="https://twitter.com/chavarria1991">Marcos Chavarría</a>.</li>
+<li>Added the possibility to create a 'plus' version with extra information in slides and books.</li>
 </ul>
 </section></section>
 <section><section id="adolfo-sanz-de-diego-author" class="titleslide slide level1"><h1><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Author</h1></section><section id="adolfo-sanz-de-diego" class="slide level2">
@@ -425,8 +518,8 @@ This is only visible in book mode or if you press 's' on the slides.
     </div>
   </div>
 
-  <script src="https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//lib/js/head.min.js"></script>
-  <script src="https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//js/reveal.js"></script>
+  <script src="../lib/reveal.js//lib/js/head.min.js"></script>
+  <script src="../lib/reveal.js//js/reveal.js"></script>
 
   <script>
 
@@ -481,17 +574,17 @@ This is only visible in book mode or if you press 's' on the slides.
             // Specifies the themes that will be available in the themes
             // menu panel. Set to 'false' to hide themes panel.
             themes: [
-                { name: 'Black', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/black.css' },
-                { name: 'White', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/white.css' },
-                { name: 'League', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/league.css' },
-                { name: 'Sky', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/sky.css' },
-                { name: 'Beige', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/beige.css' },
-                { name: 'Simple', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/simple.css' },
-                { name: 'Serif', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/serif.css' },
-                { name: 'Blood', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/blood.css' },
-                { name: 'Night', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/night.css' },
-                { name: 'Moon', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/moon.css' },
-                { name: 'Solarized', theme: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//css/theme/solarized.css' }
+                { name: 'Black', theme: '../lib/reveal.js//css/theme/black.css' },
+                { name: 'White', theme: '../lib/reveal.js//css/theme/white.css' },
+                { name: 'League', theme: '../lib/reveal.js//css/theme/league.css' },
+                { name: 'Sky', theme: '../lib/reveal.js//css/theme/sky.css' },
+                { name: 'Beige', theme: '../lib/reveal.js//css/theme/beige.css' },
+                { name: 'Simple', theme: '../lib/reveal.js//css/theme/simple.css' },
+                { name: 'Serif', theme: '../lib/reveal.js//css/theme/serif.css' },
+                { name: 'Blood', theme: '../lib/reveal.js//css/theme/blood.css' },
+                { name: 'Night', theme: '../lib/reveal.js//css/theme/night.css' },
+                { name: 'Moon', theme: '../lib/reveal.js//css/theme/moon.css' },
+                { name: 'Solarized', theme: '../lib/reveal.js//css/theme/solarized.css' }
             ],
 
             // Specifies if the transitions menu panel will be shown.
@@ -519,16 +612,27 @@ This is only visible in book mode or if you press 's' on the slides.
           TeX: { Macros: { RR: "{\\bf R}" } }
         },
 
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+          8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+          88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+          89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+        },
+
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//plugin/math/math.js', async: true }, 
-          { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-title-footer//plugin/title-footer/title-footer.js', async: true, callback: function() { 
+          { src: '../lib/reveal.js//plugin/math/math.js', async: true }, 
+          { src: '../lib/reveal.js-title-footer//plugin/title-footer/title-footer.js', async: true, callback: function() { 
               title_footer.initialize(null, 'rgba(0,0,0,0)');
             } },
-          { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js-menu//menu.js', async: true },
-          { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://asanzdiego.github.io/markdownslides/doc/lib/reveal.js//plugin/notes/notes.js', async: true }
+          { src: '../lib/reveal.js-menu//menu.js', async: true },
+          { src: '../lib/reveal.js-plugins/chalkboard//chalkboard.js', async: true },
+          { src: '../lib/reveal.js//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../lib/reveal.js//plugin/zoom-js/zoom.js', async: true },
+          { src: '../lib/reveal.js//plugin/notes/notes.js', async: true }
         ]
       });
     </script>

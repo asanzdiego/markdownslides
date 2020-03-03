@@ -133,7 +133,7 @@ function normalizeImages() {
   local TYPE="$2"
   local PLUS="$3"
 
-  if [ "$2" == "slides" ]; then
+  if [ "$TYPE" == "slides" ]; then
     # close div after .png)
     sed -i 's/.png)$/.png){ width=80% class=center }\n/g' "../export/$NAME$TYPE$PLUS.md"
     # close div after .jpg)
@@ -332,6 +332,17 @@ function buildRevealSlidesPdf() {
   rm -f "../export/$NAME-slides-pdf$PLUS.html"
 }
 
+function buildPowerPointSlides() {
+  
+  local NAME="$1"
+  local PLUS="$2"
+  
+  info "Exporting...                   ../export/$NAME-slides$PLUS.pptx"
+
+  pandoc -w pptx \
+    "$NUMBERS" -o "../export/$NAME-slides$PLUS.pptx" "../export/$NAME-slides$PLUS.md"
+}
+
 function buildHtmlBook() {
   
   local NAME="$1"
@@ -408,6 +419,9 @@ function exportMdToSlides() {
   fi
   if [ "$(build "$BUILD_REVEAL_SLIDES_PDF")" == "yes" ]; then
     buildRevealSlidesPdf "$NAME" "$PLUS"
+  fi
+  if [ "$(build "$BUILD_POWER_POINT_SLIDES")" == "yes" ]; then
+    buildPowerPointSlides "$NAME" "$PLUS"
   fi
 
   info "- - - - - - - - - - - - - - - -"

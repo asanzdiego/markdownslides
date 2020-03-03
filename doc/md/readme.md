@@ -196,6 +196,14 @@ Will be converted to:
 
 $$x = {-b \pm \sqrt{b^2-4ac}}.$$
 
+## Code
+
+~~~{.javascript}
+function helloWorld() {
+    alert('Hello world');
+}
+~~~
+
 ## Levels
 
 - You can have as many levels as you want. Example:

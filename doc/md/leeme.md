@@ -16,6 +16,7 @@ sin preocuparnos por el estilo, solo por el contenido.
 
 ![](../img/markdownslides.png)
 
+
 ## Ejemplos (I)
 
 - A partir de un fichero [MARKDOWN](https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md)
@@ -193,6 +194,14 @@ $$x = {-b \pm \sqrt{b^2-4ac}}.$$
 Se transforma en:
 
 $$x = {-b \pm \sqrt{b^2-4ac}}.$$
+
+## Código
+
+~~~{.javascript}
+function holaMundo() {
+    alert('Hola mundo');
+}
+~~~
 
 ## Niveles
 

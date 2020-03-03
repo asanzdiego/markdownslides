@@ -8,41 +8,67 @@
   <meta name="author" content="Adolfo Sanz De Diego">
   <title>Markdown Slides [ES]</title>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-pre, code { background-color: #f8f8f8; }
-code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code > span.dt { color: #204a87; } /* DataType */
-code > span.dv { color: #0000cf; } /* DecVal */
-code > span.bn { color: #0000cf; } /* BaseN */
-code > span.fl { color: #0000cf; } /* Float */
-code > span.ch { color: #4e9a06; } /* Char */
-code > span.st { color: #4e9a06; } /* String */
-code > span.co { color: #8f5902; font-style: italic; } /* Comment */
-code > span.ot { color: #8f5902; } /* Other */
-code > span.al { color: #ef2929; } /* Alert */
-code > span.fu { color: #000000; } /* Function */
-code > span.er { color: #a40000; font-weight: bold; } /* Error */
-code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #000000; } /* Constant */
-code > span.sc { color: #000000; } /* SpecialChar */
-code > span.vs { color: #4e9a06; } /* VerbatimString */
-code > span.ss { color: #4e9a06; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #000000; } /* Variable */
-code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code > span.ex { } /* Extension */
-code > span.at { color: #c4a000; } /* Attribute */
-code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <style type="text/css">
     pre, code {
@@ -69,40 +95,47 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 </header>
 <nav id="TOC">
 <ul>
-<li><a href="#acerca-de">Acerca de</a><ul>
+<li><a href="#acerca-de">Acerca de</a>
+<ul>
 <li><a href="#qué-es-esto">¿Qué es esto?</a></li>
 <li><a href="#ejemplos">Ejemplos</a></li>
 <li><a href="#colaboradores">Colaboradores</a></li>
 <li><a href="#licencia">Licencia</a></li>
 </ul></li>
-<li><a href="#instalación">Instalación</a><ul>
+<li><a href="#instalación">Instalación</a>
+<ul>
 <li><a href="#dependencias">Dependencias</a></li>
 <li><a href="#requisitos">Requisitos</a></li>
 <li><a href="#descarga">Descarga</a></li>
-<li><a href="#docker">Docker</a><ul>
+<li><a href="#docker">Docker</a>
+<ul>
 <li><a href="#construir-la-imagen">Construir la imagen</a></li>
 <li><a href="#lanzar-el-contenedor">Lanzar el contenedor</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#manejo">Manejo</a><ul>
+<li><a href="#manejo">Manejo</a>
+<ul>
 <li><a href="#creación">Creación</a></li>
 <li><a href="#imports">Imports</a></li>
 <li><a href="#notas">Notas</a></li>
 <li><a href="#notas-plus">Notas plus</a></li>
 <li><a href="#mathjax">MathJax</a></li>
+<li><a href="#código">Código</a></li>
 <li><a href="#niveles">Niveles</a></li>
 <li><a href="#numeración">Numeración</a></li>
 <li><a href="#configuración">Configuración</a></li>
 <li><a href="#generación">Generación</a></li>
 </ul></li>
-<li><a href="#releases-notes">Releases notes</a><ul>
+<li><a href="#releases-notes">Releases notes</a>
+<ul>
 <li><a href="#versión-1.0">Versión 1.0</a></li>
 <li><a href="#versión-2.0">Versión 2.0</a></li>
 <li><a href="#versión-3.0">Versión 3.0</a></li>
 <li><a href="#versión-4.0">Versión 4.0</a></li>
 <li><a href="#versión-5.0">Versión 5.0</a></li>
 </ul></li>
-<li><a href="#adolfo-sanz-de-diego-autor"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Autor</a><ul>
+<li><a href="#adolfo-sanz-de-diego-autor"><img src="../img/asanzdiego.png" style="box-shadow:none;vertical-align:middle;width:100px;" alt="Adolfo Sanz De Diego" /> Autor</a>
+<ul>
 <li><a href="#adolfo-sanz-de-diego">Adolfo Sanz De Diego</a></li>
 <li><a href="#algunos-proyectos">Algunos proyectos</a></li>
 <li><a href="#donde-encontrarme">¿Donde encontrarme?</a></li>
@@ -115,9 +148,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><p><strong>MarkdownSlides</strong> es un generador de <strong>slides</strong> Reveal.js y PDF a <strong>partir de ficheros MARKDOWN</strong>, que también genera documentos HTML, EPUB y DOCX.</p></li>
 <li><p>La idea es que <strong>a partir de un mismo fichero MARKDOWN podamos obtener slides y libros</strong> sin preocuparnos por el estilo, solo por el contenido.</p></li>
 </ul>
-<figure>
-<img src="../img/markdownslides.png" class="center" style="width:50.0%" />
-</figure>
+<p><img src="../img/markdownslides.png" class="center" style="width:50.0%" /></p>
 <h2 id="ejemplos">Ejemplos</h2>
 <ul>
 <li>A partir de un fichero <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md">MARKDOWN</a> genera:
@@ -129,7 +160,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx">docx-book</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.pdf">pdf-book</a></li>
 </ul></li>
-<li>A partir de ese mismo fichero <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md">MARKDOWN</a> se puede generar también <strong>ficheros &quot;plus&quot;</strong>:
+<li>A partir de ese mismo fichero <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/leeme.md">MARKDOWN</a> se puede generar también <strong>ficheros “plus”</strong>:
 <ul>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides-plus.html">reveal-slides-plus</a></li>
 <li><a href="http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides-plus.pdf">reveal-slides-pdf-plus</a></li>
@@ -149,14 +180,8 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <h2 id="licencia">Licencia</h2>
 <ul>
-<li><strong>Este obra está bajo una licencia:</strong>
-<ul>
-<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Reconocimiento-CompartirIgual 3.0</a></li>
-</ul></li>
-<li><strong>El código fuente de los programas están bajo una licencia:</strong>
-<ul>
-<li><a href="http://www.viti.es/gnu/licenses/gpl.html">GPL 3.0</a></li>
-</ul></li>
+<li><strong>Este obra está bajo una licencia:</strong> - <a href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Reconocimiento-CompartirIgual 3.0</a></li>
+<li><strong>El código fuente de los programas están bajo una licencia:</strong> - <a href="http://www.viti.es/gnu/licenses/gpl.html">GPL 3.0</a></li>
 </ul>
 <h1 id="instalación">Instalación</h1>
 <h2 id="dependencias">Dependencias</h2>
@@ -228,24 +253,23 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 - Line 3 of import-2.md
 - Line 4 of import-2.md</code></pre>
 <p>Cuarto ejemplo:</p>
-<pre><code> ~~~
- @import import/import-1.md startLine=2 endLine=3 showNumberLines
- ~~~</code></pre>
+<pre><code></code></pre>
+<p><span class="citation" data-cites="import">@import</span> import/import-1.md startLine=2 endLine=3 showNumberLines ~~~ ~~~</p>
 <pre><code>2 - Line 2 of import-1.md
 3 - Line 3 of import-1.md</code></pre>
 <h2 id="notas">Notas</h2>
 <ul>
-<li>Puedes añadir notas que serán visibles en modo libro o si <strong>pulsas la letra 's' en las slides</strong> mediante <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> y <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</li>
+<li>Puedes añadir notas que serán visibles en modo libro o si <strong>pulsas la letra ‘s’ en las slides</strong> mediante <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> y <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</li>
 </ul>
 <pre><code>&lt;aside class=&quot;notes&quot;&gt;
 Esto solo es visible en modo libro o si pulsas &#39;s&#39; en las slides.
 &lt;/aside&gt; </code></pre>
 <aside class="notes">
-Esto solo es visible en modo libro o si pulsas 's' en las slides.
+Esto solo es visible en modo libro o si pulsas ‘s’ en las slides.
 </aside>
 <h2 id="notas-plus">Notas plus</h2>
 <ul>
-<li>Puedes crear notas con <strong><span class="citation" data-cites="plus">@plus</span></strong> que solo estarán disponibles en ficheros &quot;plus&quot; siempre y cuando en el build.properties tengas <strong>GENERATE_PLUS_VERSION='yes'</strong></li>
+<li>Puedes crear notas con <strong><span class="citation" data-cites="plus">@plus</span></strong> que solo estarán disponibles en ficheros “plus” siempre y cuando en el build.properties tengas <strong>GENERATE_PLUS_VERSION=‘yes’</strong></li>
 </ul>
 <pre><code> @plus las lineas de abajo solo estarás disponible en la versión plus
 
@@ -265,6 +289,10 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 <pre><code>$$x = {-b \pm \sqrt{b^2-4ac}}.$$</code></pre>
 <p>Se transforma en:</p>
 <p><br /><span class="math display">$$x = {-b \pm \sqrt{b^2-4ac}}.$$</span><br /></p>
+<h2 id="código">Código</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">function</span> <span class="fu">holaMundo</span>() {</span>
+<span id="cb12-2"><a href="#cb12-2"></a>    alert(<span class="st">&#39;Hola mundo&#39;</span>)<span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>}</span></code></pre></div>
 <h2 id="niveles">Niveles</h2>
 <ul>
 <li>Puedes tener tantos niveles como quieras. Ejemplo:</li>
@@ -288,44 +316,44 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 <ul>
 <li>Podemos configurar los <strong>ficheros que queremos generar</strong> desde el fichero build.properties</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#GENERATION_MODE=&#39;min|med|max&#39;</span>
-<span class="va">DEFAULT_GENERATION_MODE=</span><span class="st">&#39;min&#39;</span>
-
-<span class="va">GENERATE_PLUS_VERSION=</span><span class="st">&#39;yes&#39;</span>
-
-<span class="va">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span>
-<span class="va">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span>
-
-<span class="va">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span>
-<span class="va">BUILD_PDF_BOOK=</span><span class="st">&#39;med&#39;</span>
-<span class="va">BUILD_DOCX_BOOK=</span><span class="st">&#39;max&#39;</span>
-<span class="va">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">#GENERATION_MODE=&#39;min|med|max&#39;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="va">DEFAULT_GENERATION_MODE=</span><span class="st">&#39;min&#39;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="va">GENERATE_PLUS_VERSION=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="va">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="va">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a></span>
+<span id="cb16-9"><a href="#cb16-9"></a><span class="va">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="va">BUILD_PDF_BOOK=</span><span class="st">&#39;med&#39;</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a><span class="va">BUILD_DOCX_BOOK=</span><span class="st">&#39;max&#39;</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a><span class="va">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></span></code></pre></div>
 <ul>
 <li>Podemos configurar también algunas cosas más desde el fichero <strong>build.properties</strong></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">CLEAN_LIB_FOLDER=</span><span class="st">&#39;no&#39;</span>
-<span class="va">COPY_IMG_FOLDER=</span><span class="st">&#39;no&#39;</span>
-<span class="va">ZIP_EXPORT_FOLDER=</span><span class="st">&#39;no&#39;</span>
-<span class="va">NUMBER_SECTIONS=</span><span class="st">&#39;no&#39;</span>
-<span class="va">NUMBER_OFFSET=</span><span class="st">&#39;no&#39;</span>
-<span class="va">CURRENT_NUMBER_OFFSET=</span>1
-<span class="va">REMOVE_GENERATE_MD_FILES=</span><span class="st">&#39;yes&#39;</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="va">CLEAN_LIB_FOLDER=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="va">COPY_IMG_FOLDER=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="va">ZIP_EXPORT_FOLDER=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="va">NUMBER_SECTIONS=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="va">NUMBER_OFFSET=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="va">CURRENT_NUMBER_OFFSET=</span>1</span>
+<span id="cb17-7"><a href="#cb17-7"></a><span class="va">REMOVE_GENERATE_MD_FILES=</span><span class="st">&#39;yes&#39;</span></span></code></pre></div>
 <ul>
 <li>Podemos configurar también algunas cosas más sobre <strong>reveal.js</strong> desde el fichero build.properties</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#THEME=&#39;black|white|league|sky|beige|simple|serif|blood|night|moon|solarized&#39;</span>
-<span class="va">REVEAL_JS_THEME=</span><span class="st">&#39;beige&#39;</span>
-<span class="va">REVEAL_JS_SHOW_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span>
-<span class="va">REVEAL_JS_DEFAULT_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span>
-<span class="va">REVEAL_JS_TITLE_FOOTER=</span><span class="st">&quot;&#39;MarkdownSlides by @asanzdiego :-)&#39;&quot;</span>
-<span class="va">REVEAL_JS_SHOW_MENU=</span><span class="st">&#39;yes&#39;</span>
-<span class="va">REVEAL_JS_SHOW_CHALKBOARD=</span><span class="st">&#39;yes&#39;</span>
-<span class="va">REVEAL_JS_ONLINE=</span><span class="st">&#39;no&#39;</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">#THEME=&#39;black|white|league|sky|beige|simple|serif|blood|night|moon|solarized&#39;</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="va">REVEAL_JS_THEME=</span><span class="st">&#39;beige&#39;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="va">REVEAL_JS_SHOW_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="va">REVEAL_JS_DEFAULT_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="va">REVEAL_JS_TITLE_FOOTER=</span><span class="st">&quot;&#39;MarkdownSlides by @asanzdiego :-)&#39;&quot;</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="va">REVEAL_JS_SHOW_MENU=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="va">REVEAL_JS_SHOW_CHALKBOARD=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="va">REVEAL_JS_ONLINE=</span><span class="st">&#39;no&#39;</span></span></code></pre></div>
 <h2 id="generación">Generación</h2>
 <ul>
 <li>Hay que posicionarse en la carpeta raiz, y ejecutar:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">./build.sh</span> [modo] [carpeta]</code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="ex">./build.sh</span> [modo] [carpeta]</span></code></pre></div>
 <ul>
 <li><p>[<strong>modo</strong>] puede tomar los valores: <strong>min, med o máx</strong>.</p></li>
 <li><p>[<strong>carpeta</strong>] donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.</p></li>
@@ -347,50 +375,50 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 <li>odt-book</li>
 <li>pdf-book</li>
 </ul></li>
-<li>Añadidos los modos de generación 'min', 'med' y 'max'.</li>
+<li>Añadidos los modos de generación ‘min’, ‘med’ y ‘max’.</li>
 <li>Descarga automática de librerías externas.</li>
-<li>Numeración, (II), (III)...</li>
+<li>Numeración, (II), (III)…</li>
 </ul>
 <h2 id="versión-2.0">Versión 2.0</h2>
 <ul>
-<li>Exporta slides a:
+<li><p>Exporta slides a:</p>
 <ul>
 <li>reveal-slides</li>
 <li>reveal-slides-pdf</li>
 <li>reveal-slides-online</li>
 </ul></li>
-<li>Exporta books a:
+<li><p>Exporta books a:</p>
 <ul>
 <li>html-book</li>
 <li>docx-book</li>
 <li>epub-book</li>
 </ul></li>
-<li>Deprecated:
+<li><p>Deprecated:</p>
 <ul>
 <li>beamer-slides</li>
 <li>deck-slides</li>
 <li>odt-book</li>
 <li>pdf-book</li>
 </ul></li>
-<li>Añadido menú gracias a <a href="https://github.com/hhkaos">Raúl Jimenez Ortega</a></li>
-<li>Añadido dockerfile gracías a <a href="https://github.com/kaneproject">Rubén Gómez García</a></li>
-<li>Limpieza de ficheros zip de las librerías gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></li>
-<li>Añadido tipo 'online' gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></li>
-<li>Arreglado fallo imágenes HTTPS gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></li>
-<li>Carga de librerias 'online' por HTTPS gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></li>
+<li><p>Añadido menú gracias a <a href="https://github.com/hhkaos">Raúl Jimenez Ortega</a></p></li>
+<li><p>Añadido dockerfile gracías a <a href="https://github.com/kaneproject">Rubén Gómez García</a></p></li>
+<li><p>Limpieza de ficheros zip de las librerías gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></p></li>
+<li><p>Añadido tipo ‘online’ gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></p></li>
+<li><p>Arreglado fallo imágenes HTTPS gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></p></li>
+<li><p>Carga de librerias ‘online’ por HTTPS gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></p></li>
 <li><p>Configuración resolución PDF gracias a <a href="https://github.com/cesarseoane">Cesar Seoane</a></p></li>
-<li>Nuevo formato 'epub'.</li>
-<li>Añadido 'bash strict mode'.</li>
-<li>Añadido 'build.properties' para configurar la generación de ficheros.</li>
-<li>Añadido comando 'clean' para limpiar la carpeta lib.</li>
-<li>Descarga de una versión concreta de librería externa.</li>
-<li>Añadidas notas solo visibles en modo libro o si pulsas 's' en las slides.</li>
+<li><p>Nuevo formato ‘epub’.</p></li>
+<li><p>Añadido ‘bash strict mode’.</p></li>
+<li><p>Añadido ‘build.properties’ para configurar la generación de ficheros.</p></li>
+<li><p>Añadido comando ‘clean’ para limpiar la carpeta lib.</p></li>
+<li><p>Descarga de una versión concreta de librería externa.</p></li>
+<li><p>Añadidas notas solo visibles en modo libro o si pulsas ‘s’ en las slides.</p></li>
 <li><p>Normalización de imágenes en slides.</p></li>
 </ul>
 <h2 id="versión-3.0">Versión 3.0</h2>
 <ul>
 <li>Limpieza de código.</li>
-<li>Eliminada la exportación de archivos &quot;deprecated&quot;.</li>
+<li>Eliminada la exportación de archivos “deprecated”.</li>
 <li>Actualización de las dependencias de <a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a>.</li>
 <li>Exportación a PDF con <a href="https://github.com/astefanutti/decktape">DeckTape</a>.</li>
 <li>Creación de libro de varios ficheros md con numeración.</li>
@@ -407,13 +435,13 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 <ul>
 <li>Limpieza de código.</li>
 <li>Arreglados algunos fallos.</li>
-<li>Eliminado el comando 'clean' para limpiar la carpeta lib pues se puede hacer via fichero de propiedades.</li>
+<li>Eliminado el comando ‘clean’ para limpiar la carpeta lib pues se puede hacer via fichero de propiedades.</li>
 <li>Añadido de nuevo la opción de expotación a PDF en formato libro.</li>
 <li>Añadida la posibilidad de importar ficheros o fragmentos de un fichero externo.</li>
 <li>Añadido el plugin <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard">chalkboard</a> gracias <a href="https://twitter.com/chavarria1991">Marcos Chavarría</a>.</li>
-<li>Añadida la posibilidad de crear una versión 'plus' con información extra en slides y libros.</li>
+<li>Añadida la posibilidad de crear una versión ‘plus’ con información extra en slides y libros.</li>
 </ul>
-<h1 id="adolfo-sanz-de-diego-autor"><img src="../img/asanzdiego.png" alt="Adolfo Sanz De Diego" style="box-shadow:none;vertical-align:middle;width:100px;" /> Autor</h1>
+<h1 id="adolfo-sanz-de-diego-autor"><img src="../img/asanzdiego.png" style="box-shadow:none;vertical-align:middle;width:100px;" alt="Adolfo Sanz De Diego" /> Autor</h1>
 <h2 id="adolfo-sanz-de-diego">Adolfo Sanz De Diego</h2>
 <ul>
 <li><p>Empecé <strong>desarrollando aplicaciones web</strong>, hasta que di el salto a la docencia.</p></li>
@@ -422,7 +450,7 @@ Esto solo es visible en modo libro o si pulsas 's' en las slides.
 </ul>
 <h2 id="algunos-proyectos">Algunos proyectos</h2>
 <ul>
-<li><p><img src="../img/hackathon-lovers-logo.png" alt="Hackathon Lovers" height="30" /> <a href="http://hackathonlovers.com">Hackathon Lovers</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
+<li><p><img src="../img/hackathon-lovers-logo.png" height="30" alt="Hackathon Lovers" /> <a href="http://hackathonlovers.com">Hackathon Lovers</a>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.</p></li>
 <li><p><a href="http://pasmangen.github.io">Password Manager Generator</a>: un gestor de contraseñas online.</p></li>
 <li><p><a href="https://github.com/asanzdiego/markdownslides">MarkdownSlides</a>: un script para crear slides a partir de ficheros MD.</p></li>
 </ul>

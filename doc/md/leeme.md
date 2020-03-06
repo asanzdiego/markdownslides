@@ -45,10 +45,12 @@ se puede generar también **ficheros "plus"**:
 
 ## Licencia
 
-> - **Este obra está bajo una licencia:**
->       - [Creative Commons Reconocimiento-CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/es/)
-> - **El código fuente de los programas están bajo una licencia:**
->       - [GPL 3.0](http://www.viti.es/gnu/licenses/gpl.html)
+::: incremental
+- **Este obra está bajo una licencia:**
+    - [Creative Commons Reconocimiento-CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/es/)
+- **El código fuente de los programas están bajo una licencia:**
+    - [GPL 3.0](http://www.viti.es/gnu/licenses/gpl.html)
+:::
 
 # Instalación
 
@@ -68,7 +70,7 @@ se puede generar también **ficheros "plus"**:
 
 ## Descarga
 
-<https://github.com/asanzdiego/markdownslides/archive/5.0.zip>
+<https://github.com/asanzdiego/markdownslides/archive/6.0.zip>
 
 ## Docker
 
@@ -142,9 +144,7 @@ Tercer ejemplo:
 Cuarto ejemplo: 
 
 ~~~
- ~~~
  @import import/import-1.md startLine=2 endLine=3 showNumberLines
- ~~~
 ~~~
 
 ~~~
@@ -157,9 +157,9 @@ Cuarto ejemplo:
 mediante **@start-notes** y **@end-notes**.
 
 ~~~
-@start-notes
-Esto solo es visible en modo libro o si pulsas 's' en las slides.
-@end-notes 
+ @start-notes
+ Esto solo es visible en modo libro o si pulsas 's' en las slides.
+ @end-notes 
 ~~~
 
 @start-notes
@@ -384,6 +384,13 @@ REVEAL_JS_ONLINE='no'
 - Añadida la posibilidad de importar ficheros o fragmentos de un fichero externo.
 - Añadido el plugin [chalkboard](https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard) gracias [Marcos Chavarría](https://twitter.com/chavarria1991).
 - Añadida la posibilidad de crear una versión 'plus' con información extra en slides y libros.
+
+## Versión 6.0
+
+- Añadida la posiibilidad de exportar a PowerPoint.
+- Actualizado todas las librerías a la última versión.
+- Actualizadas las plantillas.
+- Actualizado el Dockerfile.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 

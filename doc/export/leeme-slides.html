@@ -10,6 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../lib/reveal.js//css/reset.css">
   <link rel="stylesheet" href="../lib/reveal.js//css/reveal.css">
   <link rel="stylesheet" href="../lib/reveal.js-title-footer//plugin/title-footer/title-footer.css">
   <link rel="stylesheet" href="../lib/reveal.js-menu//menu.css">
@@ -77,6 +78,76 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../lib/reveal.js//css/theme/beige.css" id="theme">
   <!-- Printing and PDF exports -->
@@ -151,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <div class="reveal">
     <div class="slides">
 
-<section class="only-print-parent">
+<section class="only-print-parent"  id="title-slide">
     <div class="only-print-child">
       <h1 class="title">Markdown Slides [ES]</h2>
       <h2 class="author">Adolfo Sanz De Diego</h2>
@@ -215,10 +286,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="licencia" class="slide level2">
 <h2>Licencia</h2>
+<div>
 <ul>
-<li class="fragment"><strong>Este obra está bajo una licencia:</strong> - <a href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Reconocimiento-CompartirIgual 3.0</a></li>
-<li class="fragment"><strong>El código fuente de los programas están bajo una licencia:</strong> - <a href="http://www.viti.es/gnu/licenses/gpl.html">GPL 3.0</a></li>
+<li class="fragment"><strong>Este obra está bajo una licencia:</strong>
+<ul>
+<li class="fragment"><a href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Reconocimiento-CompartirIgual 3.0</a></li>
+</ul></li>
+<li class="fragment"><strong>El código fuente de los programas están bajo una licencia:</strong>
+<ul>
+<li class="fragment"><a href="http://www.viti.es/gnu/licenses/gpl.html">GPL 3.0</a></li>
+</ul></li>
 </ul>
+</div>
 </section></section>
 <section>
 <section id="instalación" class="title-slide slide level1">
@@ -322,8 +401,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="imports-iv" class="slide level2">
 <h2>Imports (IV)</h2>
 <p>Cuarto ejemplo:</p>
-<pre><code></code></pre>
-<p><span class="citation" data-cites="import">@import</span> import/import-1.md startLine=2 endLine=3 showNumberLines ~~~ ~~~</p>
+<pre><code> @import import/import-1.md startLine=2 endLine=3 showNumberLines</code></pre>
 <pre><code>2 - Line 2 of import-1.md
 3 - Line 3 of import-1.md</code></pre>
 </section>
@@ -332,11 +410,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Puedes añadir notas que serán visibles en modo libro o si <strong>pulsas la letra ‘s’ en las slides</strong> mediante <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> y <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</li>
 </ul>
-<pre><code>&lt;aside class=&quot;notes&quot;&gt;
-Esto solo es visible en modo libro o si pulsas &#39;s&#39; en las slides.
-&lt;/aside&gt; </code></pre>
+<pre><code> @start-notes
+ Esto solo es visible en modo libro o si pulsas &#39;s&#39; en las slides.
+ @end-notes </code></pre>
 <aside class="notes">
-Esto solo es visible en modo libro o si pulsas ‘s’ en las slides.
+<p>Esto solo es visible en modo libro o si pulsas ‘s’ en las slides.</p>
 </aside>
 </section>
 <section id="notas-plus" class="slide level2">
@@ -356,7 +434,7 @@ Esto solo es visible en modo libro o si pulsas ‘s’ en las slides.
 <p>Así esto:</p>
 <pre><code>$$x = {-b \pm \sqrt{b^2-4ac}}.$$</code></pre>
 <p>Se transforma en:</p>
-<p><br /><span class="math display">$$x = {-b \pm \sqrt{b^2-4ac}}.$$</span><br /></p>
+<p><span class="math display">\[x = {-b \pm \sqrt{b^2-4ac}}.\]</span></p>
 </section>
 <section id="código" class="slide level2">
 <h2>Código</h2>
@@ -569,6 +647,15 @@ Esto solo es visible en modo libro o si pulsas ‘s’ en las slides.
 <li>Añadido el plugin <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard">chalkboard</a> gracias <a href="https://twitter.com/chavarria1991">Marcos Chavarría</a>.</li>
 <li>Añadida la posibilidad de crear una versión ‘plus’ con información extra en slides y libros.</li>
 </ul>
+</section>
+<section id="versión-6.0" class="slide level2">
+<h2>Versión 6.0</h2>
+<ul>
+<li>Añadida la posiibilidad de exportar a PowerPoint.</li>
+<li>Actualizado todas las librerías a la última versión.</li>
+<li>Actualizadas las plantillas.</li>
+<li>Actualizado el Dockerfile.</li>
+</ul>
 </section></section>
 <section>
 <section id="adolfo-sanz-de-diego-autor" class="title-slide slide level1">
@@ -617,6 +704,8 @@ Esto solo es visible en modo libro o si pulsas ‘s’ en las slides.
       Reveal.initialize({
         pdfMaxPagesPerSlide: 1,
         history: true,
+        // Push each slide change to the browser history
+        history: true,
         // Transition style
         transition: 'fade', // none/fade/slide/convex/concave/zoom
         // The "normal" size of the presentation, aspect ratio will be preserved
@@ -629,6 +718,22 @@ Esto solo es visible en modo libro o si pulsas ‘s’ en las slides.
         // Bounds for smallest/largest possible scale to apply to content
         minScale: 0.9,
         maxScale: 1.1,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
         menu: {
             // Specifies which side of the presentation the menu will
             // be shown. Use 'left' or 'right'.
@@ -694,26 +799,18 @@ Esto solo es visible en modo libro o si pulsas ‘s’ en las slides.
             keyboard: true
         },
 
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
-          // pass other options into `MathJax.Hub.Config()`
-          TeX: { Macros: { RR: "{\\bf R}" } }
-        },
-
         keyboard: {
           67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
           66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
-          46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
-          8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
-          68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
-          88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
-          89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+          46: function() { RevealChalkboard.clear() },			// clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },			// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() },		// downlad recorded chalkboard drawing when 'd' is pressed
+          88: function() { RevealChalkboard.colorNext() },		// cycle colors forward when 'x' is pressed
+          89: function() { RevealChalkboard.colorPrev() },		// cycle colors backward when 'y' is pressed
         },
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: '../lib/reveal.js//plugin/math/math.js', async: true }, 
           { src: '../lib/reveal.js-title-footer//plugin/title-footer/title-footer.js', async: true, callback: function() { 
               title_footer.initialize(null, 'rgba(0,0,0,0)');
             } },
@@ -721,6 +818,7 @@ Esto solo es visible en modo libro o si pulsas ‘s’ en las slides.
           { src: '../lib/reveal.js-plugins/chalkboard//chalkboard.js', async: true },
           { src: '../lib/reveal.js//lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: '../lib/reveal.js//plugin/zoom-js/zoom.js', async: true },
+          { src: '../lib/reveal.js//plugin/math/math.js', async: true },
           { src: '../lib/reveal.js//plugin/notes/notes.js', async: true }
         ]
       });

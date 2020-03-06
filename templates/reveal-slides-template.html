@@ -20,6 +20,7 @@ $endif$
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="$revealjs-url$/css/reset.css">
   <link rel="stylesheet" href="$revealjs-url$/css/reveal.css">
 $if(revealjs-title-footer)$
   <link rel="stylesheet" href="$revealjs-title-footer-url$/plugin/title-footer/title-footer.css">
@@ -36,6 +37,9 @@ $if(highlighting-css)$
 $highlighting-css$
   </style>
 $endif$
+  <style>
+    $styles.html()$
+  </style>
 $if(theme)$
   <link rel="stylesheet" href="$revealjs-url$/css/theme/$theme$.css" id="theme">
 $else$
@@ -126,7 +130,7 @@ $endfor$
     <div class="slides">
 
 $if(title)$
-<section class="only-print-parent">
+<section class="only-print-parent"  id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$>
     <div class="only-print-child">
       <h1 class="title">$title$</h1>
 $for(author)$
@@ -140,7 +144,7 @@ $endif$
 $endif$
 $if(toc)$
 <section id="$idprefix$TOC">
-$toc$
+$table-of-contents$
 </section>
 $endif$
 
@@ -170,6 +174,12 @@ $if(slideNumber)$
         // Display the page number of the current slide
         slideNumber: $slideNumber$,
 $endif$
+        // Push each slide change to the browser history
+$if(history)$
+        history: $history$,
+$else$
+        history: true,
+$endif$
 $if(keyboard)$
         // Enable keyboard shortcuts for navigation
         keyboard: $keyboard$,
@@ -193,6 +203,10 @@ $endif$
 $if(rtl)$
         // Change the presentation direction to be RTL
         rtl: $rtl$,
+$endif$
+$if(navigationMode)$
+        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        navigationMode: '$navigationMode$',
 $endif$
 $if(fragments)$
         // Turns fragments on and off globally
@@ -226,6 +240,10 @@ $if(mouseWheel)$
         // Enable slide navigation via mouse wheel
         mouseWheel: $mouseWheel$,
 $endif$
+$if(rollingLinks)$
+        // Apply a 3D roll to links on hover
+        rollingLinks: $rollingLinks$,
+$endif$
 $if(hideAddressBar)$
         // Hides the address bar on mobile devices
         hideAddressBar: $hideAddressBar$,
@@ -253,6 +271,11 @@ $endif$
 $if(parallaxBackgroundImage)$
         // Parallax background image
         parallaxBackgroundImage: '$parallaxBackgroundImage$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+$else$
+$if(background-image)$
+       // Parallax background image
+       parallaxBackgroundImage: '$background-image$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+$endif$
 $endif$
 $if(parallaxBackgroundSize)$
         // Parallax background size
@@ -285,6 +308,28 @@ $if(minScale)$
 $endif$
 $if(maxScale)$
         maxScale: $maxScale$,
+$endif$
+$if(zoomKey)$
+        // Modifier key used to click-zoom to part of the slide
+        zoomKey: '$zoomKey$',
+$endif$
+$if(mathjax)$
+        math: {
+          mathjax: '$mathjaxurl$',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 $endif$
         menu: {
             // Specifies which side of the presentation the menu will
@@ -351,28 +396,20 @@ $endif$
             keyboard: true
         },
 
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
-          // pass other options into `MathJax.Hub.Config()`
-          TeX: { Macros: { RR: "{\\bf R}" } }
-        },
-
 $if(revealjs-show-chalkboard)$
         keyboard: {
           67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
           66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
-          46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
-          8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
-          68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
-          88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
-          89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+          46: function() { RevealChalkboard.clear() },			// clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },			// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() },		// downlad recorded chalkboard drawing when 'd' is pressed
+          88: function() { RevealChalkboard.colorNext() },		// cycle colors forward when 'x' is pressed
+          89: function() { RevealChalkboard.colorPrev() },		// cycle colors backward when 'y' is pressed
         },
 $endif$
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: '$revealjs-url$/plugin/math/math.js', async: true }, 
 $if(revealjs-title-footer)$
           { src: '$revealjs-title-footer-url$/plugin/title-footer/title-footer.js', async: true, callback: function() { 
               title_footer.initialize($revealjs-title-footer$, 'rgba(0,0,0,0)');
@@ -386,6 +423,13 @@ $if(revealjs-show-chalkboard)$
 $endif$
           { src: '$revealjs-url$/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: '$revealjs-url$/plugin/zoom-js/zoom.js', async: true },
+$if(notes-server)$
+          { src: '$revealjs-url$/socket.io/socket.io.js', async: true },
+          { src: '$revealjs-url$/plugin/notes-server/client.js', async: true },
+$endif$
+$if(mathjax)$
+          { src: '$revealjs-url$/plugin/math/math.js', async: true },
+$endif$
           { src: '$revealjs-url$/plugin/notes/notes.js', async: true }
         ]
       });

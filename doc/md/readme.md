@@ -44,10 +44,12 @@ generate:
 
 ## Licence
 
-> - **This work is licensed under a:**
->       - [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by-sa/3.0//)
-> - **The program source code are licensed under a:**
->       - [GPL 3.0](http://www.gnu.org/licenses/gpl.html)
+::: incremental
+- **This work is licensed under a:**
+    - [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by-sa/3.0//)
+- **The program source code are licensed under a:**
+    - [GPL 3.0](http://www.gnu.org/licenses/gpl.html)
+:::
 
 # Instalation
 
@@ -67,7 +69,7 @@ generate:
 
 ## Download
 
-<https://github.com/asanzdiego/markdownslides/archive/5.0.zip>
+<https://github.com/asanzdiego/markdownslides/archive/6.0.zip>
 
 ## Docker
 
@@ -142,9 +144,7 @@ Third example:
 Fourth example: 
 
 ~~~
- ~~~
  @import import/import-1.md startLine=2 endLine=3 showNumberLines
- ~~~
 ~~~
 
 ~~~
@@ -157,9 +157,9 @@ Fourth example:
 with **@start-notes** and **@end-notes**.
 
 ~~~
-@start-notes
-This is only visible in book mode or if you press 's' on the slides.
-@end-notes
+ @start-notes
+ This is only visible in book mode or if you press 's' on the slides.
+ @end-notes
 ~~~
 
 @start-notes
@@ -386,6 +386,13 @@ REVEAL_JS_ONLINE='no'
 - Added the possibility to import files or fragments from an external file.
 - Added the plugin  [chalkboard](https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard) thanks to [Marcos Chavarría](https://twitter.com/chavarria1991).
 - Added the possibility to create a 'plus' version with extra information in slides and books.
+
+## Version 6.0
+
+- Added the possibility to export to PowerPoint.
+- Updated all the libraries to the latest version.
+- Updated the templates.
+- Updated the Dockerfile.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 

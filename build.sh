@@ -87,8 +87,8 @@ function downloadLib() {
 
 function downloadLibs() {
 
-    downloadLib https://github.com/hakimel/reveal.js/archive/3.8.0.zip \
-      reveal.js-3.8.0 reveal.js
+    downloadLib https://github.com/hakimel/reveal.js/archive/3.9.2.zip \
+      reveal.js-3.9.2 reveal.js
     downloadLib https://github.com/denehyg/reveal.js-menu/archive/1.2.0.zip \
       reveal.js-menu-1.2.0 reveal.js-menu
     downloadLib https://github.com/e-gor/Reveal.js-Title-Footer/archive/master.zip \
@@ -187,11 +187,23 @@ function replaceNotes() {
   local TYPE="$2"
   local PLUS="$3"
 
-  # replace @start-notes with <aside class="notes">
-  sed -i 's/^@start-notes/<aside class="notes">/g' "../export/$NAME$TYPE$PLUS.md"
+  if [ "$TYPE" == "-slides" ]; then
 
-  # replace @end-notes with </aside>
-  sed -i 's/^@end-notes/<\/aside>/g' "../export/$NAME$TYPE$PLUS.md"
+    # replace @start-notes with ::: notes
+    sed -i 's/^@start-notes/::: notes/g' "../export/$NAME$TYPE$PLUS.md"
+
+    # replace @end-notes with :::
+    sed -i 's/^@end-notes/:::/g' "../export/$NAME$TYPE$PLUS.md"
+  
+  else
+
+    # replace @start-notes with <aside class="notes">
+    sed -i 's/^@start-notes/<aside class="notes">/g' "../export/$NAME$TYPE$PLUS.md"
+
+    # replace @end-notes with </aside>
+    sed -i 's/^@end-notes/<\/aside>/g' "../export/$NAME$TYPE$PLUS.md"
+  fi
+
 }
 
 function cleanMdToSlides() {
@@ -309,7 +321,7 @@ function buildRevealSlides() {
     --variable "transition=$REVEAL_JS_TRANSITION" \
     --variable "minScale=$REVEAL_JS_MIN_SCALE" \
     --variable "maxScale=$REVEAL_JS_MAX_SCALE" \
-    "$NUMBERS" -o "../export/$NAME-slides$PDF$PLUS.html" "../export/$NAME-slides$PLUS.md"
+    "$NUMBERS" --mathjax -o "../export/$NAME-slides$PDF$PLUS.html" "../export/$NAME-slides$PLUS.md"
 
   sed -i s/h1\>/h2\>/g "../export/$NAME-slides$PDF$PLUS.html"
   sed -i s/\>\<h2/\>\<h1/g "../export/$NAME-slides$PDF$PLUS.html"
@@ -340,7 +352,7 @@ function buildPowerPointSlides() {
   info "Exporting...                   ../export/$NAME-slides$PLUS.pptx"
 
   pandoc -w pptx \
-    "$NUMBERS" -o "../export/$NAME-slides$PLUS.pptx" "../export/$NAME-slides$PLUS.md"
+    "$NUMBERS" --mathjax -o "../export/$NAME-slides$PLUS.pptx" "../export/$NAME-slides$PLUS.md"
 }
 
 function buildHtmlBook() {
@@ -352,7 +364,7 @@ function buildHtmlBook() {
 
   pandoc -w html5 --template "$ORIGIN/templates/html-book-template.html" \
     --table-of-contents --top-level-division=chapter --highlight-style=tango \
-    "$NUMBERS" -o "../export/$NAME-book$PLUS.html" "../export/$NAME-book$PLUS.md"
+    "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.html" "../export/$NAME-book$PLUS.md"
 }
 
 function buildDocxBook() {
@@ -363,7 +375,7 @@ function buildDocxBook() {
   info "Exporting...                   ../export/$NAME-book$PLUS.docx"
 
   pandoc -w docx --table-of-contents --top-level-division=chapter \
-    "$NUMBERS" -o "../export/$NAME-book$PLUS.docx" "../export/$NAME-book$PLUS.md"
+    "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.docx" "../export/$NAME-book$PLUS.md"
 }
 
 function buildEpubBook() {
@@ -374,7 +386,7 @@ function buildEpubBook() {
   info "Exporting...                   ../export/$NAME-book$PLUS.epub"
 
   pandoc -w epub --table-of-contents --top-level-division=chapter \
-    "$NUMBERS" -o "../export/$NAME-book$PLUS.epub" "../export/$NAME-book$PLUS.md"
+    "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.epub" "../export/$NAME-book$PLUS.md"
 }
 
 function buildPdfBook() {
@@ -386,7 +398,7 @@ function buildPdfBook() {
 
   sed '/.gif/d' "../export/$NAME-book$PLUS.md" | pandoc \
     --table-of-contents --top-level-division=chapter \
-    "$NUMBERS" -o "../export/$NAME-book$PLUS.pdf"
+    "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.pdf"
 }
 
 function build() {

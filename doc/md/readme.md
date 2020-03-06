@@ -387,7 +387,7 @@ REVEAL_JS_ONLINE='no'
 - Added the plugin  [chalkboard](https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard) thanks to [Marcos Chavarría](https://twitter.com/chavarria1991).
 - Added the possibility to create a 'plus' version with extra information in slides and books.
 
-## Version 6.0
+## Relese 6.0
 
 - Added the possibility to export to PowerPoint.
 - Updated all the libraries to the latest version.

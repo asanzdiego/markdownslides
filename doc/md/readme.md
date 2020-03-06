@@ -296,7 +296,7 @@ REVEAL_JS_ONLINE='no'
 
 # Releases notes
 
-## Relese 1.0 (I)
+## Release 1.0 (I)
 
 - Export slides to:
     - reveal-slides
@@ -304,7 +304,7 @@ REVEAL_JS_ONLINE='no'
     - beamer-slides
     - deck-slides
 
-## Relese 1.0 (II)
+## Release 1.0 (II)
 
 - Export books to:
     - html-book
@@ -312,27 +312,27 @@ REVEAL_JS_ONLINE='no'
     - odt-book
     - pdf-book
 
-## Relese 1.0 (III)
+## Release 1.0 (III)
 
 - Added generation modes 'min', 'med' and 'max'.
 - Automatic download the external libraries.
 - Numbering (I), (II), (III) ...
 
-## Relese 2.0 (I)
+## Release 2.0 (I)
 
 - Export slides to:
     - reveal-slides
     - reveal-slides-pdf
     - reveal-slides-online
 
-## Relese 2.0 (II)
+## Release 2.0 (II)
 
 - Export books to:
     - html-book
     - docx-book
     - epub-book
 
-## Relese 2.0 (III)
+## Release 2.0 (III)
 
 - Deprecated:
     - beamer-slides
@@ -340,7 +340,7 @@ REVEAL_JS_ONLINE='no'
     - odt-book
     - pdf-book
 
-## Relese 2.0 (III)
+## Release 2.0 (III)
 
 - Added menu thanks to [Raul Jimenez Ortega](https://github.com/hhkaos).
 - Added dockerfile thanks to [Rubén Gómez García](https://github.com/kaneproject).
@@ -350,7 +350,7 @@ REVEAL_JS_ONLINE='no'
 - Loading the online libraries with HTTPS thanks to [Cesar Seoane](https://github.com/cesarseoane).
 - Configuration PDF resolution thanks to [Cesar Seoane](https://github.com/cesarseoane).
 
-## Relese 2.0 (IV)
+## Release 2.0 (IV)
 
 - New format 'epub'.
 - Added 'bash strict mode'.
@@ -360,7 +360,7 @@ REVEAL_JS_ONLINE='no'
 - Added notes only visible in book mode or if you press 's' on the slides.
 - Normalization of images in slides.
 
-## Relese 3.0
+## Release 3.0
 
 - Clean the code.
 - Remove deprecated exportation files.
@@ -370,14 +370,14 @@ REVEAL_JS_ONLINE='no'
 - Book creation from some md files with enumeration.
 - Possibility of adding a footer to the slides.
 
-## Relese 4.0
+## Release 4.0
 
 - Fix some bugs.
 - Add bookmarks to the slides.
 - Improve file names.
 - Add [MathJax/](https://www.mathjax.org/) lib thanks to [Pablo J. Triviño](https://twitter.com/p_trivino).
 
-## Relese 5.0
+## Release 5.0
 
 - Clean the code.
 - Fixed some bugs.
@@ -387,7 +387,7 @@ REVEAL_JS_ONLINE='no'
 - Added the plugin  [chalkboard](https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard) thanks to [Marcos Chavarría](https://twitter.com/chavarria1991).
 - Added the possibility to create a 'plus' version with extra information in slides and books.
 
-## Relese 6.0
+## Release 6.0
 
 - Added the possibility to export to PowerPoint.
 - Updated all the libraries to the latest version.

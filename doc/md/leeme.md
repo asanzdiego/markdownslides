@@ -293,7 +293,7 @@ REVEAL_JS_ONLINE='no'
 
 - [**carpeta**] donde va a buscar los ficheros md. Si no se indica nada convertirá todos los ficheros md de todas las carpetas.
 
-# Releases notes
+# Notas de las versiones
 
 ## Versión 1.0 (I)
 

@@ -69,7 +69,7 @@ generate:
 
 ## Download
 
-<https://github.com/asanzdiego/markdownslides/archive/6.0.zip>
+<https://github.com/asanzdiego/markdownslides/archive/6.1.zip>
 
 ## Docker
 
@@ -393,6 +393,11 @@ REVEAL_JS_ONLINE='no'
 - Updated all the libraries to the latest version.
 - Updated the templates.
 - Updated the Dockerfile.
+
+## Release 6.1
+
+- New image of MarkdownSlides.
+- Added Bootstrap to the html template.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 

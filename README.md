@@ -16,6 +16,7 @@ file that generate all this formats:
 
   - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html)
   - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf)
+  - [pptx-slides](http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pptx)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html)
   - [pdf-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.pdf)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx)
@@ -35,6 +36,7 @@ que genera todos estos formatos:
 
   - [reveal-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.html)
   - [reveal-slides-pdf](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pdf)
+  - [pptx-slides](http://asanzdiego.github.io/markdownslides/doc/export/leeme-slides.pptx)
   - [html-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.html)
   - [pdf-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.pdf)
   - [docx-book](http://asanzdiego.github.io/markdownslides/doc/export/leeme-book.docx)

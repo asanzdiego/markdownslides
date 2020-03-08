@@ -328,8 +328,8 @@ function buildRevealSlides() {
   sed -i s/\\/h2\>\</\\/h1\>\</g "../export/$NAME-slides$PDF$PLUS.html"
 
   if [ "$DEFAULT_BUILD" == "REVEAL_SLIDES" ] && [ "$PDF" != "-pdf" ]; then
-    info "Exporting default build...     ../export/$NAME$PLUS.html"
-    cp "../export/$NAME-slides$PLUS.html" "../export/$NAME$PLUS.html"
+    info "Convert to default build...    ../export/$NAME$PLUS.html"
+    mv "../export/$NAME-slides$PLUS.html" "../export/$NAME$PLUS.html"
   fi
 }
 
@@ -349,7 +349,8 @@ function buildRevealSlidesPdf() {
   rm -f "../export/$NAME-slides-pdf$PLUS.html"
 
   if [ "$DEFAULT_BUILD" == "REVEAL_SLIDES_PDF" ]; then
-    cp "../export/$NAME-slides$PLUS.pdf" "../export/$NAME$PLUS.pdf"
+    info "Convert to default build...    ../export/$NAME$PLUS.pdf"
+    mv "../export/$NAME-slides$PLUS.pdf" "../export/$NAME$PLUS.pdf"
   fi
 }
 
@@ -364,7 +365,8 @@ function buildPowerPointSlides() {
     "$NUMBERS" --mathjax -o "../export/$NAME-slides$PLUS.pptx" "../export/$NAME-slides$PLUS.md"
 
   if [ "$DEFAULT_BUILD" == "POWER_POINT_SLIDES" ]; then
-    cp "../export/$NAME-slides$PLUS.pptx" "../$NAME.pptx"
+    info "Convert to default build...    ../export/$NAME$PLUS.pptx"
+    mv "../export/$NAME-slides$PLUS.pptx" "../$NAME.pptx"
   fi
 }
 
@@ -380,7 +382,8 @@ function buildHtmlBook() {
     "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.html" "../export/$NAME-book$PLUS.md"
 
   if [ "$DEFAULT_BUILD" == "HTML_BOOK" ]; then
-    cp "../export/$NAME-book$PLUS.html" "../$NAME.html"
+    info "Convert to default build...    ../export/$NAME$PLUS.html"
+    mv "../export/$NAME-book$PLUS.html" "../$NAME$PLUS.html"
   fi
 }
 
@@ -395,7 +398,8 @@ function buildDocxBook() {
     "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.docx" "../export/$NAME-book$PLUS.md"
 
   if [ "$DEFAULT_BUILD" == "DOCX_BOOK" ]; then
-    cp "../export/$NAME-book$PLUS.docx" "../$NAME.docx"
+    info "Convert to default build...    ../export/$NAME$PLUS.docx"
+    mv "../export/$NAME-book$PLUS.docx" "../$NAME$PLUS.docx"
   fi
 }
 
@@ -410,7 +414,8 @@ function buildEpubBook() {
     "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.epub" "../export/$NAME-book$PLUS.md"
 
   if [ "$DEFAULT_BUILD" == "EPUB_BOOK" ]; then
-    cp "../export/$NAME-book$PLUS.epub" "../$NAME.epub"
+    info "Convert to default build...    ../export/$NAME$PLUS.epub"
+    mv "../export/$NAME-book$PLUS.epub" "../$NAME$PLUS.epub"
   fi
 }
 
@@ -426,7 +431,8 @@ function buildPdfBook() {
     "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.pdf"
 
   if [ "$DEFAULT_BUILD" == "PDF_BOOK" ]; then
-    cp "../export/$NAME-book$PLUS.pdf" "../$NAME.pdf"
+    info "Convert to default build...    ../export/$NAME$PLUS.pdf"
+    mv "../export/$NAME-book$PLUS.pdf" "../$NAME$PLUS.pdf"
   fi
 }
 

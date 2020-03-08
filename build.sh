@@ -471,7 +471,7 @@ function exportMdToSlides() {
     buildPowerPointSlides "$NAME" "$PLUS"
   fi
 
-  info "- - - - - - - - - - - - - - - -"
+  debug "- - - - - - - - - - - - - - - -"
 }
 
 function exportMdToBook() {
@@ -494,7 +494,7 @@ function exportMdToBook() {
     buildPdfBook "$NAME" "$PLUS"
   fi
   
-  info "- - - - - - - - - - - - - - - -"
+  debug "- - - - - - - - - - - - - - - -"
 }
 
 function addImportToMD() {

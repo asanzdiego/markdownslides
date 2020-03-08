@@ -69,7 +69,7 @@ generate:
 
 ## Download
 
-<https://github.com/asanzdiego/markdownslides/archive/6.2.zip>
+<https://github.com/asanzdiego/markdownslides/archive/6.3.zip>
 
 ## Docker
 
@@ -401,6 +401,10 @@ REVEAL_JS_ONLINE='no'
 ## Release 6.2
 
 - Added the DEFAULT_BUILD property.
+
+## Release 6.3
+
+- Minor change.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 

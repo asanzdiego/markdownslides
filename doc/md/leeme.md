@@ -70,7 +70,7 @@ se puede generar también **ficheros "plus"**:
 
 ## Descarga
 
-<https://github.com/asanzdiego/markdownslides/archive/6.2.zip>
+<https://github.com/asanzdiego/markdownslides/archive/6.3.zip>
 
 ## Docker
 
@@ -399,6 +399,10 @@ REVEAL_JS_ONLINE='no'
 ## Versión 6.2
 
 - Añadida la propiedad DEFAULT_BUILD.
+
+## Versión 6.3
+
+- Cambio menor.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 

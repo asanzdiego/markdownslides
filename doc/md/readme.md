@@ -69,7 +69,7 @@ generate:
 
 ## Download
 
-<https://github.com/asanzdiego/markdownslides/archive/6.1.zip>
+<https://github.com/asanzdiego/markdownslides/archive/6.2.zip>
 
 ## Docker
 
@@ -239,10 +239,9 @@ In the book will be:
 We can configure the files that we want to generate from the file **build.properties**
 
 ~~~{.bash}
-#GENERATION_MODE='min|med|max'
 DEFAULT_GENERATION_MODE='min'
-
 GENERATE_PLUS_VERSION='yes'
+DEFAULT_BUILD='REVEAL_SLIDES_PDF'
 
 BUILD_REVEAL_SLIDES='min'
 BUILD_REVEAL_SLIDES_PDF='med'
@@ -398,6 +397,10 @@ REVEAL_JS_ONLINE='no'
 
 - New image of MarkdownSlides.
 - Added Bootstrap to the html template.
+
+## Release 6.2
+
+- Added the DEFAULT_BUILD property.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 

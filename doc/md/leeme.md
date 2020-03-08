@@ -70,7 +70,7 @@ se puede generar también **ficheros "plus"**:
 
 ## Descarga
 
-<https://github.com/asanzdiego/markdownslides/archive/6.1.zip>
+<https://github.com/asanzdiego/markdownslides/archive/6.2.zip>
 
 ## Docker
 
@@ -238,10 +238,9 @@ En el libro quedará:
 - Podemos configurar los **ficheros que queremos generar** desde el fichero build.properties
 
 ~~~{.bash}
-#GENERATION_MODE='min|med|max'
 DEFAULT_GENERATION_MODE='min'
-
 GENERATE_PLUS_VERSION='yes'
+DEFAULT_BUILD='REVEAL_SLIDES_PDF'
 
 BUILD_REVEAL_SLIDES='min'
 BUILD_REVEAL_SLIDES_PDF='med'
@@ -392,11 +391,14 @@ REVEAL_JS_ONLINE='no'
 - Actualizadas las plantillas.
 - Actualizado el Dockerfile.
 
-
 ## Versión 6.1
 
 - Nueva imagen de MarkdownSlides.
 - Añadido Bootstrap a la plantilla de html.
+
+## Versión 6.2
+
+- Añadida la propiedad DEFAULT_BUILD.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 

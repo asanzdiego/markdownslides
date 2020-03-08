@@ -326,6 +326,11 @@ function buildRevealSlides() {
   sed -i s/h1\>/h2\>/g "../export/$NAME-slides$PDF$PLUS.html"
   sed -i s/\>\<h2/\>\<h1/g "../export/$NAME-slides$PDF$PLUS.html"
   sed -i s/\\/h2\>\</\\/h1\>\</g "../export/$NAME-slides$PDF$PLUS.html"
+
+  if [ "$DEFAULT_BUILD" == "REVEAL_SLIDES" ] && [ "$PDF" != "-pdf" ]; then
+    info "Exporting default build...     ../export/$NAME$PLUS.html"
+    cp "../export/$NAME-slides$PLUS.html" "../export/$NAME$PLUS.html"
+  fi
 }
 
 function buildRevealSlidesPdf() {
@@ -342,6 +347,10 @@ function buildRevealSlidesPdf() {
     "file://$(pwd)/../export/$NAME-slides-pdf$PLUS.html" "../export/$NAME-slides$PLUS.pdf" > /dev/null
 
   rm -f "../export/$NAME-slides-pdf$PLUS.html"
+
+  if [ "$DEFAULT_BUILD" == "REVEAL_SLIDES_PDF" ]; then
+    cp "../export/$NAME-slides$PLUS.pdf" "../export/$NAME$PLUS.pdf"
+  fi
 }
 
 function buildPowerPointSlides() {
@@ -353,6 +362,10 @@ function buildPowerPointSlides() {
 
   pandoc -w pptx \
     "$NUMBERS" --mathjax -o "../export/$NAME-slides$PLUS.pptx" "../export/$NAME-slides$PLUS.md"
+
+  if [ "$DEFAULT_BUILD" == "POWER_POINT_SLIDES" ]; then
+    cp "../export/$NAME-slides$PLUS.pptx" "../$NAME.pptx"
+  fi
 }
 
 function buildHtmlBook() {
@@ -365,6 +378,10 @@ function buildHtmlBook() {
   pandoc -w html5 --template "$ORIGIN/templates/html-book-template.html" \
     --table-of-contents --top-level-division=chapter --highlight-style=tango \
     "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.html" "../export/$NAME-book$PLUS.md"
+
+  if [ "$DEFAULT_BUILD" == "HTML_BOOK" ]; then
+    cp "../export/$NAME-book$PLUS.html" "../$NAME.html"
+  fi
 }
 
 function buildDocxBook() {
@@ -376,6 +393,10 @@ function buildDocxBook() {
 
   pandoc -w docx --table-of-contents --top-level-division=chapter \
     "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.docx" "../export/$NAME-book$PLUS.md"
+
+  if [ "$DEFAULT_BUILD" == "DOCX_BOOK" ]; then
+    cp "../export/$NAME-book$PLUS.docx" "../$NAME.docx"
+  fi
 }
 
 function buildEpubBook() {
@@ -387,6 +408,10 @@ function buildEpubBook() {
 
   pandoc -w epub --table-of-contents --top-level-division=chapter \
     "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.epub" "../export/$NAME-book$PLUS.md"
+
+  if [ "$DEFAULT_BUILD" == "EPUB_BOOK" ]; then
+    cp "../export/$NAME-book$PLUS.epub" "../$NAME.epub"
+  fi
 }
 
 function buildPdfBook() {
@@ -399,6 +424,10 @@ function buildPdfBook() {
   sed '/.gif/d' "../export/$NAME-book$PLUS.md" | pandoc \
     --table-of-contents --top-level-division=chapter \
     "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.pdf"
+
+  if [ "$DEFAULT_BUILD" == "PDF_BOOK" ]; then
+    cp "../export/$NAME-book$PLUS.pdf" "../$NAME.pdf"
+  fi
 }
 
 function build() {

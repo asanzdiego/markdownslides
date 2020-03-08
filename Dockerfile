@@ -10,7 +10,6 @@ RUN apt-get update && \
 WORKDIR /home/
 RUN wget https://github.com/jgm/pandoc/releases/download/2.9.2/pandoc-2.9.2-1-amd64.deb && \
     dpkg -i pandoc-2.9.2-1-amd64.deb
-RUN wget https://github.com/asanzdiego/markdownslides/archive/6.3.zip && \
-    unzip 6.1.zip
+RUN wget https://github.com/asanzdiego/markdownslides/archive/6.4.zip && unzip 6.4.zip
 WORKDIR /home/markdownslides-master
 ADD . /home/markdownslides-master

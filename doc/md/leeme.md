@@ -70,7 +70,7 @@ se puede generar también **ficheros "plus"**:
 
 ## Descarga
 
-<https://github.com/asanzdiego/markdownslides/archive/6.3.zip>
+<https://github.com/asanzdiego/markdownslides/releases>
 
 ## Docker
 
@@ -391,18 +391,12 @@ REVEAL_JS_ONLINE='no'
 - Actualizadas las plantillas.
 - Actualizado el Dockerfile.
 
-## Versión 6.1
+## Versión 6.*
 
 - Nueva imagen de MarkdownSlides.
 - Añadido Bootstrap a la plantilla de html.
-
-## Versión 6.2
-
 - Añadida la propiedad DEFAULT_BUILD.
-
-## Versión 6.3
-
-- Cambio menor.
+- Cambios menores.
 
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 

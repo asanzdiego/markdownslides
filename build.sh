@@ -109,7 +109,7 @@ function downloadTemplates() {
   else
     mkdir "$TEMPLATES_FOLDER"
     cp $ORIGIN/templates/* "$TEMPLATES_FOLDER"
-    info "Creating lib folder...         ../$TEMPLATES_FOLDER"
+    info "Templates folder created...    ../$TEMPLATES_FOLDER"
   fi
 }
 

@@ -97,6 +97,21 @@ function downloadLibs() {
       reveal.js-plugins-master reveal.js-plugins
 }
 
+function downloadTemplates() {
+
+  local TEMPLATES_FOLDER="../templates"
+
+  if [ -e "$TEMPLATES_FOLDER" ]; then
+    if [ ! -d "$TEMPLATES_FOLDER" ]; then
+      error "ERROR: $TEMPLATES_FOLDER exists and is not a folder"
+      exit -1
+    fi
+  else
+    mkdir "$TEMPLATES_FOLDER"
+    cp $ORIGIN/templates/* "$TEMPLATES_FOLDER"
+  fi
+}
+
 function initExportFolder() {
 
   local FOLDER_NAME="$1"
@@ -306,7 +321,7 @@ function buildRevealSlides() {
    REVEAL_JS_SHOW_CHALKBOARD_MD=""
   fi
 
-  pandoc -w revealjs --template "$ORIGIN/templates/reveal-slides-template.html" \
+  pandoc -w revealjs --template "../templates/reveal-slides-template.html" \
     --variable "revealjs-title-footer=$REVEAL_JS_TITLE_FOOTER" \
     --variable "revealjs-show-menu=$REVEAL_JS_SHOW_MENU_MD" \
     --variable "revealjs-show-chalkboard=$REVEAL_JS_SHOW_CHALKBOARD_MD" \
@@ -377,7 +392,7 @@ function buildHtmlBook() {
 
   info "Exporting...                   ../export/$NAME-book$PLUS.html"
 
-  pandoc -w html5 --template "$ORIGIN/templates/html-book-template.html" \
+  pandoc -w html5 --template "../templates/html-book-template.html" \
     --table-of-contents --top-level-division=chapter --highlight-style=tango \
     "$NUMBERS" --mathjax -o "../export/$NAME-book$PLUS.html" "../export/$NAME-book$PLUS.md"
 
@@ -631,6 +646,8 @@ function processFolder() {
 
   info "==============================="
   info "Processing folder...           ../$FOLDER"
+
+  downloadTemplates
 
   if [ -e "$FOLDER/build.properties" ]; then
     info "Overwriting properties...      ../build.properties"

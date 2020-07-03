@@ -99,7 +99,7 @@ function downloadLibs() {
 
 function downloadTemplates() {
 
-  local TEMPLATES_FOLDER="../templates"
+  local TEMPLATES_FOLDER="$1/templates"
 
   if [ -e "$TEMPLATES_FOLDER" ]; then
     if [ ! -d "$TEMPLATES_FOLDER" ]; then
@@ -109,6 +109,7 @@ function downloadTemplates() {
   else
     mkdir "$TEMPLATES_FOLDER"
     cp $ORIGIN/templates/* "$TEMPLATES_FOLDER"
+    info "Creating lib folder...         ../$TEMPLATES_FOLDER"
   fi
 }
 
@@ -647,7 +648,7 @@ function processFolder() {
   info "==============================="
   info "Processing folder...           ../$FOLDER"
 
-  downloadTemplates
+  downloadTemplates "$FOLDER"
 
   if [ -e "$FOLDER/build.properties" ]; then
     info "Overwriting properties...      ../build.properties"

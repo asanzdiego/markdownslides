@@ -250,7 +250,7 @@ function cleanMdToBook() {
 
   cp "../export/$NAME-import$PLUS.md" "../export/$NAME-book$PLUS.md"
 
-  verbose "Cleaning md to book...         ../export/$NAME-book$PLUS.md"
+  debug "Cleaning md to book...         ../export/$NAME-book$PLUS.md"
 
   # remove % if img
   sed -i 's/% !\[/!\[/g' "../export/$NAME-book$PLUS.md"
@@ -358,9 +358,15 @@ function buildRevealSlidesPdf() {
 
   info "Exporting...                   ../export/$NAME-slides$PLUS.pdf"
 
-  decktape --chrome-arg=--no-sandbox \
-    --size "$DECKTAPE_RESOLUTION" --pause "$DECKTAPE_PAUSE" reveal \
-    "file://$(pwd)/../export/$NAME-slides-pdf$PLUS.html" "../export/$NAME-slides$PLUS.pdf" > /dev/null
+  if [ "$LOG_LEVEL" -ge "$VERBOSE" ]; then
+    decktape --chrome-arg=--no-sandbox \
+      --size "$DECKTAPE_RESOLUTION" --pause "$DECKTAPE_PAUSE" reveal \
+      "file://$(pwd)/../export/$NAME-slides-pdf$PLUS.html" "../export/$NAME-slides$PLUS.pdf"
+  else
+    decktape --chrome-arg=--no-sandbox \
+      --size "$DECKTAPE_RESOLUTION" --pause "$DECKTAPE_PAUSE" reveal \
+      "file://$(pwd)/../export/$NAME-slides-pdf$PLUS.html" "../export/$NAME-slides$PLUS.pdf" > /dev/null  
+  fi
 
   rm -f "../export/$NAME-slides-pdf$PLUS.html"
 
@@ -540,7 +546,7 @@ function addImportToMD() {
   local BASENAME_FILE_TO_IMPORT
   BASENAME_FILE_TO_IMPORT="$(basename "$FILE_TO_IMPORT")"
 
-  verbose "Importing file...              $FILE_TO_IMPORT"
+  debug "Importing file...              $FILE_TO_IMPORT"
 
   generatePlusAndNormalMD "$FILE_TO_IMPORT" "$BASENAME_FILE_TO_IMPORT"
 
@@ -589,11 +595,11 @@ function generatePlusAndNormalMD() {
   local INPUT="$1"
   local OUTPUT="$2"
 
-  verbose "Generating file...             ../export/$OUTPUT.md"
+  debug "Generating file...             ../export/$OUTPUT.md"
   echo -n > "../export/$2.md"
 
   if [ "$GENERATE_PLUS_VERSION" == "yes" ]; then
-    verbose "Generating file...             ../export/$OUTPUT-plus.md"
+    debug "Generating file...             ../export/$OUTPUT-plus.md"
     echo -n > "../export/$OUTPUT-plus.md"
   fi
 
@@ -610,7 +616,7 @@ function generatePlusAndNormalMD() {
     fi
   done < "$INPUT"
 
-  verbose "- - - - - - - - - - - - - - - -"
+  debug "- - - - - - - - - - - - - - - -"
 }
 
 function exportMdFile() {
@@ -692,14 +698,24 @@ function processFolder() {
     fi
   done
 
-  cd ../.. > /dev/null
+  if [ "$LOG_LEVEL" -ge "$VERBOSE" ]; then
+    cd ../..
+  else
+    cd ../.. > /dev/null
+  fi
 
   if [ "$ZIP_EXPORT_FOLDER" == "yes" ]; then
     info "-------------------------------"
     info "Ziping export folder...        ../export/$FOLDER.zip"
     cd "$FOLDER/export"
-    zip -r "$FOLDER.zip" . > /dev/null
-    cd ../.. > /dev/null
+    
+    if [ "$LOG_LEVEL" -ge "$VERBOSE" ]; then
+      zip -r "$FOLDER.zip" .
+      cd ../..
+    else
+      zip -r "$FOLDER.zip" . > /dev/null
+      cd ../.. > /dev/null
+    fi
   fi
 
   chmod 755 "$FOLDER/export"

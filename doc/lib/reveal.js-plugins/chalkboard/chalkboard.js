@@ -3,7 +3,7 @@
 **
 ** A plugin for reveal.js adding a chalkboard.
 **
-** Version: 0.8
+** Version: 0.9.1
 **
 ** License: MIT license (see LICENSE.md)
 **
@@ -211,7 +211,8 @@ try {
 		if ( id == "0" ) {
 			container.style.background = 'rgba(0,0,0,0)';
 			container.style.zIndex = "24";
-			container.classList.add( 'visible' )
+			container.style.opacity = 1;
+			container.style.visibility = 'visible';
 			container.style.pointerEvents = "none";
 
 			var slides = document.querySelector(".slides");
@@ -226,6 +227,8 @@ try {
 		else {
 			container.style.background = 'url("' + background[id] + '") repeat';
 			container.style.zIndex = "26";
+			container.style.opacity = 0;
+			container.style.visibility = 'hidden';
 		}
 
 		var sponge = document.createElement( 'img' );
@@ -379,7 +382,8 @@ try {
 
 	function createPrintout( ) {
 //console.log( 'Create printout for ' + storage[1].data.length + " slides");
-		drawingCanvas[0].container.classList.remove( 'visible' ); // do not print notes canvas
+		drawingCanvas[0].container.style.opacity = 0; // do not print notes canvas
+		drawingCanvas[0].container.style.visibility = 'hidden';
 		var nextSlide = [];
 		for (var i = 0; i < storage[1].data.length; i++) {
 			var slide = Reveal.getSlide( storage[1].data[i].slide.h, storage[1].data[i].slide.v );
@@ -545,7 +549,8 @@ console.log( 'Create printout for slide ' + storage[1].data[i].slide.h + "." + s
 		touchTimeout = null;
 		drawingCanvas[0].sponge.style.visibility = "hidden"; // make sure that the sponge from touch events is hidden
 		drawingCanvas[1].sponge.style.visibility = "hidden"; // make sure that the sponge from touch events is hidden
-		drawingCanvas[1].container.classList.add( 'visible' );
+		drawingCanvas[1].container.style.opacity = 1;
+		drawingCanvas[1].container.style.visibility = 'visible';
 		mode = 1;
 		// broadcast
 		var message = new CustomEvent('send');
@@ -562,7 +567,8 @@ console.log( 'Create printout for slide ' + storage[1].data[i].slide.h + "." + s
 		touchTimeout = null;
 		drawingCanvas[0].sponge.style.visibility = "hidden"; // make sure that the sponge from touch events is hidden
 		drawingCanvas[1].sponge.style.visibility = "hidden"; // make sure that the sponge from touch events is hidden
-		drawingCanvas[1].container.classList.remove( 'visible' );
+		drawingCanvas[1].container.style.opacity = 0;
+		drawingCanvas[1].container.style.visibility = 'hidden';
 		xLast = null;
 		yLast = null;
 		event = null;
@@ -705,9 +711,9 @@ console.log( 'Create printout for slide ' + storage[1].data[i].slide.h + "." + s
 					startDrawing(message.content.x, message.content.y, message.content.erase);
 					break;
 				case 'startErasing':
-					if ( event ) {
-						event.type = "erase";
-						event.begin = Date.now() - slideStart;
+					if ( message.content ) {
+						message.content.type = "erase";
+						message.content.begin = Date.now() - slideStart;
 						eraseWithSponge(drawingCanvas[mode].context, message.content.x, message.content.y);
 					}
 					break;
@@ -720,8 +726,8 @@ console.log( 'Create printout for slide ' + storage[1].data[i].slide.h + "." + s
 				case 'clear':
 					clear();
 					break;
-				case "setcolor":
-					setColor(event.index);
+				case 'setcolor':
+					setColor(message.content.index);
 					break;
 				case 'resetSlide':
 					resetSlide(true);
@@ -1419,6 +1425,10 @@ console.log( 'Create printout for slide ' + storage[1].data[i].slide.h + "." + s
 			let idx = cycleColorNext();
 			setColor(idx);
 			recordEvent( { type: "setcolor", index: idx, begin: Date.now() - slideStart } );
+			// broadcast
+			var message = new CustomEvent('send');
+			message.content = { sender: 'chalkboard-plugin', type: 'setcolor', index: idx };
+			document.dispatchEvent( message );
 		}
 	}
 
@@ -1427,6 +1437,10 @@ console.log( 'Create printout for slide ' + storage[1].data[i].slide.h + "." + s
 			let idx = cycleColorPrev();
 			setColor(idx);
 			recordEvent( { type: "setcolor", index: idx, begin: Date.now() - slideStart } );
+			// broadcast
+			var message = new CustomEvent('send');
+			message.content = { sender: 'chalkboard-plugin', type: 'setcolor', index: idx };
+			document.dispatchEvent( message );
 		}
 	}
 

@@ -93,8 +93,8 @@ function downloadLibs() {
       reveal.js-menu-1.2.0 reveal.js-menu
     downloadLib https://github.com/e-gor/Reveal.js-Title-Footer/archive/master.zip \
       Reveal.js-Title-Footer-master reveal.js-title-footer
-    downloadLib https://github.com/rajgoel/reveal.js-plugins/archive/master.zip \
-      reveal.js-plugins-master reveal.js-plugins
+    downloadLib https://github.com/rajgoel/reveal.js-plugins/archive/3.9.0.zip \
+      reveal.js-plugins-3.9.0 reveal.js-plugins
 }
 
 function downloadTemplates() {

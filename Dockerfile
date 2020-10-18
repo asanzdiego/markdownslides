@@ -13,6 +13,6 @@ RUN npm install -g decktape@3.1.0
 WORKDIR /home/
 RUN wget https://github.com/jgm/pandoc/releases/download/2.9.2/pandoc-2.9.2-1-amd64.deb && \
     dpkg -i pandoc-2.9.2-1-amd64.deb
-RUN wget https://github.com/asanzdiego/markdownslides/archive/6.5.zip && unzip 6.5.zip
+RUN wget https://github.com/asanzdiego/markdownslides/archive/6.7.zip && unzip 6.7.zip
 WORKDIR /home/markdownslides-master
 ADD . /home/markdownslides-master

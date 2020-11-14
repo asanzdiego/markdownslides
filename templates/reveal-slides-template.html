@@ -414,7 +414,11 @@ $endif$
 
             // Adds a menu button to the slides to open the menu panel.
             // Set to 'false' to hide the button.
+$if(revealjs-show-menu)$
             openButton: true,
+$else$
+            openButton: false,
+$endif$
 
             // If 'true' allows the slide number in the presentation to
             // open the menu panel. The reveal.js slideNumber option must
@@ -446,9 +450,7 @@ $if(revealjs-title-footer)$
               title_footer.initialize($revealjs-title-footer$, 'rgba(0,0,0,0)');
             } },
 $endif$
-$if(revealjs-show-menu)$
           { src: '$revealjs-menu-url$/menu.js', async: true },
-$endif$
 $if(revealjs-show-chalkboard)$
           { src: '$revealjs-chalkboard-url$/chalkboard.js', async: true },
 $endif$

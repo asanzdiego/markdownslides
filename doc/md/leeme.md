@@ -397,7 +397,7 @@ REVEAL_JS_ONLINE='no'
 - Añadida la propiedad DEFAULT_BUILD.
 - Cambios menores.
 
-## Release 7.0
+## Versión 7.0
 
 - Actualizadas todas las librerías a la última versión.
 - Actualizadas las plantillas.

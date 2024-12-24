@@ -99,8 +99,7 @@ docker run -it -v "${PWD}":/home/markdownslides-master/"${PWD##*/}" \
 
 ## Creación
 
-- Primero **copia la carpeta doc y renombrala a tu gusto**. Esto no es necesario pero
-te ayuda a organizar tus documentos.
+- Primero **copia la carpeta doc y renombrala a tu gusto**. Es importante renombrarla para que no de error.
 
 - **Crea los ficheros md** que quieras generar en la **carpeta md**.
 Los ficheros md son ficheros [Markdown](http://es.wikipedia.org/wiki/Markdown),
@@ -387,7 +386,7 @@ REVEAL_JS_ONLINE='no'
 ## Versión 6.0
 
 - Añadida la posiibilidad de exportar a PowerPoint.
-- Actualizado todas las librerías a la última versión.
+- Actualizadas todas las librerías a la última versión.
 - Actualizadas las plantillas.
 - Actualizado el Dockerfile.
 
@@ -398,15 +397,21 @@ REVEAL_JS_ONLINE='no'
 - Añadida la propiedad DEFAULT_BUILD.
 - Cambios menores.
 
+## Release 7.0
+
+- Actualizadas todas las librerías a la última versión.
+- Actualizadas las plantillas.
+- Actualizado el Dockerfile.
+
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 
 ## Adolfo Sanz De Diego
 
 - Empecé **desarrollando aplicaciones web**, hasta que di el salto a la docencia.
 
-- Actualmente soy **Asesor Técnico Docente** en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.
+- Actualmente soy [Jefe de Servicio de Plataformas Educativas en la Consejería de Digitalización de la Comunidad de Madrid](https://www.comunidad.madrid/transparencia/unidad-organizativa-responsable/servicio-plataformas-educativas).
 
-- Además colaboro como **formador especializado en tecnologías de desarrollo**.
+- Colaboro como profesor en la [Universidad de Alcalá](https://www.uah.es/) y como formador en [Pronoide](https://www.pronoide.com/).
 
 ## Algunos proyectos
 
@@ -414,7 +419,9 @@ REVEAL_JS_ONLINE='no'
 
 - [Password Manager Generator](http://pasmangen.github.io): un gestor de contraseñas online.
 
-- [MarkdownSlides](https://github.com/asanzdiego/markdownslides): un script para crear slides a partir de ficheros MD.
+- [Extensión de Password Manager Generator](https://github.com/pasmangen-extension/pasmangen-extension.github.io): una extensión para los navegadores de Password Manager Generator.
+
+- [MarkdownSlides](https://github.com/asanzdiego/markdownslides): un script para crear slides y mucho más a partir de ficheros MD.
 
 ## ¿Donde encontrarme?
 
@@ -423,4 +430,3 @@ REVEAL_JS_ONLINE='no'
     - GitHub:     [github.com/asanzdiego](http://github.com/asanzdiego)
     - Twitter:    [twitter.com/asanzdiego](http://twitter.com/asanzdiego)
     - LinkedIn:   [linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)
-    - SlideShare: [slideshare.net/asanzdiego](http://www.slideshare.net/asanzdiego)

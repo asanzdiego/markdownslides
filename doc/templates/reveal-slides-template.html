@@ -20,101 +20,67 @@ $endif$
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="$revealjs-url$/css/reset.css">
-  <link rel="stylesheet" href="$revealjs-url$/css/reveal.css">
+  <link rel="stylesheet" href="$revealjs-url$/dist/reset.css">
+  <link rel="stylesheet" href="$revealjs-url$/dist/reveal.css">
 $if(revealjs-title-footer)$
   <link rel="stylesheet" href="$revealjs-title-footer-url$/plugin/title-footer/title-footer.css">
 $endif$
 $if(revealjs-show-menu)$
   <link rel="stylesheet" href="$revealjs-menu-url$/menu.css">
 $endif$
-<style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
-$if(quotes)$
-  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+$if(revealjs-show-chalkboard)$
+  <link rel="stylesheet" href="$revealjs-fontawesome-url$/css/all.min.css">
+  <link rel="stylesheet" href="$revealjs-plugins-url$/customcontrols/style.css">
+  <link rel="stylesheet" href="$revealjs-plugins-url$/chalkboard/style.css">
 $endif$
-$if(highlighting-css)$
   <style type="text/css">
-$highlighting-css$
-  </style>
-$endif$
-  <style>
+    .slide-number {
+        position: fixed !important;
+        bottom: 3.9em !important;
+        right: 3.2em !important;
+        z-index: 100 !important;
+        background-color: rgba(0,0,0,0) !important;
+    }
+
+    .slide-number a {
+        color: var(--r-link-color) !important;
+        font-size: 1em !important;
+    }
+    
+    .slide-number a:hover {
+        color: var(--r-link-color-hover) !important;
+    }
+
+    footer {
+      position: fixed !important;
+      left: 10% !important;
+      width: 80%  !important;
+      text-align: center  !important;
+    }
+
+    footer p {
+      font-size: 2em !important;
+      margin-top: -3% !important;
+    }
+
+    .reveal > .overlay { /* see https://github.com/rajgoel/reveal.js-plugins/issues/179#issuecomment-2063578130 */
+      backdrop-filter: unset!important;
+    }
+
+    code{white-space: pre; background-color: lightgrey;}  
+    .reveal .sourceCode {  /* see #7635 */
+        overflow: visible;
+    }
     $styles.html()$
   </style>
 $if(theme)$
-  <link rel="stylesheet" href="$revealjs-url$/css/theme/$theme$.css" id="theme">
+  <link rel="stylesheet" href="$revealjs-url$/dist/theme/$theme$.css" id="theme">
 $else$
-  <link rel="stylesheet" href="$revealjs-url$/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="$revealjs-url$/dist/theme/black.css" id="theme">
 $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$"/>
 $endfor$
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '$revealjs-url$/css/print/pdf.css' : '$revealjs-url$/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-
-  <style type="text/css">
-    body {
-      background: white !important;
-      background-color: white !important;
-    }
-    code{
-      white-space: pre;
-    }
-    .reveal pre code {
-      background: rgba(255, 255, 255, 0.7);
-      color: rgba(0, 0, 0, 0.7);
-    }
-    .reveal section img {
-      margin: 0px;
-      padding: 0px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 0px;
-    }
-    strong {
-      color: #777
-    }
-    a:hover {
-      text-decoration: underline !important;
-    }
-    h1.title {
-      font-size: 200% !important;
-    }
-    h1 {
-      font-size: 200% !important;
-    }
-    h2 {
-      font-size: 150% !important;
-    }
-    h3 {
-      font-size: 100% !important;
-    }
-    #toggle-chalkboard {
-      inset: auto auto 30px 70px !important;
-    }
-    #toggle-notes {
-      inset: auto auto 30px 110px !important;
-    }
-    @media print {
-      #only-print-parent { display: table !important; }
-      #only-print-child { display: table-cell !important; vertical-align: middle;}
-      h1.title { font-size: 300% !important;}
-      h1 { font-size: 300% !important; }
-      h2 { font-size: 200% !important; }
-      h3 { font-size: 150% !important; }
-    }
-    footer p {
-      font-size: 200% !important;
-      margin-top: -3% !important;
-    }
-  </style>
-  <!--[if lt IE 9]>
-  <script src="$revealjs-url$/lib/js/html5shiv.js"></script>
-  <![endif]-->
 $if(math)$
   $math$
 $endif$
@@ -130,21 +96,30 @@ $endfor$
     <div class="slides">
 
 $if(title)$
-<section class="only-print-parent"  id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$>
-    <div class="only-print-child">
-      <h1 class="title">$title$</h1>
+<section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$>
+  <h1 class="title">$title$</h1>
+$if(subtitle)$
+  <p class="subtitle">$subtitle$</p>
+$endif$
 $for(author)$
-      <h2 class="author">$author$</h2>
+  <h2 class="author">$author$</h2>
+$endfor$
+$for(institute)$
+  <p class="institute">$institute$</p>
 $endfor$
 $if(date)$
-      <h3 class="date">$date$</h3>
+  <h3 class="date">$date$</h3>
 $endif$
-    </div>
 </section>
 $endif$
 $if(toc)$
 <section id="$idprefix$TOC">
+<nav role="doc-toc"> 
+$if(toc-title)$
+<h2 id="$idprefix$toc-title">$toc-title$</h2>
+$endif$
 $table-of-contents$
+</nav>
 </section>
 $endif$
 
@@ -152,168 +127,221 @@ $body$
     </div>
   </div>
 
-  <script src="$revealjs-url$/lib/js/head.min.js"></script>
-  <script src="$revealjs-url$/js/reveal.js"></script>
+  <script src="$revealjs-url$/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="$revealjs-url$/plugin/notes/notes.js"></script>
+  <script src="$revealjs-url$/plugin/search/search.js"></script>
+  <script src="$revealjs-url$/plugin/zoom/zoom.js"></script>
+$if(revealjs-show-menu)$
+  <script src="$revealjs-menu-url$/menu.js"></script>
+$endif$
+$if(revealjs-show-chalkboard)$
+  <script src="$revealjs-fontawesome-url$/js/all.min.js"></script>
+  <script src="$revealjs-plugins-url$/customcontrols/plugin.js"></script>
+  <script src="$revealjs-plugins-url$/chalkboard/plugin.js"></script>
+$endif$
+$if(mathjax)$
+  <script src="$revealjs-url$/plugin/math/math.js"></script>
+$endif$
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
-        pdfMaxPagesPerSlide: 1,
-        history: true,
-$if(controls)$
         // Display controls in the bottom right corner
         controls: $controls$,
-$endif$
-$if(progress)$
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: $controlsTutorial$,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: '$controlsLayout$',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: '$controlsBackArrows$',
+
         // Display a presentation progress bar
         progress: $progress$,
-$endif$
-$if(slideNumber)$
+
         // Display the page number of the current slide
         slideNumber: $slideNumber$,
-$endif$
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: '$showSlideNumber$',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: $hash$,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: $hashOneBasedIndex$,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: $respondToHashChanges$,
+
         // Push each slide change to the browser history
-$if(history)$
         history: $history$,
-$else$
-        history: true,
-$endif$
-$if(keyboard)$
+
         // Enable keyboard shortcuts for navigation
         keyboard: $keyboard$,
-$endif$
-$if(overview)$
+
         // Enable the slide overview mode
         overview: $overview$,
-$endif$
-$if(center)$
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: $disableLayout$,
+
         // Vertical centering of slides
         center: $center$,
-$endif$
-$if(touch)$
+
         // Enables touch navigation on devices with touch input
         touch: $touch$,
-$endif$
-$if(loop)$
+
         // Loop the presentation
         loop: $loop$,
-$endif$
-$if(rtl)$
+
         // Change the presentation direction to be RTL
         rtl: $rtl$,
-$endif$
-$if(navigationMode)$
-        // see https://github.com/hakimel/reveal.js/#navigation-mode
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: '$navigationMode$',
-$endif$
-$if(fragments)$
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: $shuffle$,
+
         // Turns fragments on and off globally
         fragments: $fragments$,
-$endif$
-$if(embedded)$
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: $fragmentInURL$,
+
         // Flags if the presentation is running in an embedded mode,
         // i.e. contained within a limited portion of the screen
         embedded: $embedded$,
-$endif$
-$if(help)$
+
         // Flags if we should show a help overlay when the questionmark
         // key is pressed
         help: $help$,
-$endif$
-$if(showNotes)$
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: $pause$,
+
         // Flags if speaker notes should be visible to all viewers
         showNotes: $showNotes$,
-$endif$
-$if(autoSlide)$
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: $autoPlayMedia$,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: $preloadIframes$,
+
         // Number of milliseconds between automatically proceeding to the
         // next slide, disabled when set to 0, this value can be overwritten
         // by using a data-autoslide attribute on your slides
         autoSlide: $autoSlide$,
-$endif$
-$if(autoSlideStoppable)$
+
         // Stop auto-sliding after user input
         autoSlideStoppable: $autoSlideStoppable$,
-$endif$
-$if(mouseWheel)$
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: $autoSlideMethod$,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: $defaultTiming$,
+
         // Enable slide navigation via mouse wheel
         mouseWheel: $mouseWheel$,
-$endif$
-$if(rollingLinks)$
-        // Apply a 3D roll to links on hover
-        rollingLinks: $rollingLinks$,
-$endif$
-$if(hideAddressBar)$
-        // Hides the address bar on mobile devices
-        hideAddressBar: $hideAddressBar$,
-$endif$
-$if(previewLinks)$
+
+        // The display mode that will be used to show slides
+        display: '$display$',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: $hideInactiveCursor$,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: $hideCursorTime$,
+
         // Opens links in an iframe preview overlay
         previewLinks: $previewLinks$,
-$endif$
-$if(transition)$
-        // Transition style
-        transition: '$transition$', // none/fade/slide/convex/concave/zoom
-$endif$
-$if(transitionSpeed)$
-        // Transition speed
-        transitionSpeed: '$transitionSpeed$', // default/fast/slow
-$endif$
-$if(backgroundTransition)$
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: '$transition$',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: '$transitionSpeed$',
+
         // Transition style for full page slide backgrounds
-        backgroundTransition: '$backgroundTransition$', // none/fade/slide/convex/concave/zoom
-$endif$
-$if(viewDistance)$
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: '$backgroundTransition$',
+
         // Number of slides away from the current that are visible
         viewDistance: $viewDistance$,
-$endif$
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: $mobileViewDistance$,
 $if(parallaxBackgroundImage)$
+
         // Parallax background image
-        parallaxBackgroundImage: '$parallaxBackgroundImage$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+        parallaxBackgroundImage: '$parallaxBackgroundImage/nowrap$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 $else$
 $if(background-image)$
+
        // Parallax background image
-       parallaxBackgroundImage: '$background-image$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+       parallaxBackgroundImage: '$background-image/nowrap$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 $endif$
 $endif$
 $if(parallaxBackgroundSize)$
+
         // Parallax background size
-        parallaxBackgroundSize: '$parallaxBackgroundSize$', // CSS syntax, e.g. "2100px 900px"
+        parallaxBackgroundSize: '$parallaxBackgroundSize/nowrap$', // CSS syntax, e.g. "2100px 900px"
 $endif$
 $if(parallaxBackgroundHorizontal)$
+
         // Amount to move parallax background (horizontal and vertical) on slide change
         // Number, e.g. 100
-        parallaxBackgroundHorizontal: $parallaxBackgroundHorizontal$,
+        parallaxBackgroundHorizontal: $parallaxBackgroundHorizontal/nowrap$,
 $endif$
 $if(parallaxBackgroundVertical)$
-        parallaxBackgroundVertical: $parallaxBackgroundVertical$,
+
+        parallaxBackgroundVertical: $parallaxBackgroundVertical/nowrap$,
 $endif$
 $if(width)$
+
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
         width: $width$,
 $endif$
 $if(height)$
+
         height: $height$,
 $endif$
 $if(margin)$
+
         // Factor of the display size that should remain empty around the content
         margin: $margin$,
 $endif$
 $if(minScale)$
+
         // Bounds for smallest/largest possible scale to apply to content
         minScale: $minScale$,
 $endif$
 $if(maxScale)$
+
         maxScale: $maxScale$,
 $endif$
-$if(zoomKey)$
-        // Modifier key used to click-zoom to part of the slide
-        zoomKey: '$zoomKey$',
-$endif$
 $if(mathjax)$
+
         math: {
           mathjax: '$mathjaxurl$',
           config: 'TeX-AMS_HTML-full',
@@ -331,106 +359,182 @@ $if(mathjax)$
           },
         },
 $endif$
+
+$if(revealjs-show-menu)$
         menu: {
-            // Specifies which side of the presentation the menu will
-            // be shown. Use 'left' or 'right'.
-            side: 'left',
+          // Specifies which side of the presentation the menu will
+          // be shown. Use 'left' or 'right'.
+          side: 'left',
 
-            // Add slide numbers to the titles in the slide list.
-            // Use 'true' or format string (same as reveal.js slide numbers)
-            numbers: false,
+          // Specifies the width of the menu.
+          // Can be one of the following:
+          // 'normal', 'wide', 'third', 'half', 'full', or
+          // any valid css length value
+          width: 'normal',
 
-            // Specifies which slide elements will be used for generating
-            // the slide titles in the menu. The default selects the first
-            // heading element found in the slide, but you can specify any
-            // valid css selector and the text from the first matching
-            // element will be used.
-            // Note: that a section data-menu-title attribute or an element
-            // with a menu-title class will take precedence over this option
-            titleSelector: 'h1, h2, h3, h4, h5, h6',
+          // Add slide numbers to the titles in the slide list.
+          // Use 'true' or format string (same as reveal.js slide numbers)
+          numbers: true,
 
-            // Hide slides from the menu that do not have a title.
-            // Set to 'true' to only list slides with titles.
-            hideMissingTitles: false,
+          // Specifies which slide elements will be used for generating
+          // the slide titles in the menu. The default selects the first
+          // heading element found in the slide, but you can specify any
+          // valid css selector and the text from the first matching
+          // element will be used.
+          // Note: that a section data-menu-title attribute or an element
+          // with a menu-title class will take precedence over this option
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
 
-            // Add markers to the slide titles to indicate the
-            // progress through the presentation
-            markers: false,
+          // If slides do not have a matching title, attempt to use the
+          // start of the text content as the title instead
+          useTextContentForMissingTitles: false,
 
-            // Specify custom panels to be included in the menu, by
-            // providing an array of objects with 'title', 'icon'
-            // properties, and either a 'src' or 'content' property.
-            custom: false,
+          // Hide slides from the menu that do not have a title.
+          // Set to 'true' to only list slides with titles.
+          hideMissingTitles: false,
 
-            // Specifies the themes that will be available in the themes
-            // menu panel. Set to 'false' to hide themes panel.
-            themes: [
-                { name: 'Black', theme: '$revealjs-url$/css/theme/black.css' },
-                { name: 'White', theme: '$revealjs-url$/css/theme/white.css' },
-                { name: 'League', theme: '$revealjs-url$/css/theme/league.css' },
-                { name: 'Sky', theme: '$revealjs-url$/css/theme/sky.css' },
-                { name: 'Beige', theme: '$revealjs-url$/css/theme/beige.css' },
-                { name: 'Simple', theme: '$revealjs-url$/css/theme/simple.css' },
-                { name: 'Serif', theme: '$revealjs-url$/css/theme/serif.css' },
-                { name: 'Blood', theme: '$revealjs-url$/css/theme/blood.css' },
-                { name: 'Night', theme: '$revealjs-url$/css/theme/night.css' },
-                { name: 'Moon', theme: '$revealjs-url$/css/theme/moon.css' },
-                { name: 'Solarized', theme: '$revealjs-url$/css/theme/solarized.css' }
-            ],
+          // Adds markers to the slide titles to indicate the
+          // progress through the presentation. Set to 'false'
+          // to hide the markers.
+          markers: true,
 
-            // Specifies if the transitions menu panel will be shown.
-            transitions: true,
+          // Specify custom panels to be included in the menu, by
+          // providing an array of objects with 'title', 'icon'
+          // properties, and either a 'src' or 'content' property.
+          custom: false,
 
-            // Adds a menu button to the slides to open the menu panel.
-            // Set to 'false' to hide the button.
-            openButton: true,
+          // Specifies the themes that will be available in the themes
+          // menu panel. Set to 'true' to show the themes menu panel
+          // with the default themes list. Alternatively, provide an
+          // array to specify the themes to make available in the
+          // themes menu panel, for example...
+          themes: [
+                { name: 'Beige', theme: '$revealjs-url$/dist/theme/beige.css' },
+                { name: 'Black', theme: '$revealjs-url$/dist/theme/black.css' },
+                { name: 'Blood', theme: '$revealjs-url$/dist/theme/blood.css' },
+                { name: 'Dracula', theme: '$revealjs-url$/dist/theme/dracula.css' },
+                { name: 'League', theme: '$revealjs-url$/dist/theme/league.css' },
+                { name: 'Moon', theme: '$revealjs-url$/dist/theme/moon.css' },
+                { name: 'Night', theme: '$revealjs-url$/dist/theme/night.css' },
+                { name: 'Serif', theme: '$revealjs-url$/dist/theme/serif.css' },
+                { name: 'Simple', theme: '$revealjs-url$/dist/theme/simple.css' },
+                { name: 'Sky', theme: '$revealjs-url$/dist/theme/sky.css' },
+                { name: 'Solarized', theme: '$revealjs-url$/dist/theme/solarized.css' },
+                { name: 'White', theme: '$revealjs-url$/dist/theme/white.css' },
 
-            // If 'true' allows the slide number in the presentation to
-            // open the menu panel. The reveal.js slideNumber option must
-            // be displayed for this to take effect
-            openSlideNumber: false,
+                //{
+                //  name: 'Dark',
+                //  theme: 'lib/reveal.js/dist/theme/black.css',
+                //  highlightTheme: 'lib/reveal.js/plugin/highlight/monokai.css'
+                //},
+                //{
+                //  name: 'Code: Zenburn',
+                //  highlightTheme: 'lib/reveal.js/plugin/highlight/zenburn.css'
+                //}
+          ],
 
-            // If true allows the user to open and navigate the menu using
-            // the keyboard. Standard keyboard interaction with reveal
-            // will be disabled while the menu is open.
-            keyboard: true
-        },
+          // Note: specifying highlightTheme without a theme will
+          // change the code highlight theme while leaving the
+          // presentation theme unchanged.
+          //themes: true,
 
-$if(revealjs-show-chalkboard)$
-        keyboard: {
-          67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
-          66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
-          46: function() { RevealChalkboard.clear() },			// clear chalkboard when 'DEL' is pressed
-           8: function() { RevealChalkboard.reset() },			// reset chalkboard data on current slide when 'BACKSPACE' is pressed
-          68: function() { RevealChalkboard.download() },		// downlad recorded chalkboard drawing when 'd' is pressed
-          88: function() { RevealChalkboard.colorNext() },		// cycle colors forward when 'x' is pressed
-          89: function() { RevealChalkboard.colorPrev() },		// cycle colors backward when 'y' is pressed
+          // Specifies the path to the default theme files. If your
+          // presentation uses a different path to the standard reveal
+          // layout then you need to provide this option, but only
+          // when 'themes' is set to 'true'. If you provide your own
+          // list of themes or 'themes' is set to 'false' the
+          // 'themesPath' option is ignored.
+          themesPath: 'dist/theme/',
+
+          // Specifies if the transitions menu panel will be shown.
+          // Set to 'true' to show the transitions menu panel with
+          // the default transitions list. Alternatively, provide an
+          // array to specify the transitions to make available in
+          // the transitions panel, for example...
+          // ['None', 'Fade', 'Slide']
+          transitions: true,
+
+          // Adds a menu button to the slides to open the menu panel.
+          // Set to 'false' to hide the button.
+          openButton: true,
+
+          // If 'true' allows the slide number in the presentation to
+          // open the menu panel. The reveal.js slideNumber option must
+          // be displayed for this to take effect
+          openSlideNumber: true,
+
+          // If true allows the user to open and navigate the menu using
+          // the keyboard. Standard keyboard interaction with reveal
+          // will be disabled while the menu is open.
+          keyboard: true,
+
+          // Normally the menu will close on user actions such as
+          // selecting a menu item, or clicking the presentation area.
+          // If 'true', the sticky option will leave the menu open
+          // until it is explicitly closed, that is, using the close
+          // button or pressing the ESC or m key (when the keyboard
+          // interaction option is enabled).
+          sticky: false,
+
+          // If 'true' standard menu items will be automatically opened
+          // when navigating using the keyboard. Note: this only takes
+          // effect when both the 'keyboard' and 'sticky' options are enabled.
+          autoOpen: true,
+
+          // If 'true' the menu will not be created until it is explicitly
+          // requested by calling RevealMenu.init(). Note this will delay
+          // the creation of all menu panels, including custom panels, and
+          // the menu button.
+          delayInit: false,
+
+          // If 'true' the menu will be shown when the menu is initialised.
+          openOnInit: false,
+
+          // By default the menu will load it's own font-awesome library
+          // icons. If your presentation needs to load a different
+          // font-awesome library the 'loadIcons' option can be set to false
+          // and the menu will not attempt to load the font-awesome library.
+          loadIcons: true
         },
 $endif$
-
         // Optional reveal.js plugins
         dependencies: [
 $if(revealjs-title-footer)$
           { src: '$revealjs-title-footer-url$/plugin/title-footer/title-footer.js', async: true, callback: function() { 
               title_footer.initialize($revealjs-title-footer$, 'rgba(0,0,0,0)');
-            } },
+            }
+          },
 $endif$
+        ],
+
+        customcontrols: {
+          controls: [
+            { icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();'
+            },
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
+
+        // reveal.js plugins
+        plugins: [
 $if(revealjs-show-menu)$
-          { src: '$revealjs-menu-url$/menu.js', async: true },
+          RevealMenu,
 $endif$
 $if(revealjs-show-chalkboard)$
-          { src: '$revealjs-chalkboard-url$/chalkboard.js', async: true },
-$endif$
-          { src: '$revealjs-url$/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '$revealjs-url$/plugin/zoom-js/zoom.js', async: true },
-$if(notes-server)$
-          { src: '$revealjs-url$/socket.io/socket.io.js', async: true },
-          { src: '$revealjs-url$/plugin/notes-server/client.js', async: true },
+          RevealChalkboard,
+          RevealCustomControls,
 $endif$
 $if(mathjax)$
-          { src: '$revealjs-url$/plugin/math/math.js', async: true },
+          RevealMath,
 $endif$
-          { src: '$revealjs-url$/plugin/notes/notes.js', async: true }
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

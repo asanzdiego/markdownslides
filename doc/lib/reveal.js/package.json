@@ -1,44 +1,104 @@
 {
   "name": "reveal.js",
-  "version": "3.9.2",
+  "version": "5.1.0",
   "description": "The HTML Presentation Framework",
-  "homepage": "http://revealjs.com",
+  "homepage": "https://revealjs.com",
   "subdomain": "revealjs",
-  "main": "js/reveal.js",
+  "main": "dist/reveal.js",
+  "module": "dist/reveal.esm.js",
+  "license": "MIT",
   "scripts": {
-    "test": "grunt test",
-    "start": "grunt serve",
-    "build": "grunt"
+    "test": "gulp test",
+    "start": "gulp serve",
+    "build": "gulp build"
   },
   "author": {
     "name": "Hakim El Hattab",
     "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "web": "https://hakim.se"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/hakimel/reveal.js.git"
   },
   "engines": {
-    "node": ">=9.0.0"
+    "node": ">=18.0.0"
   },
+  "keywords": [
+    "reveal",
+    "slides",
+    "presentation"
+  ],
   "devDependencies": {
-    "express": "^4.16.2",
-    "grunt": "^1.0.4",
-    "grunt-autoprefixer": "^3.0.4",
-    "grunt-cli": "^1.3.2",
-    "grunt-contrib-connect": "^2.0.0",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-jshint": "^2.0.0",
-    "grunt-contrib-qunit": "^3.1.0",
-    "grunt-contrib-uglify": "^3.3.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-sass": "^3.0.2",
-    "grunt-zip": "~0.17.1",
-    "load-grunt-tasks": "^4.0.0",
-    "mustache": "^2.3.0",
-    "node-sass": "^4.13.1",
-    "socket.io": "^2.2.0"
+    "@babel/core": "^7.23.2",
+    "@babel/eslint-parser": "^7.22.15",
+    "@babel/preset-env": "^7.23.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "babel-plugin-transform-html-import-to-string": "2.0.0",
+    "colors": "^1.4.0",
+    "core-js": "^3.33.1",
+    "fitty": "^2.3.7",
+    "glob": "^10.3.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-header": "^2.0.9",
+    "gulp-tap": "^2.0.0",
+    "gulp-zip": "^5.1.0",
+    "highlight.js": "^11.9.0",
+    "marked": "^4.3.0",
+    "node-qunit-puppeteer": "^2.1.2",
+    "qunit": "^2.20.0",
+    "rollup": "^4.1.5",
+    "sass": "^1.69.5",
+    "yargs": "^17.7.2"
   },
-  "license": "MIT"
+  "overrides": {
+    "chokidar": "3.5.3",
+    "glob-parent": "6.0.2"
+  },
+  "browserslist": "> 2%, not dead",
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "sourceType": "module",
+      "allowImportExportEverywhere": true,
+      "requireConfigFile": false
+    },
+    "globals": {
+      "module": false,
+      "console": false,
+      "unescape": false,
+      "define": false,
+      "exports": false
+    },
+    "rules": {
+      "curly": 0,
+      "eqeqeq": 2,
+      "wrap-iife": [
+        2,
+        "any"
+      ],
+      "no-use-before-define": [
+        2,
+        {
+          "functions": false
+        }
+      ],
+      "new-cap": 2,
+      "no-caller": 2,
+      "dot-notation": 0,
+      "no-eq-null": 2,
+      "no-unused-expressions": 0
+    }
+  }
 }

@@ -98,8 +98,7 @@ docker run -it -v "${PWD}":/home/markdownslides-master/"${PWD##*/}" \
 
 ## Creation
 
-- First **copy the doc folder and rename it as you like**. This is not necessary but
-  helps you organize your documents.
+- First **copy the doc folder and rename it as you like**. It is important to rename it to prevent errors.
 
 - **Create the md files** that you want to generate in the **md folder**.
 The md files are [Markdown](http://en.wikipedia.org/wiki/Markdown) files
@@ -400,21 +399,29 @@ REVEAL_JS_ONLINE='no'
 - Added the DEFAULT_BUILD property.
 - Minor changes.
 
+## Release 7.0
+
+- Updated all the libraries to the latest version.
+- Updated the templates.
+- Updated the Dockerfile.
+
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 
 ## Adolfo Sanz De Diego
 
-- **Old JEE web developer**.
+- I started **developing web applications** until I transitioned into teaching.
 
-- Now I'm **Tecnical Teacher Advaisor** in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education and Youth of the Community of Madrid.
+- Currently, I am the [Head of the Educational Platforms Service at the Digitalization Department of the Community of Madrid](https://www.comunidad.madrid/transparencia/unidad-organizativa-responsable/servicio-plataformas-educativas).
 
-- In addition I work as **trainer specialized in development technologies**.
+- I collaborate as a teacher at the [University of Alcalá](https://www.uah.es/) and as a trainer at [Pronoide](https://www.pronoide.com/).
 
 ## Some projects
 
 - ![Hackathon Lovers](../img/hackathon-lovers-logo.png){height=30} [Hackathon Lovers](http://hackathonlovers.com): a group created for entrepreneurs and developers who loves hackathons.
 
 - [Password Manager Generator](http://pasmangen.github.io): an online password manager.
+
+- [Extension of Password Manager Generator](https://github.com/pasmangen-extension/pasmangen-extension.github.io): an extension for browsers of Password Manager Generator.
 
 - [MarkdownSlides](https://github.com/asanzdiego/markdownslides): a script to create slides from MD files.
 
@@ -425,4 +432,3 @@ REVEAL_JS_ONLINE='no'
     - GitHub:     [github.com/asanzdiego](http://github.com/asanzdiego)
     - Twitter:    [twitter.com/asanzdiego](http://twitter.com/asanzdiego)
     - LinkedIn:   [linkedin.com/in/asanzdiego](http://www.linkedin.com/in/asanzdiego)
-    - SlideShare: [slideshare.net/asanzdiego](http://www.slideshare.net/asanzdiego)

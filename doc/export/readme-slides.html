@@ -10,85 +10,71 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../lib/reveal.js//css/reset.css">
-  <link rel="stylesheet" href="../lib/reveal.js//css/reveal.css">
+  <link rel="stylesheet" href="../lib/reveal.js//dist/reset.css">
+  <link rel="stylesheet" href="../lib/reveal.js//dist/reveal.css">
   <link rel="stylesheet" href="../lib/reveal.js-title-footer//plugin/title-footer/title-footer.css">
   <link rel="stylesheet" href="../lib/reveal.js-menu//menu.css">
-<style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
+  <link rel="stylesheet" href="../lib/fontawesome//css/all.min.css">
+  <link rel="stylesheet" href="../lib/reveal.js-plugins//customcontrols/style.css">
+  <link rel="stylesheet" href="../lib/reveal.js-plugins//chalkboard/style.css">
   <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-  <style>
+    .slide-number {
+        position: fixed !important;
+        bottom: 3.9em !important;
+        right: 3.2em !important;
+        z-index: 100 !important;
+        background-color: rgba(0,0,0,0) !important;
+    }
+
+    .slide-number a {
+        color: var(--r-link-color) !important;
+        font-size: 1em !important;
+    }
+    
+    .slide-number a:hover {
+        color: var(--r-link-color-hover) !important;
+    }
+
+    footer {
+      position: fixed !important;
+      left: 10% !important;
+      width: 80%  !important;
+      text-align: center  !important;
+    }
+
+    footer p {
+      font-size: 2em !important;
+      margin-top: -3% !important;
+    }
+
+    .reveal > .overlay { /* see https://github.com/rajgoel/reveal.js-plugins/issues/179#issuecomment-2063578130 */
+      backdrop-filter: unset!important;
+    }
+
+    code{white-space: pre; background-color: lightgrey;}  
+    .reveal .sourceCode {  /* see #7635 */
+        overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
     div.sourceCode { margin: 1em 0; }
     pre.sourceCode { margin: 0; }
@@ -123,7 +109,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
+    code span.bu { color: #008000; } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -136,7 +122,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -149,85 +135,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../lib/reveal.js//css/theme/beige.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal.js//css/print/pdf.css' : '../lib/reveal.js//css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-
-  <style type="text/css">
-    body {
-      background: white !important;
-      background-color: white !important;
-    }
-    code{
-      white-space: pre;
-    }
-    .reveal pre code {
-      background: rgba(255, 255, 255, 0.7);
-      color: rgba(0, 0, 0, 0.7);
-    }
-    .reveal section img {
-      margin: 0px;
-      padding: 0px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 0px;
-    }
-    strong {
-      color: #777
-    }
-    a:hover {
-      text-decoration: underline !important;
-    }
-    h1.title {
-      font-size: 200% !important;
-    }
-    h1 {
-      font-size: 200% !important;
-    }
-    h2 {
-      font-size: 150% !important;
-    }
-    h3 {
-      font-size: 100% !important;
-    }
-    #toggle-chalkboard {
-      inset: auto auto 30px 70px !important;
-    }
-    #toggle-notes {
-      inset: auto auto 30px 110px !important;
-    }
-    @media print {
-      #only-print-parent { display: table !important; }
-      #only-print-child { display: table-cell !important; vertical-align: middle;}
-      h1.title { font-size: 300% !important;}
-      h1 { font-size: 300% !important; }
-      h2 { font-size: 200% !important; }
-      h3 { font-size: 150% !important; }
-    }
-    footer p {
-      font-size: 200% !important;
-      margin-top: -3% !important;
-    }
-  </style>
-  <!--[if lt IE 9]>
-  <script src="../lib/reveal.js//lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="../lib/reveal.js//dist/theme/white.css" id="theme">
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-<section class="only-print-parent"  id="title-slide">
-    <div class="only-print-child">
-      <h1 class="title">Markdown Slides [EN]</h2>
-      <h2 class="author">Adolfo Sanz De Diego</h2>
-      <h3 class="date"><span class="citation" data-cites="asanzdiego">@asanzdiego</span></h3>
-    </div>
+<section id="title-slide">
+  <h1 class="title">Markdown Slides [EN]</h2>
+  <h2 class="author">Adolfo Sanz De Diego</h2>
+  <h3 class="date"><span class="citation"
+data-cites="asanzdiego">@asanzdiego</span></h3>
 </section>
 
 <section>
@@ -238,66 +156,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="what-is-it" class="slide level2">
 <h2>What is it?</h2>
 <ul>
-<li><p><strong>MarkdownSlides</strong> is a Reveal.js and PDF <strong>slides</strong> generator <strong>from MARKDOWN files</strong>, that also generate HTML, EPUB and DOCX documents.</p></li>
-<li><p>The idea is that <strong>from a same MARKDOWN file we can get slides and books</strong> without worrying about style, just worrying about content.</p></li>
+<li><p><strong>MarkdownSlides</strong> is a Reveal.js and PDF
+<strong>slides</strong> generator <strong>from MARKDOWN files</strong>,
+that also generate HTML, EPUB and DOCX documents.</p></li>
+<li><p>The idea is that <strong>from a same MARKDOWN file we can get
+slides and books</strong> without worrying about style, just worrying
+about content.</p></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p><img data-src="../img/markdownslides.png" class="center" style="width:50.0%" /></p>
+<p><img data-src="../img/markdownslides.png" class="center"
+style="width:50.0%" /></p>
 </section>
 <section id="samples-i" class="slide level2">
 <h2>Samples (I)</h2>
 <ul>
-<li>From a <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file generate:
+<li>From a <a
+href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a>
+file generate:
 <ul>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html">reveal-slides</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf">reveal-slides-pdf</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html">html-book</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx">docx-book</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.pdf">pdf-book</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.html">reveal-slides</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides.pdf">reveal-slides-pdf</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.epub">epub-book</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.html">html-book</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.docx">docx-book</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book.pdf">pdf-book</a></li>
 </ul></li>
 </ul>
 </section>
 <section id="samples-i-1" class="slide level2">
 <h2>Samples (I)</h2>
 <ul>
-<li>From this same <a href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a> file <strong>“plus” files</strong> can be generated:
+<li>From this same <a
+href="https://raw.github.com/asanzdiego/markdownslides/master/doc/md/readme.md">MARKDOWN</a>
+file <strong>“plus” files</strong> can be generated:
 <ul>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-plus.html">reveal-slides-plus</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-plus.pdf">reveal-slides-pdf-plus</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.epub">epub-book-plus</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.html">html-book-plus</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.docx">docx-book-plus</a></li>
-<li><a href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.pdf">pdf-book-plus</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-plus.html">reveal-slides-plus</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-slides-plus.pdf">reveal-slides-pdf-plus</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.epub">epub-book-plus</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.html">html-book-plus</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.docx">docx-book-plus</a></li>
+<li><a
+href="http://asanzdiego.github.io/markdownslides/doc/export/readme-book-plus.pdf">pdf-book-plus</a></li>
 </ul></li>
 </ul>
 </section>
 <section id="contributors" class="slide level2">
 <h2>Contributors</h2>
 <ul>
-<li>Cesar Seoane: <a href="https://github.com/cesarseoane" class="uri">https://github.com/cesarseoane</a></li>
-<li>Rubén Gómez García: <a href="https://github.com/kaneproject" class="uri">https://github.com/kaneproject</a></li>
-<li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos" class="uri">https://github.com/hhkaos</a></li>
-<li>Pablo J. Triviño: <a href="https://twitter.com/p_trivino" class="uri">https://twitter.com/p_trivino</a></li>
-<li>Marcos Chavarría: <a href="https://twitter.com/chavarria1991" class="uri">https://twitter.com/chavarria1991</a></li>
+<li>Cesar Seoane: <a href="https://github.com/cesarseoane"
+class="uri">https://github.com/cesarseoane</a></li>
+<li>Rubén Gómez García: <a href="https://github.com/kaneproject"
+class="uri">https://github.com/kaneproject</a></li>
+<li>Raul Jimenez Ortega: <a href="https://github.com/hhkaos"
+class="uri">https://github.com/hhkaos</a></li>
+<li>Pablo J. Triviño: <a href="https://twitter.com/p_trivino"
+class="uri">https://twitter.com/p_trivino</a></li>
+<li>Marcos Chavarría: <a href="https://twitter.com/chavarria1991"
+class="uri">https://twitter.com/chavarria1991</a></li>
 </ul>
 </section>
 <section id="licence" class="slide level2">
 <h2>Licence</h2>
-<div>
 <ul>
 <li class="fragment"><strong>This work is licensed under a:</strong>
 <ul>
-<li class="fragment"><a href="http://creativecommons.org/licenses/by-sa/3.0//">Creative Commons Attribution 3.0</a></li>
+<li class="fragment"><a
+href="http://creativecommons.org/licenses/by-sa/3.0//">Creative Commons
+Attribution 3.0</a></li>
 </ul></li>
-<li class="fragment"><strong>The program source code are licensed under a:</strong>
+<li class="fragment"><strong>The program source code are licensed under
+a:</strong>
 <ul>
-<li class="fragment"><a href="http://www.gnu.org/licenses/gpl.html">GPL 3.0</a></li>
+<li class="fragment"><a href="http://www.gnu.org/licenses/gpl.html">GPL
+3.0</a></li>
 </ul></li>
 </ul>
-</div>
 </section></section>
 <section>
 <section id="instalation" class="title-slide slide level1">
@@ -328,12 +274,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="download" class="slide level2">
 <h2>Download</h2>
-<p><a href="https://github.com/asanzdiego/markdownslides/releases" class="uri">https://github.com/asanzdiego/markdownslides/releases</a></p>
+<p><a href="https://github.com/asanzdiego/markdownslides/releases"
+class="uri">https://github.com/asanzdiego/markdownslides/releases</a></p>
 </section>
 <section id="docker" class="slide level2">
 <h2>Docker</h2>
 <ul>
-<li><p>Your installation with docker is still <strong>under testing</strong>.</p></li>
+<li><p>Your installation with docker is still <strong>under
+testing</strong>.</p></li>
 <li><p>Any feedback is welcome.</p></li>
 </ul>
 </section>
@@ -360,14 +308,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="creation" class="slide level2">
 <h2>Creation</h2>
 <ul>
-<li><p>First <strong>copy the doc folder and rename it as you like</strong>. This is not necessary but helps you organize your documents.</p></li>
-<li><p><strong>Create the md files</strong> that you want to generate in the <strong>md folder</strong>. The md files are <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which are nothing more than plain text files with extension md, and a lightweight markup (we should know it but it is very simple).</p></li>
+<li><p>First <strong>copy the doc folder and rename it as you
+like</strong>. It is important to rename it to prevent errors.</p></li>
+<li><p><strong>Create the md files</strong> that you want to generate in
+the <strong>md folder</strong>. The md files are <a
+href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> files which
+are nothing more than plain text files with extension md, and a
+lightweight markup (we should know it but it is very simple).</p></li>
 </ul>
 </section>
 <section id="imports-i" class="slide level2">
 <h2>Imports (I)</h2>
 <ul>
-<li>We can add a file with <strong><span class="citation" data-cites="import">@import</span> import/NOMBRE_FICHERO [startLine=NUMERO] [endLine=NUMERO] [showNumberLines]</strong></li>
+<li>We can add a file with <strong><span class="citation"
+data-cites="import">@import</span> import/NOMBRE_FICHERO
+[startLine=NUMERO] [endLine=NUMERO] [showNumberLines]</strong></li>
 </ul>
 <p>Firt example:</p>
 <pre><code> @import import/import-2.md</code></pre>
@@ -408,19 +363,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="notes" class="slide level2">
 <h2>Notes</h2>
 <ul>
-<li>We can add notes that will be visible in book mode or if <strong>you press the letter ‘s’ on the slides</strong> with <strong><span class="citation" data-cites="start-notes">@start-notes</span></strong> and <strong><span class="citation" data-cites="end-notes">@end-notes</span></strong>.</li>
+<li>We can add notes that will be visible in book mode or if <strong>you
+press the letter ‘s’ on the slides</strong> with <strong><span
+class="citation" data-cites="start-notes">@start-notes</span></strong>
+and <strong><span class="citation"
+data-cites="end-notes">@end-notes</span></strong>.</li>
 </ul>
 <pre><code> @start-notes
  This is only visible in book mode or if you press &#39;s&#39; on the slides.
  @end-notes</code></pre>
 <aside class="notes">
-<p>This is only visible in book mode or if you press ‘s’ on the slides.</p>
+<p>This is only visible in book mode or if you press ‘s’ on the
+slides.</p>
 </aside>
 </section>
 <section id="plus-notes" class="slide level2">
 <h2>Plus notes</h2>
 <ul>
-<li>We can create notes with <strong><span class="citation" data-cites="plus">@plus</span></strong> that will be only visible in “plus” files as long as in the build.properties we have <strong>GENERATE_PLUS_VERSION=‘yes’</strong></li>
+<li>We can create notes with <strong><span class="citation"
+data-cites="plus">@plus</span></strong> that will be only visible in
+“plus” files as long as in the build.properties we have
+<strong>GENERATE_PLUS_VERSION=‘yes’</strong></li>
 </ul>
 <pre><code> @plus the lines below will only be available in the plus version
 
@@ -429,18 +392,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="mathjax" class="slide level2">
 <h2>MathJax</h2>
 <ul>
-<li>We can use the <a href="https://www.mathjax.org/">MathJax</a> lib.</li>
+<li>We can use the <a href="https://www.mathjax.org/">MathJax</a>
+lib.</li>
 </ul>
 <p>So this:</p>
 <pre><code>$$x = {-b \pm \sqrt{b^2-4ac}}.$$</code></pre>
 <p>Will be converted to:</p>
-<p><span class="math display">\[x = {-b \pm \sqrt{b^2-4ac}}.\]</span></p>
+<p><span class="math display">\[x = {-b \pm
+\sqrt{b^2-4ac}}.\]</span></p>
 </section>
 <section id="code" class="slide level2">
 <h2>Code</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">function</span> <span class="fu">helloWorld</span>() {</span>
-<span id="cb12-2"><a href="#cb12-2"></a>    alert(<span class="st">&#39;Hello world&#39;</span>)<span class="op">;</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">helloWorld</span>() {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">alert</span>(<span class="st">&#39;Hello world&#39;</span>)<span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section id="levels" class="slide level2">
 <h2>Levels</h2>
@@ -457,7 +423,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="numbering" class="slide level2">
 <h2>Numbering</h2>
 <ul>
-<li>You can name several slides with (I), (II), etc. But only the first one will be exported to the book. Example:</li>
+<li>You can name several slides with (I), (II), etc. But only the first
+one will be exported to the book. Example:</li>
 </ul>
 <pre><code> ## Foo Bar (I)
 
@@ -467,51 +434,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="configuration-i" class="slide level2">
 <h2>Configuration (I)</h2>
-<p>We can configure the files that we want to generate from the file <strong>build.properties</strong></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="va">DEFAULT_GENERATION_MODE=</span><span class="st">&#39;min&#39;</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="va">GENERATE_PLUS_VERSION=</span><span class="st">&#39;yes&#39;</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="va">DEFAULT_BUILD=</span><span class="st">&#39;REVEAL_SLIDES_PDF&#39;</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a></span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="va">BUILD_REVEAL_SLIDES=</span><span class="st">&#39;min&#39;</span></span>
-<span id="cb16-6"><a href="#cb16-6"></a><span class="va">BUILD_REVEAL_SLIDES_PDF=</span><span class="st">&#39;med&#39;</span></span>
-<span id="cb16-7"><a href="#cb16-7"></a></span>
-<span id="cb16-8"><a href="#cb16-8"></a><span class="va">BUILD_HTML_BOOK=</span><span class="st">&#39;min&#39;</span></span>
-<span id="cb16-9"><a href="#cb16-9"></a><span class="va">BUILD_PDF_BOOK=</span><span class="st">&#39;med&#39;</span></span>
-<span id="cb16-10"><a href="#cb16-10"></a><span class="va">BUILD_DOCX_BOOK=</span><span class="st">&#39;max&#39;</span></span>
-<span id="cb16-11"><a href="#cb16-11"></a><span class="va">BUILD_EPUB_BOOK=</span><span class="st">&#39;max&#39;</span></span></code></pre></div>
+<p>We can configure the files that we want to generate from the file
+<strong>build.properties</strong></p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="va">DEFAULT_GENERATION_MODE</span><span class="op">=</span><span class="st">&#39;min&#39;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="va">GENERATE_PLUS_VERSION</span><span class="op">=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="va">DEFAULT_BUILD</span><span class="op">=</span><span class="st">&#39;REVEAL_SLIDES_PDF&#39;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="va">BUILD_REVEAL_SLIDES</span><span class="op">=</span><span class="st">&#39;min&#39;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="va">BUILD_REVEAL_SLIDES_PDF</span><span class="op">=</span><span class="st">&#39;med&#39;</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="va">BUILD_HTML_BOOK</span><span class="op">=</span><span class="st">&#39;min&#39;</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="va">BUILD_PDF_BOOK</span><span class="op">=</span><span class="st">&#39;med&#39;</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="va">BUILD_DOCX_BOOK</span><span class="op">=</span><span class="st">&#39;max&#39;</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="va">BUILD_EPUB_BOOK</span><span class="op">=</span><span class="st">&#39;max&#39;</span></span></code></pre></div>
 </section>
 <section id="configuration-ii" class="slide level2">
 <h2>Configuration (II)</h2>
-<p>We can also configure some other stufs from the file <strong>build.properties</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="va">CLEAN_LIB_FOLDER=</span><span class="st">&#39;no&#39;</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="va">COPY_IMG_FOLDER=</span><span class="st">&#39;no&#39;</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a><span class="va">ZIP_EXPORT_FOLDER=</span><span class="st">&#39;no&#39;</span></span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="va">NUMBER_SECTIONS=</span><span class="st">&#39;no&#39;</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a><span class="va">NUMBER_OFFSET=</span><span class="st">&#39;no&#39;</span></span>
-<span id="cb17-6"><a href="#cb17-6"></a><span class="va">CURRENT_NUMBER_OFFSET=</span>1</span>
-<span id="cb17-7"><a href="#cb17-7"></a><span class="va">REMOVE_GENERATE_MD_FILES=</span><span class="st">&#39;yes&#39;</span></span></code></pre></div>
+<p>We can also configure some other stufs from the file
+<strong>build.properties</strong></p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="va">CLEAN_LIB_FOLDER</span><span class="op">=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="va">COPY_IMG_FOLDER</span><span class="op">=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="va">ZIP_EXPORT_FOLDER</span><span class="op">=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="va">NUMBER_SECTIONS</span><span class="op">=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="va">NUMBER_OFFSET</span><span class="op">=</span><span class="st">&#39;no&#39;</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="va">CURRENT_NUMBER_OFFSET</span><span class="op">=</span>1</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="va">REMOVE_GENERATE_MD_FILES</span><span class="op">=</span><span class="st">&#39;yes&#39;</span></span></code></pre></div>
 </section>
 <section id="configuración-iii" class="slide level2">
 <h2>Configuración (III)</h2>
-<p>We can also configure some other stufs aboout reveal.js from the file <strong>build.properties</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">#THEME=&#39;black|white|league|sky|beige|simple|serif|blood|night|moon|solarized&#39;</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="va">REVEAL_JS_THEME=</span><span class="st">&#39;beige&#39;</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="va">REVEAL_JS_SHOW_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="va">REVEAL_JS_DEFAULT_TITLE_FOOTER=</span><span class="st">&#39;yes&#39;</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="va">REVEAL_JS_TITLE_FOOTER=</span><span class="st">&quot;&#39;MarkdownSlides by @asanzdiego :-)&#39;&quot;</span></span>
-<span id="cb18-6"><a href="#cb18-6"></a><span class="va">REVEAL_JS_SHOW_MENU=</span><span class="st">&#39;yes&#39;</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a><span class="va">REVEAL_JS_SHOW_CHALKBOARD=</span><span class="st">&#39;yes&#39;</span></span>
-<span id="cb18-8"><a href="#cb18-8"></a><span class="va">REVEAL_JS_ONLINE=</span><span class="st">&#39;no&#39;</span></span></code></pre></div>
+<p>We can also configure some other stufs aboout reveal.js from the file
+<strong>build.properties</strong></p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#THEME=&#39;black|white|league|sky|beige|simple|serif|blood|night|moon|solarized&#39;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="va">REVEAL_JS_THEME</span><span class="op">=</span><span class="st">&#39;beige&#39;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="va">REVEAL_JS_SHOW_TITLE_FOOTER</span><span class="op">=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="va">REVEAL_JS_DEFAULT_TITLE_FOOTER</span><span class="op">=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="va">REVEAL_JS_TITLE_FOOTER</span><span class="op">=</span><span class="st">&quot;&#39;MarkdownSlides by @asanzdiego :-)&#39;&quot;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="va">REVEAL_JS_SHOW_MENU</span><span class="op">=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="va">REVEAL_JS_SHOW_CHALKBOARD</span><span class="op">=</span><span class="st">&#39;yes&#39;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="va">REVEAL_JS_ONLINE</span><span class="op">=</span><span class="st">&#39;no&#39;</span></span></code></pre></div>
 </section>
 <section id="build" class="slide level2">
 <h2>Build</h2>
 <ul>
 <li>In the root folder you have to execute:</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="ex">./build.sh</span> [mode] [folder]</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./build.sh</span> <span class="pp">[</span><span class="ss">mode</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">folder</span><span class="pp">]</span></span></code></pre></div>
 <ul>
-<li><p>[<strong>mode</strong>] can take the next values: <strong>min, med o máx</strong>.</p></li>
-<li><p>[<strong>folder</strong>] folder wher to find the md files. If no folder name, it will convert all md files of all the folders.</p></li>
+<li><p>[<strong>mode</strong>] can take the next values: <strong>min,
+med o máx</strong>.</p></li>
+<li><p>[<strong>folder</strong>] folder wher to find the md files. If no
+folder name, it will convert all md files of all the folders.</p></li>
 </ul>
 </section></section>
 <section>
@@ -588,13 +564,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="release-2.0-iii-1" class="slide level2">
 <h2>Release 2.0 (III)</h2>
 <ul>
-<li>Added menu thanks to <a href="https://github.com/hhkaos">Raul Jimenez Ortega</a>.</li>
-<li>Added dockerfile thanks to <a href="https://github.com/kaneproject">Rubén Gómez García</a>.</li>
-<li>Clean zip files from libraries thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
-<li>Added type ‘online’ thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
-<li>Fixed bug HTTPS images thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
-<li>Loading the online libraries with HTTPS thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
-<li>Configuration PDF resolution thanks to <a href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
+<li>Added menu thanks to <a href="https://github.com/hhkaos">Raul
+Jimenez Ortega</a>.</li>
+<li>Added dockerfile thanks to <a
+href="https://github.com/kaneproject">Rubén Gómez García</a>.</li>
+<li>Clean zip files from libraries thanks to <a
+href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
+<li>Added type ‘online’ thanks to <a
+href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
+<li>Fixed bug HTTPS images thanks to <a
+href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
+<li>Loading the online libraries with HTTPS thanks to <a
+href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
+<li>Configuration PDF resolution thanks to <a
+href="https://github.com/cesarseoane">Cesar Seoane</a>.</li>
 </ul>
 </section>
 <section id="release-2.0-iv" class="slide level2">
@@ -605,7 +588,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Added ‘build.properties’ to configure file generation.</li>
 <li>Added the command ‘clean’ to clean the lib folder.</li>
 <li>Download a specific version of external library.</li>
-<li>Added notes only visible in book mode or if you press ‘s’ on the slides.</li>
+<li>Added notes only visible in book mode or if you press ‘s’ on the
+slides.</li>
 <li>Normalization of images in slides.</li>
 </ul>
 </section>
@@ -615,8 +599,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Clean the code.</li>
 <li>Remove deprecated exportation files.</li>
 <li>Improve de configuration in build.properties file.</li>
-<li>Update <a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a> dependencies.</li>
-<li>Export to PDF with <a href="https://github.com/astefanutti/decktape">DeckTape</a>.</li>
+<li>Update <a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a>
+dependencies.</li>
+<li>Export to PDF with <a
+href="https://github.com/astefanutti/decktape">DeckTape</a>.</li>
 <li>Book creation from some md files with enumeration.</li>
 <li>Possibility of adding a footer to the slides.</li>
 </ul>
@@ -627,7 +613,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Fix some bugs.</li>
 <li>Add bookmarks to the slides.</li>
 <li>Improve file names.</li>
-<li>Add <a href="https://www.mathjax.org/">MathJax/</a> lib thanks to <a href="https://twitter.com/p_trivino">Pablo J. Triviño</a>.</li>
+<li>Add <a href="https://www.mathjax.org/">MathJax/</a> lib thanks to <a
+href="https://twitter.com/p_trivino">Pablo J. Triviño</a>.</li>
 </ul>
 </section>
 <section id="release-5.0" class="slide level2">
@@ -635,11 +622,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Clean the code.</li>
 <li>Fixed some bugs.</li>
-<li>Removed the command ‘clean’ to clean the lib folder because it can be done via properties file.</li>
+<li>Removed the command ‘clean’ to clean the lib folder because it can
+be done via properties file.</li>
 <li>Added again the option to export to PDF in book format.</li>
-<li>Added the possibility to import files or fragments from an external file.</li>
-<li>Added the plugin <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard">chalkboard</a> thanks to <a href="https://twitter.com/chavarria1991">Marcos Chavarría</a>.</li>
-<li>Added the possibility to create a ‘plus’ version with extra information in slides and books.</li>
+<li>Added the possibility to import files or fragments from an external
+file.</li>
+<li>Added the plugin <a
+href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard">chalkboard</a>
+thanks to <a href="https://twitter.com/chavarria1991">Marcos
+Chavarría</a>.</li>
+<li>Added the possibility to create a ‘plus’ version with extra
+information in slides and books.</li>
 </ul>
 </section>
 <section id="release-6.0" class="slide level2">
@@ -659,26 +652,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Added the DEFAULT_BUILD property.</li>
 <li>Minor changes.</li>
 </ul>
+</section>
+<section id="release-7.0" class="slide level2">
+<h2>Release 7.0</h2>
+<ul>
+<li>Updated all the libraries to the latest version.</li>
+<li>Updated the templates.</li>
+<li>Updated the Dockerfile.</li>
+</ul>
 </section></section>
 <section>
-<section id="adolfo-sanz-de-diego-author" class="title-slide slide level1">
-<h2><img data-src="../img/asanzdiego.png" style="box-shadow:none;vertical-align:middle;width:100px;" alt="Adolfo Sanz De Diego" /> Author</h2>
+<section id="adolfo-sanz-de-diego-author"
+class="title-slide slide level1">
+<h2><img data-src="../img/asanzdiego.png"
+style="box-shadow:none;vertical-align:middle;width:100px;"
+alt="Adolfo Sanz De Diego" /> Author</h2>
 
 </section>
 <section id="adolfo-sanz-de-diego" class="slide level2">
 <h2>Adolfo Sanz De Diego</h2>
 <ul>
-<li><p><strong>Old JEE web developer</strong>.</p></li>
-<li><p>Now I’m <strong>Tecnical Teacher Advaisor</strong> in the TIC service of the General Direction of Infrastructure and Services of the Ministry of Education and Youth of the Community of Madrid.</p></li>
-<li><p>In addition I work as <strong>trainer specialized in development technologies</strong>.</p></li>
+<li><p>I started <strong>developing web applications</strong> until I
+transitioned into teaching.</p></li>
+<li><p>Currently, I am the <a
+href="https://www.comunidad.madrid/transparencia/unidad-organizativa-responsable/servicio-plataformas-educativas">Head
+of the Educational Platforms Service at the Digitalization Department of
+the Community of Madrid</a>.</p></li>
+<li><p>I collaborate as a teacher at the <a
+href="https://www.uah.es/">University of Alcalá</a> and as a trainer at
+<a href="https://www.pronoide.com/">Pronoide</a>.</p></li>
 </ul>
 </section>
 <section id="some-projects" class="slide level2">
 <h2>Some projects</h2>
 <ul>
-<li><p><img data-src="../img/hackathon-lovers-logo.png" height="30" alt="Hackathon Lovers" /> <a href="http://hackathonlovers.com">Hackathon Lovers</a>: a group created for entrepreneurs and developers who loves hackathons.</p></li>
-<li><p><a href="http://pasmangen.github.io">Password Manager Generator</a>: an online password manager.</p></li>
-<li><p><a href="https://github.com/asanzdiego/markdownslides">MarkdownSlides</a>: a script to create slides from MD files.</p></li>
+<li><p><img data-src="../img/hackathon-lovers-logo.png" height="30"
+alt="Hackathon Lovers" /> <a href="http://hackathonlovers.com">Hackathon
+Lovers</a>: a group created for entrepreneurs and developers who loves
+hackathons.</p></li>
+<li><p><a href="http://pasmangen.github.io">Password Manager
+Generator</a>: an online password manager.</p></li>
+<li><p><a
+href="https://github.com/pasmangen-extension/pasmangen-extension.github.io">Extension
+of Password Manager Generator</a>: an extension for browsers of Password
+Manager Generator.</p></li>
+<li><p><a
+href="https://github.com/asanzdiego/markdownslides">MarkdownSlides</a>:
+a script to create slides from MD files.</p></li>
 </ul>
 </section>
 <section id="where-to-find-me" class="slide level2">
@@ -687,42 +707,192 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>My nick: <strong>asanzdiego</strong>
 <ul>
 <li>Blog: <a href="http://asanzdiego.com">asanzdiego.com</a></li>
-<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
-<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
-<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">linkedin.com/in/asanzdiego</a></li>
-<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego">slideshare.net/asanzdiego</a></li>
+<li>GitHub: <a
+href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a
+href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a
+href="http://www.linkedin.com/in/asanzdiego">linkedin.com/in/asanzdiego</a></li>
 </ul></li>
 </ul>
 </section></section>
     </div>
   </div>
 
-  <script src="../lib/reveal.js//lib/js/head.min.js"></script>
-  <script src="../lib/reveal.js//js/reveal.js"></script>
+  <script src="../lib/reveal.js//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../lib/reveal.js//plugin/notes/notes.js"></script>
+  <script src="../lib/reveal.js//plugin/search/search.js"></script>
+  <script src="../lib/reveal.js//plugin/zoom/zoom.js"></script>
+  <script src="../lib/reveal.js-menu//menu.js"></script>
+  <script src="../lib/fontawesome//js/all.min.js"></script>
+  <script src="../lib/reveal.js-plugins//customcontrols/plugin.js"></script>
+  <script src="../lib/reveal.js-plugins//chalkboard/plugin.js"></script>
+  <script src="../lib/reveal.js//plugin/math/math.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
-        pdfMaxPagesPerSlide: 1,
-        history: true,
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
         // Push each slide change to the browser history
-        history: true,
-        // Transition style
-        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
         width: 1280,
+
         height: 720,
+
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
+
         // Bounds for smallest/largest possible scale to apply to content
         minScale: 0.9,
+
         maxScale: 1.1,
+
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -737,92 +907,172 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             processClass: 'tex2jax_process'
           },
         },
+
         menu: {
-            // Specifies which side of the presentation the menu will
-            // be shown. Use 'left' or 'right'.
-            side: 'left',
+          // Specifies which side of the presentation the menu will
+          // be shown. Use 'left' or 'right'.
+          side: 'left',
 
-            // Add slide numbers to the titles in the slide list.
-            // Use 'true' or format string (same as reveal.js slide numbers)
-            numbers: false,
+          // Specifies the width of the menu.
+          // Can be one of the following:
+          // 'normal', 'wide', 'third', 'half', 'full', or
+          // any valid css length value
+          width: 'normal',
 
-            // Specifies which slide elements will be used for generating
-            // the slide titles in the menu. The default selects the first
-            // heading element found in the slide, but you can specify any
-            // valid css selector and the text from the first matching
-            // element will be used.
-            // Note: that a section data-menu-title attribute or an element
-            // with a menu-title class will take precedence over this option
-            titleSelector: 'h1, h2, h3, h4, h5, h6',
+          // Add slide numbers to the titles in the slide list.
+          // Use 'true' or format string (same as reveal.js slide numbers)
+          numbers: true,
 
-            // Hide slides from the menu that do not have a title.
-            // Set to 'true' to only list slides with titles.
-            hideMissingTitles: false,
+          // Specifies which slide elements will be used for generating
+          // the slide titles in the menu. The default selects the first
+          // heading element found in the slide, but you can specify any
+          // valid css selector and the text from the first matching
+          // element will be used.
+          // Note: that a section data-menu-title attribute or an element
+          // with a menu-title class will take precedence over this option
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
 
-            // Add markers to the slide titles to indicate the
-            // progress through the presentation
-            markers: false,
+          // If slides do not have a matching title, attempt to use the
+          // start of the text content as the title instead
+          useTextContentForMissingTitles: false,
 
-            // Specify custom panels to be included in the menu, by
-            // providing an array of objects with 'title', 'icon'
-            // properties, and either a 'src' or 'content' property.
-            custom: false,
+          // Hide slides from the menu that do not have a title.
+          // Set to 'true' to only list slides with titles.
+          hideMissingTitles: false,
 
-            // Specifies the themes that will be available in the themes
-            // menu panel. Set to 'false' to hide themes panel.
-            themes: [
-                { name: 'Black', theme: '../lib/reveal.js//css/theme/black.css' },
-                { name: 'White', theme: '../lib/reveal.js//css/theme/white.css' },
-                { name: 'League', theme: '../lib/reveal.js//css/theme/league.css' },
-                { name: 'Sky', theme: '../lib/reveal.js//css/theme/sky.css' },
-                { name: 'Beige', theme: '../lib/reveal.js//css/theme/beige.css' },
-                { name: 'Simple', theme: '../lib/reveal.js//css/theme/simple.css' },
-                { name: 'Serif', theme: '../lib/reveal.js//css/theme/serif.css' },
-                { name: 'Blood', theme: '../lib/reveal.js//css/theme/blood.css' },
-                { name: 'Night', theme: '../lib/reveal.js//css/theme/night.css' },
-                { name: 'Moon', theme: '../lib/reveal.js//css/theme/moon.css' },
-                { name: 'Solarized', theme: '../lib/reveal.js//css/theme/solarized.css' }
-            ],
+          // Adds markers to the slide titles to indicate the
+          // progress through the presentation. Set to 'false'
+          // to hide the markers.
+          markers: true,
 
-            // Specifies if the transitions menu panel will be shown.
-            transitions: true,
+          // Specify custom panels to be included in the menu, by
+          // providing an array of objects with 'title', 'icon'
+          // properties, and either a 'src' or 'content' property.
+          custom: false,
 
-            // Adds a menu button to the slides to open the menu panel.
-            // Set to 'false' to hide the button.
-            openButton: true,
+          // Specifies the themes that will be available in the themes
+          // menu panel. Set to 'true' to show the themes menu panel
+          // with the default themes list. Alternatively, provide an
+          // array to specify the themes to make available in the
+          // themes menu panel, for example...
+          themes: [
+                { name: 'Beige', theme: '../lib/reveal.js//dist/theme/beige.css' },
+                { name: 'Black', theme: '../lib/reveal.js//dist/theme/black.css' },
+                { name: 'Blood', theme: '../lib/reveal.js//dist/theme/blood.css' },
+                { name: 'Dracula', theme: '../lib/reveal.js//dist/theme/dracula.css' },
+                { name: 'League', theme: '../lib/reveal.js//dist/theme/league.css' },
+                { name: 'Moon', theme: '../lib/reveal.js//dist/theme/moon.css' },
+                { name: 'Night', theme: '../lib/reveal.js//dist/theme/night.css' },
+                { name: 'Serif', theme: '../lib/reveal.js//dist/theme/serif.css' },
+                { name: 'Simple', theme: '../lib/reveal.js//dist/theme/simple.css' },
+                { name: 'Sky', theme: '../lib/reveal.js//dist/theme/sky.css' },
+                { name: 'Solarized', theme: '../lib/reveal.js//dist/theme/solarized.css' },
+                { name: 'White', theme: '../lib/reveal.js//dist/theme/white.css' },
 
-            // If 'true' allows the slide number in the presentation to
-            // open the menu panel. The reveal.js slideNumber option must
-            // be displayed for this to take effect
-            openSlideNumber: false,
+                //{
+                //  name: 'Dark',
+                //  theme: 'lib/reveal.js/dist/theme/black.css',
+                //  highlightTheme: 'lib/reveal.js/plugin/highlight/monokai.css'
+                //},
+                //{
+                //  name: 'Code: Zenburn',
+                //  highlightTheme: 'lib/reveal.js/plugin/highlight/zenburn.css'
+                //}
+          ],
 
-            // If true allows the user to open and navigate the menu using
-            // the keyboard. Standard keyboard interaction with reveal
-            // will be disabled while the menu is open.
-            keyboard: true
+          // Note: specifying highlightTheme without a theme will
+          // change the code highlight theme while leaving the
+          // presentation theme unchanged.
+          //themes: true,
+
+          // Specifies the path to the default theme files. If your
+          // presentation uses a different path to the standard reveal
+          // layout then you need to provide this option, but only
+          // when 'themes' is set to 'true'. If you provide your own
+          // list of themes or 'themes' is set to 'false' the
+          // 'themesPath' option is ignored.
+          themesPath: 'dist/theme/',
+
+          // Specifies if the transitions menu panel will be shown.
+          // Set to 'true' to show the transitions menu panel with
+          // the default transitions list. Alternatively, provide an
+          // array to specify the transitions to make available in
+          // the transitions panel, for example...
+          // ['None', 'Fade', 'Slide']
+          transitions: true,
+
+          // Adds a menu button to the slides to open the menu panel.
+          // Set to 'false' to hide the button.
+          openButton: true,
+
+          // If 'true' allows the slide number in the presentation to
+          // open the menu panel. The reveal.js slideNumber option must
+          // be displayed for this to take effect
+          openSlideNumber: true,
+
+          // If true allows the user to open and navigate the menu using
+          // the keyboard. Standard keyboard interaction with reveal
+          // will be disabled while the menu is open.
+          keyboard: true,
+
+          // Normally the menu will close on user actions such as
+          // selecting a menu item, or clicking the presentation area.
+          // If 'true', the sticky option will leave the menu open
+          // until it is explicitly closed, that is, using the close
+          // button or pressing the ESC or m key (when the keyboard
+          // interaction option is enabled).
+          sticky: false,
+
+          // If 'true' standard menu items will be automatically opened
+          // when navigating using the keyboard. Note: this only takes
+          // effect when both the 'keyboard' and 'sticky' options are enabled.
+          autoOpen: true,
+
+          // If 'true' the menu will not be created until it is explicitly
+          // requested by calling RevealMenu.init(). Note this will delay
+          // the creation of all menu panels, including custom panels, and
+          // the menu button.
+          delayInit: false,
+
+          // If 'true' the menu will be shown when the menu is initialised.
+          openOnInit: false,
+
+          // By default the menu will load it's own font-awesome library
+          // icons. If your presentation needs to load a different
+          // font-awesome library the 'loadIcons' option can be set to false
+          // and the menu will not attempt to load the font-awesome library.
+          loadIcons: true
         },
-
-        keyboard: {
-          67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
-          66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
-          46: function() { RevealChalkboard.clear() },			// clear chalkboard when 'DEL' is pressed
-           8: function() { RevealChalkboard.reset() },			// reset chalkboard data on current slide when 'BACKSPACE' is pressed
-          68: function() { RevealChalkboard.download() },		// downlad recorded chalkboard drawing when 'd' is pressed
-          88: function() { RevealChalkboard.colorNext() },		// cycle colors forward when 'x' is pressed
-          89: function() { RevealChalkboard.colorPrev() },		// cycle colors backward when 'y' is pressed
-        },
-
         // Optional reveal.js plugins
         dependencies: [
           { src: '../lib/reveal.js-title-footer//plugin/title-footer/title-footer.js', async: true, callback: function() { 
               title_footer.initialize(null, 'rgba(0,0,0,0)');
-            } },
-          { src: '../lib/reveal.js-menu//menu.js', async: true },
-          { src: '../lib/reveal.js-plugins/chalkboard//chalkboard.js', async: true },
-          { src: '../lib/reveal.js//lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '../lib/reveal.js//plugin/zoom-js/zoom.js', async: true },
-          { src: '../lib/reveal.js//plugin/math/math.js', async: true },
-          { src: '../lib/reveal.js//plugin/notes/notes.js', async: true }
+            }
+          },
+        ],
+
+        customcontrols: {
+          controls: [
+            { icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();'
+            },
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMenu,
+          RevealChalkboard,
+          RevealCustomControls,
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

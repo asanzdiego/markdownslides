@@ -41,8 +41,11 @@ div.progress[style="display: block;"] ~ #title-footer
 }
 
 /* This is to fix the positioning of the title which goes off screen due to a new reveal.js CSS property. */
-#title-footer p{
-	margin: 0;
+
+#title-footer p
+{
+	margin: 0px;
+	line-height: 1.2em;
 }
 
 /* Bottom position for the Title-Footer footer when progress bar is visible */

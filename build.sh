@@ -95,8 +95,6 @@ function downloadLibs() {
       Reveal.js-Title-Footer-master reveal.js-title-footer
     downloadLib https://github.com/rajgoel/reveal.js-plugins/archive/4.2.5.zip \
       reveal.js-plugins-4.2.5 reveal.js-plugins
-    downloadLib https://github.com/twbs/bootstrap/releases/download/v5.3.3/bootstrap-5.3.3-dist.zip \
-      bootstrap-5.3.3-dist bootstrap
     downloadLib https://use.fontawesome.com/releases/v6.7.2/fontawesome-free-6.7.2-web.zip \
       fontawesome-free-6.7.2-web fontawesome
 }
@@ -300,7 +298,6 @@ function buildRevealSlides() {
     REVEAL_JS_MENU_URL=$REVEAL_JS_MENU_URL_ONLINE
     REVEAL_JS_TITLE_FOOTER_URL=$REVEAL_JS_TITLE_FOOTER_URL_ONLINE
     REVEAL_JS_CHALKBOARD_URL=$REVEAL_JS_CHALKBOARD_URL_ONLINE
-    REVEAL_JS_BOOTSTRAP_URL=$REVEAL_JS_BOOTSTRAP_URL_ONLINE
     REVEAL_JS_FONTAWESOME_URL=$REVEAL_JS_FONTAWESOME_URL_ONLINE
   else
     downloadLibs
@@ -308,7 +305,6 @@ function buildRevealSlides() {
     REVEAL_JS_MENU_URL=$REVEAL_JS_MENU_URL_OFFLINE
     REVEAL_JS_TITLE_FOOTER_URL=$REVEAL_JS_TITLE_FOOTER_URL_OFFLINE
     REVEAL_JS_PLUGINS_URL=$REVEAL_JS_PLUGINS_URL_OFFLINE
-    REVEAL_JS_BOOTSTRAP_URL=$REVEAL_JS_BOOTSTRAP_URL_OFFLINE
     REVEAL_JS_FONTAWESOME_URL=$REVEAL_JS_FONTAWESOME_URL_OFFLINE
   fi
   
@@ -346,7 +342,6 @@ function buildRevealSlides() {
     --variable "revealjs-menu-url=$REVEAL_JS_MENU_URL" \
     --variable "revealjs-title-footer-url=$REVEAL_JS_TITLE_FOOTER_URL" \
     --variable "revealjs-plugins-url=$REVEAL_JS_PLUGINS_URL" \
-    --variable "revealjs-bootstrap-url=$REVEAL_JS_BOOTSTRAP_URL" \
     --variable "revealjs-fontawesome-url=$REVEAL_JS_FONTAWESOME_URL" \
     --variable "width=$REVEAL_JS_WIDTH" \
     --variable "height=$REVEAL_JS_HEIGHT" \

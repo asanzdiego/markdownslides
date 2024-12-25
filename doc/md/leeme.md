@@ -403,6 +403,10 @@ REVEAL_JS_ONLINE='no'
 - Actualizadas las plantillas.
 - Actualizado el Dockerfile.
 
+## Versión 7.*
+
+- Cambios menores.
+
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Autor
 
 ## Adolfo Sanz De Diego

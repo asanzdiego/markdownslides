@@ -1,6 +1,6 @@
 FROM node:23.5.0-bookworm-slim
 LABEL MAINTAINER Adolfo Sanz De Diego asanzdiego@gmail.com
-ENV VERSION 7.0
+ENV VERSION 7.1
 # Software dependencies
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
@@ -11,6 +11,6 @@ RUN npm install -g decktape@3.14.0
 WORKDIR /home/
 RUN wget https://github.com/jgm/pandoc/releases/download/3.6.1/pandoc-3.6.1-1-amd64.deb && \
     dpkg -i pandoc-3.6.1-1-amd64.deb
-RUN wget https://github.com/asanzdiego/markdownslides/archive/7.0.zip && unzip 7.0.zip
+RUN wget https://github.com/asanzdiego/markdownslides/archive/7.1.zip && unzip 7.1.zip
 WORKDIR /home/markdownslides-master
 ADD . /home/markdownslides-master

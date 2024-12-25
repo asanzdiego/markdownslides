@@ -405,6 +405,10 @@ REVEAL_JS_ONLINE='no'
 - Updated the templates.
 - Updated the Dockerfile.
 
+## Release 7.*
+
+- Minor changes.
+
 # ![Adolfo Sanz De Diego](../img/asanzdiego.png){style=box-shadow:none;vertical-align:middle;width:100px;} Author
 
 ## Adolfo Sanz De Diego
